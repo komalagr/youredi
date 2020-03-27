@@ -21,15 +21,16 @@ steps:
   
 
 
-- script: 
+- script: |
     pip install robotframework robotframework-seleniumlibrary webdrivermanager
     displayName: 'Install Python dependencies'
   displayName: 'Install dependencies'
   
--  script: webdrivermanager chrome --linkpath AUTO
+-  script: |
+webdrivermanager chrome --linkpath AUTO
      displayName: 'Manage Chrome webdriver version'
 
-- script: 
+- script: |
     pip install pytest pytest-azurepipelines
     pytest
     robot --pythonpath . -x outputxunit.xml TestScenarios.robot
