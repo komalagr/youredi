@@ -26,7 +26,7 @@ steps:
     displayName: 'Install Python dependencies'
   displayName: 'Install dependencies'
   
--  script: webdrivermanager chrome --linkpath AUTO
+-  script: webdrivermanager chrome:$(ChromeVersion) --linkpath AUTO
      displayName: 'Manage Chrome webdriver version'
 
 - script: |
