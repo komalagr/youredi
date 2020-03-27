@@ -21,7 +21,7 @@ steps:
   
 
 
-- script: 
+- script: |
     pip install robotframework robotframework-seleniumlibrary && webdrivermanager chrome:80.0.3987.149--linkpath AUTO
     displayName: 'Install Python dependencies'
   displayName: 'Install dependencies'
