@@ -22,12 +22,10 @@ steps:
 
 
 - script: |
-    pip install robotframework robotframework-seleniumlibrary webdrivermanager
+    pip install robotframework robotframework-seleniumlibrary webdrivermanager && webdrivermanager chrome:80.0.3987.149--linkpath AUTO
     displayName: 'Install Python dependencies'
   displayName: 'Install dependencies'
   
--  script: webdrivermanager chrome:$(ChromeVersion) --linkpath AUTO
-     displayName: 'Manage Chrome webdriver version'
 
 - script: |
     pip install pytest pytest-azurepipelines
