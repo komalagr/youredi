@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-2019'
 strategy:
   matrix:
     Python37:
@@ -25,7 +25,9 @@ steps:
     pip install robotframework robotframework-seleniumlibrary webdrivermanager && webdrivermanager chrome:80.0.3987.149--linkpath AUTO
     displayName: 'Install Robot dependencies'
   
-  
+- powershell: |
+   (Get-Item "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe").VersionInfo 
+  displayName: 'We want to know the Chrome version installed on this darned machine'
 
 - script: |
     pip install pytest pytest-azurepipelines
