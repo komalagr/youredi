@@ -22,7 +22,7 @@ steps:
 
 - script: |
     pip install robotframework robotframework-seleniumlibrary webdrivermanager 
-    displayName: 'Install Python dependencies'
+  
 
 
 - script: |
