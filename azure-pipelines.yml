@@ -24,8 +24,7 @@ steps:
   displayName: 'We want to know the Chrome version installed on this darned machine'
 
 - script: |
-    pip install robotframework robotframework-seleniumlibrary webdrivermanager && webdrivermanager chrome:80.0.3987.149--linkpath AUTO
-    displayName: 'Install Robot dependencies'
+    pip install robotframework robotframework-seleniumlibrary && webdrivermanager 
   
 
 
