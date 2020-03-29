@@ -19,13 +19,10 @@ steps:
     versionSpec: '$(python.version)'
   displayName: 'Use Python $(python.version)'
   
-- powershell: |
-   (Get-Item "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe").VersionInfo 
-  displayName: 'We want to know the Chrome version installed on this darned machine'
 
 - script: |
-    pip install robotframework robotframework-seleniumlibrary && webdrivermanager 
-  
+    pip install robotframework robotframework-seleniumlibrary webdrivermanager 
+    displayName: 'Install Python dependencies'
 
 
 - script: |
