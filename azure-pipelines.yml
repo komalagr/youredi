@@ -31,10 +31,11 @@ steps:
     robot --pythonpath . -x outputxunit.xml TestScenarios.robot
   displayName: 'Run Robot Scripts'
  
+steps:
 - task: PublishTestResults@2
-inputs:
-testResultsFiles: outputxunit.xml
-searchFolder: 'D:\a\1\s\'
-condition: succeededOrFailed()
-displayName: 'Publish Test Results outputxunit.xml'
+  inputs:
+    testResultsFiles: outputxunit.xml
+    searchFolder: 'D:\a\1\s\'
+    condition: succeededOrFailed()
+  displayName: 'Publish Test Results outputxunit.xml'
   
