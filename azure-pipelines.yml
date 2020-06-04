@@ -30,5 +30,11 @@ steps:
     pytest
     robot --pythonpath . -x outputxunit.xml TestScenarios.robot
   displayName: 'Run Robot Scripts'
+  
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testResultsFiles: 'outputxunit.xml'
+    testRunTitle: 'Publish test results for Python $(python.version)'
 
   
