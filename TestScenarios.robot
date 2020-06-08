@@ -566,3 +566,23 @@ TC25-Logs-information
     Sleep    7s
     Capture page Screenshot
     Page should not contain    text=hello
+    
+TC26-UsersPage-Search
+    [Documentation]    Check user can search user on Users page
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Click Element    class=fa-users
+    Sleep    6s
+    capture page screenshot
+    Input text    name=filter    sami
+    Sleep    7s
+    Capture page Screenshot
+    Page should not contain    text=Mike Flavell
+    Page should contain    text=sami
