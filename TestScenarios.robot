@@ -343,7 +343,7 @@ TC15_Search_Counter
     Page should contain Element    class=fa-remove
 
 TC16_Add And Delete Extension
-    [Documentation]    Check user can search Counter on UI
+    [Documentation]    Check user add and Delete extension if it is not associated to a process
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -371,7 +371,7 @@ TC16_Add And Delete Extension
     Capture Page screenshot
 
 TC17_Add Library
-    [Documentation]    Check user can search Counter on UI
+    [Documentation]    Check user can add Library
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -395,7 +395,7 @@ TC17_Add Library
     Element should be Enabled    class=fa-refresh
 
 TC18_Delete Library
-    [Documentation]    Check user can search Counter on UI
+    [Documentation]    Check user can delete library
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -415,7 +415,7 @@ TC18_Delete Library
     Capture Page Screenshot
 
 TC19_Add Service
-    [Documentation]    Check user can search Counter on UI
+    [Documentation]    Check user can add Service
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -427,7 +427,7 @@ TC19_Add Service
     Scroll element into view    class=btn-light
     Click Element    class=btn-light
     Sleep    6s
-    Input Text    name=ShortDescription    TestServiceRF7
+    Input Text    name=ShortDescription    TestServiceRF5
     Input Text    name=LongDescription    Test Add service
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]/i
     Sleep    6s
@@ -462,7 +462,7 @@ TC20_Add_schedule
     sleep    6s
 
 TC21-Alerts_FilterByInfo
-    [Documentation]    Check user can add Schedule
+    [Documentation]    Check user can filter Alerts by Info
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -485,7 +485,7 @@ TC21-Alerts_FilterByInfo
     Page should not contain    text=No alerts found
 
 TC22-Alerts_FilterByAssignedTo
-    [Documentation]    Check user can add Schedule
+    [Documentation]    Check user can filter Alerts by Assigned To
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -498,7 +498,7 @@ TC22-Alerts_FilterByAssignedTo
     Click Element    class=fa-bell
     Sleep    6s
     capture page screenshot
-    Select from List by value    name=filterAssignedUserId    909
+    Select from List by value    name=filterAssignedUserId    928
     Sleep    7s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
     Sleep    6s
@@ -530,7 +530,7 @@ TC23_delete_schedule
     Capture page Screenshot
 
 TC24-Logs-FilterById
-    [Documentation]    Check user can add Schedule
+    [Documentation]    Check user can filter Logs by ID
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -549,7 +549,7 @@ TC24-Logs-FilterById
     Page should contain    text=hello
 
 TC25-Logs-information
-    [Documentation]    Check user can add Schedule
+    [Documentation]    Check user can Filter Logs by information
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
