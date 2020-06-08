@@ -200,7 +200,7 @@ TC09_ServiceDataPage
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
     Sleep    6s
     capture page screenshot
-    Page should contain     text=Data2
+    Page should contain    text=Data2
 
 TC10_AddServiceParameter_Positive
     [Documentation]    Check user can add Service parameter on Parameter UI page
@@ -295,7 +295,7 @@ TC13_Delete_CrossReferenceKey
     Sleep    6s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
-    Sleep     6s
+    Sleep    6s
     Capture Page Screenshot
     Click element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[2]
     sleep    6s
@@ -319,10 +319,10 @@ TC14_Delete_Counter
     Sleep    6s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i
-    Sleep     6s
+    Sleep    6s
     Capture Page Screenshot
 
-TC17_Search_Counter
+TC15_Search_Counter
     [Documentation]    Check user can search Counter on UI
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
@@ -342,7 +342,7 @@ TC17_Search_Counter
     Capture Page Screenshot
     Page should contain Element    class=fa-remove
 
-TC18_Add and Delete Extension
+TC16_Add And Delete Extension
     [Documentation]    Check user can search Counter on UI
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
@@ -359,13 +359,210 @@ TC18_Add and Delete Extension
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i
     Sleep    6s
     Input Text    name=extension.Name    Ext2
-    Sleep     6s
+    Sleep    6s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]
-    sleep     6s
+    sleep    6s
     Capture Page Screenshot
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i
     Sleep    6s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i
     Sleep    6s
     Capture Page screenshot
+
+TC17_Add Library
+    [Documentation]    Check user can search Counter on UI
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Click Element    class=fa-book
+    Sleep    6s
+    Capture Page screenshot
+    Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i
+    Sleep    6s
+    Input Text    name=Name    Default1
+    Sleep    6s
+    Capture Page Screenshot
+    Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
+    Sleep    8s
+    Capture page screenshot
+    Element should be Enabled    class=fa-refresh
+
+TC18_Delete Library
+    [Documentation]    Check user can search Counter on UI
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Click Element    class=fa-book
+    Sleep    6s
+    Capture Page screenshot
+    Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i
+    Sleep    6s
+    Capture Page Screenshot
+
+TC19_Add Service
+    [Documentation]    Check user can search Counter on UI
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Scroll element into view    class=btn-light
+    Click Element    class=btn-light
+    Sleep    6s
+    Input Text    name=ShortDescription    TestServiceRF7
+    Input Text    name=LongDescription    Test Add service
+    Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]/i
+    Sleep    6s
+    Click Element    xpath=//*[@id="btn-home"]/i
+    Scroll element into view    class=btn-light
+    Capture Page screenshot
+
+TC20_Add_schedule
+    [Documentation]    Check user can add Schedule
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Click Element    class=fa-calendar
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/main/section/form/section[2]/header/div/button[2]/i
+    Sleep    6s
+    Capture Page screenshot
+    Select From list by value    xpath=//*[@id="webide"]/main/section/form/section[2]/article/div[1]/select    2365
+    Sleep    6s
+    Execute Javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Setting payload")
+    Input Text    name=hours    8
+    Click element    xpath=//*[@id="webide"]/main/section/form/section[2]/header/div/button[1]/i
+    Sleep    6s
+    Capture page screenshot
+    click element    class=fa-refresh
+    sleep    6s
+
+TC21-Alerts_FilterByInfo
+    [Documentation]    Check user can add Schedule
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Click Element    class=fa-bell
+    Sleep    6s
+    capture page screenshot
+    Input text    name=filterInfo    Info3
+    Sleep    7s
+    Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
+    Sleep    6s
+    Capture page Screenshot
+    Page should not contain    text=No alerts found
+
+TC22-Alerts_FilterByAssignedTo
+    [Documentation]    Check user can add Schedule
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Click Element    class=fa-bell
+    Sleep    6s
+    capture page screenshot
+    Select from List by value    name=filterAssignedUserId    909
+    Sleep    7s
+    Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
+    Sleep    6s
+    Capture page Screenshot
+    Page should not contain    text=No alerts found
+
+TC23_delete_schedule
+    [Documentation]    Check user can remove Schedule
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Click Element    class=fa-calendar
+    Sleep    6s
+    capture page screenshot
+    click element    xpath=//*[@id="webide"]/main/section/form/section[2]/header/button/i
+    Sleep    6s
+    click element    xpath=//*[@id="webide"]/main/section/form/section[2]/header/div/button[1]/i
+    sleep    6s
+    click element    class=fa-refresh
+    sleep    6s
+    Capture page Screenshot
+
+TC24-Logs-FilterById
+    [Documentation]    Check user can add Schedule
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Click Element    class=fa-info-circle
+    Sleep    6s
+    capture page screenshot
+    Input text    name=filterIdGte    22404797
+    Sleep    7s
+    Capture page Screenshot
+    Page should contain    text=hello
+
+TC25-Logs-information
+    [Documentation]    Check user can add Schedule
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Click Element    class=fa-info-circle
+    Sleep    6s
+    capture page screenshot
+    Input text    name=filterInformation    Hii
+    Sleep    7s
+    Capture page Screenshot
+    Page should not contain    text=hello
