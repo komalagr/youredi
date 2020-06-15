@@ -586,3 +586,47 @@ TC26-UsersPage-Search
     Capture page Screenshot
     Page should not contain    text=Mike Flavell
     Page should contain    text=sami
+    
+TC27-Home
+    [Documentation]    Check user can mark organization as Favorite and see those that marked as Favorites on Favorites page
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    capture page screenshot
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div/p/i
+    capture page screenshot
+    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[1]/p/a[1]/i
+    sleep    6s
+    capture page screenshot
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/header[1]/div/button/i
+    Sleep    6s
+    Capture Page Screenshot
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/header[1]/div/button/i
+    sleep    6s
+    capture page screenshot
+    Page should contain    text=TestOrganisation1
+    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div/p/i
+    Capture page screenshot
+
+TC28-Logout
+    [Documentation]    Check user can logout from the application
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    capture page screenshot
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div/p/i
+    capture page screenshot
+    Click element    class=fa-cog
+    Click element    xpath=//*[@id="webide"]/aside/div[2]/div/a[5]/i
+    Handle Alert
+    Sleep    6s
+    Page should contain element    xpath=//*[@id="login"]/div/div[1]/div[2]/form/div[4]/div/button/i
+
