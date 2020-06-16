@@ -174,7 +174,7 @@ TC08_AddEndpoint_Positive
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i
     Sleep    6s
-    Input text    name=Description    13Process
+    Input text    name=Description    14Process
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/button
     Sleep    6s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]
@@ -427,7 +427,7 @@ TC19_Add Service
     Scroll element into view    class=btn-light
     Click Element    class=btn-light
     Sleep    6s
-    Input Text    name=ShortDescription    TestServiceRF9
+    Input Text    name=ShortDescription    TestServiceRF10
     Input Text    name=LongDescription    Test Add service
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]/i
     Sleep    6s
