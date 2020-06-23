@@ -301,6 +301,26 @@ TC13_Delete_CrossReferenceKey
     sleep    6s
     Capture Page Screenshot
 
+TC15_Search_Counter
+    [Documentation]    Check user can search Counter on UI
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Click Element    class=fa-calculator
+    Sleep    6s
+    Capture Page screenshot
+    Input text    name=filterName    Counter3
+    Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i
+    Sleep    6s
+    Capture Page Screenshot
+    Page should contain Element    class=fa-remove
+
 TC14_Delete_Counter
     [Documentation]    Check user can delete Counter on UI
     Open Browser    https://stage.youredi.com/    chrome
@@ -321,26 +341,6 @@ TC14_Delete_Counter
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i
     Sleep    6s
     Capture Page Screenshot
-
-TC15_Search_Counter
-    [Documentation]    Check user can search Counter on UI
-    Open Browser    https://stage.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
-    Click Element    class=fa-sign-in
-    Sleep    6s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-calculator
-    Sleep    6s
-    Capture Page screenshot
-    Input text    name=filterName    Counter3
-    Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i
-    Sleep    6s
-    Capture Page Screenshot
-    Page should contain Element    class=fa-remove
 
 TC16_Add And Delete Extension
     [Documentation]    Check user add and Delete extension if it is not associated to a process
@@ -427,7 +427,7 @@ TC19_Add Service
     Scroll element into view    class=btn-light
     Click Element    class=btn-light
     Sleep    6s
-    Input Text    name=ShortDescription    TestServiceRF14
+    Input Text    name=ShortDescription    TestServiceRF20
     Input Text    name=LongDescription    Test Add service
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]/i
     Sleep    6s
@@ -707,3 +707,115 @@ TC31_AddandDeleteBinding
     sleep    6s
     click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[2]/i
     sleep    6s
+
+TC32_ChangeEndpointName
+    [Documentation]    Check user can edit endpoint type if it Binding is not associated to it
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
+    sleep    6s
+    Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
+    Sleep    6s
+    Capture Page screenshot
+    click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i
+    Sleep    6s
+    Input text    name=Description    1Updated
+    sleep    6s
+    Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]
+    Capture page screenshot
+    Page should not contain    text=1EP
+
+TC33_EditOrganisationName
+    [Documentation]    Check user can edit endpoint type if it Binding is not associated to it
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    6s
+    click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
+    Input text    name=OrganizationName    UpdatedOrg
+    Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]/i
+    Sleep    6s
+    Click element    xpath=//*[@id="btn-home"]/i
+    Scroll element into View    xpath=//*[@id="webide"]/main/section/section/div/div[5]/p/a
+    Capture page screenshot
+    Page should not contain     text=TestOrg
+
+TC34_AddUserToOrganization
+    [Documentation]    Check user can edit endpoint type if it Binding is not associated to it
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    6s
+    click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/section/header/button[1]/i
+    Sleep    6s
+    Input Text    xpath=/html/body/main/section/section/section/section/div/div/div[2]/form/div/div/input    aryan@youredi.com
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div/div/span/span/button/i
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div[2]/button/i
+    sleep    6s
+    capture page screenshot
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
+    sleep    6s
+    capture page screenshot
+
+TC36_EditUserRoleInOrganization
+    [Documentation]    Check user can edit endpoint type if it Binding is not associated to it
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    6s
+    click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
+    Sleep    6s
+    capture page screenshot
+    Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
+    sleep    6s
+    Select from list by value    name=Role    Designer
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
+    Sleep    6s
+    capture page screenshot
+
+TC35_DeleteUserFromOrganization
+    [Documentation]    Check user can edit endpoint type if it Binding is not associated to it
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    6s
+    click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
+    Sleep    6s
+    Capture page screenshot
+    Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/div/button/i
+    Sleep    6s
+    Capture page screenshot
+    Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i
+    Sleep    6s
+    Capture page screenshot
+    Page should not contain     text=Aryan
