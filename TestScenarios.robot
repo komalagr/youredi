@@ -888,4 +888,33 @@ TC039_Transfer_FilterById
     sleep    6s
     capture page screenshot
     Page should not contain    text=32334475
+    
+ TC41_Transfer_BugTesting
+    [Documentation]    Check that user can filter transactions by Duration id
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[1]/p/a[2]
+    sleep    6s
+    click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
+    sleep    6s
+    Input text    xpath=/html/body/main/section/header/form/div[1]/div[4]/div[1]/div/input    3s
+    sleep    6s
+    click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
+    click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
+    sleep    6s
+    capture page screenshot
+    Page should not contain    32354479
+    sleep    6s
+    Click element    xpath=/html/body/main/section/div/section/div/div/div[1]/div[1]/i
+    Sleep    6s
+    Click element    xpath=/html/body/main/section/section/header/div[1]/div/button/i
+    Sleep     6s
+    ${duration}    Get Value    xpath=/html/body/main/section/header/form/div[1]/div[4]/div[1]/div/input
+    Should be equal as strings    ${duration}    3s
+
 
