@@ -427,7 +427,7 @@ TC19_Add Service
     Scroll element into view    class=btn-light
     Click Element    class=btn-light
     Sleep    6s
-    Input Text    name=ShortDescription    TestServiceRF21
+    Input Text    name=ShortDescription    TestServiceRF22
     Input Text    name=LongDescription    Test Add service
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]/i
     Sleep    6s
@@ -819,3 +819,70 @@ TC35_DeleteUserFromOrganization
     Sleep    6s
     Capture page screenshot
     Page should not contain     text=Aryan
+    
+ TC37_EditServiceName
+    [Documentation]    Check user can edit Service name
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    6s
+    click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
+    Sleep    6s
+    Capture page screenshot
+    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div/p/a[1]/i
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[2]/div[2]/div/p/a[2]
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[4]/span[2]/a/i
+    Sleep    6s
+    Input Text    name=ShortDescription    ServiceUpdated
+    sleep    6s
+    Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]/i
+    Sleep    6s
+    Capture page screenshot
+
+TC038_Transfer_FilterbyDuration
+    [Documentation]    Check that user can filter transactions by Duration id
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[1]/p/a[2]
+    sleep    6s
+    click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
+    sleep    6s
+    Input text    xpath=/html/body/main/section/header/form/div[1]/div[4]/div[1]/div/input    3s
+    sleep    6s
+    click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
+    click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
+    sleep    6s
+    capture page screenshot
+    Page should not contain    32354479
+
+TC039_Transfer_FilterById
+    [Documentation]    Check that user can filter transactions by Duration id
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[1]/p/a[2]
+    sleep    6s
+    click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
+    sleep    6s
+    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    32334479
+    sleep    6s
+    click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
+    click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
+    sleep    6s
+    capture page screenshot
+    Page should not contain    text=32334475
+
