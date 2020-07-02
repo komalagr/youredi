@@ -166,7 +166,7 @@ TC08_AddEndpoint_Positive
     Click Element    class=fa-sign-in
     Sleep    6s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
+    Sleep    9s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-lightbulb-o
@@ -300,6 +300,28 @@ TC13_Delete_CrossReferenceKey
     Click element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[2]
     sleep    6s
     Capture Page Screenshot
+    
+    
+TC14_Delete_Counter
+    [Documentation]    Check user can delete Counter on UI
+    Open Browser    https://stage.youredi.com/    chrome
+    Input Text    id=email    komal@youredi.com
+    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
+    Click Element    class=fa-sign-in
+    Sleep    6s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    9s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Click Element    class=fa-calculator
+    Sleep    9s
+    Capture Page screenshot
+    Click Element    xpath=//*[@id="webide"]/main/section/section/section/table/tbody/tr/td[3]/div/button/i
+    Sleep    6s
+    Capture Page Screenshot
+    Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i
+    Sleep    6s
+    Capture Page Screenshot
 
 TC15_Search_Counter
     [Documentation]    Check user can search Counter on UI
@@ -321,26 +343,7 @@ TC15_Search_Counter
     Capture Page Screenshot
     Page should contain Element    class=fa-remove
 
-TC14_Delete_Counter
-    [Documentation]    Check user can delete Counter on UI
-    Open Browser    https://stage.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
-    Click Element    class=fa-sign-in
-    Sleep    6s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-calculator
-    Sleep    6s
-    Capture Page screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/section/table/tbody/tr/td[3]/div/button/i
-    Sleep    6s
-    Capture Page Screenshot
-    Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i
-    Sleep    6s
-    Capture Page Screenshot
+
 
 TC16_Add And Delete Extension
     [Documentation]    Check user add and Delete extension if it is not associated to a process
@@ -427,7 +430,7 @@ TC19_Add Service
     Scroll element into view    class=btn-light
     Click Element    class=btn-light
     Sleep    6s
-    Input Text    name=ShortDescription    TestServiceRF22
+    Input Text    name=ShortDescription    TestServiceRF23
     Input Text    name=LongDescription    Test Add service
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]/i
     Sleep    6s
@@ -643,7 +646,7 @@ TC29_ChangeEndpointType
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
     sleep    6s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
-    Sleep    6s
+    Sleep    9s
     Capture Page screenshot
     click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i
     Sleep    6s
@@ -665,9 +668,9 @@ TC30_ChangeEndpointType_Negative
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[4]/div[1]/p/a[2]
-    sleep    6s
+    sleep    9s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
-    Sleep    6s
+    Sleep    9s
     Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    1
     sleep    6s
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
@@ -690,9 +693,9 @@ TC31_AddandDeleteBinding
     sleep    6s
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
     Click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
-    Sleep    6s
+    Sleep    8s
     Click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
-    Sleep    6s
+    Sleep    8s
     click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
     sleep    6s
     Input Text    name=OperationName    Binding
@@ -721,7 +724,7 @@ TC32_ChangeEndpointName
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
     sleep    6s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
-    Sleep    6s
+    Sleep    9s
     Capture Page screenshot
     click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i
     Sleep    6s
