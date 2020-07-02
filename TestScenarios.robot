@@ -200,7 +200,7 @@ TC09_ServiceDataPage
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
     Sleep    6s
     capture page screenshot
-    Page should contain    text=Data2
+    Page should contain    text=Data
 
 TC10_AddServiceParameter_Positive
     [Documentation]    Check user can add Service parameter on Parameter UI page
