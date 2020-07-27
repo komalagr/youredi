@@ -4,6 +4,10 @@ Library           SeleniumLibrary
 *** Test Cases ***
 TC01_AddProcess
     [Documentation]    Check that If Process does not exist , it should get added successfully
+    ...
+    ...    Test Data Setup
+    ...    1. Need Organization -- Name : Komal test organistaion
+    ...    2. Need Service -- DemoService
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -12,22 +16,25 @@ TC01_AddProcess
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-object-group
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
+    Click Element    class=fa-object-group    #Click Processes
     Sleep    6s
     Capture Page Screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]
+    Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    #Clicks Add Process button
     Sleep    6s
-    Input Text    name=processName    1Process
+    Input Text    name=processName    1Process    #Provide new process name
     Sleep    6s
     Capture Page Screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    #Click Save
     Sleep    8s
-    Page should contain element    class=fa-play
+    Page should contain element    class=fa-play    #New process page should be displayed with Start button
     Capture Page screenshot
 
 TC02_DeleteProcess_PositiveScenario
-    [Documentation]    Check that user is able to delete the process
+    [Documentation]    Check that user is able to delete the process if process name entered on Delete pop up window is correct
+    ...
+    ...    Test data setup
+    ...    Need process- 1Process added to DemoService in Komal test organistaion
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -37,13 +44,13 @@ TC02_DeleteProcess_PositiveScenario
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-object-group
+    Click Element    class=fa-object-group    # Clicks Processes
     Sleep    6s
-    ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a
+    ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Gets name of the process that will be deleted
     Capture Page Screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button
+    Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click delete
     Sleep    6s
-    Input Text    xpath=//*[@id="input-8"]    ${process}
+    Input Text    xpath=//*[@id="input-8"]    ${process}    #Enter process name on delete pop up window
     Sleep    10s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
     Sleep    10s
@@ -51,6 +58,9 @@ TC02_DeleteProcess_PositiveScenario
 
 TC03_DeleteProcess_ProcessNameIncorect
     [Documentation]    Check that delete button should not be active if On delete window,process name entered is incorrect
+    ...
+    ...    Test Data setup
+    ...    1. Komal test organistaion \ -- DemoService
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -59,18 +69,22 @@ TC03_DeleteProcess_ProcessNameIncorect
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-object-group
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
+    Click Element    class=fa-object-group    #Click on Processes
     Sleep    6s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button
+    Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click on delete button in first row
     Sleep    6s
-    Input Text    xpath=//*[@id="input-8"]    8134 Bug
+    Input Text    xpath=//*[@id="input-8"]    8134 Bug    # enter incorrect process name in delete popup window
     Sleep    10s
-    Element Should Be Disabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
+    Element Should Be Disabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #Check that delete button should be disabled
     Capture Page Screenshot
 
 TC04_DeleteProcess_Cancel
     [Documentation]    Check that user if User clicks on cancel button on Delete process page, then process should not get deleted
+    ...
+    ...
+    ...    Test Data setup
+    ...    1. Komal test organistaion \ -- DemoService
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -79,22 +93,26 @@ TC04_DeleteProcess_Cancel
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-object-group
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
+    Click Element    class=fa-object-group    # click on processes
     Sleep    6s
-    ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a
+    ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #get the process name to be deleted
     Capture Page Screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button
+    Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    # click delete button
     Sleep    6s
-    Input Text    xpath=//*[@id="input-8"]    ${process}
+    Input Text    xpath=//*[@id="input-8"]    ${process}    # get in the process name to be deleted
     Sleep    10s
     Capture Page Screenshot
-    Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[2]
+    Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[2]    # click cancel on delete pop up window
     Sleep    10s
     Capture Page Screenshot
+    Page should contain    text=${process}
 
 TC05_DeleteEndpoint_Positive
     [Documentation]    Check that If endpoint is not assoicated to a process, then it should get deleted
+    ...
+    ...    Test Data setup
+    ...    1. Komal test organistaion \ -- DemoService \ -- 1Process
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -104,17 +122,22 @@ TC05_DeleteEndpoint_Positive
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-lightbulb-o
+    Click Element    class=fa-lightbulb-o    #Click endpoints
     Sleep    6s
     Capture Page screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button
+    Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button    #click delete button
     Sleep    6s
-    Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
+    Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #confirm deletion
     Sleep    6s
     Capture Page Screenshot
 
 TC06_AddProcess_Negative_ProcessAlreadyExist
     [Documentation]    Check that process should not get added if Process name or endpoint name already exist
+    ...
+    ...
+    ...    Test Data Setup
+    ...    1. Need Organization -- Name : Komal test organistaion
+    ...    2. Need Service -- DemoService
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -124,42 +147,52 @@ TC06_AddProcess_Negative_ProcessAlreadyExist
     sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-object-group
+    Click Element    class=fa-object-group    # Click on processes
     Sleep    6s
     Capture Page screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]
+    Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    # click on add process
     Sleep    6s
-    Input Text    name=processName    ProcessNew12121
+    Input Text    name=processName    ProcessNew12121    # try adding adding process that already exist
     Sleep    6s
     Capture page screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    # click save button
     Sleep    6s
-    Page should not contain element    class=fa-play
+    Page should not contain element    class=fa-play    # Error message should be displayed
     Capture Page screenshot
 
 TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
-    [Documentation]    Check that If endpoint is associated to a process it should not get deleted
+    [Documentation]    Check that If endpoint is associated to a process , endpoint should not get deleted
+    ...
+    ...
+    ...    Test Data Setup
+    ...    1. Need Organization -- Name : Komal test organistaion
+    ...    2. Need Service -- DemoService
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
-    Click Element    class=fa-sign-in
+    Click Element    class=fa-sign-in    # Login
     Sleep    6s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-lightbulb-o
+    Click Element    class=fa-lightbulb-o    # Click on Endpoints
     Sleep    6s
     Capture Page screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button
+    Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button    # click on delete enpoint
     Sleep    6s
-    Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
+    Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    # confirm deletion on endpoint
     Sleep    6s
     Capture Page Screenshot
-    Page Should contain    text=Errors
+    Page Should contain    text=Errors    # error message should be displayed since endpoint associated to a process
 
 TC08_AddEndpoint_Positive
     [Documentation]    Check user can add endpoint if it does not already exist
+    ...
+    ...
+    ...    Test Data Setup
+    ...    1. Need Organization -- Name : Komal test organistaion
+    ...    2. Need Service -- DemoService
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -169,18 +202,23 @@ TC08_AddEndpoint_Positive
     Sleep    9s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-lightbulb-o
+    Click Element    class=fa-lightbulb-o    # click on endpoints
     Sleep    6s
     Capture Page screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    # click on add endpoint
     Sleep    6s
-    Input text    name=Description    3Endpoint
-    click element    xpath=//*[@id="webide"]/main/section/section/form/header/button
+    Input text    name=Description    3Endpoint    # enter new endpoint name
+    click element    xpath=//*[@id="webide"]/main/section/section/form/header/button    # save the endpoint
     Sleep    6s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]
+    Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
 
 TC09_ServiceDataPage
     [Documentation]    Check Service data UI page
+    ...
+    ...
+    ...    Test Data Setup
+    ...    1. Need Organization -- Name : Komal test organistaion
+    ...    2. Need Service -- DemoService
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -191,19 +229,24 @@ TC09_ServiceDataPage
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
     Sleep    6s
-    Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i
+    Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    # click on Service data link
     Sleep    6s
     Capture Page Screenshot
-    Input Text    name=itemType    Type2
-    Input Text    name=index1    In2
-    Input Text    name=index2    Dex2
+    Input Text    name=itemType    Type2    # enter item type
+    Input Text    name=index1    In2    # enter index1
+    Input Text    name=index2    Dex2    # enter index 2
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
     Sleep    6s
     capture page screenshot
-    Page should contain    text=Data
+    Page should contain    text=Data    # Service Data - Data should fe fetched
 
 TC10_AddServiceParameter_Positive
     [Documentation]    Check user can add Service parameter on Parameter UI page
+    ...
+    ...
+    ...    Test Data Setup
+    ...    1. Need Organization -- Name : Komal test organistaion
+    ...    2. Need Service -- DemoService
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -213,22 +256,28 @@ TC10_AddServiceParameter_Positive
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-cogs
+    Click Element    class=fa-cogs    # Click on Parameters link
     Sleep    6s
     Capture Page screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]
+    Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]    # click on Add parameter
     Sleep    6s
-    Input Text    name=ID    1parameter
-    Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1")
+    Input Text    name=ID    1parameter    # enter parameter name
+    Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1")    # set value for parameter
     Sleep    5s
     Capture Page Screenshot
-    Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[1]/button
+    Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[1]/button    # click save button
     sleep    6s
     Capture Page Screenshot
-    Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i    # click refresh
+    Sleep    6s
+    Page should contain    text=1parameter    # check that page should display new parameter added
 
 TC11_DeleteParameter
     [Documentation]    Check user can delete service parameter
+    ...
+    ...    Test Data Setup
+    ...    1. Need Organization -- Name : Komal test organistaion
+    ...    2. Need Service -- DemoService
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -237,19 +286,23 @@ TC11_DeleteParameter
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-cogs
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
+    Click Element    class=fa-cogs    # click on paramters
     Sleep    6s
     Capture Page screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i    # click on delete button
     Sleep    6s
     Capture page screenshot
-    Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i
+    Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # confirm deletion
     Sleep    6s
     Capture Page Screenshot
 
 TC12_AddCrossReference_Positive
-    [Documentation]    Check user can add Cross reference on UI
+    [Documentation]    Check user can add Cross reference key on UI
+    ...
+    ...    Test Data Setup
+    ...    1. Need Organization -- Name : Komal test organistaion
+    ...    2. Need Service -- DemoService
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
@@ -259,12 +312,12 @@ TC12_AddCrossReference_Positive
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-table
+    Click Element    class=fa-table    # click on cross reference
     Sleep    6s
     Capture Page screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[1]
+    Click Element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[1]    # click on add cross reference table
     Sleep    6s
-    Input Text    name=newTableName    Table1
+    Input Text    name=newTableName    Table1    # Add a table name
     Sleep    6s
     capture page screenshot
     click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/div/button[1]
@@ -413,173 +466,3 @@ TC18_Delete Library
     Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i
     Sleep    6s
     Capture Page Screenshot
-    
- TC20_Add_schedule
-    [Documentation]    Check user can add Schedule
-    Open Browser    https://stage.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
-    Click Element    class=fa-sign-in
-    Sleep    6s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-calendar
-    Sleep    6s
-    Click element    xpath=//*[@id="webide"]/main/section/form/section[2]/header/div/button[2]/i
-    Sleep    6s
-    Capture Page screenshot
-    Select From list by value    xpath=//*[@id="webide"]/main/section/form/section[2]/article/div[1]/select    2365
-    Sleep    6s
-    Execute Javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Setting payload")
-    Input Text    name=hours    8
-    Click element    xpath=//*[@id="webide"]/main/section/form/section[2]/header/div/button[1]/i
-    Sleep    6s
-    Capture page screenshot
-    click element    class=fa-refresh
-    sleep    6s
-
-TC21-Alerts_FilterByInfo
-    [Documentation]    Check user can filter Alerts by Info
-    Open Browser    https://stage.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
-    Click Element    class=fa-sign-in
-    Sleep    6s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-bell
-    Sleep    6s
-    capture page screenshot
-    Input text    name=filterInfo    Info3
-    Sleep    7s
-    Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
-    Sleep    6s
-    Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
-    Sleep    6s
-    Capture page Screenshot
-    Page should not contain    text=No alerts found
-
-TC22-Alerts_FilterByAssignedTo
-    [Documentation]    Check user can filter Alerts by Assigned To
-    Open Browser    https://stage.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
-    Click Element    class=fa-sign-in
-    Sleep    6s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-bell
-    Sleep    6s
-    capture page screenshot
-    Select from List by value    name=filterAssignedUserId    928
-    Sleep    7s
-    Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
-    Sleep    6s
-    Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
-    Sleep    6s
-    Capture page Screenshot
-    Page should not contain    text=No alerts found
-
-TC23_delete_schedule
-    [Documentation]    Check user can remove Schedule
-    Open Browser    https://stage.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
-    Click Element    class=fa-sign-in
-    Sleep    6s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-calendar
-    Sleep    6s
-    capture page screenshot
-    click element    xpath=//*[@id="webide"]/main/section/form/section[2]/header/button/i
-    Sleep    6s
-    click element    xpath=//*[@id="webide"]/main/section/form/section[2]/header/div/button[1]/i
-    sleep    6s
-    click element    class=fa-refresh
-    sleep    6s
-    Capture page Screenshot
-
-TC24-Logs-FilterById
-    [Documentation]    Check user can filter Logs by ID
-    Open Browser    https://stage.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
-    Click Element    class=fa-sign-in
-    Sleep    6s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-info-circle
-    Sleep    6s
-    capture page screenshot
-    Input text    name=filterIdGte    22404797
-    Sleep    7s
-    Capture page Screenshot
-    Page should contain    text=hello
-
-TC25-Logs-information
-    [Documentation]    Check user can Filter Logs by information
-    Open Browser    https://stage.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
-    Click Element    class=fa-sign-in
-    Sleep    6s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-info-circle
-    Sleep    6s
-    capture page screenshot
-    Input text    name=filterInformation    Hii
-    Sleep    7s
-    Capture page Screenshot
-    Page should not contain    text=hello
-
-TC26-UsersPage-Search
-    [Documentation]    Check user can search user on Users page
-    Open Browser    https://stage.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
-    Click Element    class=fa-sign-in
-    Sleep    6s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Click Element    class=fa-users
-    Sleep    6s
-    capture page screenshot
-    Input text    name=filter    sami
-    Sleep    7s
-    Capture page Screenshot
-    Page should not contain    text=Mike Flavell
-    Page should contain    text=sami
-
-TC28-Logout
-    [Documentation]    Check user can logout from the application
-    Open Browser    https://stage.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
-    Click Element    class=fa-sign-in
-    Sleep    6s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
-    capture page screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div/p/i
-    capture page screenshot
-    Click element    class=fa-cog
-    Click element    xpath=//*[@id="webide"]/aside/div[2]/div/a[5]/i
-    Handle Alert
-    Sleep    6s
-    Page should contain element    xpath=//*[@id="login"]/div/div[1]/div[2]/form/div[4]/div/button/i
