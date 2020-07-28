@@ -518,9 +518,9 @@ TC34_AddUserToOrganization
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    6s
+    Sleep    9s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
     Sleep    6s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
