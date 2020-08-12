@@ -467,7 +467,7 @@ TC18_Delete Library
     Sleep    6s
     Capture Page Screenshot
     
- TC51_Check If binding is not active process should not get executed
+TC51_Check If binding is not active process should not get executed
     [Documentation]    Check if the endpoint binding is not active, process should not get executed.An error message should be displayed
     ...
     ...
@@ -494,7 +494,7 @@ TC18_Delete Library
     Page should contain    text=Process not found using given account    #error message shouldbe present
     capture page screenshot
     
- TC28-Logout
+TC28-Logout
     [Documentation]    Check user can logout from the application
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
@@ -585,18 +585,18 @@ TC35_DeleteUserFromOrganization
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    Sleep    6s
+    Sleep    8s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i
     Sleep    6s
     Capture Page Screenshot
     Input Text    name=itemType    Type2
     Input Text    name=index1    In2
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
-    Sleep    6s
+    Sleep    9s
     capture page screenshot
     Page should contain    text=Data
