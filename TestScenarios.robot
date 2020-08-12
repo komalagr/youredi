@@ -579,7 +579,7 @@ TC35_DeleteUserFromOrganization
     Capture page screenshot
     Page should not contain    text=Aryan
     
- TC44_ServiceDataPage_Index2NotMandatory
+TC44_ServiceDataPage_Index2NotMandatory
     [Documentation]    Check Service data UI page
     Open Browser    https://stage.youredi.com/    chrome
     Input Text    id=email    komal@youredi.com
