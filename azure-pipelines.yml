@@ -3,9 +3,16 @@
 # Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
-trigger:
-- master
-
+trigger: none 
+resources:
+  pipelines:
+  - pipeline: Stage 
+    source: stage.youredi.com    
+    trigger:
+    branches:
+    - releases/*
+    - master
+    
 pool:
   vmImage: 'windows-2019'
 strategy:
@@ -37,12 +44,4 @@ steps:
     testResultsFiles: 'outputxunit.xml'
     testRunTitle: 'Publish test results for Python $(python.version)'
 
-trigger: none 
-resources:
-  pipelines:
-  - pipeline: Stage 
-    source: stage.youredi.com    
-    trigger:
-    branches:
-    - releases/*
-    - master
+
