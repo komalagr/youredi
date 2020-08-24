@@ -9,9 +9,9 @@ resources:
   - pipeline: Stage 
     source: stage.youredi.com    
     trigger:
-    branches:
-    - releases/*
-    - master
+      branches:
+      - releases/*
+      - master
     
 pool:
   vmImage: 'windows-2019'
