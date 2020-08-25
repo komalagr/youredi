@@ -39,17 +39,17 @@ TC02_DeleteProcess_PositiveScenario
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-object-group    # Clicks Processes
-    Sleep    6s
+    Sleep    7s
     ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Gets name of the process that will be deleted
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click delete
-    Sleep    6s
+    Sleep    8s
     Input Text    xpath=//*[@id="input-8"]    ${process}    #Enter process name on delete pop up window
     Sleep    10s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
@@ -65,15 +65,15 @@ TC03_DeleteProcess_ProcessNameIncorect
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Click Element    class=fa-object-group    #Click on Processes
-    Sleep    6s
+    Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click on delete button in first row
-    Sleep    6s
+    Sleep    7s
     Input Text    xpath=//*[@id="input-8"]    8134 Bug    # enter incorrect process name in delete popup window
     Sleep    10s
     Element Should Be Disabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #Check that delete button should be disabled
@@ -89,17 +89,17 @@ TC04_DeleteProcess_Cancel
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    7s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
     Click Element    class=fa-object-group    # click on processes
-    Sleep    6s
+    Sleep    7s
     ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #get the process name to be deleted
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    # click delete button
-    Sleep    6s
+    Sleep    8s
     Input Text    xpath=//*[@id="input-8"]    ${process}    # get in the process name to be deleted
     Sleep    10s
     Capture Page Screenshot
@@ -117,16 +117,16 @@ TC05_DeleteEndpoint_Positive
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-lightbulb-o    #Click endpoints
-    Sleep    6s
+    Sleep    8s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button    #click delete button
-    Sleep    6s
+    Sleep    8s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #confirm deletion
     Sleep    6s
     Capture Page Screenshot
@@ -142,21 +142,21 @@ TC06_AddProcess_Negative_ProcessAlreadyExist
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    7s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-object-group    # Click on processes
-    Sleep    6s
+    Sleep    7s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    # click on add process
-    Sleep    6s
+    Sleep    7s
     Input Text    name=processName    ProcessNew12121    # try adding adding process that already exist
-    Sleep    6s
+    Sleep    7s
     Capture page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    # click save button
-    Sleep    6s
+    Sleep    8s
     Page should not contain element    class=fa-play    # Error message should be displayed
     Capture Page screenshot
 
@@ -171,7 +171,7 @@ TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in    # Login
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -180,9 +180,9 @@ TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Sleep    6s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button    # click on delete enpoint
-    Sleep    6s
+    Sleep    7s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    # confirm deletion on endpoint
-    Sleep    6s
+    Sleep    7s
     Capture Page Screenshot
     Page Should contain    text=Errors    # error message should be displayed since endpoint associated to a process
 
@@ -206,10 +206,10 @@ TC08_AddEndpoint_Positive
     Sleep    6s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    # click on add endpoint
-    Sleep    6s
+    Sleep    7s
     Input text    name=Description    3Endpoint    # enter new endpoint name
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/button    # save the endpoint
-    Sleep    6s
+    Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
 
 TC09_ServiceDataPage
@@ -223,20 +223,20 @@ TC09_ServiceDataPage
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    7s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    Sleep    6s
+    Sleep    7s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    # click on Service data link
-    Sleep    6s
+    Sleep    7s
     Capture Page Screenshot
     Input Text    name=itemType    Type2    # enter item type
     Input Text    name=index1    In2    # enter index1
     Input Text    name=index2    Dex2    # enter index 2
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
-    Sleep    6s
+    Sleep    8s
     capture page screenshot
     Page should contain    text=Data    # Service Data - Data should fe fetched
 
@@ -251,25 +251,25 @@ TC10_AddServiceParameter_Positive
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    7s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-cogs    # Click on Parameters link
-    Sleep    6s
+    Sleep    7s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]    # click on Add parameter
-    Sleep    6s
+    Sleep    7s
     Input Text    name=ID    1parameter    # enter parameter name
     Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1")    # set value for parameter
-    Sleep    5s
+    Sleep    7s
     Capture Page Screenshot
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[1]/button    # click save button
-    sleep    6s
+    sleep    7s
     Capture Page Screenshot
     Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i    # click refresh
-    Sleep    6s
+    Sleep    7s
     Page should contain    text=1parameter    # check that page should display new parameter added
 
 TC11_DeleteParameter
@@ -288,10 +288,10 @@ TC11_DeleteParameter
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
     Click Element    class=fa-cogs    # click on paramters
-    Sleep    6s
+    Sleep    7s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i    # click on delete button
-    Sleep    6s
+    Sleep    7s
     Capture page screenshot
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # confirm deletion
     Sleep    6s
@@ -307,24 +307,24 @@ TC12_AddCrossReference_Positive
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    7s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-table    # click on cross reference
-    Sleep    6s
+    Sleep    7s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[1]    # click on add cross reference table
-    Sleep    6s
+    Sleep    7s
     Input Text    name=newTableName    Table1    # Add a table name
-    Sleep    6s
+    Sleep    7s
     capture page screenshot
     click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/div/button[1]
-    sleep    6s
+    sleep    7s
     Input Text    name=crossReference.Key    key1122
     Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1122")
-    Sleep    5s
+    Sleep    6s
     Capture Page Screenshot
     Click element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/button
     sleep    6s
@@ -336,19 +336,19 @@ TC13_Delete_CrossReferenceKey
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    7s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-table
-    Sleep    6s
+    Sleep    7s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/div/button/i
-    Sleep    6s
+    Sleep    7s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
-    Sleep    6s
+    Sleep    7s
     Capture Page Screenshot
     Click element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[2]
     sleep    6s
@@ -360,16 +360,16 @@ TC14_Delete_Counter
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    7s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-calculator
-    Sleep    6s
+    Sleep    7s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/table/tbody/tr/td[3]/div/button/i
-    Sleep    6s
+    Sleep    7s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i
     Sleep    6s
@@ -401,24 +401,24 @@ TC16_Add And Delete Extension
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    7s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-plug
-    Sleep    6s
+    Sleep    7s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i
-    Sleep    6s
+    Sleep    7s
     Input Text    name=extension.Name    Ext2
-    Sleep    6s
+    Sleep    7s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]
-    sleep    6s
+    sleep    7s
     Capture Page Screenshot
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i
-    Sleep    6s
+    Sleep    7s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i
     Sleep    6s
     Capture Page screenshot
@@ -429,16 +429,16 @@ TC17_Add Library
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    7s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-book
-    Sleep    6s
+    Sleep    7s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i
-    Sleep    6s
+    Sleep    7s
     Input Text    name=Name    Default1
     Sleep    6s
     Capture Page Screenshot
@@ -453,13 +453,13 @@ TC18_Delete Library
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    7s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-book
-    Sleep    6s
+    Sleep    7s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i
     Sleep    6s
@@ -479,7 +479,7 @@ TC51_Check If binding is not active process should not get executed
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    7s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=/html/body/main/section[1]/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select service
@@ -543,16 +543,16 @@ TC36_EditUserRoleInOrganization
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    6s
+    Sleep    8s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
-    Sleep    6s
+    Sleep    7s
     capture page screenshot
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
-    sleep    6s
+    sleep    7s
     Select from list by value    name=Role    Designer
-    Sleep    6s
+    Sleep    7s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
     Sleep    6s
     capture page screenshot
