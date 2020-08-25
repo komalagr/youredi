@@ -10,8 +10,9 @@ resources:
     source: stage.youredi.com    
     trigger:
       branches:
-      - releases/*
       - $/
+      - releases/*
+      
     
 pool:
   vmImage: 'windows-2019'
