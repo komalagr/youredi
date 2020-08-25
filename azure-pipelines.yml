@@ -7,7 +7,7 @@ trigger: none
 resources:
   pipelines:
   - pipeline: Stage 
-    source: stage.youredi.com    
+    source: manual deploy to stage.youredi.com    
     trigger:
       branches:
       - releases/*
