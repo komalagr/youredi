@@ -11,7 +11,7 @@ resources:
     trigger:
       branches:
       - releases/*
-      - master
+      - $/
     
 pool:
   vmImage: 'windows-2019'
