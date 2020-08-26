@@ -18,15 +18,5 @@ TC01_AddProcess
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
     Click Element    class=fa-object-group    #Click Processes
-    Sleep    7s
-    Capture Page Screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    #Clicks Add Process button
-    Sleep    7s
-    Input Text    name=processName    1Process    #Provide new process name
-    Sleep    7s
-    Capture Page Screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    #Click Save
-    Sleep    8s
-    Page should contain element    class=fa-play    #New process page should be displayed with Start button
-    Capture Page screenshot
+   
 
