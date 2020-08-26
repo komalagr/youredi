@@ -8,11 +8,8 @@ resources:
   pipelines:
   - pipeline: Stage 
     source: stage.youredi.com    
-    trigger:
-      branches:
-      - $/
-      - releases/*
-      
+    trigger: true
+         
     
 pool:
   vmImage: 'windows-2019'
