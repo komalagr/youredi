@@ -12,7 +12,7 @@ TC01_AddProcess
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -40,7 +40,7 @@ TC02_DeleteProcess_PositiveScenario
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -67,7 +67,7 @@ TC03_DeleteProcess_ProcessNameIncorect
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -92,7 +92,7 @@ TC04_DeleteProcess_Cancel
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -121,7 +121,7 @@ TC05_DeleteEndpoint_Positive
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -147,7 +147,7 @@ TC06_AddProcess_Negative_ProcessAlreadyExist
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -177,7 +177,7 @@ TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in    # Login
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -238,7 +238,7 @@ TC09_ServiceDataPage
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -266,7 +266,7 @@ TC10_AddServiceParameter_Positive
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -322,7 +322,7 @@ TC12_AddCrossReference_Positive
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -351,7 +351,7 @@ TC13_Delete_CrossReferenceKey
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -376,7 +376,7 @@ TC14_Delete_Counter
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -398,7 +398,7 @@ TC15_Search_Counter
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -456,7 +456,7 @@ TC20_Add_schedule
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -483,7 +483,7 @@ TC21-Alerts_FilterByInfo
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    $RJvT&Zd*Zzx0tW&R3r32$Pw
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
