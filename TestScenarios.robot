@@ -92,7 +92,7 @@ Dev_TC04_DeleteProcess_Cancel
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -121,7 +121,7 @@ Dev_TC05_DeleteEndpoint_Positive
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -351,7 +351,7 @@ Dev_TC13_Delete_CrossReferenceKey
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -398,7 +398,7 @@ Dev_TC15_Search_Counter
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -449,7 +449,7 @@ Dev_TC17_Add Library
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select organization
@@ -495,7 +495,7 @@ Dev_TC21-Alerts_FilterByInfo
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
@@ -519,7 +519,7 @@ Dev_TC25-Logs-information
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -539,7 +539,7 @@ Dev_TC28-Logout
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     capture page screenshot
@@ -585,7 +585,7 @@ Dev_TC36_EditUserRoleInOrganization
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    6s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
@@ -635,7 +635,7 @@ Dev_TC44_ServiceDataPage_Index2NotMandatory
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
