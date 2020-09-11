@@ -12,7 +12,7 @@ Dev_TC01_AddProcess
     Input Text    id=email    komal@youredi.com
     Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
