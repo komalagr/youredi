@@ -642,12 +642,12 @@ Test_TC44_ServiceDataPage_Index2NotMandatory
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    6s
+    Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    8s
+    Sleep    9s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    Sleep    6s
+    Sleep    9s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i
     Sleep    6s
     Capture Page Screenshot
