@@ -1,16 +1,22 @@
 *** Settings ***
 Library           SeleniumLibrary
 
+*** Variables ***
+${url}            https://test.youredi.com/
+${password}       zMh*EwX0dR0EElkLBr0r
+${email}          komal@youredi.com
+
+
 *** Test Cases ***
-Dev_TC01_AddProcess
+Test_TC01_AddProcess
     [Documentation]    Check that If Process does not exist , it should get added successfully
     ...
     ...    Test Data Setup
     ...    1. Need Organization Name : Komal test organistaion
     ...    2. Need Service -- DemoService
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
@@ -31,14 +37,14 @@ Dev_TC01_AddProcess
     Capture Page screenshot
     close browser
 
-Dev_TC02_DeleteProcess_PositiveScenario
+Test_TC02_DeleteProcess_PositiveScenario
     [Documentation]    Check that user is able to delete the process if process name entered on Delete pop up window is correct
     ...
     ...    Test data setup
     ...    Need process- 1Process added to DemoService in Komal test organistaion
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
@@ -58,14 +64,14 @@ Dev_TC02_DeleteProcess_PositiveScenario
     Capture Page Screenshot
     close browser
 
-Dev_TC03_DeleteProcess_ProcessNameIncorect
+Test_TC03_DeleteProcess_ProcessNameIncorect
     [Documentation]    Check that delete button should not be active if On delete window,process name entered is incorrect
     ...
     ...    Test Data setup
     ...    1. Komal test organistaion \ -- DemoService
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
@@ -82,17 +88,17 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Capture Page Screenshot
     close browser
 
-Dev_TC04_DeleteProcess_Cancel
+Test_TC04_DeleteProcess_Cancel
     [Documentation]    Check that user if User clicks on cancel button on Delete process page, then process should not get deleted
     ...
     ...
     ...    Test Data setup
     ...    1. Komal test organistaion \ -- DemoService
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    6s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -112,16 +118,16 @@ Dev_TC04_DeleteProcess_Cancel
     Page should contain    text=${process}
     Close browser
 
-Dev_TC05_DeleteEndpoint_Positive
+Test_TC05_DeleteEndpoint_Positive
     [Documentation]    Check that If endpoint is not assoicated to a process, then it should get deleted
     ...
     ...    Test Data setup
     ...    1. Komal test organistaion \ -- DemoService \ -- 1Process
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    6s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -136,16 +142,16 @@ Dev_TC05_DeleteEndpoint_Positive
     Capture Page Screenshot
     close browser
 
-Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
+Test_TC06_AddProcess_Negative_ProcessAlreadyExist
     [Documentation]    Check that process should not get added if Process name or endpoint name already exist
     ...
     ...
     ...    Test Data Setup
     ...    1. Need Organization -- Name : Komal test organistaion
     ...    2. Need Service -- DemoService
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
@@ -166,16 +172,16 @@ Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     Capture Page screenshot
     close browser
 
-Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
+Test_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     [Documentation]    Check that If endpoint is associated to a process , endpoint should not get deleted
     ...
     ...
     ...    Test Data Setup
     ...    1. Need Organization -- Name : Komal test organistaion
     ...    2. Need Service -- DemoService
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in    # Login
     Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
@@ -193,16 +199,16 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Page Should contain    text=Can't delete an endpoint that has a process attached    # error message should be displayed since endpoint associated to a process
     close browser
 
-Dev_TC08_AddEndpoint_Positive
+Test_TC08_AddEndpoint_Positive
     [Documentation]    Check user can add endpoint if it does not already exist
     ...
     ...
     ...    Test Data Setup
     ...    1. Need Organization -- Name : Komal test organistaion
     ...    2. Need Service -- DemoService
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
@@ -220,7 +226,7 @@ Dev_TC08_AddEndpoint_Positive
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
     close browser
 
-Dev_TC09_ServiceDataPage
+Test_TC09_ServiceDataPage
     [Documentation]    Check Service data UI page
     ...
     ...
@@ -234,15 +240,15 @@ Dev_TC09_ServiceDataPage
     ...    Index2 as Dex2
     ...
     ...    Data as DataResult
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
     Sleep    6s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    # click on Service data link
     Sleep    6s
@@ -255,16 +261,16 @@ Dev_TC09_ServiceDataPage
     capture page screenshot
     Page should contain    text=DataResult    # Service Data - Data should fe fetched
 
-Dev_TC10_AddServiceParameter_Positive
+Test_TC10_AddServiceParameter_Positive
     [Documentation]    Check user can add Service parameter on Parameter UI page
     ...
     ...
     ...    Test Data Setup
     ...    1. Need Organization -- Name : Komal test organistaion
     ...    2. Need Service -- DemoService
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
@@ -287,15 +293,15 @@ Dev_TC10_AddServiceParameter_Positive
     Sleep    6s
     Page should contain    text=1parameter    # check that page should display new parameter added
 
-Dev_TC11_DeleteParameter
+Test_TC11_DeleteParameter
     [Documentation]    Check user can delete service parameter
     ...
     ...    Test Data Setup
     ...    1. Need Organization -- Name : Komal test organistaion
     ...    2. Need Service -- DemoService
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
@@ -312,15 +318,15 @@ Dev_TC11_DeleteParameter
     Sleep    6s
     Capture Page Screenshot
 
-Dev_TC12_AddCrossReference_Positive
+Test_TC12_AddCrossReference_Positive
     [Documentation]    Check user can add Cross reference key on UI
     ...
     ...    Test Data Setup
     ...    1. Need Organization -- Name : Komal test organistaion
     ...    2. Need Service -- DemoService
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
@@ -345,13 +351,13 @@ Dev_TC12_AddCrossReference_Positive
     sleep    6s
     Capture Page Screenshot
 
-Dev_TC13_Delete_CrossReferenceKey
+Test_TC13_Delete_CrossReferenceKey
     [Documentation]    Check user can delete Cross reference key on UI
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    6s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -370,11 +376,11 @@ Dev_TC13_Delete_CrossReferenceKey
     Capture Page Screenshot
     close browser
 
-Dev_TC14_Delete_Counter
+Test_TC14_Delete_Counter
     [Documentation]    Check user can delete Counter on UI
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    6s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
@@ -392,13 +398,13 @@ Dev_TC14_Delete_Counter
     Capture Page Screenshot
     close browser
 
-Dev_TC15_Search_Counter
+Test_TC15_Search_Counter
     [Documentation]    Check user can search Counter on UI
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    6s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -413,11 +419,11 @@ Dev_TC15_Search_Counter
     Page should contain Element    class=fa-remove
     Close browser
 
-Dev_TC16_Add And Delete Extension
+Test_TC16_Add And Delete Extension
     [Documentation]    Check user add and Delete extension if it is not associated to a process
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
@@ -443,13 +449,13 @@ Dev_TC16_Add And Delete Extension
     Capture Page screenshot
     close browser
 
-Dev_TC17_Add Library
+Test_TC17_Add Library
     [Documentation]    Check user can add Library
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    6s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select organization
@@ -468,11 +474,11 @@ Dev_TC17_Add Library
     Element should be Enabled    class=fa-refresh    #Click refresh
     close browser
 
-Dev_TC18_Delete Library
+Test_TC18_Delete Library
     [Documentation]    Check user can delete library
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
@@ -489,13 +495,13 @@ Dev_TC18_Delete Library
     Capture Page Screenshot
     close browser
 
-Dev_TC21-Alerts_FilterByInfo
+Test_TC21-Alerts_FilterByInfo
     [Documentation]    Check user can filter Alerts by Info
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    6s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
@@ -513,13 +519,13 @@ Dev_TC21-Alerts_FilterByInfo
     Page should not contain    text=No alerts found
     close browser
 
-Dev_TC25-Logs-information
+Test_TC25-Logs-information
     [Documentation]    Check user can Filter Logs by information
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    6s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -531,15 +537,16 @@ Dev_TC25-Logs-information
     Sleep    7s
     Capture page Screenshot
     Page should not contain    text=hello
+    page should contain    text=Hii
     close browser
 
-Dev_TC28-Logout
+Test_TC28-Logout
     [Documentation]    Check user can logout from the application
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    6s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     capture page screenshot
@@ -551,14 +558,14 @@ Dev_TC28-Logout
     Sleep    6s
     Page should contain element    xpath=//*[@id="login"]/div/div[1]/div[2]/form/div[4]/div/button/i
 
-Dev_TC34_AddUserToOrganization
+Test_TC34_AddUserToOrganization
     [Documentation]    Check we can add User to Organisation
     ...
     ...    Test data setup
     ...    Komal test organisation
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
@@ -579,13 +586,13 @@ Dev_TC34_AddUserToOrganization
     sleep    6s
     capture page screenshot
 
-Dev_TC36_EditUserRoleInOrganization
+Test_TC36_EditUserRoleInOrganization
     [Documentation]    Check that we can add role for the user for organisation
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    6s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    6s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
@@ -599,11 +606,11 @@ Dev_TC36_EditUserRoleInOrganization
     Sleep    6s
     capture page screenshot
 
-Dev_TC35_DeleteUserFromOrganization
+Test_TC35_DeleteUserFromOrganization
     [Documentation]    check that we can delete user from organisation
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
@@ -621,7 +628,7 @@ Dev_TC35_DeleteUserFromOrganization
     Capture page screenshot
     Page should not contain    text=Aryan
 
-Dev_TC44_ServiceDataPage_Index2NotMandatory
+Test_TC44_ServiceDataPage_Index2NotMandatory
     [Documentation]    Check that index2 is not mandatory on Service data page
     ...
     ...
@@ -631,11 +638,11 @@ Dev_TC44_ServiceDataPage_Index2NotMandatory
     ...
     ...    Service data with Item Type as Type2 and Index1 as In2
     ...    Data should be DataResult
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    6s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -651,7 +658,7 @@ Dev_TC44_ServiceDataPage_Index2NotMandatory
     capture page screenshot
     Page should contain    text=DataResult
 
-Dev_TC51_Check If binding is not active process should not get executed
+Test_TC51_Check If binding is not active process should not get executed
     [Documentation]    Check if the endpoint binding is not active, process should not get executed.An error message should be displayed
     ...
     ...
@@ -659,9 +666,9 @@ Dev_TC51_Check If binding is not active process should not get executed
     ...    1. Need Organization Name : Komal test organistaion
     ...    2. Need Service -- DemoService
     ...    3 Process name binding whose endpoint binding is not marked active
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
