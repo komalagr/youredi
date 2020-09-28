@@ -2,8 +2,8 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-${url}            https://stage.youredi.com/
-${password}       $RJvT&Zd*Zzx0tW&R3r32$Pw
+${url}            https://dev.youredi.com/
+${password}       N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
 ${email}          komal@youredi.com
 
 
@@ -535,7 +535,7 @@ Test_TC25-Logs-information
     Sleep    6s
     capture page screenshot
     Input text    name=filterInformation    hii
-    Sleep    7s
+    Sleep    10s
     Capture page Screenshot
     Page should not contain    text=hello
     page should contain    text=hii
@@ -577,9 +577,9 @@ Test_TC34_AddUserToOrganization
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/header/button[1]/i
     Sleep    6s
     Input Text    xpath=/html/body/main/section/section/section/section/div/div/div[2]/form/div/div/input    aryan@youredi.com
-    Sleep    6s
+    Sleep    8s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div/div/span/span/button/i
-    Sleep    6s
+    Sleep    8s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div[2]/button/i
     sleep    6s
     capture page screenshot
