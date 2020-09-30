@@ -2,8 +2,8 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-${url}            https://dev.youredi.com/
-${password}       N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+${url}            https://stage.youredi.com/
+${password}       $RJvT&Zd*Zzx0tW&R3r32$Pw
 ${email}          komal@youredi.com
 
 
@@ -441,10 +441,10 @@ Test_TC16_Add And Delete Extension
     Sleep    6s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]    #Click save
-    sleep    6s
+    sleep    9s
     Capture Page Screenshot
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i    #Click delete
-    Sleep    6s
+    Sleep    9s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
     Sleep    6s
     Capture Page screenshot
