@@ -427,27 +427,27 @@ Stage_TC16_Add And Delete Extension
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    10s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     sleep    6s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
     Click Element    class=fa-plug    #Click extension
-    Sleep    6s
+    Sleep    10s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    # Click on Add
-    Sleep    6s
+    Sleep    10s
     Input Text    name=extension.Name    Ext2    #Enter Extension name
-    Sleep    6s
+    Sleep    10s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]    #Click save
-    sleep    6s
+    sleep    10s
     Capture Page Screenshot
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i    #Click delete
-    Sleep    6s
+    Sleep    10s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
-    Sleep    6s
+    Sleep    10s
     Capture Page screenshot
     close browser
 
