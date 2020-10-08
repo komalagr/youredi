@@ -2,8 +2,8 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-${url}            https://stage.youredi.com/
-${password}       $RJvT&Zd*Zzx0tW&R3r32$Pw
+${url}            https://test.youredi.com/
+${password}       zMh*EwX0dR0EElkLBr0r
 ${email}          komal@youredi.com
 
 
@@ -672,7 +672,7 @@ TC51_Check If binding is not active process should not get executed
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -682,10 +682,10 @@ TC51_Check If binding is not active process should not get executed
     Click element    class=fa-object-group    #Click on Processes
     Sleep    9s
     click element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Select Binding process
-    Sleep    6s
+    Sleep    9s
     click element    xpath=//*[@id="webide"]/main/section[1]/header/div/button/i    #click start
     sleep    9s
     click element    xpath=//*[@id="webide"]/main/section[1]/div[1]/div[1]/div[1]/div/button[1]/i    #click start
-    sleep    9s
+    sleep    15s
     Page should contain    text=Process not found using given account    #error message shouldbe present
     capture page screenshot
