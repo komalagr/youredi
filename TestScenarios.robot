@@ -2,8 +2,8 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-${url}            https://test.youredi.com/
-${password}       zMh*EwX0dR0EElkLBr0r
+${url}            https://stage.youredi.com/
+${password}       $RJvT&Zd*Zzx0tW&R3r32$Pw
 ${email}          komal@youredi.com
 
 
@@ -569,7 +569,7 @@ TC34_AddUserToOrganization
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    6s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
@@ -578,9 +578,9 @@ TC34_AddUserToOrganization
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/header/button[1]/i
     Sleep    6s
     Input Text    xpath=/html/body/main/section/section/section/section/div/div/div[2]/form/div/div/input    aryan@youredi.com
-    Sleep    6s
+    Sleep    9s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div/div/span/span/button/i
-    Sleep    6s
+    Sleep    9s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div[2]/button/i
     sleep    6s
     capture page screenshot
@@ -594,7 +594,7 @@ TC36_EditUserRoleInOrganization
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    10s
+    Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    6s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
