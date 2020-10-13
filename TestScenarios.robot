@@ -2,8 +2,8 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-${url}            https://test.youredi.com/
-${password}       zMh*EwX0dR0EElkLBr0r
+${url}            https://stage.youredi.com/
+${password}       $RJvT&Zd*Zzx0tW&R3r32$Pw
 ${email}          komal@youredi.com
 
 
@@ -274,7 +274,7 @@ TC10_AddServiceParameter_Positive
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -330,7 +330,7 @@ TC12_AddCrossReference_Positive
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -434,10 +434,10 @@ TC16_Add And Delete Extension
     sleep    6s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
     Click Element    class=fa-plug    #Click extension
-    Sleep    10s
+    Sleep    15s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    # Click on Add
-    Sleep    10s
+    Sleep    14s
     Input Text    name=extension.Name    Ext2    #Enter Extension name
     Sleep    10s
     Capture Page Screenshot
@@ -482,7 +482,7 @@ TC18_Delete Library
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
@@ -512,7 +512,7 @@ TC21-Alerts_FilterByInfo
     Sleep    6s
     capture page screenshot
     Input text    name=filterInfo    Info3    # Enter into filter criteria
-    Sleep    7s
+    Sleep    9s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
     Sleep    6s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
@@ -689,3 +689,128 @@ TC51_Check If binding is not active process should not get executed
     sleep    15s
     Page should contain    text=Process not found using given account    #error message shouldbe present
     capture page screenshot
+    
+TC30: Bug 8955: Check that user can delete Endpoint bindings from sub-organization
+    [Documentation]    Check that user can delete Endpoint bindings from sub-organization
+    ...
+    ...
+    ...    Test Data Setup
+    ...    1. Need Organization Name : Komal test organistaion
+    ...    2. Need Service -- DemoService
+    ...    3 Process name binding whose endpoint binding is not marked active
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
+    Click Element    class=fa-sign-in
+    Sleep    10s
+    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[3]/div/p/a[1]/i
+    Sleep    6s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[3]/div[2]/div[1]/div/p/a[1]/i    #Select service
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[3]/div[2]/div[1]/div[1]/p/a[2]
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
+    Sleep    6s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
+    Sleep    6s
+    Select from List by Value    xpath=//*[@id="webide"]/div[6]/form/div/div[2]/div/select    907    #test_1094 stage_907
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/div[6]/form/div/div[3]/div/button[1]/i
+    Sleep    6s
+    Input Text    xpath=/html/body/main/section/section/div/form/article/div/div[2]/input    ChildBinding
+    Input Text    xpath=/html/body/main/section/section/div/form/article/div/div[3]/input    GET
+    sleep    6s
+    Click element    xpath=/html/body/main/section/section/div/form/header/button/i
+    sleep    8s
+    Click element    xpath=/html/body/main/section/section/div/form/header/div/button
+    sleep    6s
+    click element    xpath=/html/body/div[5]/form/div/div[3]/span/button[1]/i
+    Sleep    6s
+
+TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
+    [Documentation]    Check that Extension cannot  be deleted if its referenced by a process
+    ...
+    ...
+    ...    Test Data Setup
+    ...    1. Need Organization -- Name : Komal test organistaion
+    ...    2. Need Service -- DemoService2
+    ...
+    ...    Extension should be added and it should be referenced by some process in the service
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
+    Click Element    class=fa-sign-in
+    Sleep    15s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    8s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
+    Sleep    6s
+    Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[10]/a/i    # click on Extension link
+    Sleep    15s
+    Capture Page Screenshot
+    Click element    xpath=//*[@id="webide"]/main/section[1]/section/form/header/div/button/i    #Click on Delete button
+    Sleep    9s
+    capture page screenshot
+    Click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
+    Sleep    9s
+    Page should contain    text=The extension cannot be deleted as it is being used in process
+    close browser
+
+TC47_Bug 8386: Space at the end of process name should not prevent it to be deleted.
+    [Documentation]    Check that Space at the end of process name should not prevent it to be deleted
+    ...
+    ...    test data setup
+    ...    Process - 1Space trim Test with extra spaces in end should be present in Demo service4
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
+    Click Element    class=fa-sign-in
+    Sleep    10s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    10s
+    Click Element    xpath=/html/body/main/section[1]/section/div/div[1]/div[2]/div[4]/div/p/a[2]    #click on demo service4
+    sleep    10s
+    Click element    xpath=/html/body/aside/div[1]/ul/li[5]/a/i    #click on processes
+    Sleep    9s
+    Click element    xpath=/html/body/main/section[1]/section/article/table/tbody/tr[1]/td[9]/div/button/i    #Click on delete
+    Sleep    7s
+    Capture page screenshot
+    Input Text    xpath=/html/body/div[4]/form/div/div[2]/p[2]/input    1Space trim Test
+    sleep    9s
+    Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Confirm deletion
+    sleep    6s
+    Capturepage screenshot
+    Page should not contain    text=1Space trim Test
+
+TC41_Bug 8433: WebIDE In Transfer -Filter, Duration filter does not retain value set when you move back to the transfer list, after viewing transfer detail
+    [Documentation]    Check that Transfer- Duration filter should retain value when we read transfer message log and navigate back to Transfer.
+    ...
+    ...    Need a process execution on Transfer page, with execution time >= 3s
+    ...    DemoService2
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
+    Click Element    class=fa-sign-in
+    Sleep    15s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[1]/p/a[2]
+    sleep    6s
+    click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
+    sleep    6s
+    Input text    xpath=/html/body/main/section/header/form/div[1]/div[4]/div[1]/div/input    3s
+    sleep    6s
+    click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
+    click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
+    sleep    6s
+    capture page screenshot
+    Page should not contain    32354479
+    sleep    6s
+    Click element    xpath=/html/body/main/section/div/section/div/div/div[1]/div[1]/i
+    Sleep    6s
+    Click element    xpath=/html/body/main/section/section/header/div[1]/div/button/i
+    Sleep    6s
+    ${duration}    Get Value    xpath=/html/body/main/section/header/form/div[1]/div[4]/div[1]/div/input
+    Should be equal as strings    ${duration}    3s
+
