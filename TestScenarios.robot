@@ -2,15 +2,15 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-${url}            https://stage.youredi.com/
-${password}       $RJvT&Zd*Zzx0tW&R3r32$Pw
+${url}            https://dev.youredi.com/
+${password}       N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
 ${email}          komal@youredi.com
 
 
 *** Test Cases ***
 
 
-TC01_AddProcess
+Dev_TC01_AddProcess
     [Documentation]    Check that If Process does not exist , it should get added successfully
     ...
     ...    Test Data Setup
@@ -20,7 +20,7 @@ TC01_AddProcess
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    15s
+    Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -39,7 +39,7 @@ TC01_AddProcess
     Capture Page screenshot
     close browser
 
-TC02_DeleteProcess_PositiveScenario
+Dev_TC02_DeleteProcess_PositiveScenario
     [Documentation]    Check that user is able to delete the process if process name entered on Delete pop up window is correct
     ...
     ...    Test data setup
@@ -48,9 +48,9 @@ TC02_DeleteProcess_PositiveScenario
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    15s
+    Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    8s
+    Sleep    10s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-object-group    # Clicks Processes
@@ -66,7 +66,7 @@ TC02_DeleteProcess_PositiveScenario
     Capture Page Screenshot
     close browser
 
-TC03_DeleteProcess_ProcessNameIncorect
+Dev_TC03_DeleteProcess_ProcessNameIncorect
     [Documentation]    Check that delete button should not be active if On delete window,process name entered is incorrect
     ...
     ...    Test Data setup
@@ -75,7 +75,7 @@ TC03_DeleteProcess_ProcessNameIncorect
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -90,7 +90,7 @@ TC03_DeleteProcess_ProcessNameIncorect
     Capture Page Screenshot
     close browser
 
-TC04_DeleteProcess_Cancel
+Dev_TC04_DeleteProcess_Cancel
     [Documentation]    Check that user if User clicks on cancel button on Delete process page, then process should not get deleted
     ...
     ...
@@ -120,7 +120,7 @@ TC04_DeleteProcess_Cancel
     Page should contain    text=${process}
     Close browser
 
-TC05_DeleteEndpoint_Positive
+Dev_TC05_DeleteEndpoint_Positive
     [Documentation]    Check that If endpoint is not assoicated to a process, then it should get deleted
     ...
     ...    Test Data setup
@@ -144,7 +144,7 @@ TC05_DeleteEndpoint_Positive
     Capture Page Screenshot
     close browser
 
-TC06_AddProcess_Negative_ProcessAlreadyExist
+Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     [Documentation]    Check that process should not get added if Process name or endpoint name already exist
     ...
     ...
@@ -174,7 +174,7 @@ TC06_AddProcess_Negative_ProcessAlreadyExist
     Capture Page screenshot
     close browser
 
-TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
+Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     [Documentation]    Check that If endpoint is associated to a process , endpoint should not get deleted
     ...
     ...
@@ -201,7 +201,7 @@ TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Page Should contain    text=Can't delete an endpoint that has a process attached    # error message should be displayed since endpoint associated to a process
     close browser
 
-TC08_AddEndpoint_Positive
+Dev_TC08_AddEndpoint_Positive
     [Documentation]    Check user can add endpoint if it does not already exist
     ...
     ...
@@ -228,7 +228,7 @@ TC08_AddEndpoint_Positive
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
     close browser
 
-TC09_ServiceDataPage
+Dev_TC09_ServiceDataPage
     [Documentation]    Check Service data UI page
     ...
     ...
@@ -246,7 +246,7 @@ TC09_ServiceDataPage
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -263,7 +263,7 @@ TC09_ServiceDataPage
     capture page screenshot
     Page should contain    text=DataResult    # Service Data - Data should fe fetched
 
-TC10_AddServiceParameter_Positive
+Dev_TC10_AddServiceParameter_Positive
     [Documentation]    Check user can add Service parameter on Parameter UI page
     ...
     ...
@@ -274,9 +274,9 @@ TC10_AddServiceParameter_Positive
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    10s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
+    Sleep    10s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-cogs    # Click on Parameters link
@@ -289,13 +289,13 @@ TC10_AddServiceParameter_Positive
     Sleep    5s
     Capture Page Screenshot
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[1]/button    # click save button
-    sleep    9s
+    sleep    6s
     Capture Page Screenshot
     Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i    # click refresh
-    Sleep    6s
+    Sleep    10s
     Page should contain    text=1parameter    # check that page should display new parameter added
 
-TC11_DeleteParameter
+Dev_TC11_DeleteParameter
     [Documentation]    Check user can delete service parameter
     ...
     ...    Test Data Setup
@@ -320,7 +320,7 @@ TC11_DeleteParameter
     Sleep    6s
     Capture Page Screenshot
 
-TC12_AddCrossReference_Positive
+Dev_TC12_AddCrossReference_Positive
     [Documentation]    Check user can add Cross reference key on UI
     ...
     ...    Test Data Setup
@@ -330,7 +330,7 @@ TC12_AddCrossReference_Positive
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -353,7 +353,7 @@ TC12_AddCrossReference_Positive
     sleep    6s
     Capture Page Screenshot
 
-TC13_Delete_CrossReferenceKey
+Dev_TC13_Delete_CrossReferenceKey
     [Documentation]    Check user can delete Cross reference key on UI
     Open Browser    ${url}    chrome
     Input Text    id=email    ${email}
@@ -378,35 +378,35 @@ TC13_Delete_CrossReferenceKey
     Capture Page Screenshot
     close browser
 
-TC14_Delete_Counter
+Dev_TC14_Delete_Counter
     [Documentation]    Check user can delete Counter on UI
     Open Browser    ${url}    chrome
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    10s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-calculator    #Click on Counters
-    Sleep    6s
+    Sleep    9s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/table/tbody/tr/td[3]/div/button/i    #Click Delete
-    Sleep    6s
+    Sleep    8s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Click Delete on confimation
-    Sleep    6s
+    Sleep    9s
     Capture Page Screenshot
     close browser
 
-TC15_Search_Counter
+Dev_TC15_Search_Counter
     [Documentation]    Check user can search Counter on UI
     Open Browser    ${url}    chrome
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    10s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -421,37 +421,37 @@ TC15_Search_Counter
     Page should contain Element    class=fa-remove
     Close browser
 
-TC16_Add And Delete Extension
+Dev_TC16_Add And Delete Extension
     [Documentation]    Check user add and Delete extension if it is not associated to a process
     Open Browser    ${url}    chrome
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    10s
+    Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     sleep    6s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
     Click Element    class=fa-plug    #Click extension
-    Sleep    15s
+    Sleep    6s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    # Click on Add
-    Sleep    14s
+    Sleep    6s
     Input Text    name=extension.Name    Ext2    #Enter Extension name
-    Sleep    10s
+    Sleep    6s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]    #Click save
-    sleep    10s
+    sleep    6s
     Capture Page Screenshot
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i    #Click delete
-    Sleep    10s
+    Sleep    6s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
-    Sleep    10s
+    Sleep    6s
     Capture Page screenshot
     close browser
 
-TC17_Add Library
+Dev_TC17_Add Library
     [Documentation]    Check user can add Library
     Open Browser    ${url}    chrome
     Input Text    id=email    ${email}
@@ -476,7 +476,7 @@ TC17_Add Library
     Element should be Enabled    class=fa-refresh    #Click refresh
     close browser
 
-TC18_Delete Library
+Dev_TC18_Delete Library
     [Documentation]    Check user can delete library
     Open Browser    ${url}    chrome
     Input Text    id=email    ${email}
@@ -497,13 +497,13 @@ TC18_Delete Library
     Capture Page Screenshot
     close browser
 
-TC21-Alerts_FilterByInfo
+Dev_TC21-Alerts_FilterByInfo
     [Documentation]    Check user can filter Alerts by Info
     Open Browser    ${url}    chrome
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    10s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
@@ -512,7 +512,7 @@ TC21-Alerts_FilterByInfo
     Sleep    6s
     capture page screenshot
     Input text    name=filterInfo    Info3    # Enter into filter criteria
-    Sleep    9s
+    Sleep    7s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
     Sleep    6s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
@@ -521,7 +521,7 @@ TC21-Alerts_FilterByInfo
     Page should not contain    text=No alerts found
     close browser
 
-TC25-Logs-information
+Dev_TC25-Logs-information
     [Documentation]    Check user can Filter Logs by information
     Open Browser    ${url}    chrome
     Input Text    id=email    ${email}
@@ -536,19 +536,19 @@ TC25-Logs-information
     Sleep    6s
     capture page screenshot
     Input text    name=filterInformation    hii
-    Sleep    10s
+    Sleep    12s
     Capture page Screenshot
     Page should not contain    text=hello
     page should contain    text=hii
     close browser
 
-TC28-Logout
+Dev_TC28-Logout
     [Documentation]    Check user can logout from the application
     Open Browser    ${url}    chrome
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    10s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    7s
     capture page screenshot
@@ -560,7 +560,7 @@ TC28-Logout
     Sleep    6s
     Page should contain element    xpath=//*[@id="login"]/div/div[1]/div[2]/form/div[4]/div/button/i
 
-TC34_AddUserToOrganization
+Dev_TC34_AddUserToOrganization
     [Documentation]    Check we can add User to Organisation
     ...
     ...    Test data setup
@@ -578,37 +578,37 @@ TC34_AddUserToOrganization
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/header/button[1]/i
     Sleep    6s
     Input Text    xpath=/html/body/main/section/section/section/section/div/div/div[2]/form/div/div/input    aryan@youredi.com
-    Sleep    9s
+    Sleep    8s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div/div/span/span/button/i
-    Sleep    9s
+    Sleep    8s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div[2]/button/i
-    sleep    6s
+    sleep    9s
     capture page screenshot
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
     sleep    6s
     capture page screenshot
 
-TC36_EditUserRoleInOrganization
+Dev_TC36_EditUserRoleInOrganization
     [Documentation]    Check that we can add role for the user for organisation
     Open Browser    ${url}    chrome
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    15s
+    Sleep    10s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    6s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
     Sleep    6s
     capture page screenshot
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
-    sleep    6s
+    sleep    8s
     Select from list by value    name=Role    Designer
-    Sleep    6s
+    Sleep    8s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
     Sleep    6s
     capture page screenshot
 
-TC35_DeleteUserFromOrganization
+Dev_TC35_DeleteUserFromOrganization
     [Documentation]    check that we can delete user from organisation
     Open Browser    ${url}    chrome
     Input Text    id=email    ${email}
@@ -618,19 +618,19 @@ TC35_DeleteUserFromOrganization
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    6s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
-    Sleep    6s
+    Sleep    9s
     Capture page screenshot
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
     Sleep    6s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/div/button/i
-    Sleep    6s
+    Sleep    9s
     Capture page screenshot
     Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i
-    Sleep    6s
+    Sleep    9s
     Capture page screenshot
     Page should not contain    text=Aryan
 
-TC44_ServiceDataPage_Index2NotMandatory
+Dev_TC44_ServiceDataPage_Index2NotMandatory
     [Documentation]    Check that index2 is not mandatory on Service data page
     ...
     ...
@@ -649,7 +649,7 @@ TC44_ServiceDataPage_Index2NotMandatory
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    Sleep    6s
+    Sleep    10s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i
     Sleep    6s
     Capture Page Screenshot
@@ -660,7 +660,7 @@ TC44_ServiceDataPage_Index2NotMandatory
     capture page screenshot
     Page should contain    text=DataResult
 
-TC51_Check If binding is not active process should not get executed
+Dev_TC51_Check If binding is not active process should not get executed
     [Documentation]    Check if the endpoint binding is not active, process should not get executed.An error message should be displayed
     ...
     ...
@@ -672,7 +672,7 @@ TC51_Check If binding is not active process should not get executed
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    8s
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -682,53 +682,17 @@ TC51_Check If binding is not active process should not get executed
     Click element    class=fa-object-group    #Click on Processes
     Sleep    9s
     click element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Select Binding process
-    Sleep    9s
+    Sleep    6s
     click element    xpath=//*[@id="webide"]/main/section[1]/header/div/button/i    #click start
     sleep    9s
     click element    xpath=//*[@id="webide"]/main/section[1]/div[1]/div[1]/div[1]/div/button[1]/i    #click start
-    sleep    15s
+    sleep    9s
     Page should contain    text=Process not found using given account    #error message shouldbe present
     capture page screenshot
-    
-TC30: Bug 8955: Check that user can delete Endpoint bindings from sub-organization
-    [Documentation]    Check that user can delete Endpoint bindings from sub-organization
-    ...
-    ...
-    ...    Test Data Setup
-    ...    1. Need Organization Name : Komal test organistaion
-    ...    2. Need Service -- DemoService
-    ...    3 Process name binding whose endpoint binding is not marked active
-    Open Browser    ${url}    chrome
-    Input Text    id=email    ${email}
-    Input Password    id=password    ${password}
-    Click Element    class=fa-sign-in
-    Sleep    10s
-    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[3]/div/p/a[1]/i
-    Sleep    6s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[3]/div[2]/div[1]/div/p/a[1]/i    #Select service
-    Sleep    6s
-    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[3]/div[2]/div[1]/div[1]/p/a[2]
-    Sleep    6s
-    Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
-    Sleep    6s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
-    Sleep    6s
-    Select from List by Value    xpath=//*[@id="webide"]/div[6]/form/div/div[2]/div/select    907    #test_1094 stage_907
-    Sleep    6s
-    Click element    xpath=//*[@id="webide"]/div[6]/form/div/div[3]/div/button[1]/i
-    Sleep    6s
-    Input Text    xpath=/html/body/main/section/section/div/form/article/div/div[2]/input    ChildBinding
-    Input Text    xpath=/html/body/main/section/section/div/form/article/div/div[3]/input    GET
-    sleep    6s
-    Click element    xpath=/html/body/main/section/section/div/form/header/button/i
-    sleep    8s
-    Click element    xpath=/html/body/main/section/section/div/form/header/div/button
-    sleep    6s
-    click element    xpath=/html/body/div[5]/form/div/div[3]/span/button[1]/i
-    Sleep    6s
+
 
 TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
-    [Documentation]    Check that Extension cannot  be deleted if its referenced by a process
+    [Documentation]    Check Service data UI page
     ...
     ...
     ...    Test Data Setup
@@ -745,7 +709,7 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
-    Sleep    6s
+    Sleep    10s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[10]/a/i    # click on Extension link
     Sleep    15s
     Capture Page Screenshot
@@ -758,7 +722,7 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     close browser
 
 TC47_Bug 8386: Space at the end of process name should not prevent it to be deleted.
-    [Documentation]    Check that Space at the end of process name should not prevent it to be deleted
+    [Documentation]    Check that if message property is set \ with empty value , still it should be displayed in Transfer messages
     ...
     ...    test data setup
     ...    Process - 1Space trim Test with extra spaces in end should be present in Demo service4
@@ -794,23 +758,113 @@ TC41_Bug 8433: WebIDE In Transfer -Filter, Duration filter does not retain value
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
+    Sleep    9s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[1]/p/a[2]
     sleep    6s
-    click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
+    click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i    #Click on Transfer
     sleep    6s
-    Input text    xpath=/html/body/main/section/header/form/div[1]/div[4]/div[1]/div/input    3s
+    Input text    xpath=/html/body/main/section/header/form/div[1]/div[4]/div[1]/div/input    2s    #Set Duration filter
     sleep    6s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
     sleep    6s
     capture page screenshot
     Page should not contain    32354479
-    sleep    6s
+    sleep    10s
     Click element    xpath=/html/body/main/section/div/section/div/div/div[1]/div[1]/i
-    Sleep    6s
+    Sleep    10s
     Click element    xpath=/html/body/main/section/section/header/div[1]/div/button/i
-    Sleep    6s
+    Sleep    12s
     ${duration}    Get Value    xpath=/html/body/main/section/header/form/div[1]/div[4]/div[1]/div/input
-    Should be equal as strings    ${duration}    3s
+    Should be equal as strings    ${duration}    2s
 
+TC32_AddandDeleteBinding
+    [Documentation]    Check user can add Bindings to endpoint and also user can delete bindings
+    ...
+    ...    Komal test Organisation - Demo service 5
+    ...    Counters endpoint
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
+    Click Element    class=fa-sign-in
+    Sleep    10s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[5]/div[1]/p/a[2]
+    sleep    6s
+    click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
+    Click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
+    Sleep    6s
+    click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
+    sleep    6s
+    Input Text    name=OperationName    Binding
+    Input Text    name=HTTPMethod    GET
+    click element    xpath=//*[@id="webide"]/main/section/section/div/form/header/button/i
+    sleep    6s
+    capture page screenshot
+    Element should be enabled    xpath=//*[@id="webide"]/main/section/section/div/form/header/div/button/i
+    Click element    xpath=//*[@id="webide"]/main/section/section/div/form/header/div/button/i
+    sleep    6s
+    click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/span/button[1]/i
+    sleep    6s
+    click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[2]/i
+    sleep    6s
+    Close browser
+
+TC33_PBI 8220: Web IDE: changing of Endpoint type.
+    [Documentation]    Check user can edit endpoint type if it Binding is not associated to it
+    ...
+    ...    Komal Test Organisation - Demo Service 3
+    ...    Endpoint \ with type Inbound and no binding attached to it
+    ...    Endpoint is associated to a process
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
+    Click Element    class=fa-sign-in
+    Sleep    10s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
+    sleep    6s
+    Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
+    Sleep    9s
+    Capture Page screenshot
+    click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i
+    Sleep    6s
+    Select from List by Value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    4
+    sleep    6s
+    Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
+    Sleep    9s
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]
+    Capture page screenshot
+    Page should not contain    text=Can't change type of an endpoint that has endpoint bindings
+
+TC34_CannotChangeEndpointType_IfBindingassociated
+    [Documentation]    Check user cannot edit endpoint type if it Binding is associated to it
+    ...
+    ...    Test Data setup
+    ...    Komal Test Organisation - DemoService4
+    ...    EndpointB1 with Binding
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
+    Click Element    class=fa-sign-in
+    Sleep    10s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[4]/div[1]/p/a[2]
+    sleep    6s
+    Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
+    Sleep    9s
+    Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    1
+    sleep    6s
+    Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
+    sleep    6s
+    Capture page screenshot
+    Page should contain    text=Can't change type of an endpoint that has endpoint bindings
+    Capture page screenshot
