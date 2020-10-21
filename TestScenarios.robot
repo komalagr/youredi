@@ -2,8 +2,8 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-${url}            https://dev.youredi.com/
-${password}       N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+${url}            https://test.youredi.com/
+${password}       zMh*EwX0dR0EElkLBr0r
 ${email}          komal@youredi.com
 
 
@@ -651,12 +651,12 @@ Dev_TC44_ServiceDataPage_Index2NotMandatory
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
     Sleep    10s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i
-    Sleep    6s
+    Sleep    9s
     Capture Page Screenshot
     Input Text    name=itemType    Type2
     Input Text    name=index1    In2
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
-    Sleep    6s
+    Sleep    9s
     capture page screenshot
     Page should contain    text=DataResult
 
@@ -672,21 +672,21 @@ Dev_TC51_Check If binding is not active process should not get executed
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    8s
+    Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    8s
+    Sleep    10s
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Sleep    6s
+    Sleep    10s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select service
-    Sleep    6s
+    Sleep    9s
     Click element    class=fa-object-group    #Click on Processes
     Sleep    9s
     click element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Select Binding process
-    Sleep    6s
+    Sleep    9s
     click element    xpath=//*[@id="webide"]/main/section[1]/header/div/button/i    #click start
-    sleep    9s
+    sleep    10s
     click element    xpath=//*[@id="webide"]/main/section[1]/div[1]/div[1]/div[1]/div/button[1]/i    #click start
-    sleep    9s
+    sleep    12s
     Page should contain    text=Process not found using given account    #error message shouldbe present
     capture page screenshot
 
@@ -760,17 +760,17 @@ TC41_Bug 8433: WebIDE In Transfer -Filter, Duration filter does not retain value
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    9s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[1]/p/a[2]
-    sleep    6s
+    sleep    9s
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i    #Click on Transfer
-    sleep    6s
+    sleep    9s
     Input text    xpath=/html/body/main/section/header/form/div[1]/div[4]/div[1]/div/input    2s    #Set Duration filter
-    sleep    6s
+    sleep    9s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
-    sleep    6s
+    sleep    10s
     capture page screenshot
     Page should not contain    32354479
-    sleep    10s
+    sleep    15s
     Click element    xpath=/html/body/main/section/div/section/div/div/div[1]/div[1]/i
     Sleep    10s
     Click element    xpath=/html/body/main/section/section/header/div[1]/div/button/i
@@ -792,26 +792,26 @@ TC32_AddandDeleteBinding
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[5]/div[1]/p/a[2]
-    sleep    6s
+    sleep    9s
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
     Click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
-    Sleep    6s
+    Sleep    9s
     Click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
-    Sleep    6s
+    Sleep    9s
     click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
-    sleep    6s
+    sleep    8s
     Input Text    name=OperationName    Binding
     Input Text    name=HTTPMethod    GET
     click element    xpath=//*[@id="webide"]/main/section/section/div/form/header/button/i
-    sleep    6s
+    sleep    9s
     capture page screenshot
     Element should be enabled    xpath=//*[@id="webide"]/main/section/section/div/form/header/div/button/i
     Click element    xpath=//*[@id="webide"]/main/section/section/div/form/header/div/button/i
-    sleep    6s
+    sleep    8s
     click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/span/button[1]/i
-    sleep    6s
+    sleep    8s
     click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[2]/i
-    sleep    6s
+    sleep    8s
     Close browser
 
 TC33_PBI 8220: Web IDE: changing of Endpoint type.
@@ -829,14 +829,14 @@ TC33_PBI 8220: Web IDE: changing of Endpoint type.
     Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
-    sleep    6s
+    sleep    8s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
     Sleep    9s
     Capture Page screenshot
     click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i
-    Sleep    6s
+    Sleep    8s
     Select from List by Value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    4
-    sleep    6s
+    sleep    9s
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
     Sleep    9s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]
@@ -862,9 +862,9 @@ TC34_CannotChangeEndpointType_IfBindingassociated
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
     Sleep    9s
     Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    1
-    sleep    6s
+    sleep    8s
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
-    sleep    6s
+    sleep    9s
     Capture page screenshot
     Page should contain    text=Can't change type of an endpoint that has endpoint bindings
     Capture page screenshot
