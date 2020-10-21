@@ -868,3 +868,40 @@ TC34_CannotChangeEndpointType_IfBindingassociated
     Capture page screenshot
     Page should contain    text=Can't change type of an endpoint that has endpoint bindings
     Capture page screenshot
+
+TC30: Bug 8955: Check that user can delete Endpoint bindings from sub-organization
+    [Documentation]    Check that user can delete Endpoint bindings from sub-organization
+    ...
+    ...
+    ...    Test Data Setup
+    ...    1. Need Organization Name : Komal test organistaion
+    ...    2. Need Service -- DemoService
+    ...    3 Main org, child org, service sharing, endpoint shared
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
+    Click Element    class=fa-sign-in
+    Sleep    15s
+    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[3]/div/p/a[1]/i
+    Sleep    12s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[3]/div[2]/div[1]/div/p/a[1]/i    #Select service
+    Sleep    9s
+    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[3]/div[2]/div[1]/div[1]/p/a[2]
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
+    Sleep    6s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
+    Sleep    6s
+    Select from List by Value    xpath=//*[@id="webide"]/div[6]/form/div/div[2]/div/select    1094    #test_1094 stage_907
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/div[6]/form/div/div[3]/div/button[1]/i
+    Sleep    6s
+    Input Text    xpath=/html/body/main/section/section/div/form/article/div/div[2]/input    ChildBinding
+    Input Text    xpath=/html/body/main/section/section/div/form/article/div/div[3]/input    GET
+    sleep    6s
+    Click element    xpath=/html/body/main/section/section/div/form/header/button/i
+    sleep    8s
+    Click element    xpath=/html/body/main/section/section/div/form/header/div/button
+    sleep    6s
+    click element    xpath=/html/body/div[5]/form/div/div[3]/span/button[1]/i
+    Sleep    6s
