@@ -26,7 +26,7 @@ Dev_TC01_AddProcess
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
     Click Element    class=fa-object-group    #Click Processes
-    Sleep    6s
+    Sleep    9s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    #Clicks Add Process button
     Sleep    6s
@@ -54,11 +54,11 @@ Dev_TC02_DeleteProcess_PositiveScenario
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-object-group    # Clicks Processes
-    Sleep    6s
+    Sleep    9s
     ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Gets name of the process that will be deleted
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click delete
-    Sleep    6s
+    Sleep    8s
     Input Text    xpath=//*[@id="input-8"]    ${process}    #Enter process name on delete pop up window
     Sleep    10s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
@@ -81,7 +81,7 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Click Element    class=fa-object-group    #Click on Processes
-    Sleep    6s
+    Sleep    9s
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click on delete button in first row
     Sleep    6s
     Input Text    xpath=//*[@id="input-8"]    8134 Bug    # enter incorrect process name in delete popup window
@@ -106,7 +106,7 @@ Dev_TC04_DeleteProcess_Cancel
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
     Click Element    class=fa-object-group    # click on processes
-    Sleep    6s
+    Sleep    9s
     ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #get the process name to be deleted
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    # click delete button
@@ -161,7 +161,7 @@ Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-object-group    # Click on processes
-    Sleep    6s
+    Sleep    9s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    # click on add process
     Sleep    6s
@@ -191,7 +191,7 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-lightbulb-o    # Click on Endpoints
-    Sleep    6s
+    Sleep    9s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button    # click on delete enpoint
     Sleep    6s
@@ -218,7 +218,7 @@ Dev_TC08_AddEndpoint_Positive
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-lightbulb-o    # click on endpoints
-    Sleep    6s
+    Sleep    8s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    # click on add endpoint
     Sleep    6s
