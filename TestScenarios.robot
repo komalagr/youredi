@@ -2,8 +2,8 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-${url}            https://test.youredi.com/
-${password}       zMh*EwX0dR0EElkLBr0r
+${url}            https://stage.youredi.com/
+${password}       $RJvT&Zd*Zzx0tW&R3r32$Pw
 ${email}          komal@youredi.com
 
 
@@ -20,9 +20,9 @@ Dev_TC01_AddProcess
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
+    Sleep    10s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
     Click Element    class=fa-object-group    #Click Processes
@@ -251,9 +251,9 @@ Dev_TC09_ServiceDataPage
     Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
-    Sleep    6s
+    Sleep    8s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    # click on Service data link
-    Sleep    6s
+    Sleep    10s
     Capture Page Screenshot
     Input Text    name=itemType    Type2    # enter item type
     Input Text    name=index1    In2    # enter index1
@@ -416,7 +416,7 @@ Dev_TC15_Search_Counter
     Capture Page screenshot
     Input text    name=filterName    Counter3    # Enter Counter3 in Search
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i    #Click refresh
-    Sleep    6s
+    Sleep    10s
     Capture Page Screenshot
     Page should contain Element    class=fa-remove
     Close browser
@@ -429,20 +429,20 @@ Dev_TC16_Add And Delete Extension
     Click Element    class=fa-sign-in
     Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
+    Sleep    9s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     sleep    6s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
     Click Element    class=fa-plug    #Click extension
-    Sleep    6s
+    Sleep    15s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    # Click on Add
-    Sleep    6s
+    Sleep    8s
     Input Text    name=extension.Name    Ext2    #Enter Extension name
     Sleep    6s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]    #Click save
-    sleep    6s
+    sleep    9s
     Capture Page Screenshot
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i    #Click delete
     Sleep    6s
@@ -557,7 +557,7 @@ Dev_TC28-Logout
     Click element    class=fa-cog
     Click element    xpath=//*[@id="webide"]/aside/div[2]/div/a[5]/i
     Handle Alert
-    Sleep    6s
+    Sleep    8s
     Page should contain element    xpath=//*[@id="login"]/div/div[1]/div[2]/form/div[4]/div/button/i
 
 Dev_TC34_AddUserToOrganization
@@ -616,7 +616,7 @@ Dev_TC35_DeleteUserFromOrganization
     Click Element    class=fa-sign-in
     Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    6s
+    Sleep    8s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
     Sleep    9s
     Capture page screenshot
@@ -892,7 +892,7 @@ TC30: Bug 8955: Check that user can delete Endpoint bindings from sub-organizati
     Sleep    6s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
     Sleep    6s
-    Select from List by Value    xpath=//*[@id="webide"]/div[6]/form/div/div[2]/div/select    1094    #test_1094 stage_907
+    Select from List by Value    xpath=//*[@id="webide"]/div[6]/form/div/div[2]/div/select    907    #test_1094 stage_907
     Sleep    6s
     Click element    xpath=//*[@id="webide"]/div[6]/form/div/div[3]/div/button[1]/i
     Sleep    6s
