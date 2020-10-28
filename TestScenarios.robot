@@ -740,12 +740,12 @@ TC47_Bug 8386: Space at the end of process name should not prevent it to be dele
     Click element    xpath=/html/body/main/section[1]/section/article/table/tbody/tr[1]/td[9]/div/button/i    #Click on delete
     Sleep    7s
     Capture page screenshot
-    Input Text    xpath=/html/body/div[4]/form/div/div[2]/p[2]/input    1Space trim Test
+    Input Text    xpath=/html/body/div[4]/form/div/div[2]/p[2]/input    1Space Trim Test
     sleep    9s
     Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Confirm deletion
     sleep    6s
     Capturepage screenshot
-    Page should not contain    text=1Space trim Test
+    Page should not contain    text=1Space Trim Test
 
 TC41_Bug 8433: WebIDE In Transfer -Filter, Duration filter does not retain value set when you move back to the transfer list, after viewing transfer detail
     [Documentation]    Check that Transfer- Duration filter should retain value when we read transfer message log and navigate back to Transfer.
