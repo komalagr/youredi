@@ -919,14 +919,16 @@ TC039_Transfer_FilterById
     sleep    6s
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
     sleep    6s
-    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    43179132    #for dev - 11303940, stage=43179132
-    sleep    6s
+    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    43281303
+    #for dev - 11303940, stage=43179132
+    sleep    15s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
     sleep    6s
     capture page screenshot
     Page should not contain    text=43177436
-    Page should contain    text=43179132
+    Page should contain    text=43281303
+
 
 TC42_RestartProcesswithemptyProperty
     [Documentation]    Check that if message property is set \ with empty value , still it should be displayed in Transfer messages
@@ -1081,7 +1083,7 @@ Dev_TC46-Alerts_AssignToMe
     Click Element    class=fa-sign-in
     Sleep    10s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
+    Sleep    10s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     Click Element    class=fa-bell    #Click on Alerts
@@ -1112,7 +1114,7 @@ Dev_TC46-Alerts_Unassign
     Click Element    class=fa-sign-in
     Sleep    10s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
+    Sleep    9s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     Click Element    class=fa-bell    #Click on Alerts
@@ -1133,3 +1135,30 @@ Dev_TC46-Alerts_Unassign
     Should be equal as Strings    ${assignedto}    Not assigned.
     Sleep    5s
 
+TC21-Alerts_FilterByAssignedTo
+    [Documentation]    Check user can filter Alerts by Info
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
+    Click Element    class=fa-sign-in
+    Sleep    10s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
+    Click Element    class=fa-bell    #Click on Alerts
+    Sleep    6s
+    capture page screenshot
+    Select from list by value    xpath=/html/body/main/section/section/header/form/div[2]/div[2]/select    928    # Enter into filter criteria
+    Sleep    7s
+    Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
+    Sleep    6s
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
+    Sleep    6s
+    Capture page Screenshot
+    Page should not contain    text=No alerts found
+    ${id}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[1]
+    Sleep    6s
+    Should be equal as Strings    ${id}    218508
+    Capture page screenshot
+    close browser
