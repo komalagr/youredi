@@ -2,7 +2,7 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-${url}            https://stage.youredi.com/
+${url}            https://dev.youredi.com/
 ${password}       $RJvT&Zd*Zzx0tW&R3r32$Pw
 ${email}          komal@youredi.com
 
@@ -20,13 +20,13 @@ Dev_TC01_AddProcess
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    15s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    12s
+    Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
     Click Element    class=fa-object-group    #Click Processes
-    Sleep    9s
+    Sleep    6s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    #Clicks Add Process button
     Sleep    6s
@@ -48,7 +48,7 @@ Dev_TC02_DeleteProcess_PositiveScenario
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    15s
+    Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    10s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -75,9 +75,9 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    15s
+    Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    10s
+    Sleep    9s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Click Element    class=fa-object-group    #Click on Processes
@@ -100,9 +100,9 @@ Dev_TC04_DeleteProcess_Cancel
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    15s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    10s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
     Click Element    class=fa-object-group    # click on processes
@@ -129,9 +129,9 @@ Dev_TC05_DeleteEndpoint_Positive
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    15s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    10s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-lightbulb-o    #Click endpoints
@@ -169,7 +169,7 @@ Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     Sleep    6s
     Capture page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    # click save button
-    Sleep    6s
+    Sleep    8s
     Page should not contain element    class=fa-play    # Error message should be displayed
     Capture Page screenshot
     close browser
@@ -248,10 +248,10 @@ Dev_TC09_ServiceDataPage
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    12s
+    Sleep    10s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
-    Sleep    10s
+    Sleep    8s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    # click on Service data link
     Sleep    9s
     Capture Page Screenshot
@@ -259,7 +259,7 @@ Dev_TC09_ServiceDataPage
     Input Text    name=index1    In2    # enter index1
     Input Text    name=index2    Dex2    # enter index 2
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
-    Sleep    8s
+    Sleep    12s
     capture page screenshot
     Page should contain    text=DataResult    # Service Data - Data should fe fetched
 
@@ -305,7 +305,7 @@ Dev_TC11_DeleteParameter
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    9s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -330,13 +330,13 @@ Dev_TC12_AddCrossReference_Positive
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    9s
+    Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    9s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-table    # click on cross reference
-    Sleep    8s
+    Sleep    6s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[1]    # click on add cross reference table
     Sleep    6s
@@ -509,7 +509,7 @@ Dev_TC21-Alerts_FilterByInfo
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     Click Element    class=fa-bell    #Click on Alerts
-    Sleep    6s
+    Sleep    10s
     capture page screenshot
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    7s
@@ -527,9 +527,9 @@ Dev_TC25-Logs-information
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    15s
+    Sleep    9s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    10s
+    Sleep    9s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-info-circle
@@ -571,16 +571,16 @@ Dev_TC34_AddUserToOrganization
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    9s
+    Sleep    6s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
-    Sleep    9s
+    Sleep    6s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/header/button[1]/i
-    Sleep    9s
+    Sleep    6s
     Input Text    xpath=/html/body/main/section/section/section/section/div/div/div[2]/form/div/div/input    aryan@youredi.com
-    Sleep    10s
+    Sleep    8s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div/div/span/span/button/i
-    Sleep    10s
+    Sleep    8s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div[2]/button/i
     sleep    9s
     capture page screenshot
@@ -644,9 +644,9 @@ Dev_TC44_ServiceDataPage_Index2NotMandatory
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    15s
+    Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    15s
+    Sleep    12s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
     Sleep    10s
@@ -656,7 +656,7 @@ Dev_TC44_ServiceDataPage_Index2NotMandatory
     Input Text    name=itemType    Type2
     Input Text    name=index1    In2
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
-    Sleep    6s
+    Sleep    12s
     capture page screenshot
     Page should contain    text=DataResult
 
@@ -690,43 +690,6 @@ Dev_TC51_Check If binding is not active process should not get executed
     Page should contain    text=Process not found using given account    #error message shouldbe present
     capture page screenshot
 
-TC30: Bug 8955: Check that user can delete Endpoint bindings from sub-organization
-    [Documentation]    Check that user can delete bindngsfrom sub organization
-    ...
-    ...
-    ...    Test Data Setup
-    ...    1. Need Organization Name : Main Org (2nd organization \ ) parent of Child Org(3rd Org)
-    ...    2. Need Service -- MasterService
-    Open Browser    ${url}    chrome
-    Input Text    id=email    ${email}
-    Input Password    id=password    ${password}
-    Click Element    class=fa-sign-in
-    Sleep    15s
-    click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i    #click continue
-    sleep    10s
-    Click element    xpath=/html/body/main/section/section/div/div[2]/div/p/a[1]/i    #Select 2nd org
-    Sleep    15s
-    Click Element    xpath=/html/body/main/section/section/div/div[2]/div[2]/div[1]/div[1]/p/a[2]    #Select service
-    Sleep    9s
-    Click element    class=fa-lightbulb-o
-    Sleep    6s
-    Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
-    Sleep    6s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
-    Sleep    6s
-    Select from List by Value    xpath=//*[@id="webide"]/div[6]/form/div/div[2]/div/select    907    #test_1094 stage_907
-    Sleep    6s
-    Click element    xpath=//*[@id="webide"]/div[6]/form/div/div[3]/div/button[1]/i
-    Sleep    6s
-    Input Text    xpath=/html/body/main/section/section/div/form/article/div/div[2]/input    ChildBinding
-    Input Text    xpath=/html/body/main/section/section/div/form/article/div/div[3]/input    GET
-    sleep    6s
-    Click element    xpath=/html/body/main/section/section/div/form/header/button/i
-    sleep    8s
-    Click element    xpath=/html/body/main/section/section/div/form/header/div/button
-    sleep    6s
-    click element    xpath=/html/body/div[5]/form/div/div[3]/span/button[1]/i
-    Sleep    6s
 
 TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     [Documentation]    Check Service data UI page
@@ -919,16 +882,14 @@ TC039_Transfer_FilterById
     sleep    6s
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
     sleep    6s
-    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    43281303
-    #for dev - 11303940, stage=43179132
+    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    11425362    #for dev - 11303940, stage=43179132
     sleep    15s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
     sleep    6s
     capture page screenshot
-    Page should not contain    text=43177436
-    Page should contain    text=43281303
-
+    Page should not contain    text=11425361
+    Page should contain    text=11425362
 
 TC42_RestartProcesswithemptyProperty
     [Documentation]    Check that if message property is set \ with empty value , still it should be displayed in Transfer messages
@@ -970,15 +931,15 @@ TC43_AddParentOrg
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
+    Sleep    10s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=/html/body/main/section/section/div/div[3]/div/p/a[2]    # Selects org2
     sleep    6s
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i    #Click on edit org2
     sleep    6s
-    Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div[2]/select    906    #Select from parent org dropdown.For test = 1040, dev=14449,stage=906
+    Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div[2]/select    14449    #Select from parent org dropdown.For test = 1040, dev=14449,stage=906
     sleep    6s
     click element    xpath=/html/body/main/section/section/form/header/button[1]/i    #click save
     Page should contain    text=Komal test organistaion
@@ -1083,7 +1044,7 @@ Dev_TC46-Alerts_AssignToMe
     Click Element    class=fa-sign-in
     Sleep    10s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    10s
+    Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     Click Element    class=fa-bell    #Click on Alerts
@@ -1104,7 +1065,7 @@ Dev_TC46-Alerts_AssignToMe
     Should be equal as Strings    ${assignedto}    Komal Agarwal (komal@youredi.com)
     Sleep    5s
 
-Dev_TC46-Alerts_Unassign
+Dev_TC47-Alerts_Unassign
     [Documentation]    Check user is able to unassign the alert
     ...
     ...    Test data setup. - Need an alert with info as Info3 in Demoservice of Komal Test Organisation
@@ -1114,7 +1075,7 @@ Dev_TC46-Alerts_Unassign
     Click Element    class=fa-sign-in
     Sleep    10s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    9s
+    Sleep    7s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     Click Element    class=fa-bell    #Click on Alerts
@@ -1135,7 +1096,7 @@ Dev_TC46-Alerts_Unassign
     Should be equal as Strings    ${assignedto}    Not assigned.
     Sleep    5s
 
-TC21-Alerts_FilterByAssignedTo
+Dev_TC21-Alerts_FilterByAssignedTo
     [Documentation]    Check user can filter Alerts by Info
     Open Browser    ${url}    chrome
     Input Text    id=email    ${email}
@@ -1147,18 +1108,110 @@ TC21-Alerts_FilterByAssignedTo
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     Click Element    class=fa-bell    #Click on Alerts
-    Sleep    6s
+    Sleep    12s
     capture page screenshot
-    Select from list by value    xpath=/html/body/main/section/section/header/form/div[2]/div[2]/select    928    # Enter into filter criteria
-    Sleep    7s
+    Select from list by value    xpath=/html/body/main/section/section/header/form/div[2]/div[2]/select    16887    # Enter into filter criteria 928 for stage , dev=16887
+    Sleep    9s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
     Sleep    6s
-    Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[3]
     Sleep    6s
     Capture page Screenshot
     Page should not contain    text=No alerts found
     ${id}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[1]
     Sleep    6s
-    Should be equal as Strings    ${id}    218508
+    Should be equal as Strings    ${id}    203542    #dev=203542
     Capture page screenshot
     close browser
+
+
+Dev_TC49-PrimarycontactTechnicalContactpresent
+    [Documentation]    Check that Primary contact, Secondary contct fields present on Edit Organization page
+    ...
+    ...    Test data setup
+    ...    1 Organization
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
+    Click Element    class=fa-sign-in
+    Sleep    10s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
+    click element    xpath=/html/body/aside/div[1]/ul/li[1]/span[2]/a/i    # click on edit orgnization
+    sleep    8s
+    Page should contain    text=Primary contact
+    Page should contain    text=Technical contact
+    capture page screenshot
+
+Dev_TC50-DeletePrimaryContactUser_Negative scenario
+    [Documentation]    Check that user cannor delete user from the organization if that user is primary contac of that organization
+    ...
+    ...    Test data setup
+    ...    1 Organization
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
+    Click Element    class=fa-sign-in
+    Sleep    10s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
+    click element    xpath=/html/body/aside/div[1]/ul/li[1]/span[2]/a/i    # click on edit orgnization
+    sleep    8s
+    click element    xpath=/html/body/main/section/section/section/form/header/div/button/i    # click delete
+    sleep    6s
+    click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i    #confirm deletion
+    sleep    6s
+    page should contain    text=Can't delete primary/technical contact of this account.
+    capture page screenshot
+
+Dev_TC51-DeleteTechnicalContactUser_Negative scenario
+    [Documentation]    Check that user cannor delete user from the organization if that user is Technical contact of that organization
+    ...
+    ...    Test data setup
+    ...    1 Organization
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
+    Click Element    class=fa-sign-in
+    Sleep    10s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
+    click element    xpath=/html/body/aside/div[1]/ul/li[1]/span[2]/a/i    # click on edit orgnization
+    sleep    8s
+    click element     xpath=/html/body/main/section/section/section/section/article[1]/ul/li[2]
+    sleep    6s
+    click element    xpath=/html/body/main/section/section/section/form/header/div/button/i    # click delete
+    sleep    6s
+    click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i    #confirm deletion
+    sleep    6s
+    page should contain    text=Can't delete primary/technical contact of this account.
+    capture page screenshot
+
+Dev_TC52-AssignPrimaryContact
+    [Documentation]    Check that user cannor delete user from the organization if that user is Technical contact of that organization
+    ...
+    ...    Test data setup
+    ...    1 Organization
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
+    Click Element    class=fa-sign-in
+    Sleep    10s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Sleep    7s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
+    click element    xpath=/html/body/aside/div[1]/ul/li[1]/span[2]/a/i    # click on edit orgnization
+    sleep    8s
+    Select from list by value    xpath=/html/body/main/section/section/section/section/article[2]/div[1]/select    16887    #dev-16887
+    sleep    6s
+    Capture page screenshot
+    Select from list by value     xpath=/html/body/main/section/section/section/section/article[2]/div[2]/select    15584    #dev-15584
+    Sleep    6s
+    Capture page screenshot
