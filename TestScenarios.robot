@@ -3,7 +3,7 @@ Library           SeleniumLibrary
 
 *** Variables ***
 ${url}            https://dev.youredi.com/
-${password}       $RJvT&Zd*Zzx0tW&R3r32$Pw
+${password}       N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
 ${email}          komal@youredi.com
 
 
