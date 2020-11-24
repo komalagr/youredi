@@ -2,9 +2,9 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-variable.url            $(url)
-variable.password       $(password)
-variable.email         $(email)
+$(url)
+$(password)
+$(email)
 
 
 *** Test Cases ***
@@ -16,9 +16,9 @@ Dev_TC01_AddProcess
     ...    Test Data Setup
     ...    1. Need Organization Name : Komal test organistaion
     ...    2. Need Service -- DemoService
-    Open Browser    ${variable.url}    chrome
-    Input Text    id=email    ${variable.email}
-    Input Password    id=password    ${variable.password}
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
