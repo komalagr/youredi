@@ -1,5 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
+Variables         variablesfile.yaml
 
 *** Variables ***
 ${url}            https://dev.youredi.com/
@@ -16,9 +17,9 @@ Dev_TC01_AddProcess
     ...    Test Data Setup
     ...    1. Need Organization Name : Komal test organistaion
     ...    2. Need Service -- DemoService
-    Open Browser    ${url}    chrome
-    Input Text    id=email    ${email}
-    Input Password    id=password    ${password}
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
