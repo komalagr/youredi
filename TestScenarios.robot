@@ -2,7 +2,7 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-${varibale.url}           ${url}
+${variable.url}           ${url}
 ${variable.password}       ${password}
 ${variable.email}          ${email}
 
@@ -16,7 +16,7 @@ Dev_TC01_AddProcess
     ...    Test Data Setup
     ...    1. Need Organization Name : Komal test organistaion
     ...    2. Need Service -- DemoService
-    Open Browser    ${varibale.url}    chrome
+    Open Browser    ${variable.url}    chrome
     Input Text    id=email    ${variable.email}
     Input Password    id=password    ${variable.password}
     Click Element    class=fa-sign-in
