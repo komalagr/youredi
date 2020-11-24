@@ -2,9 +2,9 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-${variable.url}           ${url}
-${variable.password}       ${password}
-${variable.email}          ${email}
+${url}            https://dev.youredi.com/
+${password}       N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+${email}          komal@youredi.com
 
 
 *** Test Cases ***
