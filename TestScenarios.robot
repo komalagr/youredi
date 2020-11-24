@@ -2,9 +2,9 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-$(url)
-$(password)
-$(email)
+${url}
+${password}
+${email}
 
 
 *** Test Cases ***
