@@ -29,7 +29,7 @@ steps:
 - script: |
     pip install pytest pytest-azurepipelines
     pytest
-    robot --pythonpath . -x outputxunit.xml TestScenarios.robot
+    robot --pythonpath . -x outputxunit.xml variablesfile.yaml TestScenarios.robot
   displayName: 'Run Robot Scripts'
   
 - task: PublishTestResults@2
