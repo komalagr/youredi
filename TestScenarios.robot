@@ -2,10 +2,6 @@
 Library           SeleniumLibrary
 Variables         variablesfile.yaml
 
-*** Variables ***
-${url}            https://dev.youredi.com/
-${password}       N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
-${email}          komal@youredi.com
 
 
 *** Test Cases ***
