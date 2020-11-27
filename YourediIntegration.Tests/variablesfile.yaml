@@ -5,7 +5,8 @@
 
 
 login:
- url: $(url) 
- email: $(email) 
- password: $(password) 
+ url: https://dev.youredi.com/ 
+ email: komal@youredi.com 
+ password: N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+ 
       
