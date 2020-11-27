@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Variables         variablesfile.yaml
+Variables         YourediIntegration.Tests/variablesfile.yaml
 
 
 
