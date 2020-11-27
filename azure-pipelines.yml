@@ -24,7 +24,8 @@ steps:
 - script: |
     pip install robotframework robotframework-seleniumlibrary webdrivermanager 
   
-
+- script: |
+    pip install pyyaml
 
 - script: |
     pip install pytest pytest-azurepipelines
