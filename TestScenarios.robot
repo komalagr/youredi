@@ -2,9 +2,11 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-${url}
-${password}
-${email}
+${url}     komal@youredi.com 
+
+${password}  N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
+
+${email}  komal@youredi.com 
 
 
 *** Test Cases ***
