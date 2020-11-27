@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Variables         komalagr/youredi/YourediIntegration.Tests/variablesfile.yaml
+Variables         variablesfile.yaml
 *** Test Cases ***
 Dev_TC01_AddProcess
     [Documentation]    Check that If Process does not exist , it should get added successfully
