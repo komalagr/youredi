@@ -2,8 +2,8 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-${url}     komal@youredi.com 
-
+${url}     https://dev.youredi.com/
+ 
 ${password}  N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
 
 ${email}  komal@youredi.com 
