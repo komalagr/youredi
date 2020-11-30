@@ -5,7 +5,7 @@
 
 
 login:
- url: $(urllink)
+ url: '$(urllink)'
  email: komal@youredi.com
  password: N9ScmaA$BRDalQbm$Gn9XmNZKcQ!
       
