@@ -5,6 +5,6 @@
 
 
 login:
-  url: https://dev.youredi.com/
-  email: komal@youredi.com
-  password: RobotTesting@123
+ url: '#{devurl}#'
+ email: '#{devemail}#'
+ password: '#{devpassword}#'
