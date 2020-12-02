@@ -14,14 +14,14 @@ Dev_TC01_AddProcess
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
+    Sleep    11s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
     Click Element    class=fa-object-group    #Click Processes
-    Sleep    6s
+    Sleep    11s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    #Clicks Add Process button
-    Sleep    6s
+    Sleep    11s
     Input Text    name=processName    1Process    #Provide new process name
     Sleep    6s
     Capture Page Screenshot
