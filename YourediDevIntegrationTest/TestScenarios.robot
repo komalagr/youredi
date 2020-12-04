@@ -23,7 +23,7 @@ Dev_TC01_AddProcess
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    #Clicks Add Process button
     Sleep    12s
     Input Text    name=processName    1Process    #Provide new process name
-    Sleep    6s
+    Sleep    11s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    #Click Save
     Sleep    12s
@@ -42,7 +42,7 @@ Dev_TC01_AddProcess
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    10s
+    Sleep    11s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-object-group    # Clicks Processes
@@ -77,7 +77,7 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click on delete button in first row
     Sleep    12s
     Input Text    xpath=//*[@id="input-8"]    8134 Bug    # enter incorrect process name in delete popup window
-    Sleep    10s
+    Sleep    11s
     Element Should Be Disabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #Check that delete button should be disabled
     Capture Page Screenshot
     close browser
@@ -158,10 +158,10 @@ Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    # click on add process
     Sleep    12s
     Input Text    name=processName    ProcessNew12121    # try adding adding process that already exist
-    Sleep    6s
+    Sleep    11s
     Capture page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    # click save button
-    Sleep    6s
+    Sleep    11s
     Page should not contain element    class=fa-play    # Error message should be displayed
     Capture Page screenshot
     close browser
@@ -179,7 +179,7 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Click Element    class=fa-sign-in    # Login
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    10s
+    Sleep    11s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-lightbulb-o    # Click on Endpoints
@@ -188,7 +188,7 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button    # click on delete enpoint
     Sleep    11s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    # confirm deletion on endpoint
-    Sleep    6s
+    Sleep    11s
     Capture Page Screenshot
     Page Should contain    text=Can't delete an endpoint that has a process attached    # error message should be displayed since endpoint associated to a process
     close browser
@@ -216,7 +216,7 @@ Dev_TC08_AddEndpoint_Positive
     Sleep    12s
     Input text    name=Description    3Endpoint    # enter new endpoint name
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/button    # save the endpoint
-    Sleep    6s
+    Sleep    11s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
     close browser
 
@@ -365,7 +365,7 @@ Dev_TC12_AddCrossReference_Positive
     sleep    12s
     Input Text    name=crossReference.Key    key1122
     Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1122")
-    Sleep    5s
+    Sleep    11ss
     Capture Page Screenshot
     Click element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/button
     sleep    6s
@@ -387,7 +387,7 @@ Dev_TC13_Delete_CrossReferenceKey
     Sleep    11s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/div/button/i
-    Sleep    9s
+    Sleep    11s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
     Sleep    11s
@@ -412,7 +412,7 @@ Dev_TC14_Delete_Counter
     Sleep    12s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/table/tbody/tr/td[3]/div/button/i    #Click Delete
-    Sleep    10s
+    Sleep    11s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Click Delete on confimation
     Sleep    9s
@@ -487,7 +487,7 @@ Dev_TC17_Add Library
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    #Click on Add
     Sleep    11s
     Input Text    name=Name    Default1    #Enter Library Name
-    Sleep    6s
+    Sleep    11s
     Capture Page Screenshot
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    #Click Save
     Sleep    8s
@@ -860,9 +860,9 @@ TC34_CannotChangeEndpointType_IfBindingassociated
 
 TC039_Transfer_FilterById
     [Documentation]    Check that user can filter transactions by id
-    Open Browser    ${url}    chrome
-    Input Text    id=email    komal@youredi.com
-    Input Password    id=password    ${password}
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
@@ -875,7 +875,7 @@ TC039_Transfer_FilterById
     sleep    15s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
-    sleep    6s
+    sleep    11s
     capture page screenshot
     Page should not contain    text=11425361
     Page should contain    text=11425362
@@ -1177,11 +1177,13 @@ Dev_TC54_DesignerRole
     Page should contain element    class=fa-table    # can see cross references
     Page should contain element    class=fa-plug    # can see extensions
     Page should contain element    class=fa-calendar
+    Page should contain element    class=fa-calculator
+    Page should contain element    class=fa-cubes
     Page should not contain element    class=fa-exclamation-cirlce    # cant see admin tools
     Click element    xpath=/html/body/aside/div[1]/ul/li[7]/a/i    # click on endpoints
-    Sleep    10s
+    Sleep    11s
     click element    xpath=/html/body/main/section/section/section/article/ul/li[2]/h6/i
-    sleep    10s
+    sleep    11s
     click element    xpath=/html/body/main/section/section/form/header/div/button/i    # able to delete endpoints
     sleep    10s
     click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i
@@ -1191,7 +1193,7 @@ Dev_TC54_DesignerRole
     click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div/h6
     sleep    12s
     Scroll element into view    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i
-    Sleep    6s
+    Sleep    11s
     Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i
     Sleep    6s
     Page should contain    text=Not authorized
@@ -1226,6 +1228,8 @@ Dev_TC54_AdminRole
     Page should contain element    class=fa-table    # can see cross references
     Page should contain element    class=fa-plug    # can see extensions
     Page should contain element    class=fa-calendar
+    Page should contain element    class=fa-calculator
+    Page should contain element    class=fa-cubes
     Page should not contain element    class=fa-exclamation-cirlce    # cant see admin tools
     Click element    xpath=/html/body/aside/div[1]/ul/li[7]/a/i    # click on endpoints
     Sleep    10s
@@ -1234,13 +1238,13 @@ Dev_TC54_AdminRole
     click element    xpath=/html/body/main/section/section/form/header/div/button/i    # able to delete endpoints
     sleep    10s
     click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i
-    sleep    6s
+    sleep    11s
     click element    xpath=/html/body/aside/div[1]/ul/li[3]/a/i
     sleep    8s
     click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div/h6
     sleep    12s
     Scroll element into view    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i
-    Sleep    6s
+    Sleep    11s
     Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i    # can save alert settings
     Sleep    11s
     Page should not contain    text=Not authorized
