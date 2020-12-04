@@ -926,9 +926,9 @@ TC34_CannotChangeEndpointType_IfBindingassociated
 
 TC039_Transfer_FilterById
     [Documentation]    Check that user can filter transactions by id
-    Open Browser    ${url}    chrome
+    Open Browser    ${login.url}    chrome
     Input Text    id=email    komal@youredi.com
-    Input Password    id=password    ${password}
+    Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
