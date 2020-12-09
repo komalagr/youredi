@@ -351,20 +351,21 @@ TC12_AddCrossReference_Positive
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    12s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
+    Sleep    11s
     Click Element    class=fa-table    # click on cross reference
     Sleep    12s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[1]    # click on add cross reference table
-    Sleep    11s
+    Sleep    9s
     Input Text    name=newTableName    Table1    # Add a table name
-    Sleep    11s
+    Sleep    6s
     capture page screenshot
     click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/div/button[1]
     sleep    12s
     Input Text    name=crossReference.Key    key1122
     Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1122")
-    Sleep    8s
+    Sleep    5s
     Capture Page Screenshot
     Click element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/button
     sleep    6s
@@ -381,7 +382,8 @@ TC13_Delete_CrossReferenceKey
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    12s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
+    Sleep    11s
     Click Element    class=fa-table    #Click on Cross Reference
     Sleep    11s
     Capture Page screenshot
@@ -395,6 +397,7 @@ TC13_Delete_CrossReferenceKey
     sleep    6s
     Capture Page Screenshot
     close browser
+    
 
 TC14_Delete_Counter
     [Documentation]    Check user can delete Counter on UI
