@@ -26,7 +26,7 @@ Dev_TC01_AddProcess
     Sleep    11s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    #Click Save
-    Sleep    8s
+    Sleep    11s
     Page should contain element    class=fa-play    #New process page should be displayed with Start button
     Capture Page screenshot
     close browser
