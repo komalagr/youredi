@@ -52,7 +52,7 @@ Dev_TC01_AddProcess
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click delete
     Sleep    12s
     Input Text    xpath=//*[@id="input-8"]    ${process}    #Enter process name on delete pop up window
-    Sleep    11s
+    Sleep    12s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
     Sleep    11s
     Capture Page Screenshot
