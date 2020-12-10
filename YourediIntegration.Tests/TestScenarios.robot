@@ -23,7 +23,7 @@ Dev_TC01_AddProcess
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    #Clicks Add Process button
     Sleep    11s
     Input Text    name=processName    1Process    #Provide new process name
-    Sleep    6s
+    Sleep    11s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    #Click Save
     Sleep    8s
