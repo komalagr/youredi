@@ -31,7 +31,7 @@ Dev_TC01_AddProcess
     Capture Page screenshot
     close browser
     
-    Dev_TC02_DeleteProcess_PositiveScenario
+ Dev_TC02_DeleteProcess_PositiveScenario
     [Documentation]    Check that user is able to delete the process if process name entered on Delete pop up window is correct
     ...
     ...    Test data setup
