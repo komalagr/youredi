@@ -1219,6 +1219,7 @@ TC54_DesignerRole
     Page should contain element    class=fa-table    # can see cross references
     Page should contain element    class=fa-plug    # can see extensions
     Page should contain element    class=fa-calendar
+    Page should contain element    class=fa-cubes
     Page should not contain element    class=fa-exclamation-cirlce    # cant see admin tools
     Click element    xpath=/html/body/aside/div[1]/ul/li[7]/a/i    # click on endpoints
     Sleep    12s
@@ -1269,6 +1270,7 @@ TC54_AdminRole
     Page should contain element    class=fa-table    # can see cross references
     Page should contain element    class=fa-plug    # can see extensions
     Page should contain element    class=fa-calendar
+    Page should contain element    class=fa-cubes
     Page should not contain element    class=fa-exclamation-cirlce    # cant see admin tools
     Click element    xpath=/html/body/aside/div[1]/ul/li[7]/a/i    # click on endpoints
     Sleep    11s
@@ -1319,6 +1321,7 @@ TC54_AdminRoleWithGlobalAdminRights
     Page should contain element    class=fa-table    # can see cross references
     Page should contain element    class=fa-plug    # can see extensions
     Page should contain element    class=fa-calendar
+    Page should contain element    class=fa-cubes
     Scroll element into view    xpath=/html/body/aside/div[1]/ul/li[3]/a/i
     Page should contain element    xpath=/html/body/aside/div[1]/ul/li[3]/a/i    # can see admin tools
     Capture page screenshot
