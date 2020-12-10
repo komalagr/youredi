@@ -122,7 +122,7 @@ TC05_DeleteEndpoint_Positive
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    10s
+    Sleep    11s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-lightbulb-o    #Click endpoints
@@ -157,10 +157,10 @@ TC06_AddProcess_Negative_ProcessAlreadyExist
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    # click on add process
     Sleep    11s
     Input Text    name=processName    ProcessNew12121    # try adding adding process that already exist
-    Sleep    6s
+    Sleep    11s
     Capture page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    # click save button
-    Sleep    6s
+    Sleep    11s
     Page should not contain element    class=fa-play    # Error message should be displayed
     Capture Page screenshot
     close browser
@@ -185,9 +185,9 @@ TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Sleep    11s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button    # click on delete enpoint
-    Sleep    9s
+    Sleep    11s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    # confirm deletion on endpoint
-    Sleep    6s
+    Sleep    11s
     Capture Page Screenshot
     Page Should contain    text=Can't delete an endpoint that has a process attached    # error message should be displayed since endpoint associated to a process
     close browser
@@ -212,7 +212,7 @@ TC08_AddEndpoint_Positive
     Sleep    11s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    # click on add endpoint
-    Sleep    9s
+    Sleep    11s
     Input text    name=Description    3Endpoint    # enter new endpoint name
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/button    # save the endpoint
     Sleep    11s
@@ -239,7 +239,7 @@ TC08b_DeleteEndpointforNextrun
     click element    xpath=/html/body/main/section/section/section/article/ul/li[2]/h6/i
     sleep    11s
     Click Element    xpath=/html/body/main/section/section/form/header/div/button    #click delete button
-    Sleep    6s
+    Sleep    11s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #confirm deletion
     Sleep    6s
     Capture Page Screenshot
@@ -265,7 +265,7 @@ TC09_ServiceDataPage
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    10s
+    Sleep    12s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
     Sleep    11s
@@ -293,20 +293,20 @@ TC10_AddServiceParameter_Positive
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    10s
+    Sleep    12s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-cogs    # Click on Parameters link
     Sleep    11s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]    # click on Add parameter
-    Sleep    8s
+    Sleep    11s
     Input Text    name=ID    1parameter    # enter parameter name
     Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1")    # set value for parameter
     Sleep    5s
     Capture Page Screenshot
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[1]/button    # click save button
-    sleep    6s
+    sleep    11s
     Capture Page Screenshot
     Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i    # click refresh
     Sleep    10s
@@ -357,9 +357,9 @@ TC12_AddCrossReference_Positive
     Sleep    12s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[1]    # click on add cross reference table
-    Sleep    9s
+    Sleep    11s
     Input Text    name=newTableName    Table1    # Add a table name
-    Sleep    6s
+    Sleep    11s
     capture page screenshot
     click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/div/button[1]
     sleep    12s
@@ -388,7 +388,7 @@ TC13_Delete_CrossReferenceKey
     Sleep    11s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/div/button/i
-    Sleep    9s
+    Sleep    11s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
     Sleep    6s
@@ -414,7 +414,7 @@ TC14_Delete_Counter
     Sleep    12s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/table/tbody/tr/td[3]/div/button/i    #Click Delete
-    Sleep    10s
+    Sleep    11s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Click Delete on confimation
     Sleep    9s
@@ -480,7 +480,7 @@ TC17_Add Library
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    11s
+    Sleep    12s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Click Element    class=fa-book    #Click on Library
@@ -489,10 +489,10 @@ TC17_Add Library
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    #Click on Add
     Sleep   11s
     Input Text    name=Name    Default1    #Enter Library Name
-    Sleep    6s
+    Sleep    11s
     Capture Page Screenshot
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    #Click Save
-    Sleep    8s
+    Sleep    11s
     Capture page screenshot
     Element should be Enabled    class=fa-refresh    #Click refresh
     close browser
@@ -578,7 +578,7 @@ TC28-Logout
     Click element    class=fa-cog
     Click element    xpath=//*[@id="webide"]/aside/div[2]/div/a[5]/i
     Handle Alert
-    Sleep    6s
+    Sleep    11s
     Page should contain element    xpath=//*[@id="login"]/div/div[1]/div[2]/form/div[4]/div/button/i
 
 TC34_AddUserToOrganization
@@ -597,13 +597,13 @@ TC34_AddUserToOrganization
     Sleep    11s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/header/button[1]/i
-    Sleep    6s
+    Sleep    11s
     Input Text    xpath=/html/body/main/section/section/section/section/div/div/div[2]/form/div/div/input    aryan@youredi.com
     Sleep    11s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div/div/span/span/button/i
     Sleep    11s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div[2]/button/i
-    sleep    9s
+    sleep    11s
     capture page screenshot
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
     sleep    6s
@@ -622,9 +622,9 @@ TC36_EditUserRoleInOrganization
     Sleep    12s
     capture page screenshot
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
-    sleep    8s
+    sleep    11s
     Select from list by value    name=Role    Designer
-    Sleep    8s
+    Sleep    11s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
     Sleep    6s
     capture page screenshot
@@ -672,7 +672,7 @@ TC44_ServiceDataPage_Index2NotMandatory
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
     Sleep    11s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i
-    Sleep    6s
+    Sleep    11s
     Capture Page Screenshot
     Input Text    name=itemType    Type2
     Input Text    name=index1    In2
@@ -705,7 +705,7 @@ TC51_Check If binding is not active process should not get executed
     click element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Select Binding process
     Sleep    15s
     click element    xpath=//*[@id="webide"]/main/section[1]/header/div/button/i    #click start
-    sleep    9s
+    sleep    12s
     click element    xpath=//*[@id="webide"]/main/section[1]/div[1]/div[1]/div[1]/div/button[1]/i    #click start
     sleep    12s
     Page should contain    text=Process not found using given account    #error message shouldbe present
@@ -724,7 +724,7 @@ TC30: Bug 8955: Check that user can delete Endpoint bindings from sub-organizati
     Click Element    class=fa-sign-in
     Sleep    15s
     click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i    #click continue
-    sleep    10s
+    sleep    11s
     Click element    xpath=/html/body/main/section/section/div/div[2]/div/p/a[1]/i    #Select 2nd org
     Sleep    15s
     Click Element    xpath=/html/body/main/section/section/div/div[2]/div[2]/div[1]/div[1]/p/a[2]    #Select service
@@ -738,7 +738,7 @@ TC30: Bug 8955: Check that user can delete Endpoint bindings from sub-organizati
     Select from List by Value    xpath=//*[@id="webide"]/div[6]/form/div/div[2]/div/select    907    #test_1094 stage_907
     Sleep    11s
     Click element    xpath=//*[@id="webide"]/div[6]/form/div/div[3]/div/button[1]/i
-    Sleep    6s
+    Sleep    11s
     Input Text    xpath=/html/body/main/section/section/div/form/article/div/div[2]/input    ChildBinding
     Input Text    xpath=/html/body/main/section/section/div/form/article/div/div[3]/input    GET
     sleep    6s
@@ -775,7 +775,7 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Sleep    11s
     capture page screenshot
     Click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
-    Sleep    9s
+    Sleep    11s
     Page should contain    text=The extension cannot be deleted as it is being used in process
     close browser
 
@@ -825,7 +825,7 @@ TC41_Bug 8433: WebIDE In Transfer -Filter, Duration filter does not retain value
     sleep    6s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
-    sleep    6s
+    sleep    11s
     capture page screenshot
     Page should not contain    text=11302465    
     sleep    15s
@@ -861,7 +861,7 @@ TC32_AddandDeleteBinding
     Input Text    name=OperationName    Binding
     Input Text    name=HTTPMethod    GET
     click element    xpath=//*[@id="webide"]/main/section/section/div/form/header/button/i
-    sleep    6s
+    sleep    11s
     capture page screenshot
     Element should be enabled    xpath=//*[@id="webide"]/main/section/section/div/form/header/div/button/i
     Click element    xpath=//*[@id="webide"]/main/section/section/div/form/header/div/button/i
@@ -918,9 +918,9 @@ TC34_CannotChangeEndpointType_IfBindingassociated
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[4]/div[1]/p/a[2]
     sleep    11s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
-    Sleep    9s
+    Sleep    11s
     Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    1
-    sleep    6s
+    sleep    11s
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
     sleep    12s
     Capture page screenshot
@@ -935,7 +935,7 @@ TC039_Transfer_FilterById
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    10s
+    Sleep    11s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[1]/p/a[2]
     sleep    11s
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
@@ -963,9 +963,9 @@ TC42_RestartProcesswithemptyProperty
     Click Element    class=fa-object-group    #Click Processes
     Sleep    12s
     click element    xpath=/html/body/main/section/section/article/table/tbody/tr[1]/td[2]/a
-    sleep    7s
+    sleep    11s
     Click element    xpath=//*[@id="webide"]/main/section/header/div/button/i
-    sleep    6s
+    sleep    11s
     Click element    xpath=/html/body/main/section/div[1]/div/div[1]/div/button[1]/i
     Sleep    15s
     Click element    xpath=/html/body/aside/div[1]/ul/li[2]/div/a/i
@@ -996,9 +996,9 @@ TC43_AddParentOrg
     Click Element    xpath=/html/body/main/section/section/div/div[3]/div/p/a[2]    # Selects org2
     sleep    11s
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i    #Click on edit org2
-    sleep    6s
+    sleep   11s
     Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div[2]/select    906    #Select from parent org dropdown.For test = 1040, dev=14449,stage=906
-    sleep    6s
+    sleep    11s
     click element    xpath=/html/body/main/section/section/form/header/button[1]/i    #click save
     Page should contain    text=Komal test organistaion
     capture page screenshot
@@ -1019,7 +1019,7 @@ Tc44_AddandDeleteServiceSharing
     Click element    xpath=/html/body/aside/div[1]/ul/li[4]/span[2]/a/i    #click on edit service
     sleep    11s
     click element    xpath=/html/body/main/section/section/section/article/ul/li/div/button/i    #click delete
-    Sleep    6s
+    Sleep    11s
     click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i    #click delete
     Sleep    12s
     Click element    xpath=/html/body/main/section/section/section/header/div/button    #click on add
@@ -1044,17 +1044,17 @@ TC45-Alerts_AddComment
     Sleep    12s
     capture page screenshot
     Input text    name=filterInfo    Info3    # Enter into filter criteria
-    Sleep    7s
+    Sleep    11s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
-    Sleep    6s
+    Sleep    11s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
     Sleep    6s
     Capture page Screenshot
     Page should not contain    text=No alerts found
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/div/ul/li[2]/a    # click on comments
-    Sleep    6s
+    Sleep    11s
     Input Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/form/div[1]/input    TestCommentAdding
-    Sleep    6s
+    Sleep    11s
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/section/form/div[2]/button/i    # click on add
     Sleep    6s
     Capture page screenshot
@@ -1077,11 +1077,11 @@ TC45-Alerts_AddPayload
     Sleep    12s
     capture page screenshot
     Input text    name=filterInfo    Info3    # Enter into filter criteria
-    Sleep    7s
+    Sleep    1s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
-    Sleep    6s
+    Sleep    11s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
-    Sleep    6s
+    Sleep    11s
     Capture page Screenshot
     Page should not contain    text=No alerts found
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/div/ul/li[3]/a    # click on payload
@@ -1119,7 +1119,7 @@ TC46-Alerts_AssignToMe
     click element    xpath=/html/body/main/section/section/section/section[2]/header/div/div[2]/button[1]/i    # click on Assign to me
     sleep    12s
     ${assignedto}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[6]/a    #Get value in Assigned to field
-    Sleep    6s
+    Sleep    11s
     Should be equal as Strings    ${assignedto}    Komal Agarwal (komal@youredi.com)
     Sleep    5s
 
@@ -1150,9 +1150,9 @@ TC47-Alerts_Unassign
     click element    xpath=/html/body/main/section/section/section/section[2]/header/div/div[2]/button[2]/i    # click on UnAssign
     sleep    12s
     ${assignedto}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[6]/span    #Get value in Assigned to field
-    Sleep    6s
+    Sleep    11s
     Should be equal as Strings    ${assignedto}    Not assigned.
-    Sleep    5s
+    
 
 
 
@@ -1208,7 +1208,7 @@ TC54_DesignerRole
     Page should contain element    class=fa-bell    # can see alerts
     Page should not contain element    class=fa-edit    # cant edit organization
     Click element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[1]/div/p/a
-    Sleep    6s
+    Sleep    11s
     Click element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Sleep    12s
     Page should not contain element    class=fa-edit
@@ -1221,21 +1221,21 @@ TC54_DesignerRole
     Page should contain element    class=fa-calendar
     Page should not contain element    class=fa-exclamation-cirlce    # cant see admin tools
     Click element    xpath=/html/body/aside/div[1]/ul/li[7]/a/i    # click on endpoints
-    Sleep    10s
+    Sleep    12s
     click element    xpath=/html/body/main/section/section/section/article/ul/li[2]/h6/i
     sleep    10s
     click element    xpath=/html/body/main/section/section/form/header/div/button/i    # able to delete endpoints
     sleep    10s
     click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i
-    sleep    6s
+    sleep    11s
     click element    xpath=/html/body/aside/div[1]/ul/li[3]/a/i
-    sleep    8s
+    sleep    11s
     click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div/h6
     sleep    12s
     Scroll element into view    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i
-    Sleep    6s
+    Sleep    11s
     Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i
-    Sleep    6s
+    Sleep    11s
     Page should contain    text=Not authorized
 
 TC54_AdminRole
@@ -1258,9 +1258,9 @@ TC54_AdminRole
     Page should contain element    class=fa-bell    # can see alerts
     Page should contain element    class=fa-edit    # cant edit organization
     Click element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[1]/div/p/a
-    Sleep    6s
+    Sleep    11s
     Click element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Sleep    6s
+    Sleep    11s
     Page should contain element    xpath=/html/body/aside/div[1]/ul/li[4]/span[2]/a/i
     Page should contain element    class=fa-object-group    # can see processes
     Page should contain element    class=fa-book    # can see libraries
@@ -1271,7 +1271,7 @@ TC54_AdminRole
     Page should contain element    class=fa-calendar
     Page should not contain element    class=fa-exclamation-cirlce    # cant see admin tools
     Click element    xpath=/html/body/aside/div[1]/ul/li[7]/a/i    # click on endpoints
-    Sleep    10s
+    Sleep    11s
     click element    xpath=/html/body/main/section/section/section/article/ul/li[2]/h6/i
     sleep    10s
     click element    xpath=/html/body/main/section/section/form/header/div/button/i    # able to delete endpoints
@@ -1283,9 +1283,9 @@ TC54_AdminRole
     click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div/h6
     sleep    12s
     Scroll element into view    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i
-    Sleep    6s
+    Sleep    11s
     Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i    # can save alert settings
-    Sleep    6s
+    Sleep    11s
     Page should not contain    text=Not authorized
 
 TC54_AdminRoleWithGlobalAdminRights
