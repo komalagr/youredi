@@ -810,9 +810,9 @@ TC41_Bug 8433: WebIDE In Transfer -Filter, Duration filter does not retain value
     ...
     ...    Need a process execution on Transfer page, with execution time >= 3s
     ...    DemoService2
-    Open Browser    ${url}    chrome
-    Input Text    id=email    ${email}
-    Input Password    id=password    ${password}
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
