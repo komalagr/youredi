@@ -123,7 +123,7 @@ Dev_TC05_DeleteEndpoint_Positive
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    10s
+    Sleep    11s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-lightbulb-o    #Click endpoints
@@ -266,7 +266,7 @@ Dev_TC09_ServiceDataPage
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    10s
+    Sleep    11s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
     Sleep    11s
@@ -358,9 +358,9 @@ Dev_TC12_AddCrossReference_Positive
     Sleep    12s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[1]    # click on add cross reference table
-    Sleep    9s
+    Sleep    11s
     Input Text    name=newTableName    Table1    # Add a table name
-    Sleep    6s
+    Sleep    11s
     capture page screenshot
     click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/div/button[1]
     sleep    12s
@@ -389,7 +389,7 @@ Dev_TC13_Delete_CrossReferenceKey
     Sleep    11s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/div/button/i
-    Sleep    9s
+    Sleep   11s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
     Sleep    6s
@@ -459,7 +459,7 @@ Dev_TC16_Add And Delete Extension
     Sleep    12s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    # Click on Add
-    Sleep    10s
+    Sleep    12s
     Input Text    name=extension.Name    Ext2    #Enter Extension name
     Sleep    12s
     Capture Page Screenshot
