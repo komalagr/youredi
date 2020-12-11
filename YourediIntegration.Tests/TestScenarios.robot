@@ -66,9 +66,9 @@ TC03_DeleteProcess_ProcessNameIncorect
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    11s
+    Sleep    12s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Click Element    class=fa-object-group    #Click on Processes
@@ -76,7 +76,7 @@ TC03_DeleteProcess_ProcessNameIncorect
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click on delete button in first row
     Sleep    11s
     Input Text    xpath=//*[@id="input-8"]    8134 Bug    # enter incorrect process name in delete popup window
-    Sleep    10s
+    Sleep    11s
     Element Should Be Disabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #Check that delete button should be disabled
     Capture Page Screenshot
     close browser
@@ -106,7 +106,7 @@ TC04_DeleteProcess_Cancel
     Sleep    10s
     Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[2]    # click cancel on delete pop up window
-    Sleep    10s
+    Sleep    11s
     Capture Page Screenshot
     Page should contain    text=${process}
     Close browser
@@ -458,7 +458,7 @@ TC16_Add And Delete Extension
     Sleep    12s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    # Click on Add
-    Sleep    10s
+    Sleep    15s
     Input Text    name=extension.Name    Ext2    #Enter Extension name
     Sleep    12s
     Capture Page Screenshot
@@ -524,9 +524,9 @@ TC21-Alerts_FilterByInfo
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    10s
+    Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    7s
+    Sleep    11s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     Click Element    class=fa-bell    #Click on Alerts
@@ -822,7 +822,7 @@ TC41_Bug 8433: WebIDE In Transfer -Filter, Duration filter does not retain value
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i    #Click on Transfer
     sleep    11s
     Input text    xpath=/html/body/main/section/header/form/div[1]/div[4]/div[1]/div/input    2s    #Set Duration filter
-    sleep    6s
+    sleep    11s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
     sleep    11s
@@ -865,7 +865,7 @@ TC32_AddandDeleteBinding
     capture page screenshot
     Element should be enabled    xpath=//*[@id="webide"]/main/section/section/div/form/header/div/button/i
     Click element    xpath=//*[@id="webide"]/main/section/section/div/form/header/div/button/i
-    sleep    6s
+    sleep    11s
     click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/span/button[1]/i
     sleep    6s
     click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[2]/i
@@ -940,14 +940,14 @@ TC039_Transfer_FilterById
     sleep    11s
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
     sleep    11s
-    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    43364800    
+    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    43520092    
     sleep    15s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
     sleep    11s
     capture page screenshot
-    Page should not contain    text=11425361
-    Page should contain    text=43364800
+    Page should not contain    text=43411069
+    Page should contain    text=43520092
 
 TC42_RestartProcesswithemptyProperty
     [Documentation]    Check that if message property is set \ with empty value , still it should be displayed in Transfer messages
