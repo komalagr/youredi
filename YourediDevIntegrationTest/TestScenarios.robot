@@ -874,14 +874,14 @@ TC039_Transfer_FilterById
     sleep    11s
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
     sleep    11s
-    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    11425362    #for dev - 11303940, stage=43179132
+    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    11711285    #for dev - 11303940, stage=43179132
     sleep    15s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
     sleep    11s
     capture page screenshot
     Page should not contain    text=11425361
-    Page should contain    text=11425362
+    Page should contain    text=11711285
 
 TC42_RestartProcesswithemptyProperty
     [Documentation]    Check that if message property is set \ with empty value , still it should be displayed in Transfer messages
