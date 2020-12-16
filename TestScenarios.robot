@@ -2,33 +2,38 @@
 Library           SeleniumLibrary
 Variables         variablesfile.yaml
 *** Test Cases ***
-Dev_TC01_AddProcess
-    [Documentation]    Check that If Process does not exist , it should get added successfully
+Dev_TC09_ServiceDataPage
+    [Documentation]    Check Service data UI page
+    ...
     ...
     ...    Test Data Setup
-    ...    1. Need Organization Name : Komal test organistaion
-    ...    2. Need Service -- DemoService
+    ...    1. Need Organization -- Name : Komal test organistaion
+    ...    2. Need Service -- DemoService2
+    ...
+    ...    Service data should be set with following values
+    ...    ItemType2
+    ...    Index1 as In2
+    ...    Index2 as Dex2
+    ...
+    ...    Data as DataResult
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    18s
+    Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    11s
+    Sleep    15s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
-    Click Element    class=fa-object-group    #Click Processes
-    Sleep    11s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
+    Sleep    15s
+    Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    # click on Service data link
+    Sleep    15s
     Capture Page Screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    #Clicks Add Process button
-    Sleep    11s
-    Input Text    name=processName    1Process    #Provide new process name
-    Sleep    11s
-    Capture Page Screenshot
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    #Click Save
-    Sleep    11s
-    Page should contain element    class=fa-play    #New process page should be displayed with Start button
-    Capture Page screenshot
-    close browser
-
+    Input Text    name=itemType    Type2    # enter item type
+    Input Text    name=index1    In2    # enter index1
+    Input Text    name=index2    Dex2    # enter index 2
+    Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
+    Sleep    15s
+    capture page screenshot
+    Page should contain    text=DataResult    # Service Data - Data should fe fetched
     
