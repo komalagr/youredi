@@ -28,8 +28,7 @@ Dev_TC12_AddCrossReference_Positive
     capture page screenshot
     click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/div/button[1]
     sleep    12s
-    Input Text    name=crossReference.Key    key1122
-    Sleep 12s
+    Input Text    xpath=/html/body/main/section/section/section[2]/form[1]/article/div/div[1]/div/input    key1122
     Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1122")
     Sleep    5s
     Capture Page Screenshot
