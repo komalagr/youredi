@@ -269,9 +269,9 @@ Dev_TC09_ServiceDataPage
     Sleep    11s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
-    Sleep    11s
+    Sleep    15s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    # click on Service data link
-    Sleep    11s
+    Sleep    15s
     Capture Page Screenshot
     Input Text    name=itemType    Type2    # enter item type
     Input Text    name=index1    In2    # enter index1
@@ -671,9 +671,9 @@ Dev_TC44_ServiceDataPage_Index2NotMandatory
     Sleep    12s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    Sleep    11s
+    Sleep    15s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i
-    Sleep    11s
+    Sleep    15s
     Capture Page Screenshot
     Input Text    name=itemType    Type2
     Input Text    name=index1    In2
@@ -731,7 +731,7 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Sleep    12s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
-    Sleep    12s
+    Sleep    16s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[10]/a/i    # click on Extension link
     Sleep    15s
     Capture Page Screenshot
@@ -739,7 +739,7 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Sleep    11s
     capture page screenshot
     Click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
-    Sleep    9s
+    Sleep    13s
     Page should contain    text=The extension cannot be deleted as it is being used in process
     close browser
 
