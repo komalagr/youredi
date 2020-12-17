@@ -384,7 +384,7 @@ Dev_TC13_Delete_CrossReferenceKey
     Sleep    12s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    Sleep    11s
+    Sleep    16s
     Click Element    class=fa-table    #Click on Cross Reference
     Sleep    11s
     Capture Page screenshot
@@ -671,7 +671,7 @@ Dev_TC44_ServiceDataPage_Index2NotMandatory
     Sleep    12s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    Sleep    15s
+    Sleep    16s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i
     Sleep    15s
     Capture Page Screenshot
@@ -700,15 +700,15 @@ Dev_TC51_Check If binding is not active process should not get executed
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Sleep    11s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select service
-    Sleep    11s
+    Sleep    16s
     Click element    class=fa-object-group    #Click on Processes
     Sleep    12s
     click element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Select Binding process
     Sleep    15s
     click element    xpath=//*[@id="webide"]/main/section[1]/header/div/button/i    #click start
-    sleep    9s
-    click element    xpath=//*[@id="webide"]/main/section[1]/div[1]/div[1]/div[1]/div/button[1]/i    #click start
     sleep    12s
+    click element    xpath=//*[@id="webide"]/main/section[1]/div[1]/div[1]/div[1]/div/button[1]/i    #click start
+    sleep    15s
     Page should contain    text=Process not found using given account    #error message shouldbe present
     capture page screenshot
 
