@@ -268,9 +268,9 @@ TC09_ServiceDataPage
     Sleep    12s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
-    Sleep    11s
+    Sleep    16s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    # click on Service data link
-    Sleep    11s
+    Sleep    15s
     Capture Page Screenshot
     Input Text    name=itemType    Type2    # enter item type
     Input Text    name=index1    In2    # enter index1
@@ -352,12 +352,12 @@ TC12_AddCrossReference_Positive
     Sleep    12s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    Sleep    11s
+    Sleep    16s
     Click Element    class=fa-table    # click on cross reference
     Sleep    12s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[1]    # click on add cross reference table
-    Sleep    11s
+    Sleep    12s
     Input Text    name=newTableName    Table1    # Add a table name
     Sleep    11s
     capture page screenshot
@@ -383,9 +383,9 @@ TC13_Delete_CrossReferenceKey
     Sleep    12s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    Sleep    11s
+    Sleep    16s
     Click Element    class=fa-table    #Click on Cross Reference
-    Sleep    11s
+    Sleep    15s
     Capture Page screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/div/button/i
     Sleep    11s
@@ -670,14 +670,14 @@ TC44_ServiceDataPage_Index2NotMandatory
     Sleep    12s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    Sleep    11s
+    Sleep    18s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i
     Sleep    11s
     Capture Page Screenshot
     Input Text    name=itemType    Type2
     Input Text    name=index1    In2
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
-    Sleep    12s
+    Sleep    16s
     capture page screenshot
     Page should contain    text=DataResult
 
@@ -699,15 +699,15 @@ TC51_Check If binding is not active process should not get executed
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Sleep    11s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select service
-    Sleep    11s
+    Sleep    15s
     Click element    class=fa-object-group    #Click on Processes
-    Sleep    12s
+    Sleep    15s
     click element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Select Binding process
     Sleep    15s
     click element    xpath=//*[@id="webide"]/main/section[1]/header/div/button/i    #click start
     sleep    12s
     click element    xpath=//*[@id="webide"]/main/section[1]/div[1]/div[1]/div[1]/div/button[1]/i    #click start
-    sleep    12s
+    sleep    18s
     Page should contain    text=Process not found using given account    #error message shouldbe present
     capture page screenshot
 
@@ -728,9 +728,9 @@ TC30: Bug 8955: Check that user can delete Endpoint bindings from sub-organizati
     Click element    xpath=/html/body/main/section/section/div/div[2]/div/p/a[1]/i    #Select 2nd org
     Sleep    15s
     Click Element    xpath=/html/body/main/section/section/div/div[2]/div[2]/div[1]/div[1]/p/a[2]    #Select service
-    Sleep    11s
+    Sleep    15s
     Click element    class=fa-lightbulb-o
-    Sleep    11s
+    Sleep    16s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
     Sleep    6s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
@@ -775,7 +775,7 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Sleep    11s
     capture page screenshot
     Click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
-    Sleep    11s
+    Sleep    16s
     Page should contain    text=The extension cannot be deleted as it is being used in process
     close browser
 
@@ -978,7 +978,7 @@ TC42_RestartProcesswithemptyProperty
     Sleep    6s
     Input Text    xpath=/html/body/main/section/section/div/div/div[2]/section/section[2]/section[2]/div/div/input    P1
     Click element    xpath=/html/body/main/section/section/div/div/div[1]/div/button[2]/i
-    Sleep    12s
+    Sleep    16s
     Page should contain    text=Process started successfully.
 
 TC43_AddParentOrg
