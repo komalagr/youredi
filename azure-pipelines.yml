@@ -33,7 +33,7 @@ steps:
     pytest
     robot --pythonpath . -x outputxunit.xml TestScenarios.robot
   displayName: 'Run Robot Scripts'
-  timeoutInMinutes: 75
+  
   
 - task: PublishTestResults@2
   condition: succeededOrFailed()
