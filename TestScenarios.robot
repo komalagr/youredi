@@ -14,24 +14,20 @@ Dev_TC01_AddProcess
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    11s
+    Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
     Click Element    class=fa-object-group    #Click Processes
-    Sleep    12s
-    Capture Page Screenshot
+    Wait Until Element Is Visible    class=fa-plus    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    #Clicks Add Process button
-    Sleep    12s
+    Wait until page contains    text=Add new process
     Input Text    name=processName    1Process    #Provide new process name
-    Sleep    11s
-    Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    #Click Save
-    Sleep    12s
+    Wait until page contains element    class=fa-play    timeout=16s
     Page should contain element    class=fa-play    #New process page should be displayed with Start button
-    Capture Page screenshot
     close browser
-    
- Dev_TC02_DeleteProcess_PositiveScenario
+
+Dev_TC02_DeleteProcess_PositiveScenario
     [Documentation]    Check that user is able to delete the process if process name entered on Delete pop up window is correct
     ...
     ...    Test data setup
@@ -42,20 +38,17 @@ Dev_TC01_AddProcess
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    11s
+    Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-object-group    # Clicks Processes
-    Sleep    12s
+    Wait until Page contains    text=1Process    timeout=16s
     ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Gets name of the process that will be deleted
-    Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click delete
-    Sleep    12s
+    Sleep    4s
     Input Text    xpath=//*[@id="input-8"]    ${process}    #Enter process name on delete pop up window
-    Sleep    12s
+    Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=16s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
-    Sleep    11s
-    Capture Page Screenshot
     close browser
 
 Dev_TC03_DeleteProcess_ProcessNameIncorect
@@ -69,17 +62,16 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    12s
+    Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Click Element    class=fa-object-group    #Click on Processes
-    Sleep    12s
+    Wait until Page contains    text=2enpoint    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click on delete button in first row
-    Sleep    12s
+    Sleep    6s
     Input Text    xpath=//*[@id="input-8"]    8134 Bug    # enter incorrect process name in delete popup window
-    Sleep    11s
+    Sleep    6s
     Element Should Be Disabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #Check that delete button should be disabled
-    Capture Page Screenshot
     close browser
 
 Dev_TC04_DeleteProcess_Cancel
@@ -94,21 +86,18 @@ Dev_TC04_DeleteProcess_Cancel
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    12s
+    Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
     Click Element    class=fa-object-group    # click on processes
-    Sleep    12s
+    Wait until Page contains    text=2enpoint    timeout=16s
     ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #get the process name to be deleted
-    Capture Page Screenshot
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    # click delete button
-    Sleep    12s
+    Sleep    6s
     Input Text    xpath=//*[@id="input-8"]    ${process}    # get in the process name to be deleted
-    Sleep    10s
-    Capture Page Screenshot
+    Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=16s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[2]    # click cancel on delete pop up window
     Sleep    10s
-    Capture Page Screenshot
     Page should contain    text=${process}
     Close browser
 
@@ -123,17 +112,15 @@ Dev_TC05_DeleteEndpoint_Positive
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    11s
+    Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-lightbulb-o    #Click endpoints
-    Sleep    12s
-    Capture Page screenshot
+    Wait until page contains    text=2enpoint    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button    #click delete button
-    Sleep    12s
+    Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #confirm deletion
-    Sleep    6s
-    Capture Page Screenshot
+    Wait until page does not contain    text=1Process    timeout=16s
     close browser
 
 Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
@@ -149,21 +136,18 @@ Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    sleep    11s
+    Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-object-group    # Click on processes
-    Sleep    12s
-    Capture Page screenshot
+    Wait until Page contains    text=2enpoint    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    # click on add process
-    Sleep    12s
+    Wait until page contains    text=Add new process
     Input Text    name=processName    ProcessNew12121    # try adding adding process that already exist
-    Sleep    11s
-    Capture page screenshot
+    Sleep    4s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    # click save button
-    Sleep    11s
+    Wait until page contains    text=Error    timeout=16s
     Page should not contain element    class=fa-play    # Error message should be displayed
-    Capture Page screenshot
     close browser
 
 Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
@@ -179,17 +163,15 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Click Element    class=fa-sign-in    # Login
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    11s
+    Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-lightbulb-o    # Click on Endpoints
-    Sleep    11s
-    Capture Page screenshot
+    Wait until page contains    text=2enpoint    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button    # click on delete enpoint
-    Sleep    11s
+    Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    # confirm deletion on endpoint
-    Sleep    11s
-    Capture Page Screenshot
+    Wait until page contains     text=Can't delete an endpoint that has a process attached    timeout=16s
     Page Should contain    text=Can't delete an endpoint that has a process attached    # error message should be displayed since endpoint associated to a process
     close browser
 
@@ -206,17 +188,16 @@ Dev_TC08_AddEndpoint_Positive
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    11s
+    Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-lightbulb-o    # click on endpoints
-    Sleep    12s
-    Capture Page screenshot
+    Wait until page contains    text=2enpoint    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    # click on add endpoint
-    Sleep    12s
+    Sleep    4s
     Input text    name=Description    3Endpoint    # enter new endpoint name
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/button    # save the endpoint
-    Sleep    11s
+    Wait until page contains    text=3Endpoint
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
     close browser
 
@@ -231,19 +212,17 @@ Dev_TC08b_DeleteEndpointforNextrun
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    11s
+    Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-lightbulb-o    #Click endpoints
-    Sleep    12s
-    Capture Page screenshot
+    Wait until page contains    text=2enpoint    timeout=16s
     click element    xpath=/html/body/main/section/section/section/article/ul/li[2]/h6/i
-    sleep    12s
+    sleep    6s
     Click Element    xpath=/html/body/main/section/section/form/header/div/button    #click delete button
-    Sleep    11s
+    Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #confirm deletion
-    Sleep    6s
-    Capture Page Screenshot
+    Wait until page does not contain    text=3endpoint    timeout=16s
     close browser
 
 Dev_TC09_ServiceDataPage
@@ -266,20 +245,19 @@ Dev_TC09_ServiceDataPage
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    15s
+    Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
-    Sleep    18s
+    Sleep    4s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    # click on Service data link
-    Sleep    15s
-    Capture Page Screenshot
+    Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    timeout=16s
     Input Text    name=itemType    Type2    # enter item type
     Input Text    name=index1    In2    # enter index1
     Input Text    name=index2    Dex2    # enter index 2
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
-    Sleep    15s
-    capture page screenshot
+    Wait until page contains    text=DataResult    timeout=16s
     Page should contain    text=DataResult    # Service Data - Data should fe fetched
+    close browser
 
 Dev_TC10_AddServiceParameter_Positive
     [Documentation]    Check user can add Service parameter on Parameter UI page
@@ -294,24 +272,22 @@ Dev_TC10_AddServiceParameter_Positive
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    11s
+    Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-cogs    # Click on Parameters link
-    Sleep    11s
-    Capture Page screenshot
+    Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]    # click on Add parameter
-    Sleep    11s
+    Sleep    4s
     Input Text    name=ID    1parameter    # enter parameter name
     Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1")    # set value for parameter
     Sleep    5s
-    Capture Page Screenshot
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[1]/button    # click save button
-    sleep    11s
-    Capture Page Screenshot
+    Wait until page contains    text=1parameter    timeout=16s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i    # click refresh
-    Sleep    11s
+    Wait until page contains    text=1parameter    timeout=16s
     Page should contain    text=1parameter    # check that page should display new parameter added
+    close browser
 
 Dev_TC11_DeleteParameter
     [Documentation]    Check user can delete service parameter
@@ -325,17 +301,13 @@ Dev_TC11_DeleteParameter
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Sleep    12s
+    Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
     Click Element    class=fa-cogs    # click on paramters
-    Sleep    15s
-    Capture Page screenshot
+    Sleep    6s
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i    # click on delete button
-    Sleep    11s
-    Capture page screenshot
+    Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # confirm deletion
-    Sleep    11s
-    Capture Page Screenshot
-
-
+    Wait until page does not contain    text=1parameter    timeout=16s
+    close browser
