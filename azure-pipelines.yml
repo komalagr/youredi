@@ -31,7 +31,7 @@ jobs:
   - script: |
       pip install pytest pytest-azurepipelines
       pytest
-      robot --pythonpath . -x outputxunit.xml ProcessandEndpoint.robot
+      robot --pythonpath . -x outputxunit.xml AddEditDeleteUser.robot
     displayName: 'Run Robot Scripts'
   
   
