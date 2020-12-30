@@ -712,31 +712,6 @@ Dev_TC47-Alerts_Unassign
     ${assignedto}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[6]/span    #Get value in Assigned to field
     Should be equal as Strings    ${assignedto}    Not assigned.
 
-Dev_TC21-Alerts_FilterByAssignedTo
-    [Documentation]    Check user can filter Alerts by Info
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    12s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
-    Click Element    class=fa-bell    #Click on Alerts
-    sleep    4s
-    wait until page contains    text=No alerts found.    timeout=18s
-    Select from list by value    xpath=/html/body/main/section/section/header/form/div[2]/div[2]/select    16887    # Enter into filter criteria 928 for stage , dev=16887
-    Sleep    4s
-    Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
-    Sleep    4s
-    Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[3]
-    Sleep    4s
-    Page should not contain    text=No alerts found
-    ${id}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[1]
-    Should be equal as Strings    ${id}    203542    #dev=203542
-    close browser
-
 Dev_TC53_ViewerRole
     [Documentation]    Check that user with only Viewer role can only see Account and Service Names.
     ...
