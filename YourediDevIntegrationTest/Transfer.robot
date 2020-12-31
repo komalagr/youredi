@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Variables         variablesfile.yaml
+Variables         DevVariablesfile.yaml
 *** Test Cases ***
 
 TC039_Transfer_FilterById
