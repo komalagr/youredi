@@ -598,13 +598,13 @@ TC039_Transfer_FilterById
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[1]/p/a[2]
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
     sleep    4s
-    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    43917198
+    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    44016331
     sleep    4s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
-    Wait until page contains    text=43917198
+    Wait until page contains    text=44016331    timeout=18s
     Page should not contain    text=11425361
-    Page should contain    43917198
+    Page should contain    44016331
 
 
 TC43_AddParentOrg
