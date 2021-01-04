@@ -718,7 +718,7 @@ Dev_TC53_ViewerRole
     ...    Viewer cant see Transfers, Alerts, Processes etc
     Open Browser    ${login.url}    chrome
     Input Text    id=email    robot@youredi.com
-    Input Password    id=password    RobotTesting@123
+    Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
     Sleep    12s
     Page should contain    text=Komal test organistaion
