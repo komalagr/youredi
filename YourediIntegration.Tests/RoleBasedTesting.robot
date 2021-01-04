@@ -8,8 +8,8 @@ Dev_TC53_ViewerRole
     [Documentation]    Check that user with only Viewer role can only see Account and Service Names.
     ...
     ...    Viewer cant see Transfers, Alerts, Processes etc
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    viewerole@youredi.com
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    robot@youredi.com
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
     Sleep    12s
@@ -38,11 +38,11 @@ Dev_TC54_DesignerRole
     [Documentation]    Check that user with only designer role can see and access Accounts, Services, transfers, endpoints, processses, alerts etc.
     ...    But since no global admin rights he cant see Admin tools
     ...    and designer cant edit organization and services, alert settings
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    Designerrole@youredi.com
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    robotTester@youredi.com
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Page should contain    text=Komal test organistaion    # can see org and its sub org
     Page should contain    text=org1
     Click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i
@@ -86,11 +86,11 @@ Dev_TC54_DesignerRole
 
 Dev_TC54_AdminRole
     [Documentation]    Check that user that has Admin role but does not have Global admin rights, has full rights at account and service level but does not have access to admin tools
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    adminrole@youredi.com
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    admintester@youredi.com
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Page should contain    text=Komal test organistaion    # can see org and its sub org
     Page should contain    text=org1
     Click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i
@@ -135,9 +135,9 @@ Dev_TC54_AdminRole
 
 Dev_TC56_AdminRoleWithGlobalAdminRights
     [Documentation]    Check that user that has Admin role and have Global admin rights, has full rights at account and service level and has access to admin tools
-    Open Browser    https://dev.youredi.com/    chrome
+    Open Browser    ${login.url}    chrome
     Input Text    id=email    globaladmintester@youredi.com
-    Input Password    id=password    RobotTesting@123
+    Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
     Sleep    16s
     Maximize Browser Window
