@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Variables         variablesfile.yaml
+Variables         DevVariablesfile.yaml
 *** Test Cases ***
 
 Dev_TC16_Add And Delete Extension
@@ -9,7 +9,7 @@ Dev_TC16_Add And Delete Extension
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
@@ -28,7 +28,7 @@ Dev_TC16_Add And Delete Extension
 
 
 TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
-    [Documentation]    Check Service data UI page
+    [Documentation]    Check Extension cannot be deleted if referenced by another process
     ...
     ...
     ...    Test Data Setup
