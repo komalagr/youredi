@@ -33,6 +33,8 @@ jobs:
       pytest
       robot --pythonpath . -x outputxunit.xml Logout.robot
     displayName: 'Run Robot Scripts'
+    workingDirectory: Local
+    
   
   
   - task: PublishTestResults@2
