@@ -27,30 +27,3 @@ Dev_TC16_Add And Delete Extension
     close browser
 
 
-TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
-    [Documentation]    Check Service data UI page
-    ...
-    ...
-    ...    Test Data Setup
-    ...    1. Need Organization -- Name : Komal test organistaion
-    ...    2. Need Service -- DemoService2
-    ...
-    ...    Extension should be added and it should be referenced by some process in the service
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    15s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
-    Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[10]/a/i    # click on Extension link
-    Wait Until page contains    text=Ext    timeout=25s
-    Sleep    11s
-    Click element    class=fa-remove    #Click on Delete button
-    Sleep    6s
-    Click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
-    Wait until page contains    text=The extension cannot be deleted as it is being used in process
-    Page should contain    text=The extension cannot be deleted as it is being used in process
-    close browser
