@@ -16,7 +16,7 @@ Dev_TC53_ViewerRole
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Page should contain    text=Komal test organistaion
-    Page should contain    text=org1    #org1 for dev, and MainOrg for stage
+    Page should contain    text=MainOrg    #org1 for dev, and MainOrg for stage
     Page should contain    text=DemoService
     Page should contain    text=DemoService2
     click element    xpath=/html/body/main/section/section/div/div[1]/div[1]/p/a[2]
@@ -44,7 +44,7 @@ Dev_TC54_DesignerRole
     Click Element    class=fa-sign-in
     Sleep    16s
     Page should contain    text=Komal test organistaion    # can see org and its sub org
-    Page should contain    text=org1
+    Page should contain    text=MainOrg
     Click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i
     Page should contain    text=DemoService    # can see services
     Page should contain    text=DemoService2
@@ -92,7 +92,7 @@ Dev_TC54_AdminRole
     Click Element    class=fa-sign-in
     Sleep    16s
     Page should contain    text=Komal test organistaion    # can see org and its sub org
-    Page should contain    text=org1
+    Page should contain    text=MainOrg
     Click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i
     Page should contain    text=DemoService    # can see services
     Page should contain    text=DemoService2
@@ -142,7 +142,7 @@ Dev_TC56_AdminRoleWithGlobalAdminRights
     Sleep    16s
     Maximize Browser Window
     Page should contain    text=Komal test organistaion    # can see org and its sub org
-    Page should contain    text=org1
+    Page should contain    text=MainOrg
     Click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i
     Page should contain    text=DemoService    # can see services
     Page should contain    text=DemoService2
