@@ -37,7 +37,7 @@ Dev_TC02_DeleteProcess_PositiveScenario
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -61,7 +61,7 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -85,7 +85,7 @@ Dev_TC04_DeleteProcess_Cancel
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -518,7 +518,7 @@ Dev_TC36_EditUserRoleInOrganization
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
@@ -536,7 +536,7 @@ Dev_TC35_DeleteUserFromOrganization
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
@@ -598,13 +598,13 @@ TC039_Transfer_FilterById
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[1]/p/a[2]
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
     sleep    4s
-    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    43877519
+    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    12013531
     sleep    4s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
-    Wait until page contains    text=43877519
+    Wait until page contains    text=12013531
     Page should not contain    text=11425361
-    Page should contain    43877519
+    Page should contain    12013531
 
 
 TC43_AddParentOrg
@@ -622,7 +622,7 @@ TC43_AddParentOrg
     Click Element    xpath=/html/body/main/section/section/div/div[3]/div/p/a[2]    # Selects org2
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i    #Click on edit org2
     sleep    4s
-    Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div[2]/select    906    #Select from parent org dropdown.For test = 1040, dev=14449,stage=906
+    Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div[2]/select    14449    #Select from parent org dropdown.For test = 1040, dev=14449,stage=906
     sleep    4s
     click element    xpath=/html/body/main/section/section/form/header/button[1]/i    #click save
     Page should contain    text=Komal test organistaion
@@ -717,12 +717,12 @@ Dev_TC53_ViewerRole
     ...
     ...    Viewer cant see Transfers, Alerts, Processes etc
     Open Browser    ${login.url}    chrome
-    Input Text    id=email    robot@youredi.com
-    Input Password    id=password    RobotTesting@123
+    Input Text    id=email    viewerole@youredi.com
+    Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
     Sleep    12s
     Page should contain    text=Komal test organistaion
-    Page should contain    text=MainOrg    #org1 for dev, and MainOrg for stage
+    Page should contain    text=org1    #org1 for dev, and MainOrg for stage
     Click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    12s
     Page should contain    text=DemoService
