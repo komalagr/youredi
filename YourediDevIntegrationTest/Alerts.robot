@@ -5,6 +5,7 @@ Variables         DevVariablesfile.yaml
 
 Dev_TC21-Alerts_FilterByInfo
     [Documentation]    Check user can filter Alerts by Info
+    Sleep    5s   
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
@@ -96,6 +97,7 @@ Dev_TC46-Alerts_AssignToMe
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     Click Element    class=fa-bell    #Click on Alerts
+    Sleep    6s
     wait until page contains    text=No alerts found.    timeout=18s
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    4s
@@ -149,7 +151,7 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     Click Element    class=fa-bell    #Click on Alerts
-    sleep    4s
+    sleep    6s
     wait until page contains    text=No alerts found.    timeout=18s
     Select from list by value    xpath=/html/body/main/section/section/header/form/div[2]/div[2]/select    16887    # Enter into filter criteria 928 for stage , dev=16887
     Sleep    4s
