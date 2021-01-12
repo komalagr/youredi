@@ -40,7 +40,7 @@ jobs:
   - task: PublishTestResults@2
     condition: succeededOrFailed()
     inputs:
-      testResultsFiles: 'outputxunit.xml'
+      testResultsFiles: '**/outputxunit*.xml'
       testRunTitle: 'Publish test results for Python $(python.version)'
 
 
