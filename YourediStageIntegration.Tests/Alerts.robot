@@ -19,6 +19,7 @@ Dev_TC21-Alerts_FilterByInfo
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i    #click refresh
+    Sleep    11s
     Wait until page contains    text=No alerts found.    timeout=18s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
     Wait until page does not contain    text=No alerts found    timeout=18s
