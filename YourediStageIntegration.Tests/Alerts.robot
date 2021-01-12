@@ -123,7 +123,6 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     Click Element    class=fa-bell    #Click on Alerts
     sleep    11s
-    wait until page contains    text=No alerts found.    timeout=18s
     Select from list by value    xpath=/html/body/main/section/section/header/form/div[2]/div[2]/select    928    
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
