@@ -224,7 +224,7 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Should be equal as Strings    ${id}    203542    #dev=203542
     close browser
     
- Dev_TC14_Delete_Counter
+Dev_TC14_Delete_Counter
     [Documentation]    Check user can delete Counter on UI
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
@@ -261,7 +261,7 @@ Dev_TC15_Search_Counter
     Page should contain Element    class=fa-remove
     Close browser
     
- Dev_TC12_AddCrossReference_Positive
+Dev_TC12_AddCrossReference_Positive
     [Documentation]    Check user can add Cross reference key on UI
     ...
     ...    Test Data Setup
@@ -311,7 +311,7 @@ Dev_TC13_Delete_CrossReferenceKey
     close browser
  
     
-  TC43_AddParentOrg
+TC43_AddParentOrg
     [Documentation]    Check that we can set Parent organisation to an organisation..
     ...
     ...    Test data setup. We shall e using an organization present at third position
@@ -398,7 +398,7 @@ Dev_TC18_Delete Library
     Wait until page does not contain    text=Default1    timeout=18s
     close browser
     
- Dev_TC28-Logout
+Dev_TC28-Logout
     [Documentation]    Check user can logout from the application
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
@@ -414,7 +414,7 @@ Dev_TC18_Delete Library
     Wait until page contains    text=Please log in to access Youredi.    timeout=18s
     Page should contain element    xpath=//*[@id="login"]/div/div[1]/div[2]/form/div[4]/div/button/i
     
-  Dev_TC01_AddProcess
+Dev_TC01_AddProcess
     [Documentation]    Check that If Process does not exist , it should get added successfully
     ...
     ...    Test Data Setup
@@ -804,7 +804,7 @@ TC42_RestartProcesswithemptyProperty
     Wait until page contains    text=Process started successfully.
     Page should contain    text=Process started successfully.
     
-  Dev_TC53_ViewerRole
+Dev_TC53_ViewerRole
     [Documentation]    Check that user with only Viewer role can only see Account and Service Names.
     ...
     ...    Viewer cant see Transfers, Alerts, Processes etc
@@ -935,7 +935,7 @@ Dev_TC54_AdminRole
     Sleep    4s
     Page should not contain    text=Not authorized
     
- Dev_TC25-Logs-information
+Dev_TC25-Logs-information
     [Documentation]    Check user can Filter Logs by information
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
@@ -954,7 +954,7 @@ Dev_TC54_AdminRole
     page should contain    text=hii
     close browser
   
-  Dev_TC10_AddServiceParameter_Positive
+Dev_TC10_AddServiceParameter_Positive
     [Documentation]    Check user can add Service parameter on Parameter UI page
     ...
     ...
@@ -1007,7 +1007,7 @@ Dev_TC11_DeleteParameter
     Wait until page does not contain    text=1parameter    timeout=16s
     close browser
   
-  Dev_TC09_ServiceDataPage
+Dev_TC09_ServiceDataPage
     [Documentation]    Check Service data UI page
     ...
     ...
@@ -1069,7 +1069,7 @@ Dev_TC44_ServiceDataPage_Index2NotMandatory
     Wait until page contains    text=DataResult    timeout=18s
     Page should contain    text=DataResult
     
-  TC039_Transfer_FilterById
+TC039_Transfer_FilterById
     [Documentation]    Check that user can filter transactions by id
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
@@ -1089,7 +1089,7 @@ Dev_TC44_ServiceDataPage_Index2NotMandatory
     Page should not contain    text=11425361
     Page should contain    12013531
     
-  Dev_TC16_Add And Delete Extension
+Dev_TC16_Add And Delete Extension
     [Documentation]    Check user add and Delete extension if it is not associated to a process
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
