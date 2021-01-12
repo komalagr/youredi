@@ -65,31 +65,6 @@ Dev_TC35_DeleteUserFromOrganization
     Wait until page does not contain    text=Aryan    timeout=18s
     Page should not contain    text=Aryan
     
-Dev_TC21-Alerts_FilterByInfo
-    [Documentation]    Check user can filter Alerts by Info
-    ...
-    ...    Test data setup. - Need an alert with info as Info3 in Demoservice of Komal Test Organisation   
-    Open Browser    https://dev.youredi.com/    chrome
-    Sleep    11s
-    Wait until page contains element    id=email    timeout=18s
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
-    Click Element    class=fa-bell    #Click on Alerts
-    Sleep    4s
-    Input text    name=filterInfo    Info3    # Enter into filter criteria
-    Sleep    4s
-    Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i    #click refresh
-    Wait until page contains    text=No alerts found.    timeout=18s
-    Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
-    Wait until page does not contain    text=No alerts found    timeout=18s
-    Page should not contain    text=No alerts found
-    close browser
     
 Dev_TC45-Alerts_AddComment
     [Documentation]    Check user is able to add comments to alert on alert page
