@@ -22,7 +22,7 @@ Dev_TC34_AddUserToOrganization
     wait until page contains    text=Add user    timeout=18s
     Input Text    xpath=/html/body/main/section/section/section/section/div/div/div[2]/form/div/div/input    aryan@youredi.com
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div/div/span/span/button/i
-    Sleep    4s
+    Sleep    11s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div[2]/button/i
     sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
