@@ -225,7 +225,7 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Page should not contain    text=No alerts found
     ${id}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[1]
     Should be equal as Strings    ${id}    203542    #dev=203542
-    close browser
+    
     
 Dev_TC14_Delete_Counter
     [Documentation]    Check user can delete Counter on UI
@@ -262,7 +262,7 @@ Dev_TC15_Search_Counter
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i    #Click refresh
     Wait until page contains element    class=fa-remove
     Page should contain Element    class=fa-remove
-    Close browser
+    
     
 Dev_TC12_AddCrossReference_Positive
     [Documentation]    Check user can add Cross reference key on UI
@@ -954,7 +954,7 @@ Dev_TC25-Logs-information
     sleep    4s    timeout=18s
     Page should not contain    text=hello
     page should contain    text=hii
-    close browser
+    
   
 Dev_TC10_AddServiceParameter_Positive
     [Documentation]    Check user can add Service parameter on Parameter UI page
@@ -984,7 +984,7 @@ Dev_TC10_AddServiceParameter_Positive
     Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i    # click refresh
     Wait until page contains    text=1parameter    timeout=16s
     Page should contain    text=1parameter    # check that page should display new parameter added
-    close browser
+    
     
 Dev_TC11_DeleteParameter
     [Documentation]    Check user can delete service parameter
@@ -1007,7 +1007,7 @@ Dev_TC11_DeleteParameter
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # confirm deletion
     Wait until page does not contain    text=1parameter    timeout=16s
-    close browser
+    
   
 Dev_TC09_ServiceDataPage
     [Documentation]    Check Service data UI page
@@ -1032,7 +1032,7 @@ Dev_TC09_ServiceDataPage
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
-    Sleep    11s
+    Sleep    16s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    # click on Service data link
     Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    timeout=16s
     Input Text    name=itemType    Type2    # enter item type
@@ -1112,7 +1112,7 @@ Dev_TC16_Add And Delete Extension
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i    #Click delete
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
-    close browser
+   
     
 TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     [Documentation]    Check Extension cannot be deleted if referenced by another process
