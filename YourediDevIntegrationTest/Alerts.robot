@@ -4,9 +4,10 @@ Variables         DevVariablesfile.yaml
 *** Test Cases ***
 
 Dev_TC21-Alerts_FilterByInfo
-    [Documentation]    Check user can filter Alerts by Info
-    Sleep    5s   
-    Open Browser    ${login.url}    chrome
+    [Documentation]    Check user can filter Alerts by Info   
+    Open Browser    https://dev.youredi.com/    chrome
+    Sleep    11s
+    Wait until page contains element    id=email    timeout=18s
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
