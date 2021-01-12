@@ -65,7 +65,7 @@ Dev_TC35_DeleteUserFromOrganization
     Wait until page does not contain    text=Aryan    timeout=18s
     Page should not contain    text=Aryan
     
- Dev_TC21-Alerts_FilterByInfo
+Dev_TC21-Alerts_FilterByInfo
     [Documentation]    Check user can filter Alerts by Info
     Sleep    5s   
     Open Browser    ${login.url}    chrome
