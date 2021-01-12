@@ -296,6 +296,7 @@ Dev_TC12_AddCrossReference_Positive
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
+    sleep    4s
     Click Element    class=fa-table    # click on cross reference
     Wait until page contains    text=Table20    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[1]    # click on add cross reference table
@@ -321,6 +322,7 @@ Dev_TC13_Delete_CrossReferenceKey
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
+    sleep    4s
     Click Element    class=fa-table    #Click on Cross Reference
     Sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/div/button/i
@@ -446,11 +448,11 @@ Dev_TC21-Alerts_FilterByInfo
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i    #click refresh
-    Wait until page contains    text=No alerts found.    timeout=18s
+    sleep    11s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
     Wait until page does not contain    text=No alerts found    timeout=18s
     Page should not contain    text=No alerts found
-    close browser
+    
 
 Dev_TC25-Logs-information
     [Documentation]    Check user can Filter Logs by information
@@ -469,7 +471,7 @@ Dev_TC25-Logs-information
     sleep    4s    timeout=18s
     Page should not contain    text=hello
     page should contain    text=hii
-    close browser
+    
 
 Dev_TC28-Logout
     [Documentation]    Check user can logout from the application
@@ -506,7 +508,7 @@ Dev_TC34_AddUserToOrganization
     wait until page contains    text=Add user    timeout=18s
     Input Text    xpath=/html/body/main/section/section/section/section/div/div/div[2]/form/div/div/input    aryan@youredi.com
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div/div/span/span/button/i
-    Sleep    4s
+    Sleep    11s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div[2]/button/i
     sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
