@@ -25,7 +25,7 @@ Dev_TC21-Alerts_FilterByInfo
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
     Wait until page does not contain    text=No alerts found    timeout=18s
     Page should not contain    text=No alerts found
-    close browser
+    
 
 Dev_TC45-Alerts_AddComment
     [Documentation]    Check user is able to add comments to alert on alert page
