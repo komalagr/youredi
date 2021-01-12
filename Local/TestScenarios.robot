@@ -598,13 +598,13 @@ TC039_Transfer_FilterById
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[1]/p/a[2]
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
     sleep    4s
-    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    12013531
+    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    44161689
     sleep    4s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
-    Wait until page contains    text=12013531
+    Wait until page contains    text=44161689
     Page should not contain    text=11425361
-    Page should contain    12013531
+    Page should contain    44161689
 
 
 TC43_AddParentOrg
@@ -622,7 +622,7 @@ TC43_AddParentOrg
     Click Element    xpath=/html/body/main/section/section/div/div[3]/div/p/a[2]    # Selects org2
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i    #Click on edit org2
     sleep    4s
-    Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div[2]/select    14449    #Select from parent org dropdown.For test = 1040, dev=14449,stage=906
+    Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div[2]/select    906    #Select from parent org dropdown.For test = 1040, dev=14449,stage=906
     sleep    4s
     click element    xpath=/html/body/main/section/section/form/header/button[1]/i    #click save
     Page should contain    text=Komal test organistaion
@@ -711,13 +711,37 @@ Dev_TC47-Alerts_Unassign
     sleep    4s
     ${assignedto}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[6]/span    #Get value in Assigned to field
     Should be equal as Strings    ${assignedto}    Not assigned.
+    
+    
+TC21-Alerts_FilterByAssignedTo
+    [Documentation]    Check user can filter Alerts by Info
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    12s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=18s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
+    Click Element    class=fa-bell    #Click on Alerts
+    sleep    4s
+    Select from list by value    xpath=/html/body/main/section/section/header/form/div[2]/div[2]/select    928    # Enter into filter criteria 928 for stage , dev=16887
+    Sleep    4s
+    Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
+    Sleep    4s
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[3]
+    Sleep    4s
+    ${id}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[1]
+    Should be equal as Strings    ${id}    241869    #dev=203542
+    close browser
 
 Dev_TC53_ViewerRole
     [Documentation]    Check that user with only Viewer role can only see Account and Service Names.
     ...
     ...    Viewer cant see Transfers, Alerts, Processes etc
     Open Browser    ${login.url}    chrome
-    Input Text    id=email    viewerole@youredi.com
+    Input Text    id=email    robot@youredi.com
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
     Sleep    12s
