@@ -550,42 +550,6 @@ Dev_TC35_DeleteUserFromOrganization
     Page should not contain    text=Aryan
 
 
-
-TC32_AddandDeleteBinding
-    [Documentation]    Check user can add Bindings to endpoint and also user can delete bindings
-    ...
-    ...    Komal test Organisation - Demo service 5
-    ...    Counters endpoint
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    12s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[5]/div[1]/p/a[2]
-    sleep    11s
-    click element    class=fa-lightbulb-o
-    Click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
-    Sleep    12s
-    Click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
-    Sleep    11s
-    click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
-    sleep    11s
-    Input Text    name=OperationName    Binding
-    Input Text    name=HTTPMethod    GET
-    click element    xpath=//*[@id="webide"]/main/section/section/div/form/header/button/i
-    sleep    11s
-    Element should be enabled    xpath=//*[@id="webide"]/main/section/section/div/form/header/div/button/i
-    Click element    xpath=//*[@id="webide"]/main/section/section/div/form/header/div/button/i
-    sleep    6s
-    click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/span/button[1]/i
-    sleep    6s
-    click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[2]/i
-    Close browser
-
-
 TC039_Transfer_FilterById
     [Documentation]    Check that user can filter transactions by id
     Open Browser    ${login.url}    chrome
