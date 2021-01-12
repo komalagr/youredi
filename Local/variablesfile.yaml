@@ -5,9 +5,9 @@
 
 
 login:
- url: https://dev.youredi.com/
+ url: https://stage.youredi.com/
  email: komal@youredi.com
- password: RobotTesting@123
+ password: RobotTesting@456
       
          
     
