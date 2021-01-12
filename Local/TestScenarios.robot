@@ -710,7 +710,7 @@ Dev_TC53_ViewerRole
     Click Element    class=fa-sign-in
     Sleep    12s
     Page should contain    text=Komal test organistaion
-    Page should contain    text=org1    #org1 for dev, and MainOrg for stage
+    Page should contain    text=MainOrg    #org1 for dev, and MainOrg for stage
     Click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i
     Sleep    12s
     Page should contain    text=DemoService
