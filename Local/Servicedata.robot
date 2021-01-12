@@ -26,7 +26,7 @@ Dev_TC09_ServiceDataPage
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
-    Sleep    4s
+    Sleep    11s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    # click on Service data link
     Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    timeout=16s
     Input Text    name=itemType    Type2    # enter item type
@@ -56,12 +56,12 @@ Dev_TC44_ServiceDataPage_Index2NotMandatory
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    Sleep    4s
+    Sleep    6s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    #Click on service data
-    Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    timeout=16s
+    Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    timeout=30s
     Input Text    name=itemType    Type2
     Input Text    name=index1    In2
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
-    Wait until page contains    text=DataResult    timeout=18s
+    Wait until page contains    text=DataResult    timeout=30s
     Page should contain    text=DataResult
 
