@@ -39,7 +39,7 @@ Dev_TC45-Alerts_AddComment
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     Click Element    class=fa-bell    #Click on Alerts
-    wait until page contains    text=No alerts found.    timeout=18s
+    Sleep    6s
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
@@ -69,7 +69,7 @@ Dev_TC46-Alerts_AssignToMe
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     Click Element    class=fa-bell    #Click on Alerts
-    wait until page contains    text=No alerts found.    timeout=18s
+    Sleep    6s
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
@@ -97,7 +97,7 @@ Dev_TC47-Alerts_Unassign
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     Click Element    class=fa-bell    #Click on Alerts
-    wait until page contains    text=No alerts found.    timeout=18s
+    Sleep    6s
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
