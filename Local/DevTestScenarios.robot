@@ -67,8 +67,10 @@ Dev_TC35_DeleteUserFromOrganization
     
 Dev_TC21-Alerts_FilterByInfo
     [Documentation]    Check user can filter Alerts by Info
-    Sleep    5s   
+    ...
+    ...    Test data setup. - Need an alert with info as Info3 in Demoservice of Komal Test Organisation   
     Open Browser    ${login.url}    chrome
+    Sleep    4s
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
@@ -332,13 +334,12 @@ TC43_AddParentOrg
     Page should contain    text=Komal test organistaion
     
 Tc44_AddandDeleteServiceSharing
-    [Documentation]    Check user can delete Cross reference key on UI
-    [Timeout]
+    [Documentation]    Check user can add and delete service sharing
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -354,7 +355,7 @@ Tc44_AddandDeleteServiceSharing
     sleep    4s
     click element    xpath=/html/body/main/section/section/form/header/button[1]/i    #click save
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
-    Sleep    2s
+    Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[2]
     close browser
     
@@ -1030,7 +1031,7 @@ Dev_TC09_ServiceDataPage
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
-    Sleep    4s
+    Sleep    11s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    # click on Service data link
     Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    timeout=16s
     Input Text    name=itemType    Type2    # enter item type
@@ -1060,7 +1061,7 @@ Dev_TC44_ServiceDataPage_Index2NotMandatory
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    Sleep    4s
+    Sleep    11s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    #Click on service data
     Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    timeout=16s
     Input Text    name=itemType    Type2
