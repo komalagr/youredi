@@ -69,8 +69,8 @@ Dev_TC21-Alerts_FilterByInfo
     [Documentation]    Check user can filter Alerts by Info
     ...
     ...    Test data setup. - Need an alert with info as Info3 in Demoservice of Komal Test Organisation   
-    Open Browser    ${login.url}    chrome
-    Sleep    4s
+    Open Browser    https://dev.youredi.com/    chrome
+    Sleep    11s
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
@@ -1061,7 +1061,7 @@ Dev_TC44_ServiceDataPage_Index2NotMandatory
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    Sleep    11s
+    Sleep    16s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    #Click on service data
     Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    timeout=16s
     Input Text    name=itemType    Type2
