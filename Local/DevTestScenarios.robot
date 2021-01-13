@@ -983,7 +983,7 @@ Dev_TC09_ServiceDataPage
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
     Sleep    16s
-    Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    # click on Service data link
+    Click Element    class=fa-cubes    # click on Service data link
     Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    timeout=16s
     Input Text    name=itemType    Type2    # enter item type
     Input Text    name=index1    In2    # enter index1
@@ -1013,7 +1013,7 @@ Dev_TC44_ServiceDataPage_Index2NotMandatory
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
     Sleep    16s
-    Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[14]/a/i    #Click on service data
+    Click Element    class=fa-cubes    #Click on service data
     Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    timeout=16s
     Input Text    name=itemType    Type2
     Input Text    name=index1    In2
