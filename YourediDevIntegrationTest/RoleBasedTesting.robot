@@ -50,6 +50,7 @@ Dev_TC54_DesignerRole
     Page should contain    text=DemoService2
     click element    xpath=/html/body/main/section/section/div/div[1]/div[1]/p/a[2]
     Page should contain element    class=fa-dashboard    #can see Transfers
+    Wait until page contains element    class=fa-bell    timeout=30s
     Page should contain element    class=fa-bell    # can see alerts
     Page should not contain element    class=fa-edit    # cant edit organization
     Click element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[1]/div/p/a
