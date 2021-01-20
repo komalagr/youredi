@@ -254,7 +254,7 @@ Dev_TC12_AddCrossReference_Positive
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    Sleep    6s
+    Sleep    12s
     Click Element    class=fa-table    # click on cross reference
     Wait until page contains    text=Table20    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[1]    # click on add cross reference table
