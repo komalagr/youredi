@@ -12,11 +12,11 @@ Dev_TC34_AddUserToOrganization
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    15s
+    Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
-    Sleep    4s
+    Sleep    6s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/header/button[1]/i
     wait until page contains    text=Add user    timeout=18s
@@ -38,7 +38,7 @@ Dev_TC36_EditUserRoleInOrganization
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
-    Sleep    4s
+    Sleep    6s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
     sleep    4s
     Select from list by value    name=Role    Designer
@@ -56,7 +56,7 @@ Dev_TC35_DeleteUserFromOrganization
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
-    Sleep    4s
+    Sleep    6s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/div/button/i
@@ -80,7 +80,7 @@ Dev_TC45-Alerts_AddComment
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     Click Element    class=fa-bell    #Click on Alerts
-    Sleep    4s
+    Sleep    6s
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
@@ -109,7 +109,7 @@ Dev_TC45-Alerts_AddPayload
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     Click Element    class=fa-bell    #Click on Alerts
-    Sleep    4s    
+    Sleep    6s    
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
@@ -131,7 +131,7 @@ Dev_TC46-Alerts_AssignToMe
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
@@ -184,7 +184,7 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
@@ -254,10 +254,11 @@ Dev_TC12_AddCrossReference_Positive
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
+    Sleep    6s
     Click Element    class=fa-table    # click on cross reference
     Wait until page contains    text=Table20    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[1]    # click on add cross reference table
-    sleep    4s
+    sleep    8s
     Input Text    name=newTableName    Table1    # Add a table name
     click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/div/button[1]    #click add key
     Wait until page contains    text=Table20    timeout=18s
@@ -279,6 +280,7 @@ Dev_TC13_Delete_CrossReferenceKey
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
+    sleep    8s
     Click Element    class=fa-table    #Click on Cross Reference
     Sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/div/button/i
@@ -424,7 +426,7 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -601,7 +603,7 @@ Dev_TC51_Check If binding is not active process should not get executed
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -626,7 +628,7 @@ TC47_Bug 8386: Space at the end of process name should not prevent it to be dele
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=/html/body/main/section[1]/section/div/div[1]/div[2]/div[4]/div/p/a[2]    #click on demo service4
@@ -650,7 +652,7 @@ TC32_AddandDeleteBinding
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -673,7 +675,7 @@ TC32_AddandDeleteBinding
     click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/span/button[1]/i
     sleep    6s
     click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[2]/i
-    Close browser
+    
     
 TC33_PBI 8220: Web IDE: changing of Endpoint type.
     [Documentation]    Check user can edit endpoint type if it Binding is not associated to it
@@ -685,7 +687,7 @@ TC33_PBI 8220: Web IDE: changing of Endpoint type.
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -711,7 +713,7 @@ TC34_CannotChangeEndpointType_IfBindingassociated
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -730,7 +732,7 @@ TC42_RestartProcesswithemptyProperty
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -764,7 +766,7 @@ Dev_TC53_ViewerRole
     Input Text    id=email    viewerole@youredi.com
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Page should contain    text=Komal test organistaion
@@ -991,7 +993,7 @@ Dev_TC09_ServiceDataPage
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
     Wait until page contains    text=DataResult    timeout=16s
     Page should contain    text=DataResult    # Service Data - Data should fe fetched
-    close browser
+    
     
 Dev_TC44_ServiceDataPage_Index2NotMandatory
     [Documentation]    Check that index2 is not mandatory on Service data page
@@ -1007,7 +1009,7 @@ Dev_TC44_ServiceDataPage_Index2NotMandatory
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
