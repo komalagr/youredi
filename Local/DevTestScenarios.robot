@@ -79,6 +79,7 @@ Dev_TC45-Alerts_AddComment
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
+    wait until page contains element    class=fa-bell    timeout=40s
     Click Element    class=fa-bell    #Click on Alerts
     Sleep    6s
     Input text    name=filterInfo    Info3    # Enter into filter criteria
@@ -108,6 +109,7 @@ Dev_TC45-Alerts_AddPayload
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
+    wait until page contains element    class=fa-bell    timeout=40s
     Click Element    class=fa-bell    #Click on Alerts
     Sleep    6s    
     Input text    name=filterInfo    Info3    # Enter into filter criteria
@@ -136,6 +138,7 @@ Dev_TC46-Alerts_AssignToMe
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
+    wait until page contains element    class=fa-bell    timeout=40s
     Click Element    class=fa-bell    #Click on Alerts
     Sleep    6s
     Input text    name=filterInfo    Info3    # Enter into filter criteria
@@ -164,6 +167,7 @@ Dev_TC47-Alerts_Unassign
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
+    wait until page contains element    class=fa-bell    timeout=48s
     Click Element    class=fa-bell    #Click on Alerts
     Sleep    4s
     Input text    name=filterInfo    Info3    # Enter into filter criteria
@@ -184,11 +188,12 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    16s
+    Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
+    wait until page contains element    class=fa-bell    timeout=40s
     Click Element    class=fa-bell    #Click on Alerts
     sleep    6s
     Select from list by value    xpath=/html/body/main/section/section/header/form/div[2]/div[2]/select    16887    # Enter into filter criteria 928 for stage , dev=16887
@@ -214,6 +219,7 @@ Dev_TC14_Delete_Counter
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Sleep    4s
+    wait until page contains element    class=fa-calculator    timeout=48s
     Click Element    class=fa-calculator    #Click on Counters
     Wait until page contains    text=Counter3    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/table/tbody/tr/td[3]/div/button/i    #Click Delete
@@ -233,6 +239,7 @@ Dev_TC15_Search_Counter
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Sleep    4s
+    wait until page contains element    class=fa-calculator    timeout=48s
     Click Element    class=fa-calculator    # Click on counters
     Wait until page contains    text=Counter3    timeout=18s
     Input text    name=filterName    Counter3    # Enter Counter3 in Search
@@ -284,6 +291,7 @@ Dev_TC13_Delete_CrossReferenceKey
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
     sleep    8s
+    wait until page contains element    class=fa-table   timeout=48s
     Wait until page contains element    class=fa-table    timeout=30s
     Click Element    class=fa-table    #Click on Cross Reference
     Sleep    2s
@@ -328,6 +336,7 @@ Dev_TC17_Add Library
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Sleep    4s
+    wait until page contains element    class=fa-book  timeout=48s
     Click Element    class=fa-book    #Click on Library
     Sleep    4s
     Click Element    class=fa-plus    #Click on Add
@@ -350,6 +359,7 @@ Dev_TC18_Delete Library
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Sleep    4s
+    wait until page contains element    class=fa-book    timeout=48s
     Click Element    class=fa-book    #Click on Library
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i    #Click on delete
@@ -748,6 +758,7 @@ TC42_RestartProcesswithemptyProperty
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
     Sleep    4s
+    wait until page contains element    class=fa-object-group    timeout=48s
     Click Element    class=fa-object-group    #Click Processes
     Sleep    4s
     click element    xpath=/html/body/main/section/section/article/table/tbody/tr[1]/td[2]/a
@@ -777,7 +788,7 @@ Dev_TC53_ViewerRole
     Input Text    id=email    viewerole@youredi.com
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    16s
+    Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Page should contain    text=Komal test organistaion
@@ -930,12 +941,13 @@ Dev_TC10_AddServiceParameter_Positive
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    15s
+    Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Sleep    4s
+    Wait until page contains element    class=fa-cogs    timeout=46s
     Click Element    class=fa-cogs    # Click on Parameters link
     Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]    # click on Add parameter
@@ -966,6 +978,7 @@ Dev_TC11_DeleteParameter
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
     Sleep    4s
+    Wait until page contains element    class=fa-cogs    timeout=46s
     Click Element    class=fa-cogs    # click on paramters
     Sleep    6s
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i    # click on delete button
@@ -1069,6 +1082,7 @@ Dev_TC16_Add And Delete Extension
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
+    Wait until page contains element    class=fa-plug    timeout=46s
     Click Element    class=fa-plug    #Click extension
     sleep    12s
     Click Element    class=fa-plus    # Click on Add
