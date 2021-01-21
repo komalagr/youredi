@@ -1041,8 +1041,7 @@ Dev_TC44_ServiceDataPage_Index2NotMandatory
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    Sleep    16s
-    Wait until page contains element    class=fa-cubes    timeout=30s
+    Sleep    18s
     Click Element    class=fa-cubes    #Click on service data
     Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    timeout=16s
     Input Text    name=itemType    Type2
