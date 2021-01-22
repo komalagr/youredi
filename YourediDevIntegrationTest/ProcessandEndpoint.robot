@@ -27,7 +27,7 @@ Dev_TC01_AddProcess
     Wait until page contains element    class=fa-play    timeout=16s
     Page should contain element    class=fa-play    #New process page should be displayed with Start button
     close browser
-
+    
 Dev_TC02_DeleteProcess_PositiveScenario
     [Documentation]    Check that user is able to delete the process if process name entered on Delete pop up window is correct
     ...
@@ -51,7 +51,7 @@ Dev_TC02_DeleteProcess_PositiveScenario
     Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=16s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
     close browser
-
+    
 Dev_TC03_DeleteProcess_ProcessNameIncorect
     [Documentation]    Check that delete button should not be active if On delete window,process name entered is incorrect
     ...
@@ -61,7 +61,7 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -74,7 +74,7 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Sleep    6s
     Element Should Be Disabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #Check that delete button should be disabled
     close browser
-
+    
 Dev_TC04_DeleteProcess_Cancel
     [Documentation]    Check that user if User clicks on cancel button on Delete process page, then process should not get deleted
     ...
@@ -101,7 +101,7 @@ Dev_TC04_DeleteProcess_Cancel
     Sleep    10s
     Page should contain    text=${process}
     Close browser
-
+    
 Dev_TC05_DeleteEndpoint_Positive
     [Documentation]    Check that If endpoint is not assoicated to a process, then it should get deleted
     ...
@@ -123,7 +123,7 @@ Dev_TC05_DeleteEndpoint_Positive
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #confirm deletion
     Wait until page does not contain    text=1Process    timeout=16s
     close browser
-
+    
 Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     [Documentation]    Check that process should not get added if Process name or endpoint name already exist
     ...
@@ -150,7 +150,7 @@ Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     Wait until page contains    text=Error    timeout=16s
     Page should not contain element    class=fa-play    # Error message should be displayed
     close browser
-
+    
 Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     [Documentation]    Check that If endpoint is associated to a process , endpoint should not get deleted
     ...
@@ -175,7 +175,7 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Wait until page contains    text=Can't delete an endpoint that has a process attached    timeout=16s
     Page Should contain    text=Can't delete an endpoint that has a process attached    # error message should be displayed since endpoint associated to a process
     close browser
-
+    
 Dev_TC08_AddEndpoint_Positive
     [Documentation]    Check user can add endpoint if it does not already exist
     ...
@@ -201,7 +201,7 @@ Dev_TC08_AddEndpoint_Positive
     Wait until page contains    text=3Endpoint
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
     close browser
-
+    
 Dev_TC08b_DeleteEndpointforNextrun
     [Documentation]    Check that If endpoint is not assoicated to a process, then it should get deleted
     ...
@@ -225,8 +225,7 @@ Dev_TC08b_DeleteEndpointforNextrun
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #confirm deletion
     Wait until page does not contain    text=3endpoint    timeout=16s
     close browser
-
-
+    
 Dev_TC51_Check If binding is not active process should not get executed
     [Documentation]    Check if the endpoint binding is not active, process should not get executed.An error message should be displayed
     ...
@@ -239,11 +238,12 @@ Dev_TC51_Check If binding is not active process should not get executed
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select service
+    Sleep    4s
     Click element    class=fa-object-group    #Click on Processes
     sleep    4s
     click element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Select Binding process
@@ -254,8 +254,7 @@ Dev_TC51_Check If binding is not active process should not get executed
     sleep    4s
     Wait until page contains    text=Process not found using given account    timeout=18s
     Page should contain    text=Process not found using given account    #error message shouldbe present
-
-
+    
 TC47_Bug 8386: Space at the end of process name should not prevent it to be deleted.
     [Documentation]    Check that if message property is set \ with empty value , still it should be displayed in Transfer messages
     ...
@@ -265,10 +264,11 @@ TC47_Bug 8386: Space at the end of process name should not prevent it to be dele
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=/html/body/main/section[1]/section/div/div[1]/div[2]/div[4]/div/p/a[2]    #click on demo service4
+    Sleep    4s
     Click element    xpath=/html/body/aside/div[1]/ul/li[5]/a/i    #click on processes
     Wait Until Element Is Visible    class=fa-plus    timeout=16s
     Sleep    4s
@@ -279,7 +279,7 @@ TC47_Bug 8386: Space at the end of process name should not prevent it to be dele
     Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Confirm deletion
     wait until page contains element    class=fa-plus    timeout=16s
     Page should not contain    text=1Space trim Test
-
+    
 TC32_AddandDeleteBinding
     [Documentation]    Check user can add Bindings to endpoint and also user can delete bindings
     ...
@@ -289,7 +289,7 @@ TC32_AddandDeleteBinding
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
@@ -312,8 +312,8 @@ TC32_AddandDeleteBinding
     click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/span/button[1]/i
     sleep    6s
     click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[2]/i
-    Close browser
-
+    
+    
 TC33_PBI 8220: Web IDE: changing of Endpoint type.
     [Documentation]    Check user can edit endpoint type if it Binding is not associated to it
     ...
@@ -324,11 +324,12 @@ TC33_PBI 8220: Web IDE: changing of Endpoint type.
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
+    Sleep    4s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #Click endpoints
     Wait until page contains    text=Binding    timeout=16s
     click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i
@@ -339,7 +340,7 @@ TC33_PBI 8220: Web IDE: changing of Endpoint type.
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]
     Page should not contain    text=Can't change type of an endpoint that has endpoint bindings
-
+    
 TC34_CannotChangeEndpointType_IfBindingassociated
     [Documentation]    Check user cannot edit endpoint type if it Binding is associated to it
     ...
@@ -350,11 +351,12 @@ TC34_CannotChangeEndpointType_IfBindingassociated
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[4]/div[1]/p/a[2]
+    Sleep    4s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #click on endpoints
     Wait until page contains    text=1Space Trim Test    timeout=16s
     Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    1
@@ -362,19 +364,20 @@ TC34_CannotChangeEndpointType_IfBindingassociated
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
     Wait until page contains    text=Can't change type of an endpoint that has endpoint bindings
     Page should contain    text=Can't change type of an endpoint that has endpoint bindings
-
-
+    
 TC42_RestartProcesswithemptyProperty
     [Documentation]    Check that if message property is set \ with empty value , still it should be displayed in Transfer messages
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
+    Sleep    4s
+    wait until page contains element    class=fa-object-group    timeout=48s
     Click Element    class=fa-object-group    #Click Processes
     Sleep    4s
     click element    xpath=/html/body/main/section/section/article/table/tbody/tr[1]/td[2]/a
@@ -395,4 +398,3 @@ TC42_RestartProcesswithemptyProperty
     Click element    xpath=/html/body/main/section/section/div/div/div[1]/div/button[2]/i    #click start
     Wait until page contains    text=Process started successfully.
     Page should contain    text=Process started successfully.
-
