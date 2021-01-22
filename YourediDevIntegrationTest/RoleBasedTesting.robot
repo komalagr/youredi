@@ -12,7 +12,7 @@ Dev_TC53_ViewerRole
     Input Text    id=email    viewerole@youredi.com
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    12s
+    Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Page should contain    text=Komal test organistaion
@@ -33,7 +33,8 @@ Dev_TC53_ViewerRole
     Page should not contain element    class=fa-calendar
     Page should not contain element    class=fa-exclamation-cirlce
     Page should not contain element    class=fa-cubes
-
+    
+    
 Dev_TC54_DesignerRole
     [Documentation]    Check that user with only designer role can see and access Accounts, Services, transfers, endpoints, processses, alerts etc.
     ...    But since no global admin rights he cant see Admin tools
@@ -50,7 +51,6 @@ Dev_TC54_DesignerRole
     Page should contain    text=DemoService2
     click element    xpath=/html/body/main/section/section/div/div[1]/div[1]/p/a[2]
     Page should contain element    class=fa-dashboard    #can see Transfers
-    Wait until page contains element    class=fa-bell    timeout=30s
     Page should contain element    class=fa-bell    # can see alerts
     Page should not contain element    class=fa-edit    # cant edit organization
     Click element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[1]/div/p/a
@@ -84,7 +84,8 @@ Dev_TC54_DesignerRole
     Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i
     wait until page contains    text=Not authorized    timeout=18s
     Page should contain    text=Not authorized
-
+    
+    
 Dev_TC54_AdminRole
     [Documentation]    Check that user that has Admin role but does not have Global admin rights, has full rights at account and service level but does not have access to admin tools
     Open Browser    https://dev.youredi.com/    chrome
@@ -133,4 +134,3 @@ Dev_TC54_AdminRole
     Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i    # can save alert settings
     Sleep    4s
     Page should not contain    text=Not authorized
-
