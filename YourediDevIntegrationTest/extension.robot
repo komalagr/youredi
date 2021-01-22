@@ -14,6 +14,7 @@ Dev_TC16_Add And Delete Extension
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
+    Wait until page contains element    class=fa-plug    timeout=46s
     Click Element    class=fa-plug    #Click extension
     sleep    12s
     Click Element    class=fa-plus    # Click on Add
@@ -24,9 +25,8 @@ Dev_TC16_Add And Delete Extension
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i    #Click delete
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
-    close browser
-
-
+   
+    
 TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     [Documentation]    Check Extension cannot be deleted if referenced by another process
     ...
@@ -40,11 +40,12 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    15s
+    Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
+    Sleep    6s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[10]/a/i    # click on Extension link
     Wait Until page contains    text=Ext    timeout=25s
     Sleep    11s
