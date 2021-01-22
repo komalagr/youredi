@@ -32,7 +32,7 @@ Dev_TC12_AddCrossReference_Positive
     Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1122")
     Sleep    5s
     Click element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/button
-    close browser
+    
     
 Dev_TC13_Delete_CrossReferenceKey
     [Documentation]    Check user can delete Cross reference key on UI
