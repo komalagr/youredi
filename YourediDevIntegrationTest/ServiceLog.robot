@@ -20,4 +20,3 @@ Dev_TC25-Logs-information
     sleep    4s    timeout=18s
     Page should not contain    text=hello
     page should contain    text=hii
-    close browser
