@@ -15,11 +15,13 @@ Dev_TC10_AddServiceParameter_Positive
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    15s
+    Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Sleep    4s
+    Wait until page contains element    class=fa-cogs    timeout=46s
     Click Element    class=fa-cogs    # Click on Parameters link
     Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]    # click on Add parameter
@@ -32,8 +34,8 @@ Dev_TC10_AddServiceParameter_Positive
     Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i    # click refresh
     Wait until page contains    text=1parameter    timeout=16s
     Page should contain    text=1parameter    # check that page should display new parameter added
-    close browser
-
+    
+    
 Dev_TC11_DeleteParameter
     [Documentation]    Check user can delete service parameter
     ...
@@ -49,10 +51,12 @@ Dev_TC11_DeleteParameter
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
+    Sleep    4s
+    Wait until page contains element    class=fa-cogs    timeout=46s
     Click Element    class=fa-cogs    # click on paramters
     Sleep    6s
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i    # click on delete button
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # confirm deletion
     Wait until page does not contain    text=1parameter    timeout=16s
-    close browser
+    
