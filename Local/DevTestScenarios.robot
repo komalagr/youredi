@@ -624,7 +624,8 @@ Dev_TC51_Check If binding is not active process should not get executed
     Wait until page contains    text=Organizations    timeout=18s
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select service
-    Sleep    4s
+    Sleep    8s
+    Wait Until page contains Element    class=fa-object-group    timeout=40s
     Click element    class=fa-object-group    #Click on Processes
     sleep    4s
     click element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Select Binding process
@@ -650,6 +651,7 @@ TC47_Bug 8386: Space at the end of process name should not prevent it to be dele
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=/html/body/main/section[1]/section/div/div[1]/div[2]/div[4]/div/p/a[2]    #click on demo service4
     Sleep    4s
+    Wait Until page contains Element    class=fa-object-group    timeout=40s
     Click element    xpath=/html/body/aside/div[1]/ul/li[5]/a/i    #click on processes
     Wait Until Element Is Visible    class=fa-plus    timeout=16s
     Sleep    4s
@@ -739,7 +741,8 @@ TC34_CannotChangeEndpointType_IfBindingassociated
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[4]/div[1]/p/a[2]
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #click on endpoints
-    Wait until page contains    text=1Space Trim Test    timeout=16s
+    Sleep    4s
+    Wait until page contains    text=1Space Trim Test    timeout=30s
     Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    1
     sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
@@ -1010,7 +1013,7 @@ Dev_TC09_ServiceDataPage
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
-    Sleep    16s
+    Sleep    18s
     Wait until page contains element    class=fa-cubes    timeout=30s
     Click Element    class=fa-cubes    # click on Service data link
     Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    timeout=16s
