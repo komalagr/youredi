@@ -625,7 +625,7 @@ Dev_TC51_Check If binding is not active process should not get executed
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select service
     Sleep    8s
-    Wait Until page contains Element    class=fa-object-group    timeout=40s
+    Wait Until Element Is Visible    class=fa-object-group    timeout=40s
     Click element    class=fa-object-group    #Click on Processes
     sleep    4s
     click element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Select Binding process
