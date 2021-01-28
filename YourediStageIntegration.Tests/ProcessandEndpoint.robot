@@ -24,7 +24,7 @@ Dev_TC01_AddProcess
     Wait until page contains    text=Add new process    timeout=18s
     Input Text    name=processName    1Process    #Provide new process name
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    #Click Save
-    Wait until page contains element    class=fa-play    timeout=16s
+    Wait until page contains element    class=fa-play    timeout=30s
     Page should contain element    class=fa-play    #New process page should be displayed with Start button
     close browser
 
