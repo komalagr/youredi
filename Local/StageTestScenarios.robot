@@ -65,7 +65,7 @@ Dev_TC35_DeleteUserFromOrganization
     Wait until page does not contain    text=Aryan    timeout=18s
     Page should not contain    text=Aryan
     
- Dev_TC21-Alerts_FilterByInfo
+Dev_TC21-Alerts_FilterByInfo
     [Documentation]    Check user can filter Alerts by Info
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
@@ -232,7 +232,7 @@ Dev_TC15_Search_Counter
     Page should contain Element    class=fa-remove
     Close browser
     
- Dev_TC12_AddCrossReference_Positive
+Dev_TC12_AddCrossReference_Positive
     [Documentation]    Check user can add Cross reference key on UI
     ...
     ...    Test Data Setup
@@ -282,7 +282,7 @@ Dev_TC13_Delete_CrossReferenceKey
     Click element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[2]
     close browser
     
- TC43_AddParentOrg
+TC43_AddParentOrg
     [Documentation]    Check that we can set Parent organisation to an organisation..
     ...
     ...    Test data setup. We shall e using an organization present at third position
@@ -343,7 +343,7 @@ Dev_TC18_Delete Library
     Wait until page does not contain    text=Default1    timeout=18s
     close browser
   
- Dev_TC28-Logout
+Dev_TC28-Logout
     [Documentation]    Check user can logout from the application
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
@@ -359,7 +359,7 @@ Dev_TC18_Delete Library
     Wait until page contains    text=Please log in to access Youredi.    timeout=18s
     Page should contain element    xpath=//*[@id="login"]/div/div[1]/div[2]/form/div[4]/div/button/i
     
-  Dev_TC01_AddProcess
+Dev_TC01_AddProcess
     [Documentation]    Check that If Process does not exist , it should get added successfully
     ...
     ...    Test Data Setup
@@ -576,7 +576,7 @@ Dev_TC08b_DeleteEndpointforNextrun
     Wait until page does not contain    text=3endpoint    timeout=16s
     close browser
     
- Dev_TC53_ViewerRole
+Dev_TC53_ViewerRole
     [Documentation]    Check that user with only Viewer role can only see Account and Service Names.
     ...
     ...    Viewer cant see Transfers, Alerts, Processes etc
@@ -606,7 +606,7 @@ Dev_TC08b_DeleteEndpointforNextrun
     Page should not contain element    class=fa-exclamation-cirlce
     Page should not contain element    class=fa-cubes
     
- Dev_TC25-Logs-information
+Dev_TC25-Logs-information
     [Documentation]    Check user can Filter Logs by information
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
@@ -625,7 +625,7 @@ Dev_TC08b_DeleteEndpointforNextrun
     page should contain    text=hii
     close browser
     
- TC10_AddServiceParameter_Positive
+TC10_AddServiceParameter_Positive
     [Documentation]    Check user can add Service parameter on Parameter UI page
     ...
     ...
@@ -654,6 +654,7 @@ Dev_TC08b_DeleteEndpointforNextrun
     Wait until page contains    text=1parameter    timeout=16s
     Page should contain    text=1parameter    # check that page should display new parameter added
     close browser
+    
 Dev_TC11_DeleteParameter
     [Documentation]    Check user can delete service parameter
     ...
@@ -711,7 +712,7 @@ TC09_ServiceDataPage
     Wait until page contains    text=DataResult    timeout=16s
     Page should contain    text=DataResult    # Service Data - Data should fe fetched
     
- TC039_Transfer_FilterById
+TC039_Transfer_FilterById
     [Documentation]    Check that user can filter transactions by id
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
@@ -731,7 +732,8 @@ TC09_ServiceDataPage
     Page should not contain    text=11425361
     Page should contain    44483067
     
- Dev_TC16_Add And Delete Extension
+ 
+Dev_TC16_Add And Delete Extension
     [Documentation]    Check user add and Delete extension if it is not associated to a process
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
