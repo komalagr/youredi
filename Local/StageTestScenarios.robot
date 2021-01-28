@@ -785,5 +785,58 @@ Dev_TC51_Check If binding is not active process should not get executed
     sleep    4s
     Wait until page contains    text=Process not found using given account    timeout=18s
     Page should contain    text=Process not found using given account    #error message shouldbe present
+    
+TC33_PBI 8220: Web IDE: changing of Endpoint type.
+    [Documentation]    Check user can edit endpoint type if it Binding is not associated to it
+    ...
+    ...    Komal Test Organisation - Demo Service 3
+    ...    Endpoint \ with type Inbound and no binding attached to it
+    ...    Endpoint is associated to a process
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    16s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=18s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
+    Sleep    4s
+    Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #Click endpoints
+    Wait until page contains    text=Binding    timeout=16s
+    click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i
+    Sleep    4s
+    Select from List by Value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    4
+    sleep    4s
+    Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
+    Sleep    4s
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]
+    Page should not contain    text=Can't change type of an endpoint that has endpoint bindings
+    
+TC34_CannotChangeEndpointType_IfBindingassociated
+    [Documentation]    Check user cannot edit endpoint type if it Binding is associated to it
+    ...
+    ...    Test Data setup
+    ...    Komal Test Organisation - DemoService4
+    ...    EndpointB1 with Binding
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    16s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=18s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[4]/div[1]/p/a[2]
+    Sleep    4s
+    Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #click on endpoints
+    Sleep    4s
+    Wait until page contains    text=1Space Trim Test    timeout=30s
+    Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    1
+    sleep    4s
+    Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
+    Wait until page contains    text=Can't change type of an endpoint that has endpoint bindings
+    Page should contain    text=Can't change type of an endpoint that has endpoint bindings
+        
 
 
