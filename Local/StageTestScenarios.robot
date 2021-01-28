@@ -575,3 +575,182 @@ Dev_TC08b_DeleteEndpointforNextrun
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #confirm deletion
     Wait until page does not contain    text=3endpoint    timeout=16s
     close browser
+    
+ Dev_TC53_ViewerRole
+    [Documentation]    Check that user with only Viewer role can only see Account and Service Names.
+    ...
+    ...    Viewer cant see Transfers, Alerts, Processes etc
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    robot@youredi.com
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    16s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=18s
+    Page should contain    text=Komal test organistaion
+    Page should contain    text=MainOrg    #org1 for dev, and MainOrg for stage
+    Page should contain    text=DemoService
+    Page should contain    text=DemoService2
+    click element    xpath=/html/body/main/section/section/div/div[1]/div[1]/p/a[2]
+    Page should not contain element    class=fa-dashboard
+    Page should not contain element    class=fa-bell
+    Click element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[1]/div/p/a
+    Sleep    4s
+    Page should not contain element    class=fa-object-group
+    Page should not contain element    class=fa-book
+    Page should not contain element    class=fa-lightbulb-o
+    Page should not contain element    class=fa-cogs
+    Page should not contain element    class=fa-table
+    Page should not contain element    class=fa-plug
+    Page should not contain element    class=fa-calendar
+    Page should not contain element    class=fa-exclamation-cirlce
+    Page should not contain element    class=fa-cubes
+    
+ Dev_TC25-Logs-information
+    [Documentation]    Check user can Filter Logs by information
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    12s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=18s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Click Element    class=fa-info-circle
+    sleep    6s
+    Input text    name=filterInformation    hii
+    sleep    4s    timeout=18s
+    Page should not contain    text=hello
+    page should contain    text=hii
+    close browser
+    
+ TC10_AddServiceParameter_Positive
+    [Documentation]    Check user can add Service parameter on Parameter UI page
+    ...
+    ...
+    ...    Test Data Setup
+    ...    1. Need Organization -- Name : Komal test organistaion
+    ...    2. Need Service -- DemoService
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    15s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=18s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Click Element    class=fa-cogs    # Click on Parameters link
+    Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]    timeout=16s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]    # click on Add parameter
+    Sleep    4s
+    Input Text    name=ID    1parameter    # enter parameter name
+    Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1")    # set value for parameter
+    Sleep    5s
+    Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[1]/button    # click save button
+    Wait until page contains    text=1parameter    timeout=16s
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i    # click refresh
+    Wait until page contains    text=1parameter    timeout=16s
+    Page should contain    text=1parameter    # check that page should display new parameter added
+    close browser
+Dev_TC11_DeleteParameter
+    [Documentation]    Check user can delete service parameter
+    ...
+    ...    Test Data Setup
+    ...    1. Need Organization -- Name : Komal test organistaion
+    ...    2. Need Service -- DemoService
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    12s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=18s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
+    Click Element    class=fa-cogs    # click on paramters
+    Sleep    6s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i    # click on delete button
+    Sleep    4s
+    Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # confirm deletion
+    Wait until page does not contain    text=1parameter    timeout=16s
+    
+    
+TC09_ServiceDataPage
+    [Documentation]    Check Service data UI page
+    ...
+    ...
+    ...    Test Data Setup
+    ...    1. Need Organization -- Name : Komal test organistaion
+    ...    2. Need Service -- DemoService2
+    ...
+    ...    Service data should be set with following values
+    ...    ItemType2
+    ...    Index1 as In2
+    ...    Index2 as Dex2
+    ...
+    ...    Data as DataResult
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    15s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=18s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
+    Sleep    18s
+    Wait until page contains element    class=fa-cubes    timeout=30s
+    Click Element    class=fa-cubes    # click on Service data link
+    Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    timeout=16s
+    Input Text    name=itemType    Type2    # enter item type
+    Input Text    name=index1    In2    # enter index1
+    Input Text    name=index2    Dex2    # enter index2
+    Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
+    Wait until page contains    text=DataResult    timeout=16s
+    Page should contain    text=DataResult    # Service Data - Data should fe fetched
+    
+ TC039_Transfer_FilterById
+    [Documentation]    Check that user can filter transactions by id
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    15s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=18s
+    click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[1]/p/a[2]
+    click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
+    sleep    4s
+    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    44483067    #for dev - 11303940, stage=43179132
+    sleep    4s
+    click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
+    click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
+    Wait until page contains    text=44483067    timeout=18s
+    Page should not contain    text=11425361
+    Page should contain    44483067
+    
+ Dev_TC16_Add And Delete Extension
+    [Documentation]    Check user add and Delete extension if it is not associated to a process
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    12s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=18s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
+    Click Element    class=fa-plug    #Click extension
+    sleep    12s
+    Click Element    class=fa-plus    # Click on Add
+    Sleep    6s
+    Input Text    name=extension.Name    Ext2    #Enter Extension name
+    Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]    #Click save
+    sleep    18s
+    click element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i    #Click delete
+    Sleep    4s
+    Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
+    close browser
+
