@@ -257,7 +257,7 @@ Dev_TC12_AddCrossReference_Positive
     Wait until page contains    text=Table20    timeout=18s
     Sleep    2s
     Input Text    xpath=/html/body/main/section/section/section[2]/form[1]/article/div/div[1]/div/input    key1122
-    Execute javascript    _editor = document.querySelectorAll("iv.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1122")
+    Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1122")
     Sleep    5s
     Click element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/button
     
