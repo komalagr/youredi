@@ -14,6 +14,7 @@ Dev_TC16_Add And Delete Extension
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
+    Wait until page contains element    class=fa-plug    timeout=20s
     Click Element    class=fa-plug    #Click extension
     sleep    12s
     Click Element    class=fa-plus    # Click on Add
