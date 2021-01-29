@@ -15,6 +15,7 @@ Dev_TC17_Add Library
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
+    Wait until page contains element    class=fa-book    timeout=20s
     Click Element    class=fa-book    #Click on Library
     Sleep    4s
     Click Element    class=fa-plus    #Click on Add
