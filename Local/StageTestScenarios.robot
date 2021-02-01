@@ -738,31 +738,6 @@ TC039_Transfer_FilterById
     Page should not contain    text=11425361
     Page should contain    44554235
     
-TC16_Add And Delete Extension
-    [Documentation]    Check user add and Delete extension if it is not associated to a process
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    12s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
-    wait until page contains element    class=fa-plug    timeout=18s
-    Click Element    class=fa-plug    #Click extension
-    sleep    12s
-    Click Element    class=fa-plus    # Click on Add
-    Sleep    6s
-    Input Text    name=extension.Name    Ext2    #Enter Extension name
-    Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]    #Click save
-    sleep    25s
-    Wait Until Element Is Enabled    class=fa-remove    timeout=40s
-    click element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i    #Click delete
-    Sleep    4s
-    Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
-    close browser
-    
 Dev_TC51_Check If binding is not active process should not get executed
     [Documentation]    Check if the endpoint binding is not active, process should not get executed.An error message should be displayed
     ...
@@ -844,6 +819,46 @@ TC34_CannotChangeEndpointType_IfBindingassociated
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
     Wait until page contains    text=Can't change type of an endpoint that has endpoint bindings
     Page should contain    text=Can't change type of an endpoint that has endpoint bindings
+    
+TC16_Add Extension
+    [Documentation]    Check user can add extension 
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    12s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=18s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
+    wait until page contains element    class=fa-plug    timeout=18s
+    Click Element    class=fa-plug    #Click extension
+    sleep    12s
+    Click Element    class=fa-plus    # Click on Add
+    Sleep    6s
+    Input Text    name=extension.Name    Ext2    #Enter Extension name
+    Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]    #Click save
+    close browser
+    
+TC17_Delete Extension
+    [Documentation]    Check user can Delete extension if it is not associated to a process
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    12s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=18s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
+    wait until page contains element    class=fa-plug    timeout=18s
+    Click Element    class=fa-plug    #Click extension
+    sleep    12s
+    Wait Until Element Is Enabled    class=fa-remove    timeout=30s
+    click element    class=fa-remove    #Click delete
+    Sleep    4s
+    Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
+    close browser    
         
 
 
