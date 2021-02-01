@@ -11,19 +11,19 @@ Dev_TC21-Alerts_FilterByInfo
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=30s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
-    Wait until page contains element    class=fa-bell    timeout=20s
+    Wait until page contains element    class=fa-bell    timeout=30s
     Click Element    class=fa-bell    #Click on Alerts
-    Wait until page contains element    name=filterInfo    timeout=18s
+    Wait until page contains element    name=filterInfo    timeout=30s
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i    #click refresh
     Sleep    11s
-    Wait until page contains    text=No alerts found.    timeout=18s
+    Wait until page contains    text=No alerts found.    timeout=30s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
-    Wait until page does not contain    text=No alerts found    timeout=18s
+    Wait until page does not contain    text=No alerts found    timeout=30s
     Page should not contain    text=No alerts found
     
 
