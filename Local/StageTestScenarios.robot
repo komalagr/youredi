@@ -738,18 +738,18 @@ TC039_Transfer_FilterById
     Page should not contain    text=11425361
     Page should contain    44483067
     
- 
-Dev_TC16_Add And Delete Extension
+TC16_Add And Delete Extension
     [Documentation]    Check user add and Delete extension if it is not associated to a process
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
+    wait until page contains element    class=fa-plug    timeout=18s
     Click Element    class=fa-plug    #Click extension
     sleep    12s
     Click Element    class=fa-plus    # Click on Add
@@ -757,6 +757,7 @@ Dev_TC16_Add And Delete Extension
     Input Text    name=extension.Name    Ext2    #Enter Extension name
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]    #Click save
     sleep    18s
+    Wait Until Element Is Enabled    class=fa-remove    timeout=30s
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i    #Click delete
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
