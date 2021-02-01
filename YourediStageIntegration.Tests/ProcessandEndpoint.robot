@@ -18,10 +18,11 @@ Dev_TC01_AddProcess
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
+    Wait until page contains element    class=fa-object-group    timeout=30s
     Click Element    class=fa-object-group    #Click Processes
-    Wait Until Element Is Visible    class=fa-plus    timeout=16s
+    Wait Until Element Is Visible    class=fa-plus    timeout=30s
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    #Clicks Add Process button
-    Wait until page contains    text=Add new process    timeout=18s
+    Wait until page contains    text=Add new process    timeout=30s
     Input Text    name=processName    1Process    #Provide new process name
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    #Click Save
     Wait until page contains element    class=fa-play    timeout=30s
@@ -42,8 +43,9 @@ Dev_TC02_DeleteProcess_PositiveScenario
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Wait until page contains element    class=fa-object-group    timeout=30s
     Click Element    class=fa-object-group    # Clicks Processes
-    Wait until Page contains    text=1Process    timeout=16s
+    Wait until Page contains    text=1Process    timeout=30s
     ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Gets name of the process that will be deleted
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click delete
     Sleep    4s
@@ -66,8 +68,9 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
+    Wait until page contains element    class=fa-object-group    timeout=30s
     Click Element    class=fa-object-group    #Click on Processes
-    Wait until Page contains    text=2enpoint    timeout=16s
+    Wait until Page contains    text=2enpoint    timeout=30s
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click on delete button in first row
     Sleep    6s
     Input Text    xpath=//*[@id="input-8"]    8134 Bug    # enter incorrect process name in delete popup window
@@ -90,17 +93,18 @@ Dev_TC04_DeleteProcess_Cancel
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
+    Wait until page contains element    class=fa-object-group    timeout=30s
     Click Element    class=fa-object-group    # click on processes
-    Wait until Page contains    text=2enpoint    timeout=16s
+    Wait until Page contains    text=2enpoint    timeout=30s
     ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #get the process name to be deleted
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    # click delete button
     Sleep    6s
     Input Text    xpath=//*[@id="input-8"]    ${process}    # get in the process name to be deleted
-    Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=16s
+    Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=30s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[2]    # click cancel on delete pop up window
     Sleep    10s
     Page should contain    text=${process}
-    Close browser
+    
 
 Dev_TC05_DeleteEndpoint_Positive
     [Documentation]    Check that If endpoint is not assoicated to a process, then it should get deleted
@@ -116,12 +120,13 @@ Dev_TC05_DeleteEndpoint_Positive
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Wait until page contains element    class=fa-lightbulb-o    timeout=30s
     Click Element    class=fa-lightbulb-o    #Click endpoints
     Wait until page contains    text=2enpoint    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button    #click delete button
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #confirm deletion
-    Wait until page does not contain    text=1Process    timeout=16s
+    Wait until page does not contain    text=1Process    timeout=30s
     close browser
 
 Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
@@ -140,6 +145,7 @@ Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Wait until page contains element    class=fa-object-group    timeout=30s
     Click Element    class=fa-object-group    # Click on processes
     Wait until Page contains    text=2enpoint    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    # click on add process
@@ -167,6 +173,7 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Wait until page contains element    class=fa-lightbulb-o    timeout=30s
     Click Element    class=fa-lightbulb-o    # Click on Endpoints
     Wait until page contains    text=2enpoint    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button    # click on delete enpoint
@@ -192,13 +199,14 @@ Dev_TC08_AddEndpoint_Positive
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Wait until page contains element    class=fa-lightbulb-o    timeout=30s
     Click Element    class=fa-lightbulb-o    # click on endpoints
     Wait until page contains    text=2enpoint    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    # click on add endpoint
     Sleep    4s
     Input text    name=Description    3Endpoint    # enter new endpoint name
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/button    # save the endpoint
-    Wait until page contains    text=3Endpoint
+    Wait until page contains    text=3Endpoint    timeout=30s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
     close browser
 
@@ -216,8 +224,9 @@ Dev_TC08b_DeleteEndpointforNextrun
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    Wait until page contains element    class=fa-lightbulb-o    timeout=30s    
     Click Element    class=fa-lightbulb-o    #Click endpoints
-    Wait until page contains    text=2enpoint    timeout=16s
+    Wait until page contains    text=2enpoint    timeout=30s
     click element    xpath=/html/body/main/section/section/section/article/ul/li[2]/h6/i
     sleep    6s
     Click Element    xpath=/html/body/main/section/section/form/header/div/button    #click delete button
