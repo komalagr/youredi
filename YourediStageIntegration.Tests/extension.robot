@@ -22,6 +22,7 @@ Dev_TC16_Add And Delete Extension
     Input Text    name=extension.Name    Ext2    #Enter Extension name
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]    #Click save
     sleep    18s
+    Wait Until Element Is Enabled    class=fa-remove    timeout=30s
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i    #Click delete
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
