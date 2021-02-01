@@ -730,19 +730,19 @@ TC039_Transfer_FilterById
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[1]/p/a[2]
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
     sleep    4s
-    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    44483067    #for dev - 11303940, stage=43179132
+    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    44554235    #for dev - 11303940, stage=43179132
     sleep    4s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
-    Wait until page contains    text=44483067    timeout=18s
+    Wait until page contains    text=44554235    timeout=18s
     Page should not contain    text=11425361
-    Page should contain    44483067
+    Page should contain    44554235
     
 TC16_Add And Delete Extension
     [Documentation]    Check user add and Delete extension if it is not associated to a process
-    Open Browser    ${url}    chrome
-    Input Text    id=email    ${email}
-    Input Password    id=password    ${password}
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
@@ -769,7 +769,7 @@ Dev_TC51_Check If binding is not active process should not get executed
     ...
     ...    Test Data Setup
     ...    1. Need Organization Name : Komal test organistaion
-    ...    2. Need Service -- DemoService
+    ...    2. Need Service -- DemoService2
     ...    3 Process name binding whose endpoint binding is not marked active
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
@@ -790,7 +790,7 @@ Dev_TC51_Check If binding is not active process should not get executed
     Wait until page contains    text=Start process    timeout=18s
     click element    xpath=//*[@id="webide"]/main/section[1]/div[1]/div[1]/div[1]/div/button[1]/i    #click start
     sleep    4s
-    Wait until page contains    text=Process not found using given account    timeout=18s
+    Wait until page contains    text=Process not found using given account    timeout=40s
     Page should contain    text=Process not found using given account    #error message shouldbe present
     
 TC33_PBI 8220: Web IDE: changing of Endpoint type.
