@@ -26,7 +26,7 @@ Dev_TC12_AddCrossReference_Positive
     sleep    8s
     Input Text    name=newTableName    Table1    # Add a table name
     click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/div/button[1]    #click add key
-    Wait until page contains    text=Table20    timeout=18s
+    Wait until page contains    text=Table20    timeout=30s
     Sleep    2s
     Input Text    xpath=/html/body/main/section/section/section[2]/form[1]/article/div/div[1]/div/input    key1122
     Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1122")
@@ -47,7 +47,6 @@ Dev_TC13_Delete_CrossReferenceKey
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
     sleep    8s
     wait until page contains element    class=fa-table   timeout=48s
-    Wait until page contains element    class=fa-table    timeout=30s
     Click Element    class=fa-table    #Click on Cross Reference
     Sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/div/button/i
