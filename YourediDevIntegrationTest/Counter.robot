@@ -17,7 +17,7 @@ Dev_TC14_Delete_Counter
     Sleep    4s
     wait until page contains element    class=fa-calculator    timeout=48s
     Click Element    class=fa-calculator    #Click on Counters
-    Wait until page contains    text=Counter3    timeout=18s
+    Wait until page contains    text=Counter3    timeout=30s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/table/tbody/tr/td[3]/div/button/i    #Click Delete
     Sleep    2s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Click Delete on confimation
@@ -37,7 +37,7 @@ Dev_TC15_Search_Counter
     Sleep    4s
     wait until page contains element    class=fa-calculator    timeout=48s
     Click Element    class=fa-calculator    # Click on counters
-    Wait until page contains    text=Counter3    timeout=18s
+    Wait until page contains    text=Counter3    timeout=30s
     Input text    name=filterName    Counter3    # Enter Counter3 in Search
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i    #Click refresh
     Wait until page contains element    class=fa-remove
