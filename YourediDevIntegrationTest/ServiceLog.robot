@@ -17,6 +17,6 @@ Dev_TC25-Logs-information
     Click Element    class=fa-info-circle
     sleep    6s
     Input text    name=filterInformation    hii
-    sleep    4s    timeout=18s
+    sleep    4s    
     Page should not contain    text=hello
     page should contain    text=hii
