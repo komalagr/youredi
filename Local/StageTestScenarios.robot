@@ -738,35 +738,6 @@ TC039_Transfer_FilterById
     Page should not contain    text=11425361
     Page should contain    44554235
     
-Dev_TC51_Check If binding is not active process should not get executed
-    [Documentation]    Check if the endpoint binding is not active, process should not get executed.An error message should be displayed
-    ...
-    ...
-    ...    Test Data Setup
-    ...    1. Need Organization Name : Komal test organistaion
-    ...    2. Need Service -- DemoService2
-    ...    3 Process name binding whose endpoint binding is not marked active
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
-    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select service
-    Sleep    8s
-    Wait Until Element Is Visible    class=fa-object-group    timeout=40s
-    Click element    class=fa-object-group    #Click on Processes
-    sleep    4s
-    click element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Select Binding process
-    Wait Until Element Is Visible    class=fa-play    timeout=18s
-    click element    xpath=//*[@id="webide"]/main/section[1]/header/div/button/i    #click start
-    Wait until page contains    text=Start process    timeout=18s
-    click element    xpath=//*[@id="webide"]/main/section[1]/div[1]/div[1]/div[1]/div/button[1]/i    #click start
-    sleep    4s
-    Wait until page contains    text=Process not found using given account    timeout=40s
-    Page should contain    text=Process not found using given account    #error message shouldbe present
     
 TC33_PBI 8220: Web IDE: changing of Endpoint type.
     [Documentation]    Check user can edit endpoint type if it Binding is not associated to it
