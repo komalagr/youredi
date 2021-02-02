@@ -42,7 +42,7 @@ Dev_TC36_EditUserRoleInOrganization
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
     sleep    4s
     Select from list by value    name=Role    Designer
-    Wait until page contains    text=Designer
+    Wait until page contains    text=Designer    timeout=30s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
     
     
@@ -62,7 +62,7 @@ Dev_TC35_DeleteUserFromOrganization
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/div/button/i
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i
-    Wait until page does not contain    text=Aryan    timeout=18s
+    Wait until page does not contain    text=Aryan    timeout=30s
     Page should not contain    text=Aryan
     
     
@@ -292,7 +292,6 @@ Dev_TC13_Delete_CrossReferenceKey
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
     sleep    8s
     wait until page contains element    class=fa-table   timeout=48s
-    Wait until page contains element    class=fa-table    timeout=30s
     Click Element    class=fa-table    #Click on Cross Reference
     Sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/div/button/i
@@ -399,6 +398,7 @@ Dev_TC01_AddProcess
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
+    wait until page contains element    class=fa-object-group    timeout=40s
     Click Element    class=fa-object-group    #Click Processes
     Wait Until Element Is Visible    class=fa-plus    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    #Clicks Add Process button
@@ -423,6 +423,7 @@ Dev_TC02_DeleteProcess_PositiveScenario
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+     wait until page contains element    class=fa-object-group    timeout=40s
     Click Element    class=fa-object-group    # Clicks Processes
     Wait until Page contains    text=1Process    timeout=16s
     ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Gets name of the process that will be deleted
@@ -447,6 +448,7 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
+     wait until page contains element    class=fa-object-group    timeout=40s
     Click Element    class=fa-object-group    #Click on Processes
     Wait until Page contains    text=2enpoint    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click on delete button in first row
@@ -471,6 +473,7 @@ Dev_TC04_DeleteProcess_Cancel
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
+     wait until page contains element    class=fa-object-group    timeout=40s
     Click Element    class=fa-object-group    # click on processes
     Wait until Page contains    text=2enpoint    timeout=16s
     ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #get the process name to be deleted
@@ -497,6 +500,7 @@ Dev_TC05_DeleteEndpoint_Positive
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    wait until page contains element    class=fa-lightbulb-o    timeout=40s
     Click Element    class=fa-lightbulb-o    #Click endpoints
     Wait until page contains    text=2enpoint    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button    #click delete button
@@ -521,6 +525,7 @@ Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    wait until page contains element    class=fa-object-group    timeout=40s
     Click Element    class=fa-object-group    # Click on processes
     Wait until Page contains    text=2enpoint    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    # click on add process
@@ -548,12 +553,13 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    wait until page contains element    class=fa-lightbulb-o    timeout=40s
     Click Element    class=fa-lightbulb-o    # Click on Endpoints
     Wait until page contains    text=2enpoint    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button    # click on delete enpoint
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    # confirm deletion on endpoint
-    Wait until page contains    text=Can't delete an endpoint that has a process attached    timeout=16s
+    Wait until page contains    text=Can't delete an endpoint that has a process attached    timeout=30s
     Page Should contain    text=Can't delete an endpoint that has a process attached    # error message should be displayed since endpoint associated to a process
     close browser
     
@@ -573,13 +579,14 @@ Dev_TC08_AddEndpoint_Positive
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    wait until page contains element    class=fa-lightbulb-o    timeout=40s
     Click Element    class=fa-lightbulb-o    # click on endpoints
     Wait until page contains    text=2enpoint    timeout=16s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    # click on add endpoint
     Sleep    4s
     Input text    name=Description    3Endpoint    # enter new endpoint name
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/button    # save the endpoint
-    Wait until page contains    text=3Endpoint
+    Wait until page contains    text=3Endpoint    timeout=30s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
     close browser
     
@@ -597,6 +604,7 @@ Dev_TC08b_DeleteEndpointforNextrun
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    wait until page contains element    class=fa-lightbulb-o    timeout=40s
     Click Element    class=fa-lightbulb-o    #Click endpoints
     Wait until page contains    text=2enpoint    timeout=16s
     click element    xpath=/html/body/main/section/section/section/article/ul/li[2]/h6/i
@@ -678,6 +686,7 @@ TC32_AddandDeleteBinding
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[5]/div[1]/p/a[2]
     sleep    11s
+    wait until page contains element    class=fa-lightbulb-o    timeout=40s
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
     Click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
     Sleep    12s
@@ -713,6 +722,7 @@ TC33_PBI 8220: Web IDE: changing of Endpoint type.
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
     Sleep    4s
+    wait until page contains element    class=fa-lightbulb-o    timeout=40s
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #Click endpoints
     Wait until page contains    text=Binding    timeout=16s
     click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i
@@ -740,6 +750,7 @@ TC34_CannotChangeEndpointType_IfBindingassociated
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[4]/div[1]/p/a[2]
     Sleep    4s
+    wait until page contains element    class=fa-lightbulb-o    timeout=40s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #click on endpoints
     Sleep    4s
     Wait until page contains    text=1Space Trim Test    timeout=30s
@@ -848,7 +859,7 @@ Dev_TC54_DesignerRole
     Page should contain element    class=fa-cubes
     Page should not contain element    class=fa-exclamation-cirlce    # cant see admin tools
     Click element    class=fa-lightbulb-o    # click on endpoints
-    Wait until page contains    text=2enpoint    timeout=16s
+    Wait until page contains    text=2enpoint    timeout=30s
     click element    xpath=/html/body/main/section/section/section/article/ul/li[2]/h6/i
     click element    xpath=/html/body/main/section/section/form/header/div/button/i    # able to delete endpoints
     sleep    2s
@@ -861,7 +872,7 @@ Dev_TC54_DesignerRole
     Scroll element into view    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i
     Sleep    4s
     Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i
-    wait until page contains    text=Not authorized    timeout=18s
+    wait until page contains    text=Not authorized    timeout=30s
     Page should contain    text=Not authorized
     
     
@@ -922,14 +933,14 @@ Dev_TC25-Logs-information
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=30s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-info-circle
     sleep    6s
     Input text    name=filterInformation    hii
-    sleep    4s    timeout=18s
-    Page should not contain    text=hello
+    sleep    4s    
+    Page should not contain    text=hello    timeout=18s
     page should contain    text=hii
     
   
@@ -1020,7 +1031,7 @@ Dev_TC09_ServiceDataPage
     Input Text    name=itemType    Type2    # enter item type
     Input Text    name=index1    In2    # enter index1
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
-    Wait until page contains    text=DataResult    timeout=16s
+    Wait until page contains    text=DataResult    timeout=30s
     Page should contain    text=DataResult    # Service Data - Data should fe fetched
     
     
