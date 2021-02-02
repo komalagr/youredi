@@ -940,7 +940,7 @@ Dev_TC25-Logs-information
     sleep    6s
     Input text    name=filterInformation    hii
     sleep    4s    
-    Page should not contain    text=hello    timeout=18s
+    Page should not contain    text=hello 
     page should contain    text=hii
     
   
