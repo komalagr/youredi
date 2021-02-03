@@ -42,7 +42,7 @@ Dev_TC36_EditUserRoleInOrganization
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
     sleep    4s
     Select from list by value    name=Role    Designer
-    Wait until page contains    text=Designer
+    Wait until page contains    text=Designer    timeout=18s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
     Close browser
     
