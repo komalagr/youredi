@@ -63,8 +63,8 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
     Sleep    6s
-    Wait until element is visible    class=fa-plug    timeout=30s
-    Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[10]/a/i    # click on Extension link
+    Wait until page contains element    class=fa-plug    timeout=56s
+    Click Element    class=fa-plug    #Click extension
     Wait Until page contains    text=Ext    timeout=25s
     Sleep    11s
     Click element    class=fa-remove    #Click on Delete button
