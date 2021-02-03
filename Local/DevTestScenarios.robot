@@ -1098,14 +1098,14 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
-    Sleep    8s
-    Wait Until element is visible    class=fa-plug    timeout=40s
-    Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[10]/a/i    # click on Extension link
+    Sleep    12s
+    Wait until page contains element    class=fa-plug    timeout=56s
+    Click Element    class=fa-plug    #Click extension
     Wait Until page contains    text=Ext    timeout=25s
     Sleep    11s
     Click element    class=fa-remove    #Click on Delete button
     Sleep    6s
     Click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
-    Wait until page contains    text=The extension cannot be deleted as it is being used in process
+    Wait until page contains    text=The extension cannot be deleted as it is being used in process    timeout=25s
     Page should contain    text=The extension cannot be deleted as it is being used in process
     close browser
