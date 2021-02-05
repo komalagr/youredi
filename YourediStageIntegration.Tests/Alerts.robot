@@ -11,19 +11,19 @@ Dev_TC21-Alerts_FilterByInfo
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=30s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
-    Wait until page contains element    class=fa-bell    timeout=30s
+    Wait until page contains element    class=fa-bell    timeout=${login.timeout}
     Click Element    class=fa-bell    #Click on Alerts
-    Wait until page contains element    name=filterInfo    timeout=30s
+    Wait until page contains element    name=filterInfo    timeout=${login.timeout}
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i    #click refresh
     Sleep    11s
-    Wait until page contains    text=No alerts found.    timeout=30s
+    Wait until page contains    text=No alerts found.    timeout=${login.timeout}
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
-    Wait until page does not contain    text=No alerts found    timeout=30s
+    Wait until page does not contain    text=No alerts found    timeout=${login.timeout}
     Page should not contain    text=No alerts found
     
 
@@ -37,10 +37,10 @@ Dev_TC45-Alerts_AddComment
     Click Element    class=fa-sign-in
     Sleep    25s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
-    Wait until page contains element    class=fa-bell    timeout=20s
+    Wait until page contains element    class=fa-bell    timeout=${login.timeout}
     Click Element    class=fa-bell    #Click on Alerts
     Sleep    6s
     Input text    name=filterInfo    Info3    # Enter into filter criteria
@@ -48,7 +48,7 @@ Dev_TC45-Alerts_AddComment
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
     Sleep    3s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
-    Wait until page contains    text=Info3    timeout=18s
+    Wait until page contains    text=Info3    timeout=${login.timeout}
     Page should not contain    text=No alerts found
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/div/ul/li[2]/a    # click on comments
     Sleep    4s
@@ -68,10 +68,10 @@ Dev_TC46-Alerts_AssignToMe
     Click Element    class=fa-sign-in
     Sleep    20s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
-    Wait until page contains element    class=fa-bell    timeout=20s
+    Wait until page contains element    class=fa-bell    timeout=${login.timeout}
     Click Element    class=fa-bell    #Click on Alerts
     Sleep    6s
     Input text    name=filterInfo    Info3    # Enter into filter criteria
@@ -79,7 +79,7 @@ Dev_TC46-Alerts_AssignToMe
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
     Sleep    3s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
-    Wait until page contains    text=Info3    timeout=18s
+    Wait until page contains    text=Info3    timeout=${login.timeout}
     Page should not contain    text=No alerts found
     click element    xpath=/html/body/main/section/section/section/section[2]/header/div/div[2]/button[1]/i    # click on Assign to me
     sleep    4s
@@ -97,10 +97,10 @@ Dev_TC47-Alerts_Unassign
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
-    Wait until page contains element    class=fa-bell    timeout=20s
+    Wait until page contains element    class=fa-bell    timeout=${login.timeout}
     Click Element    class=fa-bell    #Click on Alerts
     Sleep    6s
     Input text    name=filterInfo    Info3    # Enter into filter criteria
@@ -108,7 +108,7 @@ Dev_TC47-Alerts_Unassign
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
     Sleep    3s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
-    Wait until page contains    text=Info3    timeout=18s
+    Wait until page contains    text=Info3    timeout=${login.timeout}
     Page should not contain    text=No alerts found
     click element    xpath=/html/body/main/section/section/section/section[2]/header/div/div[2]/button[2]/i    # click on UnAssign
     sleep    4s
@@ -123,10 +123,10 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
-    Wait until page contains element    class=fa-bell    timeout=20s
+    Wait until page contains element    class=fa-bell    timeout=${login.timeout}
     Click Element    class=fa-bell    #Click on Alerts
     sleep    11s
     Select from list by value    xpath=/html/body/main/section/section/header/form/div[2]/div[2]/select    928    
@@ -136,7 +136,7 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[3]
     Sleep    10s
     Page should not contain    text=No alerts found
-    wait until page contains    text=1category    timeout=30s
+    wait until page contains    text=1category    timeout=${login.timeout}
     ${id}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[1]
     Should be equal as Strings    ${id}    241869    
     close browser
