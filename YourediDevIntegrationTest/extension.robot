@@ -11,10 +11,10 @@ TC16_Add Extension
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
-    wait until page contains element    class=fa-plug    timeout=18s
+    wait until page contains element    class=fa-plug    timeout=${login.timeout}
     Click Element    class=fa-plug    #Click extension
     sleep    12s
     Click Element    class=fa-plus    # Click on Add
@@ -31,13 +31,13 @@ TC17_Delete Extension
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
-    wait until page contains element    class=fa-plug    timeout=18s
+    wait until page contains element    class=fa-plug    timeout=${login.timeout}
     Click Element    class=fa-plug    #Click extension
     sleep    12s
-    Wait Until Element Is Enabled    class=fa-remove    timeout=30s
+    Wait Until Element Is Enabled    class=fa-remove    timeout=${login.timeout}
     click element    class=fa-remove    #Click delete
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
@@ -59,17 +59,17 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
     Sleep    6s
-    Wait until page contains element    class=fa-plug    timeout=56s
+    Wait until page contains element    class=fa-plug    timeout=${login.timeout}
     Click Element    class=fa-plug    #Click extension
-    Wait Until page contains    text=Ext    timeout=25s
+    Wait Until page contains    text=Ext    timeout=${login.timeout}
     Sleep    11s
     Click element    class=fa-remove    #Click on Delete button
     Sleep    6s
     Click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
     Wait until page contains    text=The extension cannot be deleted as it is being used in process
-    Page should contain    text=The extension cannot be deleted as it is being used in process    timeout=25s
+    Page should contain    text=The extension cannot be deleted as it is being used in process    timeout=${login.timeout}
     close browser
