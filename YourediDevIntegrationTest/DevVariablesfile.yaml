@@ -8,3 +8,4 @@ login:
  url: '#{devurl}#'
  email: '#{devemail}#'
  password: '#{devpassword}#'
+ timeout: '#{devtimeout}#'
