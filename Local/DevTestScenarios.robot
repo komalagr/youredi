@@ -14,12 +14,12 @@ Dev_TC34_AddUserToOrganization
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
     Sleep    6s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/header/button[1]/i
-    wait until page contains    text=Add user    timeout=18s
+    wait until page contains    text=Add user    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/section/section/div/div/div[2]/form/div/div/input    aryan@youredi.com
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div/div/span/span/button/i
     Sleep    11s
@@ -36,13 +36,13 @@ Dev_TC36_EditUserRoleInOrganization
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
     Sleep    6s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
     sleep    4s
     Select from list by value    name=Role    Designer
-    Wait until page contains    text=Designer    timeout=30s
+    Wait until page contains    text=Designer    timeout=${login.timeout}
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
     
     
@@ -54,7 +54,7 @@ Dev_TC35_DeleteUserFromOrganization
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
     Sleep    6s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
@@ -62,7 +62,7 @@ Dev_TC35_DeleteUserFromOrganization
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/div/button/i
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i
-    Wait until page does not contain    text=Aryan    timeout=30s
+    Wait until page does not contain    text=Aryan    timeout=${login.timeout}
     Page should not contain    text=Aryan
     
     
@@ -76,10 +76,10 @@ Dev_TC45-Alerts_AddComment
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
-    wait until page contains element    class=fa-bell    timeout=40s
+    wait until page contains element    class=fa-bell    timeout=${login.timeout}
     Click Element    class=fa-bell    #Click on Alerts
     Sleep    6s
     Input text    name=filterInfo    Info3    # Enter into filter criteria
@@ -87,7 +87,7 @@ Dev_TC45-Alerts_AddComment
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
     Sleep    3s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
-    Wait until page contains    text=Info3    timeout=18s
+    Wait until page contains    text=Info3    timeout=${login.timeout}
     Page should not contain    text=No alerts found
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/div/ul/li[2]/a    # click on comments
     Sleep    4s
@@ -106,10 +106,10 @@ Dev_TC45-Alerts_AddPayload
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
-    wait until page contains element    class=fa-bell    timeout=40s
+    wait until page contains element    class=fa-bell    timeout=${login.timeout}
     Click Element    class=fa-bell    #Click on Alerts
     Sleep    6s    
     Input text    name=filterInfo    Info3    # Enter into filter criteria
@@ -117,7 +117,7 @@ Dev_TC45-Alerts_AddPayload
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
     Sleep    3s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
-    Wait until page contains    text=Info3    timeout=18s
+    Wait until page contains    text=Info3    timeout=${login.timeout}
     Page should not contain    text=No alerts found
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/div/ul/li[3]/a    # click on payload
     Sleep    4s
@@ -135,10 +135,10 @@ Dev_TC46-Alerts_AssignToMe
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
-    wait until page contains element    class=fa-bell    timeout=40s
+    wait until page contains element    class=fa-bell    timeout=${login.timeout}
     Click Element    class=fa-bell    #Click on Alerts
     Sleep    6s
     Input text    name=filterInfo    Info3    # Enter into filter criteria
@@ -146,7 +146,7 @@ Dev_TC46-Alerts_AssignToMe
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
     Sleep    3s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
-    Wait until page contains    text=Info3    timeout=18s
+    Wait until page contains    text=Info3    timeout=${login.timeout}
     Page should not contain    text=No alerts found
     click element    xpath=/html/body/main/section/section/section/section[2]/header/div/div[2]/button[1]/i    # click on Assign to me
     sleep    4s
@@ -164,10 +164,10 @@ Dev_TC47-Alerts_Unassign
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
-    wait until page contains element    class=fa-bell    timeout=48s
+    wait until page contains element    class=fa-bell    timeout=${login.timeout}
     Click Element    class=fa-bell    #Click on Alerts
     Sleep    4s
     Input text    name=filterInfo    Info3    # Enter into filter criteria
@@ -175,7 +175,7 @@ Dev_TC47-Alerts_Unassign
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
     Sleep    3s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
-    Wait until page contains    text=Info3    timeout=18s
+    Wait until page contains    text=Info3    timeout=${login.timeout}
     Page should not contain    text=No alerts found
     click element    xpath=/html/body/main/section/section/section/section[2]/header/div/div[2]/button[2]/i    # click on UnAssign
     sleep    4s
@@ -190,10 +190,10 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
-    wait until page contains element    class=fa-bell    timeout=40s
+    wait until page contains element    class=fa-bell    timeout=${login.timeout}
     Click Element    class=fa-bell    #Click on Alerts
     sleep    6s
     Select from list by value    xpath=/html/body/main/section/section/header/form/div[2]/div[2]/select    16887    # Enter into filter criteria 928 for stage , dev=16887
@@ -215,13 +215,13 @@ Dev_TC14_Delete_Counter
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Sleep    4s
-    wait until page contains element    class=fa-calculator    timeout=48s
+    wait until page contains element    class=fa-calculator    timeout=${login.timeout}
     Click Element    class=fa-calculator    #Click on Counters
-    Wait until page contains    text=Counter3    timeout=18s
+    Wait until page contains    text=Counter3    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/table/tbody/tr/td[3]/div/button/i    #Click Delete
     Sleep    2s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Click Delete on confimation
@@ -235,16 +235,16 @@ Dev_TC15_Search_Counter
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Sleep    4s
-    wait until page contains element    class=fa-calculator    timeout=48s
+    wait until page contains element    class=fa-calculator    timeout=${login.timeout}
     Click Element    class=fa-calculator    # Click on counters
-    Wait until page contains    text=Counter3    timeout=18s
+    Wait until page contains    text=Counter3    timeout=${login.timeout}
     Input text    name=filterName    Counter3    # Enter Counter3 in Search
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i    #Click refresh
-    Wait until page contains element    class=fa-remove
+    Wait until page contains element    class=fa-remove    timeout=${login.timeout}
     Page should contain Element    class=fa-remove
     
     
@@ -264,14 +264,14 @@ Dev_TC12_AddCrossReference_Positive
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
     Sleep    12s
-    Wait until page contains element    class=fa-table    timeout=30s
+    Wait until page contains element    class=fa-table    timeout=${login.timeout}
     Click Element    class=fa-table    # click on cross reference
-    Wait until page contains    text=Table20    timeout=18s
+    Wait until page contains    text=Table20    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[1]    # click on add cross reference table
     sleep    8s
     Input Text    name=newTableName    Table1    # Add a table name
     click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/div/button[1]    #click add key
-    Wait until page contains    text=Table20    timeout=18s
+    Wait until page contains    text=Table20    timeout=${login.timeout}
     Sleep    2s
     Input Text    xpath=/html/body/main/section/section/section[2]/form[1]/article/div/div[1]/div/input    key1122
     Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1122")
@@ -287,11 +287,11 @@ Dev_TC13_Delete_CrossReferenceKey
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
     sleep    12s
-    wait until element is visible    class=fa-table   timeout=48s
+    wait until element is visible    class=fa-table   timeout=${login.timeout}
     Click Element    class=fa-table    #Click on Cross Reference
     Sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/div/button/i
@@ -312,7 +312,7 @@ TC43_AddParentOrg
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=/html/body/main/section/section/div/div[3]/div/p/a[2]    # Selects org2
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i    #Click on edit org2
@@ -331,18 +331,18 @@ Dev_TC17_Add Library
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Sleep    4s
-    wait until page contains element    class=fa-book  timeout=48s
+    wait until page contains element    class=fa-book  timeout=${login.timeout}
     Click Element    class=fa-book    #Click on Library
     Sleep    4s
     Click Element    class=fa-plus    #Click on Add
     Wait until page contains    text=// You can define static functions and variables that will be available in all steps.    timeout=18s
     Input Text    name=Name    Default1    #Enter Library Name
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    #Click Save
-    Wait until page contains    text=Default1    timeout=18s
+    Wait until page contains    text=Default1    timeout=${login.timeout}
     Element should be Enabled    class=fa-refresh    #Click refresh
     close browser
     
@@ -354,17 +354,17 @@ Dev_TC18_Delete Library
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Sleep    4s
-    wait until page contains element    class=fa-book    timeout=48s
+    wait until page contains element    class=fa-book    timeout=${login.timeout}
     Click Element    class=fa-book    #Click on Library
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i    #Click on delete
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Confirm deletion
-    Wait until page does not contain    text=Default1    timeout=18s
+    Wait until page does not contain    text=Default1    timeout=${login.timeout}
     close browser
     
 Dev_TC28-Logout
@@ -375,12 +375,12 @@ Dev_TC28-Logout
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div/p/i
     Click element    class=fa-cog
     Click element    xpath=//*[@id="webide"]/aside/div[2]/div/a[5]/i
     Handle Alert
-    Wait until page contains    text=Please log in to access Youredi.    timeout=18s
+    Wait until page contains    text=Please log in to access Youredi.    timeout=${login.timeout}
     Page should contain element    xpath=//*[@id="login"]/div/div[1]/div[2]/form/div[4]/div/button/i
     
 Dev_TC01_AddProcess
@@ -395,17 +395,17 @@ Dev_TC01_AddProcess
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
-    wait until page contains element    class=fa-object-group    timeout=40s
+    wait until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    #Click Processes
-    Wait Until Element Is Visible    class=fa-plus    timeout=16s
+    Wait Until Element Is Visible    class=fa-plus    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    #Clicks Add Process button
-    Wait until page contains    text=Add new process    timeout=18s
+    Wait until page contains    text=Add new process    timeout=${login.timeout}
     Input Text    name=processName    1Process    #Provide new process name
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    #Click Save
-    Wait until page contains element    class=fa-play    timeout=16s
+    Wait until page contains element    class=fa-play    timeout=${login.timeout}
     Page should contain element    class=fa-play    #New process page should be displayed with Start button
     close browser
     
@@ -420,17 +420,17 @@ Dev_TC02_DeleteProcess_PositiveScenario
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-     wait until page contains element    class=fa-object-group    timeout=40s
+     wait until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    # Clicks Processes
-    Wait until Page contains    text=1Process    timeout=16s
+    Wait until Page contains    text=1Process    timeout=${login.timeout}
     ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Gets name of the process that will be deleted
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click delete
     Sleep    4s
     Input Text    xpath=//*[@id="input-8"]    ${process}    #Enter process name on delete pop up window
-    Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=16s
+    Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
     close browser
     
@@ -445,12 +445,12 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
-     wait until page contains element    class=fa-object-group    timeout=40s
+     wait until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    #Click on Processes
-    Wait until Page contains    text=2enpoint    timeout=16s
+    Wait until Page contains    text=2enpoint    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click on delete button in first row
     Sleep    6s
     Input Text    xpath=//*[@id="input-8"]    8134 Bug    # enter incorrect process name in delete popup window
@@ -470,17 +470,17 @@ Dev_TC04_DeleteProcess_Cancel
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
-     wait until page contains element    class=fa-object-group    timeout=40s
+     wait until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    # click on processes
-    Wait until Page contains    text=2enpoint    timeout=16s
+    Wait until Page contains    text=2enpoint    timeout=${login.timeout}
     ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #get the process name to be deleted
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    # click delete button
     Sleep    6s
     Input Text    xpath=//*[@id="input-8"]    ${process}    # get in the process name to be deleted
-    Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=16s
+    Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[2]    # click cancel on delete pop up window
     Sleep    10s
     Page should contain    text=${process}
@@ -497,16 +497,16 @@ Dev_TC05_DeleteEndpoint_Positive
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    wait until page contains element    class=fa-lightbulb-o    timeout=40s
+    wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    class=fa-lightbulb-o    #Click endpoints
-    Wait until page contains    text=2enpoint    timeout=16s
+    Wait until page contains    text=2enpoint    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button    #click delete button
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #confirm deletion
-    Wait until page does not contain    text=1Process    timeout=16s
+    Wait until page does not contain    text=1Process    timeout=${login.timeout}
     close browser
     
 Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
@@ -522,18 +522,18 @@ Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    wait until page contains element    class=fa-object-group    timeout=40s
+    wait until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    # Click on processes
-    Wait until Page contains    text=2enpoint    timeout=16s
+    Wait until Page contains    text=2enpoint    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/header/button[1]    # click on add process
-    Wait until page contains    text=Add new process
+    Wait until page contains    text=Add new process    timeout=${login.timeout}
     Input Text    name=processName    ProcessNew12121    # try adding adding process that already exist
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    # click save button
-    Wait until page contains    text=Error    timeout=16s
+    Wait until page contains    text=Error    timeout=${login.timeout}
     Page should not contain element    class=fa-play    # Error message should be displayed
     close browser
     
@@ -550,16 +550,16 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Click Element    class=fa-sign-in    # Login
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     wait until page contains element    class=fa-lightbulb-o    timeout=40s
     Click Element    class=fa-lightbulb-o    # Click on Endpoints
-    Wait until page contains    text=2enpoint    timeout=16s
+    Wait until page contains    text=2enpoint    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button    # click on delete enpoint
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    # confirm deletion on endpoint
-    Wait until page contains    text=Can't delete an endpoint that has a process attached    timeout=30s
+    Wait until page contains    text=Can't delete an endpoint that has a process attached    timeout=${login.timeout}
     Page Should contain    text=Can't delete an endpoint that has a process attached    # error message should be displayed since endpoint associated to a process
     close browser
     
@@ -576,17 +576,17 @@ Dev_TC08_AddEndpoint_Positive
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    wait until page contains element    class=fa-lightbulb-o    timeout=40s
+    wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    class=fa-lightbulb-o    # click on endpoints
-    Wait until page contains    text=2enpoint    timeout=16s
+    Wait until page contains    text=2enpoint    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    # click on add endpoint
     Sleep    4s
     Input text    name=Description    3Endpoint    # enter new endpoint name
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/button    # save the endpoint
-    Wait until page contains    text=3Endpoint    timeout=30s
+    Wait until page contains    text=3Endpoint    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
     close browser
     
@@ -601,18 +601,18 @@ Dev_TC08b_DeleteEndpointforNextrun
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    wait until page contains element    class=fa-lightbulb-o    timeout=40s
+    wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    class=fa-lightbulb-o    #Click endpoints
-    Wait until page contains    text=2enpoint    timeout=16s
+    Wait until page contains    text=2enpoint    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/section/article/ul/li[2]/h6/i
     sleep    6s
     Click Element    xpath=/html/body/main/section/section/form/header/div/button    #click delete button
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #confirm deletion
-    Wait until page does not contain    text=3endpoint    timeout=16s
+    Wait until page does not contain    text=3endpoint    timeout=${login.timeout}
     close browser
     
 Dev_TC51_Check If binding is not active process should not get executed
@@ -629,20 +629,20 @@ Dev_TC51_Check If binding is not active process should not get executed
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select service
     Sleep    8s
-    Wait Until Element Is Visible    class=fa-object-group    timeout=40s
+    Wait Until Element Is Visible    class=fa-object-group    timeout=${login.timeout}
     Click element    class=fa-object-group    #Click on Processes
     sleep    4s
     click element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Select Binding process
-    Wait Until Element Is Visible    class=fa-play    timeout=18s
+    Wait Until Element Is Visible    class=fa-play    timeout=${login.timeout}
     click element    xpath=//*[@id="webide"]/main/section[1]/header/div/button/i    #click start
-    Wait until page contains    text=Start process    timeout=18s
+    Wait until page contains    text=Start process    timeout=${login.timeout}
     click element    xpath=//*[@id="webide"]/main/section[1]/div[1]/div[1]/div[1]/div/button[1]/i    #click start
     sleep    4s
-    Wait until page contains    text=Process not found using given account    timeout=18s
+    Wait until page contains    text=Process not found using given account    timeout=${login.timeout}
     Page should contain    text=Process not found using given account    #error message shouldbe present
     
 TC47_Bug 8386: Space at the end of process name should not prevent it to be deleted.
@@ -656,19 +656,19 @@ TC47_Bug 8386: Space at the end of process name should not prevent it to be dele
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section[1]/section/div/div[1]/div[2]/div[4]/div/p/a[2]    #click on demo service4
     Sleep    4s
-    Wait Until page contains Element    class=fa-object-group    timeout=40s
+    Wait Until page contains Element    class=fa-object-group    timeout=${login.timeout}
     Click element    xpath=/html/body/aside/div[1]/ul/li[5]/a/i    #click on processes
-    Wait Until Element Is Visible    class=fa-plus    timeout=16s
+    Wait Until Element Is Visible    class=fa-plus    timeout=${login.timeout}
     Sleep    4s
     Click element    xpath=/html/body/main/section[1]/section/article/table/tbody/tr[1]/td[9]/div/button/i    #Click on delete
     Sleep    4s
     Input Text    xpath=/html/body/div[4]/form/div/div[2]/p[2]/input    1Space Trim Test
     sleep    4s
     Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Confirm deletion
-    wait until page contains element    class=fa-plus    timeout=16s
+    wait until page contains element    class=fa-plus    timeout=${login.timeout}
     Page should not contain    text=1Space trim Test
     
 TC32_AddandDeleteBinding
@@ -682,11 +682,11 @@ TC32_AddandDeleteBinding
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[5]/div[1]/p/a[2]
     sleep    11s
-    wait until page contains element    class=fa-lightbulb-o    timeout=40s
+    wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
     Click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
     Sleep    12s
@@ -718,13 +718,13 @@ TC33_PBI 8220: Web IDE: changing of Endpoint type.
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
     Sleep    4s
-    wait until page contains element    class=fa-lightbulb-o    timeout=40s
+    wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #Click endpoints
-    Wait until page contains    text=Binding    timeout=16s
+    Wait until page contains    text=Binding    timeout=${login.timeout}
     click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i
     Sleep    4s
     Select from List by Value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    4
@@ -746,14 +746,14 @@ TC34_CannotChangeEndpointType_IfBindingassociated
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[4]/div[1]/p/a[2]
     Sleep    4s
-    wait until page contains element    class=fa-lightbulb-o    timeout=40s
+    wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #click on endpoints
     Sleep    4s
-    Wait until page contains    text=1Space Trim Test    timeout=30s
+    Wait until page contains    text=1Space Trim Test    timeout=${login.timeout}
     Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    1
     sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
@@ -768,11 +768,11 @@ TC42_RestartProcesswithemptyProperty
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
     Sleep    4s
-    wait until page contains element    class=fa-object-group    timeout=48s
+    wait until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    #Click Processes
     Sleep    4s
     click element    xpath=/html/body/main/section/section/article/table/tbody/tr[1]/td[2]/a
@@ -788,10 +788,10 @@ TC42_RestartProcesswithemptyProperty
     Click element    xpath=/html/body/main/section/section/header/div[1]/button/i    #click transfer id
     Sleep    4s
     Click element    xpath=/html/body/main/section/section/div/div/div[1]/div/button[1]/i    #click start process
-    Wait until element is visible    class=fa-plus    timeout=18s
+    Wait until element is visible    class=fa-plus    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/div/div/div[2]/section/section[2]/section[2]/div/div/input    P1
     Click element    xpath=/html/body/main/section/section/div/div/div[1]/div/button[2]/i    #click start
-    Wait until page contains    text=Process started successfully.
+    Wait until page contains    text=Process started successfully.    timeout=${login.timeout}
     Page should contain    text=Process started successfully.
     
 Dev_TC53_ViewerRole
@@ -804,7 +804,7 @@ Dev_TC53_ViewerRole
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Page should contain    text=Komal test organistaion
     Page should contain    text=org1    #org1 for dev, and MainOrg for stage
     Page should contain    text=DemoService
@@ -859,7 +859,7 @@ Dev_TC54_DesignerRole
     Page should contain element    class=fa-cubes
     Page should not contain element    class=fa-exclamation-cirlce    # cant see admin tools
     Click element    class=fa-lightbulb-o    # click on endpoints
-    Wait until page contains    text=2enpoint    timeout=30s
+    Wait until page contains    text=2enpoint    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/section/article/ul/li[2]/h6/i
     click element    xpath=/html/body/main/section/section/form/header/div/button/i    # able to delete endpoints
     sleep    2s
@@ -872,7 +872,7 @@ Dev_TC54_DesignerRole
     Scroll element into view    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i
     Sleep    4s
     Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i
-    wait until page contains    text=Not authorized    timeout=30s
+    wait until page contains    text=Not authorized    timeout=${login.timeout}
     Page should contain    text=Not authorized
     
     
@@ -908,7 +908,7 @@ Dev_TC54_AdminRole
     Page should contain element    class=fa-cubes
     Page should not contain element    class=fa-exclamation-cirlce    # cant see admin tools
     Click element    class=fa-lightbulb-o    # click on endpoints
-    Wait until page contains    text=2enpoint    timeout=16s
+    Wait until page contains    text=2enpoint    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/section/article/ul/li[2]/h6/i
     sleep    2s
     click element    xpath=/html/body/main/section/section/form/header/div/button/i    # able to delete endpoints
@@ -933,7 +933,7 @@ Dev_TC25-Logs-information
     Click Element    class=fa-sign-in
     Sleep    12s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=30s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Click Element    class=fa-info-circle
@@ -957,22 +957,22 @@ Dev_TC10_AddServiceParameter_Positive
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Sleep    4s
-    Wait until page contains element    class=fa-cogs    timeout=46s
+    Wait until page contains element    class=fa-cogs    timeout=${login.timeout}
     Click Element    class=fa-cogs    # Click on Parameters link
-    Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]    timeout=16s
+    Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]    # click on Add parameter
     Sleep    4s
     Input Text    name=ID    1parameter    # enter parameter name
     Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1")    # set value for parameter
     Sleep    5s
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[1]/button    # click save button
-    Wait until page contains    text=1parameter    timeout=16s
+    Wait until page contains    text=1parameter    timeout=${login.timeout}
     Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i    # click refresh
-    Wait until page contains    text=1parameter    timeout=16s
+    Wait until page contains    text=1parameter    timeout=${login.timeout}
     Page should contain    text=1parameter    # check that page should display new parameter added
     
     
@@ -992,13 +992,13 @@ Dev_TC11_DeleteParameter
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
     Sleep    4s
-    Wait until page contains element    class=fa-cogs    timeout=46s
+    Wait until page contains element    class=fa-cogs    timeout=${login.timeout}
     Click Element    class=fa-cogs    # click on paramters
     Sleep    6s
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i    # click on delete button
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # confirm deletion
-    Wait until page does not contain    text=1parameter    timeout=16s
+    Wait until page does not contain    text=1parameter    timeout=${login.timeout}
     
   
 Dev_TC09_ServiceDataPage
@@ -1021,17 +1021,17 @@ Dev_TC09_ServiceDataPage
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
     Sleep    18s
-    Wait until page contains element    class=fa-cubes    timeout=30s
+    Wait until page contains element    class=fa-cubes    timeout=${login.timeout}
     Click Element    class=fa-cubes    # click on Service data link
-    Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    timeout=16s
+    Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    timeout=${login.timeout}
     Input Text    name=itemType    Type2    # enter item type
     Input Text    name=index1    In2    # enter index1
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
-    Wait until page contains    text=DataResult    timeout=30s
+    Wait until page contains    text=DataResult    timeout=${login.timeout}
     Page should contain    text=DataResult    # Service Data - Data should fe fetched
     
     
@@ -1044,7 +1044,7 @@ TC039_Transfer_FilterById
     Click Element    class=fa-sign-in
     Sleep    15s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[1]/p/a[2]
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
     sleep    4s
@@ -1052,7 +1052,7 @@ TC039_Transfer_FilterById
     sleep    4s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
-    Wait until page contains    text=12219527
+    Wait until page contains    text=12219527    timeout=${login.timeout}
     Page should not contain    text=11425361
     Page should contain    12219527
     
@@ -1064,10 +1064,10 @@ Dev_TC16_Add And Delete Extension
     Click Element    class=fa-sign-in
     Sleep    16s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
-    Wait until page contains element    class=fa-plug    timeout=46s
+    Wait until page contains element    class=fa-plug    timeout=${login.timeout}
     Click Element    class=fa-plug    #Click extension
     sleep    12s
     Click Element    class=fa-plus    # Click on Add
@@ -1095,13 +1095,13 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
     Sleep    12s
-    Wait until page contains element    class=fa-plug    timeout=56s
+    Wait until page contains element    class=fa-plug    timeout=${login.timeout}
     Click Element    class=fa-plug    #Click extension
-    Wait Until page contains    text=Ext    timeout=25s
+    Wait Until page contains    text=Ext    timeout=${login.timeout}
     Sleep    11s
     Click element    class=fa-remove    #Click on Delete button
     Sleep    6s
