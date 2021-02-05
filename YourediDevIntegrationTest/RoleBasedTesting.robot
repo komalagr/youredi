@@ -14,7 +14,7 @@ Dev_TC53_ViewerRole
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Page should contain    text=Komal test organistaion
     Page should contain    text=org1    #org1 for dev, and MainOrg for stage
     Page should contain    text=DemoService
@@ -69,7 +69,7 @@ Dev_TC54_DesignerRole
     Page should contain element    class=fa-cubes
     Page should not contain element    class=fa-exclamation-cirlce    # cant see admin tools
     Click element    class=fa-lightbulb-o    # click on endpoints
-    Wait until page contains    text=2enpoint    timeout=16s
+    Wait until page contains    text=2enpoint    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/section/article/ul/li[2]/h6/i
     click element    xpath=/html/body/main/section/section/form/header/div/button/i    # able to delete endpoints
     sleep    2s
@@ -82,7 +82,7 @@ Dev_TC54_DesignerRole
     Scroll element into view    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i
     Sleep    4s
     Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i
-    wait until page contains    text=Not authorized    timeout=18s
+    wait until page contains    text=Not authorized    timeout=${login.timeout}
     Page should contain    text=Not authorized
     
     
@@ -118,7 +118,7 @@ Dev_TC54_AdminRole
     Page should contain element    class=fa-cubes
     Page should not contain element    class=fa-exclamation-cirlce    # cant see admin tools
     Click element    class=fa-lightbulb-o    # click on endpoints
-    Wait until page contains    text=2enpoint    timeout=16s
+    Wait until page contains    text=2enpoint    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/section/article/ul/li[2]/h6/i
     sleep    2s
     click element    xpath=/html/body/main/section/section/form/header/div/button/i    # able to delete endpoints
