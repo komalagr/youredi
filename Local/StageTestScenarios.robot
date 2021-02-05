@@ -253,7 +253,8 @@ Dev_TC12_AddCrossReference_Positive
     Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    sleep    11s
+    sleep    12s
+    Wait until element is visible    class=fa-table    timeout=${login.timeout}
     Click Element    class=fa-table    # click on cross reference
     Wait until page contains    text=Table20    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[1]    # click on add cross reference table
@@ -278,7 +279,8 @@ Dev_TC13_Delete_CrossReferenceKey
     Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    sleep    4s
+    sleep    12s
+    Wait until element is visible    class=fa-table    timeout=${login.timeout}
     Click Element    class=fa-table    #Click on Cross Reference
     Sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/div/button/i
