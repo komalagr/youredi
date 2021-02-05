@@ -1109,3 +1109,26 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Wait until page contains    text=The extension cannot be deleted as it is being used in process    timeout=25s
     Page should contain    text=The extension cannot be deleted as it is being used in process
     close browser
+
+
+TC20_Reset Endpoint type for next run
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    16s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=18s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
+    Sleep    4s
+    Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #Click endpoints
+    Wait until page contains    text=Binding    timeout=16s
+    click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i
+    Sleep    4s
+    Select from List by Value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    1
+    sleep    4s
+    Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
+    Sleep    4s
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]
+    Page should not contain    text=Can't change type of an endpoint that has endpoint bindings
