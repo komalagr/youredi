@@ -8,5 +8,5 @@ login:
  url: '#{url}#'
  email: '#{email}#'
  password: '#{password}#'
- 
+ timeout: '#{timeout}#'
       
