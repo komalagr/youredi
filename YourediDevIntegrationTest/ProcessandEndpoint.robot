@@ -252,7 +252,7 @@ Dev_TC51_Check If binding is not active process should not get executed
     Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select service
-    Sleep    12s
+    Sleep    15s
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click element    class=fa-object-group    #Click on Processes
     sleep    4s
