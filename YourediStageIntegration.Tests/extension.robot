@@ -21,6 +21,7 @@ TC16_Add Extension
     Sleep    6s
     Input Text    name=extension.Name    Ext2    #Enter Extension name
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]    #Click save
+    Sleep    6s
     close browser
 
 TC17_Delete Extension
