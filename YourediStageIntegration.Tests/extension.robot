@@ -22,7 +22,7 @@ TC16_Add Extension
     Input Text    name=extension.Name    Ext2    #Enter Extension name
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]    #Click save
     Sleep    6s
-    close browser
+    
 
 TC17_Delete Extension
     [Documentation]    Check user can Delete extension if it is not associated to a process
@@ -42,4 +42,4 @@ TC17_Delete Extension
     click element    class=fa-remove    #Click delete
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
-    close browser
+    Sleep    4s
