@@ -831,7 +831,7 @@ TC17_Delete Extension
     click element    class=fa-remove    #Click delete
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
-    close browser    
+    Sleep    4s   
         
 TC47_Bug 8386: Space at the end of process name should not prevent it to be deleted.
     [Documentation]    Check that if message property is set \ with empty value , still it should be displayed in Transfer messages
