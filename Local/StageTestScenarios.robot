@@ -52,7 +52,7 @@ Dev_TC35_DeleteUserFromOrganization
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
-    Sleep    20s
+    Sleep    25s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=${login.timeout}
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
@@ -415,6 +415,7 @@ Dev_TC02_DeleteProcess_PositiveScenario
     Input Text    xpath=//*[@id="input-8"]    ${process}    #Enter process name on delete pop up window
     Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
+    Sleep    4s
     
 Dev_TC03_DeleteProcess_ProcessNameIncorect
     [Documentation]    Check that delete button should not be active if On delete window,process name entered is incorrect
@@ -437,6 +438,7 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Input Text    xpath=//*[@id="input-8"]    8134 Bug    # enter incorrect process name in delete popup window
     Sleep    6s
     Element Should Be Disabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #Check that delete button should be disabled
+    Sleep    4s
  
 Dev_TC04_DeleteProcess_Cancel
     [Documentation]    Check that user if User clicks on cancel button on Delete process page, then process should not get deleted
@@ -534,7 +536,7 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    # confirm deletion on endpoint
     Wait until page contains    text=Can't delete an endpoint that has a process attached    timeout=${login.timeout}
     Page Should contain    text=Can't delete an endpoint that has a process attached    # error message should be displayed since endpoint associated to a process
-    close browser
+    
     
 Dev_TC08_AddEndpoint_Positive
     [Documentation]    Check user can add endpoint if it does not already exist
