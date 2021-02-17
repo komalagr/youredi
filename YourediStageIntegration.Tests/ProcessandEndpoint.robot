@@ -52,7 +52,7 @@ Dev_TC02_DeleteProcess_PositiveScenario
     Input Text    xpath=//*[@id="input-8"]    ${process}    #Enter process name on delete pop up window
     Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
-    close browser
+    Sleep    4s
 
 Dev_TC03_DeleteProcess_ProcessNameIncorect
     [Documentation]    Check that delete button should not be active if On delete window,process name entered is incorrect
@@ -76,7 +76,7 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Input Text    xpath=//*[@id="input-8"]    8134 Bug    # enter incorrect process name in delete popup window
     Sleep    6s
     Element Should Be Disabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #Check that delete button should be disabled
-    close browser
+    Sleep    2s
 
 Dev_TC04_DeleteProcess_Cancel
     [Documentation]    Check that user if User clicks on cancel button on Delete process page, then process should not get deleted
@@ -127,7 +127,7 @@ Dev_TC05_DeleteEndpoint_Positive
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #confirm deletion
     Wait until page does not contain    text=1Process    timeout=${login.timeout}
-    close browser
+    Sleep    4s
 
 Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     [Documentation]    Check that process should not get added if Process name or endpoint name already exist
@@ -181,7 +181,7 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    # confirm deletion on endpoint
     Wait until page contains    text=Can't delete an endpoint that has a process attached    timeout=${login.timeout}
     Page Should contain    text=Can't delete an endpoint that has a process attached    # error message should be displayed since endpoint associated to a process
-    close browser
+   
     
     
 
@@ -210,7 +210,7 @@ TC08_AddEndpoint_Positive
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/button    # save the endpoint
     Wait until page contains    text=3Endpoint    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
-    close browser
+    Sleep    4s
 
 TC08b_DeleteEndpointforNextrun
     [Documentation]    Check that If endpoint is not assoicated to a process, then it should get deleted
