@@ -26,7 +26,7 @@ Dev_TC34_AddUserToOrganization
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div[2]/button/i
     sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
-    
+    sleep    4s
     
 Dev_TC36_EditUserRoleInOrganization
     [Documentation]    Check that we can edit role for the user for organisation
@@ -44,7 +44,7 @@ Dev_TC36_EditUserRoleInOrganization
     Select from list by value    name=Role    Designer
     Wait until page contains    text=Designer    timeout=${login.timeout}
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
-    
+    sleep    4s
     
 Dev_TC35_DeleteUserFromOrganization
     [Documentation]    check that we can delete user from organisation
