@@ -21,7 +21,7 @@ Dev_TC14_Delete_Counter
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/table/tbody/tr/td[3]/div/button/i    #Click Delete
     Sleep    2s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Click Delete on confimation
-    close browser
+    sleep    4s
     
 Dev_TC15_Search_Counter
     [Documentation]    Check user can search Counter on UI
