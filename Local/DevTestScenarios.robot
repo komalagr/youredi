@@ -26,6 +26,7 @@ Dev_TC34_AddUserToOrganization
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div[2]/button/i
     sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
+    sleep    4s
     
     
 Dev_TC36_EditUserRoleInOrganization
@@ -44,7 +45,7 @@ Dev_TC36_EditUserRoleInOrganization
     Select from list by value    name=Role    Designer
     Wait until page contains    text=Designer    timeout=${login.timeout}
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
-    
+    sleep    4s
     
 Dev_TC35_DeleteUserFromOrganization
     [Documentation]    check that we can delete user from organisation
@@ -124,6 +125,7 @@ Dev_TC45-Alerts_AddPayload
     Input Text    xpath=//*[@id="webide"]/main/section/section/section/section[2]/article/div/form/div[1]/textarea    add
     Sleep    4s
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/form/div[2]/div/button[1]/i    # click on save
+    sleep    4s
     
 Dev_TC46-Alerts_AssignToMe
     [Documentation]    Check user is able to assign the alert to himself/herself
@@ -225,7 +227,7 @@ Dev_TC14_Delete_Counter
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/table/tbody/tr/td[3]/div/button/i    #Click Delete
     Sleep    2s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Click Delete on confimation
-    close browser
+    sleep    4s
     
 Dev_TC15_Search_Counter
     [Documentation]    Check user can search Counter on UI
@@ -263,7 +265,7 @@ Dev_TC12_AddCrossReference_Positive
     Wait until page contains    text=Organizations    timeout=18s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    Sleep    12s
+    Sleep    20s
     Wait until page contains element    class=fa-table    timeout=${login.timeout}
     Click Element    class=fa-table    # click on cross reference
     Wait until page contains    text=Table20    timeout=${login.timeout}
@@ -277,7 +279,7 @@ Dev_TC12_AddCrossReference_Positive
     Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1122")
     Sleep    5s
     Click element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/button
-    close browser
+    sleep    4s
     
 Dev_TC13_Delete_CrossReferenceKey
     [Documentation]    Check user can delete Cross reference key on UI
@@ -290,7 +292,7 @@ Dev_TC13_Delete_CrossReferenceKey
     Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]
-    sleep    12s
+    sleep    20s
     wait until element is visible    class=fa-table   timeout=${login.timeout}
     Click Element    class=fa-table    #Click on Cross Reference
     Sleep    2s
@@ -299,7 +301,7 @@ Dev_TC13_Delete_CrossReferenceKey
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
     Sleep    2s
     Click element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[2]
-    close browser
+    sleep    4s
  
     
 TC43_AddParentOrg
@@ -344,7 +346,7 @@ Dev_TC17_Add Library
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    #Click Save
     Wait until page contains    text=Default1    timeout=${login.timeout}
     Element should be Enabled    class=fa-refresh    #Click refresh
-    close browser
+    sleep    4s
     
 Dev_TC18_Delete Library
     [Documentation]    Check user can delete library
@@ -365,7 +367,7 @@ Dev_TC18_Delete Library
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Confirm deletion
     Wait until page does not contain    text=Default1    timeout=${login.timeout}
-    close browser
+    
     
 Dev_TC28-Logout
     [Documentation]    Check user can logout from the application
@@ -407,7 +409,7 @@ Dev_TC01_AddProcess
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    #Click Save
     Wait until page contains element    class=fa-play    timeout=${login.timeout}
     Page should contain element    class=fa-play    #New process page should be displayed with Start button
-    close browser
+    
     
 Dev_TC02_DeleteProcess_PositiveScenario
     [Documentation]    Check that user is able to delete the process if process name entered on Delete pop up window is correct
@@ -432,7 +434,7 @@ Dev_TC02_DeleteProcess_PositiveScenario
     Input Text    xpath=//*[@id="input-8"]    ${process}    #Enter process name on delete pop up window
     Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
-    close browser
+    sleep    4s
     
 Dev_TC03_DeleteProcess_ProcessNameIncorect
     [Documentation]    Check that delete button should not be active if On delete window,process name entered is incorrect
@@ -456,7 +458,7 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Input Text    xpath=//*[@id="input-8"]    8134 Bug    # enter incorrect process name in delete popup window
     Sleep    6s
     Element Should Be Disabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #Check that delete button should be disabled
-    close browser
+    
     
 Dev_TC04_DeleteProcess_Cancel
     [Documentation]    Check that user if User clicks on cancel button on Delete process page, then process should not get deleted
@@ -484,7 +486,7 @@ Dev_TC04_DeleteProcess_Cancel
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[2]    # click cancel on delete pop up window
     Sleep    10s
     Page should contain    text=${process}
-    Close browser
+    
     
 Dev_TC05_DeleteEndpoint_Positive
     [Documentation]    Check that If endpoint is not assoicated to a process, then it should get deleted
@@ -507,7 +509,7 @@ Dev_TC05_DeleteEndpoint_Positive
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #confirm deletion
     Wait until page does not contain    text=1Process    timeout=${login.timeout}
-    close browser
+    
     
 Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     [Documentation]    Check that process should not get added if Process name or endpoint name already exist
@@ -535,7 +537,7 @@ Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    # click save button
     Wait until page contains    text=Error    timeout=${login.timeout}
     Page should not contain element    class=fa-play    # Error message should be displayed
-    close browser
+    
     
 Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     [Documentation]    Check that If endpoint is associated to a process , endpoint should not get deleted
@@ -561,7 +563,7 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    # confirm deletion on endpoint
     Wait until page contains    text=Can't delete an endpoint that has a process attached    timeout=${login.timeout}
     Page Should contain    text=Can't delete an endpoint that has a process attached    # error message should be displayed since endpoint associated to a process
-    close browser
+    
     
 Dev_TC08_AddEndpoint_Positive
     [Documentation]    Check user can add endpoint if it does not already exist
@@ -588,7 +590,7 @@ Dev_TC08_AddEndpoint_Positive
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/button    # save the endpoint
     Wait until page contains    text=3Endpoint    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
-    close browser
+    sleep    4s
     
 Dev_TC08b_DeleteEndpointforNextrun
     [Documentation]    Check that If endpoint is not assoicated to a process, then it should get deleted
@@ -613,7 +615,7 @@ Dev_TC08b_DeleteEndpointforNextrun
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #confirm deletion
     Wait until page does not contain    text=3endpoint    timeout=${login.timeout}
-    close browser
+    
     
 Dev_TC51_Check If binding is not active process should not get executed
     [Documentation]    Check if the endpoint binding is not active, process should not get executed.An error message should be displayed
@@ -704,7 +706,7 @@ TC32_AddandDeleteBinding
     click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/span/button[1]/i
     sleep    6s
     click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[2]/i
-    
+    sleep    4s
     
 TC33_PBI 8220: Web IDE: changing of Endpoint type.
     [Documentation]    Check user can edit endpoint type if it Binding is not associated to it
@@ -1048,13 +1050,13 @@ TC039_Transfer_FilterById
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[1]/p/a[2]
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
     sleep    4s
-    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    12219527    #for dev - 11303940, stage=43179132
+    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    12325597    #for dev - 11303940, stage=43179132
     sleep    4s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
-    Wait until page contains    text=12219527    timeout=${login.timeout}
+    Wait until page contains    text=12325597    timeout=${login.timeout}
     Page should not contain    text=11425361
-    Page should contain    12219527
+    Page should contain    12325597
     
 Dev_TC16_Add And Delete Extension
     [Documentation]    Check user add and Delete extension if it is not associated to a process
@@ -1078,7 +1080,7 @@ Dev_TC16_Add And Delete Extension
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button/i    #Click delete
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
-   
+    sleep    4s
     
 TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     [Documentation]    Check Extension cannot be deleted if referenced by another process
@@ -1108,7 +1110,7 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
     Wait until page contains    text=The extension cannot be deleted as it is being used in process    timeout=25s
     Page should contain    text=The extension cannot be deleted as it is being used in process
-    close browser
+   
 
 
 TC20_Reset Endpoint type for next run
