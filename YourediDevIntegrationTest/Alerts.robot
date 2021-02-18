@@ -62,6 +62,7 @@ Dev_TC45-Alerts_AddPayload
     Input Text    xpath=//*[@id="webide"]/main/section/section/section/section[2]/article/div/form/div[1]/textarea    add
     Sleep    4s
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/form/div[2]/div/button[1]/i    # click on save
+    sleep    4s
     
 Dev_TC46-Alerts_AssignToMe
     [Documentation]    Check user is able to assign the alert to himself/herself
