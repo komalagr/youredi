@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Variables         DevVariablesfile.yaml
+Variables         variablesfile.yaml
 *** Test Cases ***
 
 TC09_ServiceDataPage
