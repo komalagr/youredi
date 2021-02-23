@@ -9,7 +9,7 @@ jobs:
   timeoutInMinutes: 180
           
   pool:
-    vmImage: 'windows-2019' 
+    name: Pipelines-SelfHostedAgent
   strategy:
     matrix:
       Python37:
