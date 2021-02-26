@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Variables         variablesfile.yaml
+Variables         variables.yaml
 *** Test Cases ***
 
 Dev_TC28-Logout
