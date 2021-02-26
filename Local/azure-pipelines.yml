@@ -9,7 +9,7 @@ jobs:
   timeoutInMinutes: 180
           
   pool:
-    name: Pipelines-SelfHostedAgent
+    vmImage: 'windows-2019'
   strategy:
     matrix:
       Python37:
@@ -31,7 +31,7 @@ jobs:
   - script: |
       pip install pytest pytest-azurepipelines
       pytest
-      robot --pythonpath . -x outputxunit.xml Servicedata.robot
+      robot --pythonpath . -x outputxunit.xml StageTestScenarios.robot
     displayName: 'Run Robot Scripts'
     workingDirectory: Local
     
