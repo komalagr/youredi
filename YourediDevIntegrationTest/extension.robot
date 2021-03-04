@@ -70,6 +70,6 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Click element    class=fa-remove    #Click on Delete button
     Sleep    6s
     Click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
-    Wait until page contains    text=The extension cannot be deleted as it is being used in process
-    Page should contain    text=The extension cannot be deleted as it is being used in process    timeout=${login.timeout}
+    Wait until page contains    text=The extension cannot be deleted as it is being used in process    timeout=${login.timeout}
+    Page should contain    text=The extension cannot be deleted as it is being used in process    
     close browser
