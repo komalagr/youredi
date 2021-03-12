@@ -52,7 +52,7 @@ Dev_TC45-Alerts_AddComment
     Page should not contain    text=No alerts found
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/div/ul/li[2]/a    # click on comments
     Sleep    4s
-    Input Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/form/div[1]/input    TestCommentAdding
+    Input Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/form/div[1]/input    a
     Sleep    4s
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/section/form/div[2]/button/i    # click on add
     Page should contain    text=TestCommentAdding
