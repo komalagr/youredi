@@ -4,11 +4,10 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 
+
 login:
- url: https://stage.youredi.com/
- email: komal@youredi.com
- password: RobotTesting@456
- timeout: 60s
+ url: '#{url}#'
+ email: '#{email}#'
+ password: '#{password}#'
+ timeout: '#{timeout}#'
       
-         
-    
