@@ -885,5 +885,31 @@ TC20
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]
     Page should not contain    text=Can't change type of an endpoint that has endpoint bindings
+    
+    T40_Add Comments to SubOrg Alerts
+    Open Browser    ${url}    chrome
+    Input Text    id=email    ${email}
+    Input Password    id=password    ${password}
+    Click element    class=fa-sign-in
+    Sleep    8s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=18s
+    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    # Selects Organization
+    click element    xpath=/html/body/main/section/section/div/div[4]/div/p/a[2]
+    sleep    4s
+    click element    class=fa-bell
+    sleep    4s
+    Select from list by value    xpath=/html/body/main/section/section/header/form/div[1]/div[1]/select    370
+    Sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div[4]/button    #click refresh
+    Sleep    8s
+    Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/article/ul/li[2]
+    Sleep    8s
+    Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/div/ul/li[2]/a    #click on comments
+    sleep    5s
+    Input Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/form/div[1]/input    Added Comments
+    Click element    class=fa-plus
+    Sleep    4s
+    Page should not contain    text=404 error
 
 
