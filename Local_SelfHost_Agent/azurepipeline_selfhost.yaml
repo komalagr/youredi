@@ -49,5 +49,5 @@ jobs:
       Contents: |
        a*
        b*
-       **/s/Local_SelfHost_Agent*
+       s*
       RemoveSourceFolder: true
