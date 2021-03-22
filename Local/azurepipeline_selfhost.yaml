@@ -16,12 +16,25 @@ jobs:
         python.version: '3.7'
 
   steps:
+  - task: replacetokens@3
+    inputs:
+      rootDirectory: 'LocaL'
+      targetFiles: 'variablesfile.yaml'
+      encoding: 'auto'
+      writeBOM: true
+      actionOnMissing: 'warn'
+      keepToken: false
+      tokenPrefix: '#{'
+      tokenSuffix: '}#'
+      useLegacyPattern: false
+      enableTransforms: false
+      enableTelemetry: true
+
   - task: UsePythonVersion@0
     inputs:
       versionSpec: '$(python.version)'
     displayName: 'Use Python $(python.version)'
   
-
   - script: |
       pip install robotframework robotframework-seleniumlibrary webdrivermanager 
   
@@ -34,8 +47,6 @@ jobs:
     displayName: 'Run Robot Scripts'
     workingDirectory: Local
     
-  
-  
   - task: PublishTestResults@2
     condition: succeededOrFailed()
     inputs:
