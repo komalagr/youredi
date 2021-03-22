@@ -886,7 +886,7 @@ TC20
     Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]
     Page should not contain    text=Can't change type of an endpoint that has endpoint bindings
     
-    T40_Add Comments to SubOrg Alerts
+T40_Add Comments to SubOrg Alerts
     Open Browser    ${url}    chrome
     Input Text    id=email    ${email}
     Input Password    id=password    ${password}
@@ -911,5 +911,36 @@ TC20
     Click element    class=fa-plus
     Sleep    4s
     Page should not contain    text=404 error
+    
+    
+TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
+    [Documentation]    Check Extension cannot be deleted if referenced by another process
+    ...
+    ...
+    ...    Test Data Setup
+    ...    1. Need Organization -- Name : Komal test organistaion
+    ...    2. Need Service -- DemoService2
+    ...
+    ...    Extension should be added and it should be referenced by some process in the service
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
+    Sleep    12s
+    Wait until page contains element    class=fa-plug    timeout=${login.timeout}
+    Click Element    class=fa-plug    #Click extension
+    Wait Until page contains    text=Ext    timeout=${login.timeout}
+    Sleep    11s
+    Click element    class=fa-remove    #Click on Delete button
+    Sleep    6s
+    Click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
+    Wait until page contains    text=The extension cannot be deleted as it is being used in process    timeout=${login.timeout}
+    Page should contain    text=The extension cannot be deleted as it is being used in process
+   
 
 
