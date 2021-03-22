@@ -887,13 +887,13 @@ TC20
     Page should not contain    text=Can't change type of an endpoint that has endpoint bindings
     
 T40_Add Comments to SubOrg Alerts
-    Open Browser    ${url}    chrome
-    Input Text    id=email    ${email}
-    Input Password    id=password    ${password}
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
     Click element    class=fa-sign-in
     Sleep    8s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    # Selects Organization
     click element    xpath=/html/body/main/section/section/div/div[4]/div/p/a[2]
     sleep    4s
