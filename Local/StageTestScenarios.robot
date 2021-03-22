@@ -199,7 +199,7 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Wait until page contains    text=1category    timeout=${login.timeout}
     ${id}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[1]
     Should be equal as Strings    ${id}    241869    
-    close browser
+    
     
 Dev_TC14_Delete_Counter
     [Documentation]    Check user can delete Counter on UI
@@ -236,7 +236,7 @@ Dev_TC15_Search_Counter
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i    #Click refresh
     Wait until page contains element    class=fa-remove
     Page should contain Element    class=fa-remove
-    Close browser
+    
     
 Dev_TC12_AddCrossReference_Positive
     [Documentation]    Check user can add Cross reference key on UI
@@ -332,7 +332,7 @@ Dev_TC17_Add Library
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    #Click Save
     Wait until page contains    text=Default1    timeout=${login.timeout}
     Element should be Enabled    class=fa-refresh    #Click refresh
-    close browser
+   
     
 Dev_TC18_Delete Library
     [Documentation]    Check user can delete library
@@ -351,7 +351,7 @@ Dev_TC18_Delete Library
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Confirm deletion
     Wait until page does not contain    text=Default1    timeout=${login.timeout}
-    close browser
+    
   
 Dev_TC28-Logout
     [Documentation]    Check user can logout from the application
@@ -562,7 +562,7 @@ Dev_TC08_AddEndpoint_Positive
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/button    # save the endpoint
     Wait until page contains    text=3Endpoint    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
-    close browser
+   
     
 Dev_TC08b_DeleteEndpointforNextrun
     [Documentation]    Check that If endpoint is not assoicated to a process, then it should get deleted
@@ -666,7 +666,7 @@ TC10_AddServiceParameter_Positive
     Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i    # click refresh
     Wait until page contains    text=1parameter    timeout=${login.timeout}
     Page should contain    text=1parameter    # check that page should display new parameter added
-    close browser
+    
     
 Dev_TC11_DeleteParameter
     [Documentation]    Check user can delete service parameter
@@ -720,7 +720,6 @@ TC09_ServiceDataPage
     Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    timeout=${login.timeout}
     Input Text    name=itemType    Type2    # enter item type
     Input Text    name=index1    In2    # enter index1
-    Input Text    name=index2    Dex2    # enter index2
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
     Wait until page contains    text=DataResult    timeout=${login.timeout}
     Page should contain    text=DataResult    # Service Data - Data should fe fetched
@@ -1040,7 +1039,7 @@ Dev_TC54_AdminRole
     Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i    # can save alert settings
     Sleep    4s
     Page should not contain    text=Not authorized
-
+    close browser
    
 
 
