@@ -41,3 +41,13 @@ jobs:
     inputs:
       testResultsFiles: '**/outputxunit*.xml'
       testRunTitle: 'Publish test results for Python $(python.version)'
+
+  - task: DeleteFiles@1
+    displayName: 'Delete files from agent build directory'
+    inputs:
+      SourceFolder: '$(Agent.BuildDirectory)'
+      Contents: |
+       a*
+       b*
+       **/s/Local_SelfHost_Agent*
+      RemoveSourceFolder: true
