@@ -18,3 +18,4 @@ Dev_TC28-Logout
     Handle Alert
     Wait until page contains    text=Please log in to access Youredi.    timeout=18s
     Page should contain element    xpath=//*[@id="login"]/div/div[1]/div[2]/form/div[4]/div/button/i
+    close browser
