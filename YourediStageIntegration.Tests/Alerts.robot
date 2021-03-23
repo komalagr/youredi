@@ -168,4 +168,36 @@ T40_Add Comments to SubOrg Alerts
     Sleep    4s
     Page should not contain    text=404 error
     Close browser
+    
+    
+Dev_TC45-Alerts_AddPayload
+    [Documentation]    Check user is able to add payload to alert on alert page
+    ...
+    ...    Test data setup. - Need an alert with info as Info3 in Demoservice of Komal Test Organisation
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    16s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
+    wait until page contains element    class=fa-bell    timeout=${login.timeout}
+    Click Element    class=fa-bell    #Click on Alerts
+    Sleep    6s    
+    Input text    name=filterInfo    Info3    # Enter into filter criteria
+    Sleep    4s
+    Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
+    Sleep    3s
+    Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
+    Wait until page contains    text=Info3    timeout=${login.timeout}
+    Page should not contain    text=No alerts found
+    Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/div/ul/li[3]/a    # click on payload
+    Sleep    4s
+    Input Text    xpath=//*[@id="webide"]/main/section/section/section/section[2]/article/div/form/div[1]/textarea    add
+    Sleep    4s
+    Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/form/div[2]/div/button[1]/i    # click on save
+    sleep    4s
+    Close browser
         
