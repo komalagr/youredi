@@ -19,7 +19,7 @@ jobs:
   - task: replacetokens@3
     inputs:
       rootDirectory: 'LocaL'
-      targetFiles: 'variablesfile.yaml'
+      targetFiles: 'DevVariablesfile.yaml'
       encoding: 'auto'
       writeBOM: true
       actionOnMissing: 'warn'
@@ -43,7 +43,7 @@ jobs:
   - script: |
       pip install pytest pytest-azurepipelines
       pytest
-      robot --pythonpath . -x outputxunit.xml StageTestScenarios.robot
+      robot --pythonpath . -x outputxunit.xml DevTestScenarios.robot
     displayName: 'Run Robot Scripts'
     workingDirectory: Local
     
