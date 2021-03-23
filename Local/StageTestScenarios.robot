@@ -920,7 +920,7 @@ T40_Add Comments to SubOrg Alerts
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click element    class=fa-sign-in
-    Sleep    8s
+    Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
     Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    # Selects Organization
