@@ -27,6 +27,7 @@ Dev_TC34_AddUserToOrganization
     sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
     sleep    6s
+    Close browser
     
 Dev_TC36_EditUserRoleInOrganization
     [Documentation]    Check that we can edit role for the user for organisation
@@ -45,6 +46,7 @@ Dev_TC36_EditUserRoleInOrganization
     Wait until page contains    text=Designer    timeout=${login.timeout}
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
     sleep    4s
+    Close browser
     
 Dev_TC35_DeleteUserFromOrganization
     [Documentation]    check that we can delete user from organisation
@@ -64,6 +66,7 @@ Dev_TC35_DeleteUserFromOrganization
     Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i
     Wait until page does not contain    text=Aryan    timeout=${login.timeout}
     Page should not contain    text=Aryan
+    Close browser
     
 Dev_TC21-Alerts_FilterByInfo
     [Documentation]    Check user can filter Alerts by Info
@@ -87,6 +90,7 @@ Dev_TC21-Alerts_FilterByInfo
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
     Wait until page does not contain    text=No alerts found    timeout=${login.timeout}
     Page should not contain    text=No alerts found
+    Close browser
     
 Dev_TC45-Alerts_AddComment
     [Documentation]    Check user is able to add comments to alert on alert page
@@ -117,6 +121,7 @@ Dev_TC45-Alerts_AddComment
     Sleep    4s
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/section/form/div[2]/button/i    # click on add
     Page should contain    text=TestCommentAdding
+    Close browser
     
 Dev_TC46-Alerts_AssignToMe
     [Documentation]    Check user is able to assign the alert to himself/herself
@@ -146,6 +151,7 @@ Dev_TC46-Alerts_AssignToMe
     ${assignedto}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[6]/a    #Get value in Assigned to field
     Sleep    4s
     Should be equal as Strings    ${assignedto}    Komal Agarwal (komal@youredi.com)
+    Close browser
     
 Dev_TC47-Alerts_Unassign
     [Documentation]    Check user is able to unassign the alert
@@ -174,6 +180,7 @@ Dev_TC47-Alerts_Unassign
     sleep    4s
     ${assignedto}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[6]/span    #Get value in Assigned to field
     Should be equal as Strings    ${assignedto}    Not assigned.
+    Close browser
     
 Dev_TC21-Alerts_FilterByAssignedTo
     [Documentation]    Check user can filter Alerts by Info
@@ -199,7 +206,7 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Wait until page contains    text=1category    timeout=${login.timeout}
     ${id}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[1]
     Should be equal as Strings    ${id}    241869    
-    
+    Close browser
     
 Dev_TC14_Delete_Counter
     [Documentation]    Check user can delete Counter on UI
@@ -217,6 +224,7 @@ Dev_TC14_Delete_Counter
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/table/tbody/tr/td[3]/div/button/i    #Click Delete
     Sleep    2s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Click Delete on confimation
+    Close browser
   
     
 Dev_TC15_Search_Counter
@@ -236,6 +244,7 @@ Dev_TC15_Search_Counter
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i    #Click refresh
     Wait until page contains element    class=fa-remove
     Page should contain Element    class=fa-remove
+    Close browser
     
     
 Dev_TC12_AddCrossReference_Positive
@@ -269,6 +278,7 @@ Dev_TC12_AddCrossReference_Positive
     Sleep    5s
     Click element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/button
     Sleep    8s
+    Close browser
     
 Dev_TC13_Delete_CrossReferenceKey
     [Documentation]    Check user can delete Cross reference key on UI
@@ -291,6 +301,7 @@ Dev_TC13_Delete_CrossReferenceKey
     Sleep    2s
     Click element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[2]
     Sleep    2s
+    Close browser
     
 TC43_AddParentOrg
     [Documentation]    Check that we can set Parent organisation to an organisation..
@@ -312,6 +323,7 @@ TC43_AddParentOrg
     sleep    4s
     click element    xpath=/html/body/main/section/section/form/header/button[1]/i    #click save
     Page should contain    text=Komal test organistaion
+    Close browser
 
 Dev_TC17_Add Library
     [Documentation]    Check user can add Library
@@ -332,6 +344,7 @@ Dev_TC17_Add Library
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    #Click Save
     Wait until page contains    text=Default1    timeout=${login.timeout}
     Element should be Enabled    class=fa-refresh    #Click refresh
+    Close browser
    
     
 Dev_TC18_Delete Library
@@ -351,7 +364,7 @@ Dev_TC18_Delete Library
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Confirm deletion
     Wait until page does not contain    text=Default1    timeout=${login.timeout}
-    
+    Close browser
   
 Dev_TC28-Logout
     [Documentation]    Check user can logout from the application
@@ -368,6 +381,7 @@ Dev_TC28-Logout
     Handle Alert
     Wait until page contains    text=Please log in to access Youredi.    timeout=${login.timeout}
     Page should contain element    xpath=//*[@id="login"]/div/div[1]/div[2]/form/div[4]/div/button/i
+    Close browser
     
 Dev_TC01_AddProcess
     [Documentation]    Check that If Process does not exist , it should get added successfully
@@ -392,6 +406,8 @@ Dev_TC01_AddProcess
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    #Click Save
     Wait until page contains element    class=fa-play    timeout=${login.timeout}
     Page should contain element    class=fa-play    #New process page should be displayed with Start button
+    Close browser
+    
     
 Dev_TC02_DeleteProcess_PositiveScenario
     [Documentation]    Check that user is able to delete the process if process name entered on Delete pop up window is correct
@@ -416,6 +432,7 @@ Dev_TC02_DeleteProcess_PositiveScenario
     Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
     Sleep    4s
+    Close browser
     
 Dev_TC03_DeleteProcess_ProcessNameIncorect
     [Documentation]    Check that delete button should not be active if On delete window,process name entered is incorrect
@@ -439,6 +456,7 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Sleep    6s
     Element Should Be Disabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #Check that delete button should be disabled
     Sleep    4s
+    Close browser
  
 Dev_TC04_DeleteProcess_Cancel
     [Documentation]    Check that user if User clicks on cancel button on Delete process page, then process should not get deleted
@@ -465,6 +483,7 @@ Dev_TC04_DeleteProcess_Cancel
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[2]    # click cancel on delete pop up window
     Sleep    10s
     Page should contain    text=${process}
+    Close browser
     
 Dev_TC05_DeleteEndpoint_Positive
     [Documentation]    Check that If endpoint is not assoicated to a process, then it should get deleted
@@ -486,6 +505,7 @@ Dev_TC05_DeleteEndpoint_Positive
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #confirm deletion
     Wait until page does not contain    text=1Process    timeout=${login.timeout}
+    Close browser
     
 Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     [Documentation]    Check that process should not get added if Process name or endpoint name already exist
@@ -512,6 +532,7 @@ Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div/div[2]/form/button    # click save button
     Wait until page contains    text=Error    timeout=${login.timeout}
     Page should not contain element    class=fa-play    # Error message should be displayed
+    Close browser
     
 Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     [Documentation]    Check that If endpoint is associated to a process , endpoint should not get deleted
@@ -536,7 +557,7 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    # confirm deletion on endpoint
     Wait until page contains    text=Can't delete an endpoint that has a process attached    timeout=${login.timeout}
     Page Should contain    text=Can't delete an endpoint that has a process attached    # error message should be displayed since endpoint associated to a process
-    
+    Close browser
     
 Dev_TC08_AddEndpoint_Positive
     [Documentation]    Check user can add endpoint if it does not already exist
@@ -562,7 +583,7 @@ Dev_TC08_AddEndpoint_Positive
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/button    # save the endpoint
     Wait until page contains    text=3Endpoint    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
-   
+    Close browser
     
 Dev_TC08b_DeleteEndpointforNextrun
     [Documentation]    Check that If endpoint is not assoicated to a process, then it should get deleted
@@ -586,7 +607,7 @@ Dev_TC08b_DeleteEndpointforNextrun
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #confirm deletion
     Wait until page does not contain    text=3endpoint    timeout=${login.timeout}
-    
+    Close browser
     
 Dev_TC53_ViewerRole
     [Documentation]    Check that user with only Viewer role can only see Account and Service Names.
@@ -617,6 +638,7 @@ Dev_TC53_ViewerRole
     Page should not contain element    class=fa-calendar
     Page should not contain element    class=fa-exclamation-cirlce
     Page should not contain element    class=fa-cubes
+    Close browser
     
 Dev_TC25-Logs-information
     [Documentation]    Check user can Filter Logs by information
@@ -636,7 +658,7 @@ Dev_TC25-Logs-information
     Wait until page contains    text=hii    timeout=${login.timeout}
     Page should not contain    text=hello
     page should contain    text=hii
-    
+    Close browser
     
 TC10_AddServiceParameter_Positive
     [Documentation]    Check user can add Service parameter on Parameter UI page
@@ -666,7 +688,7 @@ TC10_AddServiceParameter_Positive
     Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i    # click refresh
     Wait until page contains    text=1parameter    timeout=${login.timeout}
     Page should contain    text=1parameter    # check that page should display new parameter added
-    
+    Close browser
     
 Dev_TC11_DeleteParameter
     [Documentation]    Check user can delete service parameter
@@ -689,7 +711,7 @@ Dev_TC11_DeleteParameter
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # confirm deletion
     Wait until page does not contain    text=1parameter    timeout=${login.timeout}
-    
+    Close browser
     
 TC09_ServiceDataPage
     [Documentation]    Check Service data UI page
@@ -723,6 +745,7 @@ TC09_ServiceDataPage
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
     Wait until page contains    text=DataResult    timeout=${login.timeout}
     Page should contain    text=DataResult    # Service Data - Data should fe fetched
+    Close browser
     
 TC039_Transfer_FilterById
     [Documentation]    Check that user can filter transactions by id
@@ -743,7 +766,7 @@ TC039_Transfer_FilterById
     Wait until page contains    text=45337110    timeout=${login.timeout}
     Page should not contain    text=11425361
     Page should contain    45337110
-    
+    Close browser
     
 TC33_PBI 8220: Web IDE: changing of Endpoint type.
     [Documentation]    Check user can edit endpoint type if it Binding is not associated to it
@@ -771,6 +794,7 @@ TC33_PBI 8220: Web IDE: changing of Endpoint type.
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]
     Page should not contain    text=Can't change type of an endpoint that has endpoint bindings
+    Close browser
     
 TC34_CannotChangeEndpointType_IfBindingassociated
     [Documentation]    Check user cannot edit endpoint type if it Binding is associated to it
@@ -796,6 +820,7 @@ TC34_CannotChangeEndpointType_IfBindingassociated
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
     Wait until page contains    text=Can't change type of an endpoint that has endpoint bindings
     Page should contain    text=Can't change type of an endpoint that has endpoint bindings
+    Close browser
     
 TC16_Add Extension
     [Documentation]    Check user can add extension 
@@ -816,6 +841,7 @@ TC16_Add Extension
     Input Text    name=extension.Name    Ext2    #Enter Extension name
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]    #Click save
     Sleep    6s
+    Close browser
     
 TC17_Delete Extension
     [Documentation]    Check user can Delete extension if it is not associated to a process
@@ -836,7 +862,8 @@ TC17_Delete Extension
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
     Sleep    4s   
-        
+    Close browser
+    
 TC47_Bug 8386: Space at the end of process name should not prevent it to be deleted.
     [Documentation]    Check that if message property is set \ with empty value , still it should be displayed in Transfer messages
     ...
@@ -862,6 +889,7 @@ TC47_Bug 8386: Space at the end of process name should not prevent it to be dele
     Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Confirm deletion
     wait until page contains element    class=fa-plus    timeout=${login.timeout}
     Page should not contain    text=1Space trim Test
+    Close browser
 
 TC20
     Open Browser    ${login.url}    chrome
@@ -884,6 +912,7 @@ TC20
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]
     Page should not contain    text=Can't change type of an endpoint that has endpoint bindings
+    Close browser
     
 T40_Add Comments to SubOrg Alerts
     Open Browser    ${login.url}    chrome
@@ -910,7 +939,7 @@ T40_Add Comments to SubOrg Alerts
     Click element    class=fa-plus
     Sleep    4s
     Page should not contain    text=404 error
-    
+    Close browser
     
 TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     [Documentation]    Check Extension cannot be deleted if referenced by another process
@@ -940,6 +969,7 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
     Wait until page contains    text=The extension cannot be deleted as it is being used in process    timeout=${login.timeout}
     Page should contain    text=The extension cannot be deleted as it is being used in process
+    Close browser
     
 TC54_DesignerRoleedit
     [Documentation]    Check that user with only designer role can see and access Accounts, Services, transfers, endpoints, processses, alerts etc.
@@ -990,6 +1020,7 @@ TC54_DesignerRoleedit
     Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/form/div[2]/button/i
     wait until page contains    text=Not authorized    timeout=${login.timeout}
     Page should contain    text=Not authorized
+    Close browser
 
 Dev_TC54_AdminRole
     [Documentation]    Check that user that has Admin role but does not have Global admin rights, has full rights at account and service level but does not have access to admin tools
