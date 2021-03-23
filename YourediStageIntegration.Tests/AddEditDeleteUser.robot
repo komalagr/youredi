@@ -21,6 +21,7 @@ Dev_TC34_AddUserToOrganization
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/header/button[1]/i
     wait until page contains    text=Add user    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/section/section/div/div/div[2]/form/div/div/input    aryan@youredi.com
+    Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div/div/span/span/button/i
     Sleep    11s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section/div/div/div[2]/form/div[2]/button/i
