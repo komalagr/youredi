@@ -1103,6 +1103,414 @@ Dev_TC45-Alerts_AddPayload
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/form/div[2]/div/button[1]/i    # click on save
     sleep    4s
     Close browser
+    
+TC1OPData_AlertCommentsposiitve
+    [Documentation]    User should be able to fetch Comments of Alert belonging to an account
+    ...
+    ...    Test data
+    ...    Uodated Org having alert with comments
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Alerts(236598)/AlertComments
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should contain    text=200 success
+    close browser
+
+TC2OPData_AlertCommentsNeg
+    [Documentation]    Comments of an alert that belongs to another account should not get fetched.error message should be displayed
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Alerts(236598)/AlertComments
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    close browser
+
+TC3OPData_AlertsNegative
+    [Documentation]    Alert of another account should not get fetched
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Alerts(236598)
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    Page should contain    text=404 error
+    close browser
+
+TC4OPData_Service_Positive
+    [Documentation]    Service details belonging to \ account should get fetched
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should contain    text=200 success
+    close browser
+
+TC5OPData_ServiceNegative
+    [Documentation]    Service details belonging to \ another account should not get fetched
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    Page should contain    text=404 error
+    close browser
+
+TC6OPData
+    [Documentation]    Process details belonging to \ correct service, correct account should get fetched
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)/Processes(1970)
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should contain    text=200 success
+    close browser
+
+TC7OPData
+    [Documentation]    Process details belonging to another \ service of correct account , should not get fetched
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(371)/Processes(1970)
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    Page should contain    text=500 error
+    close browser
+
+TC8OPData
+    [Documentation]    Process details belonging to correct \ service but diffenrent account mentioned, so should not get fetched
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)/Processes(1970)
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    Page should contain    text=404 error
+    close browser
+
+TC9OPData_ExtensionPositive
+    [Documentation]    If correct Extension id, \ correct service, correct account is mentioned, then extension details should get fetched
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)/Extensions(4528056)
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should contain    text=200 success
+    close browser
+
+TC10OPData_ExtensionNegative
+    [Documentation]    If correct Extension id, \ correct account, but incorrect service, is mentioned, then extension details should not get fetched
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(371)/Extensions(4528056)
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    close browser
+
+TC11OPData_ExtensionNegative
+    [Documentation]    If correct Extension id, \ correct service, but incorrect account is mentioned, then extension details should not get fetched
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)/Extensions(4528056)
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    close browser
+
+TC12OPData_ServiceParameterPositive
+    [Documentation]    If correct Extension id, \ correct service, correct account is mentioned, then extension details should get fetched
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)/ServiceParameters
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should contain    text=200 success
+    close browser
+
+TC13OPData_ServiceParameterNegative
+    [Documentation]    If correct Service id but incorrect account name mentioned, then Service parameters should not get feteched
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)/ServiceParameters
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    close browser
+
+TC14OPData_CrossReferencePositive
+    [Documentation]    If correct service, correct account id is mentioned then cross reference details should be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)/CrossReferences
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should contain    text=200 success
+    close browser
+
+TC15OPData_CrossReferenceNegative
+    [Documentation]    If correct service, but another \ account id is mentioned then cross reference details should not be fetched
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)/CrossReferences
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    close browser
+
+TC16OPData_CounterPositive
+    [Documentation]    If correct service, correct account id is mentioned then counter details should be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)/Counters
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should contain    text=200 success
+    close browser
+
+TC17OPData_CounterNegative
+    [Documentation]    If correct service, incorrect account id is mentioned then cross reference details should not be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)/Counters
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    close browser
+
+TC18OPData_EPBindingPositive
+    [Documentation]    If correct service, incorrect account id is mentioned then cross reference details should not be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)/Endpoints(3484)/EndpointBindings
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should contain    text=200 success
+    close browser
+
+TC19OPData_EPBindingNegative
+    [Documentation]    correct account name, correct service, incorrect endpoint - binding ids, binding details not fetched
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)/Endpoints(3485)/EndpointBindings(1488)
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    close browser
+
+TC20OPData_EPBindingNegative
+    [Documentation]    incorrect account name, correct service, correct endpoint - binding ids, binding details not fetched
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)/Endpoints(3484)/EndpointBindings(1488)
+    sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    close browser
+
    
 
 
