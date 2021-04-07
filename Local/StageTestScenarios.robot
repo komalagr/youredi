@@ -1202,14 +1202,14 @@ TC5OPData_ServiceNegative
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)
-    sleep    2s
-    click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    2s
     Page should not contain    text=200 success
     Page should contain    text=404 error
     close browser
 
-TC6OPData
+TC6OPData_ProcessesPositive
     [Documentation]    Process details belonging to \ correct service, correct account should get fetched
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
@@ -1229,7 +1229,7 @@ TC6OPData
     Page should contain    text=200 success
     close browser
 
-TC7OPData
+TC7OPData_Processes_Negative
     [Documentation]    Process details belonging to another \ service of correct account , should not get fetched
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
@@ -1250,7 +1250,7 @@ TC7OPData
     Page should contain    text=500 error
     close browser
 
-TC8OPData
+TC8OPData_ProcessesNegative
     [Documentation]    Process details belonging to correct \ service but diffenrent account mentioned, so should not get fetched
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
@@ -1299,7 +1299,7 @@ TC10OPData_ExtensionNegative
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
@@ -1319,7 +1319,7 @@ TC11OPData_ExtensionNegative
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
@@ -1339,7 +1339,7 @@ TC12OPData_ServiceParameterPositive
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
@@ -1359,13 +1359,13 @@ TC13OPData_ServiceParameterNegative
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)/ServiceParameters
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should not contain    text=200 success
@@ -1379,13 +1379,13 @@ TC14OPData_CrossReferencePositive
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)/CrossReferences
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should contain    text=200 success
@@ -1399,13 +1399,13 @@ TC15OPData_CrossReferenceNegative
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)/CrossReferences
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should not contain    text=200 success
@@ -1419,33 +1419,33 @@ TC16OPData_CounterPositive
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)/Counters
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should contain    text=200 success
     close browser
 
 TC17OPData_CounterNegative
-    [Documentation]    If correct service, incorrect account id is mentioned then cross reference details should not be fetched correctly
+    [Documentation]    If correct service, incorrect account id is mentioned then Counter details should not be fetched correctly
     Open Browser    ${login.url}    chrome
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)/Counters
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should not contain    text=200 success
@@ -1459,13 +1459,13 @@ TC18OPData_EPBindingPositive
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)/Endpoints(3484)/EndpointBindings
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should contain    text=200 success
@@ -1479,13 +1479,13 @@ TC19OPData_EPBindingNegative
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)/Endpoints(3485)/EndpointBindings(1488)
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should not contain    text=200 success
@@ -1499,13 +1499,273 @@ TC20OPData_EPBindingNegative
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    4s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)/Endpoints(3484)/EndpointBindings(1488)
+    sleep    2s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    close browser
+
+TC21OPData_EndpointPositive
+    [Documentation]    If correct service, incorrect account id is mentioned then cross reference details should not be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    2s
-    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)/Endpoints(3484)/EndpointBindings(1488)
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)/Endpoints(3484)
+    sleep    2s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
+    Page should contain    text=200 success
+    close browser
+
+TC22OPData_EndpointNegative
+    [Documentation]    If correct service, incorrect account id is mentioned then cross reference details should not be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)/Endpoints(3484)
+    sleep    2s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    close browser
+
+TC23OPData_EndpointNegative
+    [Documentation]    If correct service, incorrect account id is mentioned then cross reference details should not be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)/Endpoints
+    sleep    2s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    close browser
+
+TC24OPData_ServiceLogPositive
+    [Documentation]    If correct service, incorrect account id is mentioned then cross reference details should not be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)/ServiceLogs
+    sleep    2s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should contain    text=200 success
+    close browser
+
+TC25OPData_ServiceLogNegative
+    [Documentation]    If correct service, incorrect account id is mentioned then cross reference details should not be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)/ServiceLogs
+    sleep    2s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    close browser
+
+TC26OPData_TransferPositive
+    [Documentation]    If correct service, incorrect account id is mentioned then cross reference details should not be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Transfers(45504474)
+    sleep    2s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should contain    text=200 success
+    close browser
+
+TC27OPData_TransferNegative
+    [Documentation]    If correct service, incorrect account id is mentioned then cross reference details should not be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Transfers(45504474)
+    sleep    2s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    close browser
+
+TC28OPData_ServiceDataPositive
+    [Documentation]    If correct service, incorrect account id is mentioned then cross reference details should not be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(370)/ServiceDatas/FindItems(ItemType='ItemType1Update',Index1='',Index2='',Skip=0,Take=50)
+    sleep    2s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should contain    text=200 success
+    close browser
+
+TC29OPData_ServiceDataNegative
+    [Documentation]    If correct service, incorrect account id is mentioned then cross reference details should not be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(370)/ServiceDatas/FindItems(ItemType='ItemType1Update',Index1='',Index2='',Skip=0,Take=50)
+    sleep    2s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    close browser
+
+TC30OPData_LibrariesPositive
+    [Documentation]    If correct service, incorrect account id is mentioned then cross reference details should not be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(370)/CodeLibraries
+    sleep    2s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should contain    text=200 success
+    close browser
+
+TC31OPData_LibrariesNegative
+    [Documentation]    If correct service, incorrect account id is mentioned then cross reference details should not be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(370)/CodeLibraries
+    sleep    2s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should not contain    text=200 success
+    close browser
+
+TC32OPData_SchedulesPositive
+    [Documentation]    If correct service, incorrect account id is mentioned then cross reference details should not be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(370)/Schedules
+    sleep    2s
+    click element    xpath=/html/body/main/section/section/header/form/div/button/i
+    sleep    4s
+    Page should contain    text=200 success
+    close browser
+
+TC33OPData_SchedulesNegative
+    [Documentation]    If correct service, incorrect account id is mentioned then cross reference details should not be fetched correctly
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+    Sleep    18s
+    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    click element    xpath=/html/body/aside/div[2]/button[2]/i
+    click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
+    Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(370)/Schedules
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should not contain    text=200 success
