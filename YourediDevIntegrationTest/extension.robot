@@ -66,7 +66,7 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Wait until page contains element    class=fa-plug    timeout=${login.timeout}
     Click Element    class=fa-plug    #Click extension
     Wait Until page contains    text=Ext    timeout=${login.timeout}
-    Sleep    11s
+    Sleep    18s
     Click element    class=fa-remove    #Click on Delete button
     Sleep    6s
     Click element    xpath=/html/body/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
