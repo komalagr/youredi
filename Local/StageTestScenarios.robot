@@ -760,13 +760,13 @@ TC039_Transfer_FilterById
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[1]/p/a[2]
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i
     sleep    4s
-    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    45460280    #for dev - 11303940, stage=43179132
+    Input text    xpath=/html/body/main/section/header/form/div[1]/div[5]/div[1]/div/input    45649376    #for dev - 11303940, stage=43179132
     sleep    4s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
-    Wait until page contains    text=45460280    timeout=${login.timeout}
+    Wait until page contains    text=45649376    timeout=${login.timeout}
     Page should not contain    text=11425361
-    Page should contain    45460280
+    Page should contain    45649376
     Close browser
     
 TC33_PBI 8220: Web IDE: changing of Endpoint type.
@@ -1121,7 +1121,7 @@ TC1OPData_AlertCommentsposiitve
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Alerts(236598)/AlertComments
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should contain    text=200 success
@@ -1141,7 +1141,7 @@ TC2OPData_AlertCommentsNeg
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Alerts(236598)/AlertComments
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should not contain    text=200 success
@@ -1161,7 +1161,7 @@ TC3OPData_AlertsNegative
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Alerts(236598)
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should not contain    text=200 success
@@ -1182,7 +1182,7 @@ TC4OPData_Service_Positive
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should contain    text=200 success
@@ -1202,7 +1202,7 @@ TC5OPData_ServiceNegative
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should not contain    text=200 success
@@ -1223,7 +1223,7 @@ TC6OPData
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)/Processes(1970)
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should contain    text=200 success
@@ -1243,7 +1243,7 @@ TC7OPData
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(371)/Processes(1970)
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should not contain    text=200 success
@@ -1264,7 +1264,7 @@ TC8OPData
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)/Processes(1970)
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should not contain    text=200 success
@@ -1285,7 +1285,7 @@ TC9OPData_ExtensionPositive
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)/Extensions(4528056)
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should contain    text=200 success
@@ -1305,7 +1305,7 @@ TC10OPData_ExtensionNegative
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(371)/Extensions(4528056)
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should not contain    text=200 success
@@ -1325,7 +1325,7 @@ TC11OPData_ExtensionNegative
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(263)/Services(368)/Extensions(4528056)
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should not contain    text=200 success
@@ -1345,7 +1345,7 @@ TC12OPData_ServiceParameterPositive
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(898)/Services(368)/ServiceParameters
-    sleep    4s
+    sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should contain    text=200 success
