@@ -1115,7 +1115,7 @@ TC1OPData_AlertCommentsposiitve
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
@@ -1135,7 +1135,7 @@ TC2OPData_AlertCommentsNeg
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
@@ -1155,7 +1155,7 @@ TC3OPData_AlertsNegative
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
@@ -1176,7 +1176,7 @@ TC4OPData_Service_Positive
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
@@ -1196,7 +1196,7 @@ TC5OPData_ServiceNegative
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
@@ -1217,7 +1217,7 @@ TC6OPData
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
@@ -1237,7 +1237,7 @@ TC7OPData
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
@@ -1258,7 +1258,7 @@ TC8OPData
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
@@ -1279,7 +1279,7 @@ TC9OPData_ExtensionPositive
     Click Element    class=fa-sign-in
     Sleep    18s
     Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${timeout}
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
