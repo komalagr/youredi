@@ -1144,7 +1144,7 @@ TC2OPData_AlertCommentsNeg
     sleep    2s
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
-    Page should not contain    text=200 success
+    Page should contain    text=200 success
     close browser
 
 TC3OPData_AlertsNegative
