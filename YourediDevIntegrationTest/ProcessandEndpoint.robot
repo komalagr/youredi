@@ -261,7 +261,7 @@ Dev_TC51_Check If binding is not active process should not get executed
     click element    xpath=//*[@id="webide"]/main/section[1]/header/div/button/i    #click start
     Wait until page contains    text=Start process    timeout=${login.timeout}
     click element    xpath=//*[@id="webide"]/main/section[1]/div[1]/div[1]/div[1]/div/button[1]/i    #click start
-    sleep    8s
+    sleep    12s
     Wait until page contains    text=Process not found using given account    timeout=${login.timeout}
     Page should contain    text=Process not found using given account    #error message shouldbe present
     
