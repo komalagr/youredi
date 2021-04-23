@@ -46,7 +46,7 @@ Dev_TC45-Alerts_AddComment
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
-    Sleep    3s
+    Sleep    6s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
     Wait until page contains    text=Info3    timeout=${login.timeout}
     Page should not contain    text=No alerts found
