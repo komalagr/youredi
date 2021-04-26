@@ -22,6 +22,7 @@ Dev_TC14_Delete_Counter
     Sleep    2s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Click Delete on confimation
     sleep    4s
+    Close Browser
     
 Dev_TC15_Search_Counter
     [Documentation]    Check user can search Counter on UI
@@ -42,3 +43,5 @@ Dev_TC15_Search_Counter
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/div[2]/button/i    #Click refresh
     Wait until page contains element    class=fa-remove    timeout=${login.timeout}
     Page should contain Element    class=fa-remove
+    Sleep    4s
+    Close Browser
