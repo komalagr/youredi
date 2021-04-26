@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Variables         DevVariablesfile.yaml
+Variables         Variablesfile.yaml
 *** Test Cases ***
 
 Dev_TC14_Delete_Counter
