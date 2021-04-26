@@ -151,5 +151,6 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Page should not contain    text=No alerts found
     ${id}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[1]
     Should be equal as Strings    ${id}    203542    #dev=203542
-    Close Browser
     Sleep    4s
+    Close Browser
+    
