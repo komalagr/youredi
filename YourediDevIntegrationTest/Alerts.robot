@@ -33,6 +33,8 @@ Dev_TC45-Alerts_AddComment
     Sleep    4s
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/section/form/div[2]/button/i    # click on add
     Page should contain    text=TestCommentAdding
+    Sleep    4s
+    Close Browser
     
 Dev_TC45-Alerts_AddPayload
     [Documentation]    Check user is able to add payload to alert on alert page
@@ -63,6 +65,7 @@ Dev_TC45-Alerts_AddPayload
     Sleep    4s
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/form/div[2]/div/button[1]/i    # click on save
     sleep    4s
+    Close Browser
     
 Dev_TC46-Alerts_AssignToMe
     [Documentation]    Check user is able to assign the alert to himself/herself
@@ -92,6 +95,8 @@ Dev_TC46-Alerts_AssignToMe
     ${assignedto}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[6]/a    #Get value in Assigned to field
     Sleep    4s
     Should be equal as Strings    ${assignedto}    Komal Agarwal (komal@youredi.com)
+    Sleep    4s
+    Close Browser
     
 Dev_TC47-Alerts_Unassign
     [Documentation]    Check user is able to unassign the alert
@@ -120,6 +125,8 @@ Dev_TC47-Alerts_Unassign
     sleep    4s
     ${assignedto}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[6]/span    #Get value in Assigned to field
     Should be equal as Strings    ${assignedto}    Not assigned.
+    sleep    4s
+    Close Browser
     
 Dev_TC21-Alerts_FilterByAssignedTo
     [Documentation]    Check user can filter Alerts by Info
@@ -144,3 +151,5 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Page should not contain    text=No alerts found
     ${id}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[1]
     Should be equal as Strings    ${id}    203542    #dev=203542
+    Close Browser
+    Sleep    4s
