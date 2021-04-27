@@ -30,6 +30,7 @@ jobs:
       useLegacyPattern: false
       enableTransforms: false
       enableTelemetry: true
+    displayName: 'Replace Variables value'
 
 #Use Python 3.7
   - task: UsePythonVersion@0
@@ -40,10 +41,12 @@ jobs:
 #Install Robot framework 
   - script: |
       pip install robotframework robotframework-seleniumlibrary webdrivermanager 
+    displayName: 'Install Robot framework'
 
 #Install Python Yaml
   - script: |
       pip install pyyaml
+    displayName: 'Install Python Yaml'
 
 #Run Robot Scripts - AddEditDeleteUser
   - script: |
