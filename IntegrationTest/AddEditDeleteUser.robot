@@ -2,6 +2,7 @@
 Library           SeleniumLibrary
 Variables         Variablesfile.yaml
 *** Test Cases ***
+
 Dev_TC34_AddUserToOrganization
     [Documentation]    Check we can add User to Organisation
     ...
