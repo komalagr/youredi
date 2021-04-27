@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Variables         DevVariablesfile.yaml
+Variables         Variablesfile.yaml
 *** Test Cases ***
 
 TC039_Transfer_FilterById
@@ -22,3 +22,5 @@ TC039_Transfer_FilterById
     Wait until page contains    text=12774939    timeout=${login.timeout}
     Page should not contain    text=11425361
     Page should contain    12774939
+    Sleep    2s
+    Close Browser
