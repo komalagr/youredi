@@ -18,7 +18,7 @@ jobs:
   steps:
   - task: replacetokens@3
     inputs:
-      rootDirectory: 'LocaL'
+      rootDirectory: 'IntegrationTest'
       targetFiles: 'variablesfile.yaml'
       encoding: 'auto'
       writeBOM: true
