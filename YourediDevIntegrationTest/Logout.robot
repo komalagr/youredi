@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Variables         DevVariablesfile.yaml
+Variables         Variablesfile.yaml
 *** Test Cases ***
 
 Dev_TC28-Logout
@@ -18,3 +18,5 @@ Dev_TC28-Logout
     Handle Alert
     Wait until page contains    text=Please log in to access Youredi.    timeout=${login.timeout}
     Page should contain element    xpath=//*[@id="login"]/div/div[1]/div[2]/form/div[4]/div/button/i
+    Sleep    2s
+    Close Browser
