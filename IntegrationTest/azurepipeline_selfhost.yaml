@@ -50,8 +50,6 @@ jobs:
 
 #Run Robot Scripts - AddEditDeleteUser
   - script: |
-      pip install pytest pytest-azurepipelines
-      pytest
       robot --pythonpath . -x AddEditDeleteUser.xml AddEditDeleteUser.robot
     workingDirectory: IntegrationTest
     displayName: 'Run Robot Scripts - AddEditDeleteUser'
@@ -66,14 +64,15 @@ jobs:
     continueOnError: true
     condition: succeededOrFailed()
 
+
 #Run Robot Scripts - Alerts
   - script: |
-      pip install pytest pytest-azurepipelines
       pytest
       robot --pythonpath . -x Alerts.xml Alerts.robot
     workingDirectory: IntegrationTest
     displayName: 'Run Robot Scripts - Alerts'
     continueOnError: true
+    enabled: false
 
 #Publish Test Results - Alerts  
   - task: PublishTestResults@2
@@ -83,6 +82,26 @@ jobs:
     displayName: 'Publish Test Results - Alerts'
     continueOnError: true
     condition: succeededOrFailed()
+    enabled: false
+
+#Run Robot Scripts - Counter
+  - script: |
+      pytest
+      robot --pythonpath . -x Counter.xml Counter.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - Counter'
+    continueOnError: true
+    enabled: false
+
+#Publish Test Results - Counter  
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/Counter.xml'
+      testRunTitle: 'Publish test results for Python $(python.version)'
+    displayName: 'Publish Test Results - Counter'
+    continueOnError: true
+    condition: succeededOrFailed()
+    enabled: false
 
 #DeleteFiles
   - task: DeleteFiles@1
