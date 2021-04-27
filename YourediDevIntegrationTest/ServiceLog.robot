@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Variables         DevVariablesfile.yaml
+Variables         Variablesfile.yaml
 *** Test Cases ***
 
 Dev_TC25-Logs-information
@@ -20,3 +20,5 @@ Dev_TC25-Logs-information
     sleep    4s    
     Page should not contain    text=hello
     page should contain    text=hii
+    Sleep    2s
+    Close Browser
