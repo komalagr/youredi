@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Variables         DevVariablesfile.yaml
+Variables         Variablesfile.yaml
 *** Test Cases ***
 
 
@@ -26,6 +26,7 @@ Dev_TC17_Add Library
     Wait until page contains    text=Default1    timeout=${login.timeout}
     Element should be Enabled    class=fa-refresh    #Click refresh
     Sleep    2s
+    Close Browser
     
 Dev_TC18_Delete Library
     [Documentation]    Check user can delete library
@@ -46,5 +47,6 @@ Dev_TC18_Delete Library
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Confirm deletion
     Wait until page does not contain    text=Default1    timeout=${login.timeout}
-    
+    Sleep    2s
+    Close Browser
     
