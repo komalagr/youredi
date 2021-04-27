@@ -50,30 +50,36 @@ jobs:
       pip install pytest pytest-azurepipelines
       pytest
       robot --pythonpath . -x AddEditDeleteUser.xml AddEditDeleteUser.robot
-    displayName: 'Run Robot Scripts'
     workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - AddEditDeleteUser'
+    continueOnError: true
 
 #Publish Test Results - AddEditDeleteUser  
   - task: PublishTestResults@2
-    condition: succeededOrFailed()
     inputs:
       testResultsFiles: '**/AddEditDeleteUser.xml'
       testRunTitle: 'Publish test results for Python $(python.version)'
+    displayName: 'Publish Test Results - AddEditDeleteUser'
+    continueOnError: true
+    condition: succeededOrFailed()
 
 #Run Robot Scripts - Alerts
   - script: |
       pip install pytest pytest-azurepipelines
       pytest
       robot --pythonpath . -x Alerts.xml Alerts.robot
-    displayName: 'Run Robot Scripts'
     workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - Alerts'
+    continueOnError: true
 
 #Publish Test Results - Alerts  
   - task: PublishTestResults@2
-    condition: succeededOrFailed()
     inputs:
       testResultsFiles: '**/Alerts.xml'
       testRunTitle: 'Publish test results for Python $(python.version)'
+    displayName: 'Publish Test Results - Alerts'
+    continueOnError: true
+    condition: succeededOrFailed()
 
 #DeleteFiles
   - task: DeleteFiles@1
