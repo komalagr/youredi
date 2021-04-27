@@ -64,7 +64,7 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFiles: '**/AddEditDeleteUser.xml'
-      testRunTitle: 'Publish test results for Python $(python.version)'
+      testRunTitle: AddEditDeleteUser
     displayName: 'Publish Test Results - AddEditDeleteUser'
     continueOnError: true
     condition: succeededOrFailed()
@@ -81,7 +81,7 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFiles: '**/Alerts.xml'
-      testRunTitle: 'Publish test results for Python $(python.version)'
+      testRunTitle: Alerts
     displayName: 'Publish Test Results - Alerts'
     continueOnError: true
     condition: succeededOrFailed()
@@ -98,7 +98,7 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFiles: '**/Counter.xml'
-      testRunTitle: 'Publish test results for Python $(python.version)'
+      testRunTitle: Counter
     displayName: 'Publish Test Results - Counter'
     continueOnError: true
     condition: succeededOrFailed()
@@ -114,7 +114,7 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFiles: '**/CrossReference.xml'
-      testRunTitle: 'Publish test results for Python $(python.version)'
+      testRunTitle: CrossReference
     displayName: 'Publish Test Results - CrossReference'
     continueOnError: true
     condition: succeededOrFailed()
@@ -131,7 +131,7 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFiles: '**/EditOrgandService.xml'
-      testRunTitle: 'Publish test results for Python $(python.version)'
+      testRunTitle: EditOrgandService
     displayName: 'Publish Test Results - EditOrgandService'
     continueOnError: true
     condition: succeededOrFailed()
@@ -148,7 +148,7 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFiles: '**/Library.xml'
-      testRunTitle: 'Publish test results for Python $(python.version)'
+      testRunTitle: Library
     displayName: 'Publish Test Results - Library'
     continueOnError: true
     condition: succeededOrFailed()
@@ -165,7 +165,7 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFiles: '**/Logout.xml'
-      testRunTitle: 'Publish test results for Python $(python.version)'
+      testRunTitle: Logout
     displayName: 'Publish Test Results - Logout'
     continueOnError: true
     condition: succeededOrFailed()
@@ -182,7 +182,7 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFiles: '**/ProcessandEndpoint.xml'
-      testRunTitle: 'Publish test results for Python $(python.version)'
+      testRunTitle: ProcessandEndpoint
     displayName: 'Publish Test Results - ProcessandEndpoint'
     continueOnError: true
     condition: succeededOrFailed()
@@ -199,7 +199,7 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFiles: '**/RoleBasedTesting.xml'
-      testRunTitle: 'Publish test results for Python $(python.version)'
+      testRunTitle: RoleBasedTesting
     displayName: 'Publish Test Results - RoleBasedTesting'
     continueOnError: true
     condition: succeededOrFailed()
@@ -216,7 +216,7 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFiles: '**/ServiceLog.xml'
-      testRunTitle: 'Publish test results for Python $(python.version)'
+      testRunTitle: ServiceLog
     displayName: 'Publish Test Results - ServiceLog'
     continueOnError: true
     condition: succeededOrFailed()
@@ -233,7 +233,7 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFiles: '**/ServiceParameter.xml'
-      testRunTitle: 'Publish test results for Python $(python.version)'
+      testRunTitle: ServiceParameter
     displayName: 'Publish Test Results - ServiceParameter'
     continueOnError: true
     condition: succeededOrFailed()
@@ -250,7 +250,7 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFiles: '**/ServiceParameter.xml'
-      testRunTitle: 'Publish test results for Python $(python.version)'
+      testRunTitle: Servicedata
     displayName: 'Publish Test Results - Servicedata'
     continueOnError: true
     condition: succeededOrFailed()
@@ -267,7 +267,7 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFiles: '**/Transfer.xml'
-      testRunTitle: 'Publish test results for Python $(python.version)'
+      testRunTitle: Transfer
     displayName: 'Publish Test Results - Transfer'
     continueOnError: true
     condition: succeededOrFailed()
@@ -284,7 +284,7 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFiles: '**/Extension.xml'
-      testRunTitle: 'Publish test results for Python $(python.version)'
+      testRunTitle: Extensions
     displayName: 'Publish Test Results - Extensions'
     continueOnError: true
     condition: succeededOrFailed()
