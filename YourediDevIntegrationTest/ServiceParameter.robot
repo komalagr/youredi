@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Variables         DevVariablesfile.yaml
+Variables         Variablesfile.yaml
 *** Test Cases ***
 
 
@@ -34,7 +34,8 @@ Dev_TC10_AddServiceParameter_Positive
     Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i    # click refresh
     Wait until page contains    text=1parameter    timeout=${login.timeout}
     Page should contain    text=1parameter    # check that page should display new parameter added
-    
+    Sleep    2s
+    Close Browser
     
 Dev_TC11_DeleteParameter
     [Documentation]    Check user can delete service parameter
@@ -59,4 +60,5 @@ Dev_TC11_DeleteParameter
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # confirm deletion
     Wait until page does not contain    text=1parameter    timeout=16s
-    
+    Sleep    2s
+    Close Browser
