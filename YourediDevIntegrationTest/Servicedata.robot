@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Variables         DevVariablesfile.yaml
+Variables         Variablesfile.yaml
 *** Test Cases ***
 
 Dev_TC09_ServiceDataPage
@@ -35,4 +35,5 @@ Dev_TC09_ServiceDataPage
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
     Wait until page contains    text=DataResult    timeout=${login.timeout}
     Page should contain    text=DataResult    # Service Data - Data should fe fetched
-    
+    Sleep    2s
+    Close Browser
