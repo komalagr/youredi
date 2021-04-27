@@ -188,23 +188,6 @@ jobs:
     condition: succeededOrFailed()
 
 
-#Run Robot Scripts - ProcessandEndpoint
-  - script: |
-       robot --pythonpath  . -x ProcessandEndpoint.xml ProcessandEndpoint.robot
-    workingDirectory: IntegrationTest
-    displayName: 'Run Robot Scripts - ProcessandEndpoint'
-    continueOnError: true
-
-#Publish Test Results - ProcessandEndpoint 
-  - task: PublishTestResults@2
-    inputs:
-      testResultsFiles: '**/ProcessandEndpoint.xml'
-      testRunTitle: 'Publish test results for Python $(python.version)'
-    displayName: 'Publish Test Results - ProcessandEndpoint'
-    continueOnError: true
-    condition: succeededOrFailed()
-
-
 #Run Robot Scripts - RoleBasedTesting
   - script: |
        robot --pythonpath  . -x RoleBasedTesting.xml RoleBasedTesting.robot
