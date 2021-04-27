@@ -43,14 +43,14 @@ jobs:
   - script: |
       pip install pytest pytest-azurepipelines
       pytest
-      robot --pythonpath . -x outputxunit.xml StageTestScenarios.robot
+      robot --pythonpath . -x AddEditDeleteUser.xml AddEditDeleteUser.robot
     displayName: 'Run Robot Scripts'
     workingDirectory: Local
     
   - task: PublishTestResults@2
     condition: succeededOrFailed()
     inputs:
-      testResultsFiles: '**/outputxunit*.xml'
+      testResultsFiles: 'AddEditDeleteUser.xml'
       testRunTitle: 'Publish test results for Python $(python.version)'
 
   - task: DeleteFiles@1
