@@ -45,7 +45,7 @@ jobs:
       pytest
       robot --pythonpath . -x AddEditDeleteUser.xml AddEditDeleteUser.robot
     displayName: 'Run Robot Scripts'
-    workingDirectory: Local
+    workingDirectory: IntegrationTest
     
   - task: PublishTestResults@2
     condition: succeededOrFailed()
