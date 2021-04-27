@@ -15,6 +15,7 @@ jobs:
       Python37:
         python.version: '3.7'
 
+#Replace Variables value
   steps:
   - task: replacetokens@3
     inputs:
@@ -30,29 +31,51 @@ jobs:
       enableTransforms: false
       enableTelemetry: true
 
+#Use Python 3.7
   - task: UsePythonVersion@0
     inputs:
       versionSpec: '$(python.version)'
     displayName: 'Use Python $(python.version)'
-  
+
+#Install Robot framework 
   - script: |
       pip install robotframework robotframework-seleniumlibrary webdrivermanager 
-  
+
+#Install Python Yaml
   - script: |
       pip install pyyaml
+
+#Run Robot Scripts - AddEditDeleteUser
   - script: |
       pip install pytest pytest-azurepipelines
       pytest
       robot --pythonpath . -x AddEditDeleteUser.xml AddEditDeleteUser.robot
     displayName: 'Run Robot Scripts'
     workingDirectory: IntegrationTest
-    
+
+#Publish Test Results - AddEditDeleteUser  
   - task: PublishTestResults@2
     condition: succeededOrFailed()
     inputs:
-      testResultsFiles: 'AddEditDeleteUser.xml'
+      testResultsFiles: '**/AddEditDeleteUser.xml'
       testRunTitle: 'Publish test results for Python $(python.version)'
 
+#Run Robot Scripts - Alerts
+  - script: |
+      pip install pytest pytest-azurepipelines
+      pytest
+      robot --pythonpath . -x Alerts.xml Alerts.robot
+    displayName: 'Run Robot Scripts'
+    workingDirectory: IntegrationTest
+
+#Publish Test Results - Alerts  
+  - task: PublishTestResults@2
+    condition: succeededOrFailed()
+    inputs:
+      testResultsFiles: '**/Alerts.xml'
+      testRunTitle: 'Publish test results for Python $(python.version)'
+
+#DeleteFiles
   - task: DeleteFiles@1
     displayName: 'Delete files from agent build directory'
     inputs:
