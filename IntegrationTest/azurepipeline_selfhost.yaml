@@ -60,8 +60,5 @@ jobs:
       Contents: |
        a*
        b*
-       **/s/Local*
-       **/s/Local_SelfHost_Agent*
-       **/s/YourediDevIntegrationTest*
-       **/s/YourediStageIntegration.Tests*
+       **/s/IntegrationTest*
       RemoveSourceFolder: true
