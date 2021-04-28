@@ -23,4 +23,4 @@ TC039_Transfer_FilterById
     Page should not contain    text=11425361
     Page should contain    12861633
     Sleep    2s
-    Close Browser
+    [Teardown]    Close Browser
