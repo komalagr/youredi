@@ -7,8 +7,8 @@ Dev_TC53_ViewerRole
     [Documentation]    Check that user with only Viewer role can only see Account and Service Names.
     ...
     ...    Viewer cant see Transfers, Alerts, Processes etc
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    viewerole@youredi.com
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.viewerroleid}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
     Sleep    18s
@@ -39,8 +39,8 @@ Dev_TC54_DesignerRole
     [Documentation]    Check that user with only designer role can see and access Accounts, Services, transfers, endpoints, processses, alerts etc.
     ...    But since no global admin rights he cant see Admin tools
     ...    and designer cant edit organization and services, alert settings
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    Designerrole@youredi.com
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.designerroleid}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
     Sleep    16s
@@ -89,8 +89,8 @@ Dev_TC54_DesignerRole
     
 Dev_TC54_AdminRole
     [Documentation]    Check that user that has Admin role but does not have Global admin rights, has full rights at account and service level but does not have access to admin tools
-    Open Browser    https://dev.youredi.com/    chrome
-    Input Text    id=email    adminrole@youredi.com
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.adminroleid}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
     Sleep    16s
