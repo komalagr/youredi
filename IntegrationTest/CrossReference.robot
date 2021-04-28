@@ -2,6 +2,7 @@
 Library           SeleniumLibrary
 Variables         Variablesfile.yaml
 *** Test Cases ***
+
 Dev_TC12_AddCrossReference_Positive
     [Documentation]    Check user can add Cross reference key on UI
     ...
@@ -32,7 +33,7 @@ Dev_TC12_AddCrossReference_Positive
     Sleep    5s
     Click element    xpath=//*[@id="webide"]/main/section/section/section[2]/form[1]/header/button
     sleep    4s
-    Close Browser
+    [Teardown]    Close Browser
     
 Dev_TC13_Delete_CrossReferenceKey
     [Documentation]    Check user can delete Cross reference key on UI
@@ -55,4 +56,4 @@ Dev_TC13_Delete_CrossReferenceKey
     Sleep    2s
     Click element    xpath=//*[@id="webide"]/main/section/section/section[1]/header/button[2]
     sleep    4s
-    Close Browser
+    [Teardown]    Close Browser
