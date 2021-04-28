@@ -23,4 +23,4 @@ TC43_AddParentOrg
     click element    xpath=/html/body/main/section/section/form/header/button[1]/i    #click save
     Page should contain    text=Komal test organistaion
     sleep    4s
-    Close browser
+    [Teardown]    Close Browser
