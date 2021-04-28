@@ -22,7 +22,7 @@ TC16_Add Extension
     Input Text    name=extension.Name    Ext2    #Enter Extension name
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/button[1]    #Click save
     Sleep    6s
-    Close Browser
+    [Teardown]    Close Browser
     
 TC17_Delete Extension
     [Documentation]    Check user can Delete extension if it is not associated to a process
@@ -43,7 +43,7 @@ TC17_Delete Extension
     Sleep    6s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # Confirm deletion
     Sleep    6s
-    Close Browser
+    [Teardown]    Close Browser
 
 
 TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
@@ -75,4 +75,4 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Wait until page contains    text=The extension cannot be deleted as it is being used in process    timeout=${login.timeout}
     Page should contain    text=The extension cannot be deleted as it is being used in process
     Sleep    2s
-    close browser
+    [Teardown]    Close Browser
