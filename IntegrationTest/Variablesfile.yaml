@@ -10,3 +10,6 @@ login:
  password: '#{password}#'
  timeout: '#{timeout}#'
  transferid: '#{transferid}#'
+ viewerroleid: '#{viewerroleid}#'
+ designerroleid: '#{designerroleid}#'
+ adminroleid: '#{adminroleid}#'
