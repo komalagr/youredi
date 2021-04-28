@@ -21,4 +21,4 @@ Dev_TC25-Logs-information
     Page should not contain    text=hello
     page should contain    text=hii
     Sleep    2s
-    Close Browser
+    [Teardown]    Close Browser
