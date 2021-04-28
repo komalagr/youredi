@@ -36,4 +36,4 @@ Dev_TC09_ServiceDataPage
     Wait until page contains    text=DataResult    timeout=${login.timeout}
     Page should contain    text=DataResult    # Service Data - Data should fe fetched
     Sleep    2s
-    Close Browser
+    [Teardown]    Close Browser
