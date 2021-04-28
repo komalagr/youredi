@@ -23,4 +23,4 @@ TC039_Transfer_FilterById
     Page should not contain    text=11425361
     Page should contain    ${login.transferid}
     Sleep    2s
-    Close Browser
+    [Teardown]    Close Browser
