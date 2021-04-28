@@ -32,7 +32,7 @@ Dev_TC53_ViewerRole
     Page should not contain element    class=fa-calendar
     Page should not contain element    class=fa-exclamation-cirlce
     Page should not contain element    class=fa-cubes
-    Close Browser
+    [Teardown]    Close Browser
     
     
 Dev_TC54_DesignerRole
@@ -85,7 +85,7 @@ Dev_TC54_DesignerRole
     wait until page contains    text=Not authorized    timeout=${login.timeout}
     Page should contain    text=Not authorized
     Sleep    2s
-    Close Browser
+    [Teardown]    Close Browser
     
 Dev_TC54_AdminRole
     [Documentation]    Check that user that has Admin role but does not have Global admin rights, has full rights at account and service level but does not have access to admin tools
@@ -136,4 +136,4 @@ Dev_TC54_AdminRole
     Sleep    4s
     Page should not contain    text=Not authorized
     Sleep    2s
-    Close Browser
+    [Teardown]    Close Browser
