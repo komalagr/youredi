@@ -60,4 +60,4 @@ Dev_TC11_DeleteParameter
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    # confirm deletion
     Wait until page does not contain    text=1parameter    timeout=16s
     Sleep    2s
-    Close Browser
+    [Teardown]    Close Browser
