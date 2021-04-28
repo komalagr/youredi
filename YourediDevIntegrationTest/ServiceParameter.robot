@@ -35,7 +35,7 @@ Dev_TC10_AddServiceParameter_Positive
     Wait until page contains    text=1parameter    timeout=${login.timeout}
     Page should contain    text=1parameter    # check that page should display new parameter added
     Sleep    2s
-    Close Browser
+    [Teardown]    Close Browser
     
 Dev_TC11_DeleteParameter
     [Documentation]    Check user can delete service parameter
