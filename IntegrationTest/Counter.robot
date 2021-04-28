@@ -36,7 +36,7 @@ Dev_TC15_Search_Counter
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Sleep    4s
-    wait until page contains element    class=fa-calculato    timeout=${login.timeout}
+    wait until page contains element    class=fa-calculator    timeout=${login.timeout}
     Click Element    class=fa-calculator    # Click on counters
     Wait until page contains    text=Counter3    timeout=${login.timeout}
     Input text    name=filterName    Counter3    # Enter Counter3 in Search
