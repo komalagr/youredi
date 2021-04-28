@@ -61,7 +61,7 @@ Dev_TC45-Alerts_AddPayload
     Page should not contain    text=No alerts found
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/div/ul/li[3]/a    # click on payload
     Sleep    4s
-    Input Text    xpath=//*[@id="webide"]/main/section/section/section/section[2]/article/div/form/div[1]/textarea    add
+    Execute javascript    _editor = document.querySelectorAll("div.CodeMirror")[0].CodeMirror;    _editor.setValue("Value for Key1")
     Sleep    4s
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/form/div[2]/div/button[1]/i    # click on save
     sleep    4s
