@@ -141,7 +141,7 @@ Dev_TC21-Alerts_FilterByAssignedTo
     wait until page contains element    class=fa-bell    timeout=${login.timeout}
     Click Element    class=fa-bell    #Click on Alerts
     sleep    6s
-    Select from list by value    xpath=/html/body/main/section/section/header/form/div[2]/div[2]/select    16887    # Enter into filter criteria 928 for stage , dev=16887
+    Select from list by value    xpath=/html/body/main/section/section/header/form/div[2]/div[2]/select    ${login.alertfilter}    # Enter into filter criteria 928 for stage , dev=16887
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
     Sleep    4s
@@ -149,6 +149,6 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Sleep    4s
     Page should not contain    text=No alerts found
     ${id}=    Get Text    xpath=/html/body/main/section/section/section/section[2]/article/div/section/div/dl/dd[1]
-    Should be equal as Strings    ${id}    203542    #dev=203542
+    Should be equal as Strings    ${id}    ${login.alertid}    #dev=203542
     Sleep    4s
     [Teardown]    Close Browser
