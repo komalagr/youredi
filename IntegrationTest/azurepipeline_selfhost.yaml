@@ -1,0 +1,302 @@
+# Python package
+# Create and test a Python package on multiple Python versions.
+# Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/python
+
+jobs:
+- job: Phase_1
+  displayName: Build and Test
+  timeoutInMinutes: 180
+          
+  pool:
+    name: Pipelines-SelfHostedAgent
+  strategy:
+    matrix:
+      Python37:
+        python.version: '3.7'
+
+
+#Replace Variables value
+  steps:
+  - task: replacetokens@3
+    inputs:
+      rootDirectory: 'IntegrationTest'
+      targetFiles: 'variablesfile.yaml'
+      encoding: 'auto'
+      writeBOM: true
+      actionOnMissing: 'warn'
+      keepToken: false
+      tokenPrefix: '#{'
+      tokenSuffix: '}#'
+      useLegacyPattern: false
+      enableTransforms: false
+      enableTelemetry: true
+    displayName: 'Replace Variables value'
+
+
+#Use Python 3.7
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '$(python.version)'
+    displayName: 'Use Python $(python.version)'
+
+
+#Install Robot framework 
+  - script: |
+      pip install robotframework robotframework-seleniumlibrary webdrivermanager 
+    displayName: 'Install Robot framework'
+
+
+#Install Python Yaml
+  - script: |
+      pip install pyyaml
+    displayName: 'Install Python Yaml'
+
+
+#Run Robot Scripts - AddEditDeleteUser
+  - script: |
+      robot --pythonpath . -x AddEditDeleteUser.xml AddEditDeleteUser.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - AddEditDeleteUser'
+    continueOnError: true
+
+#Publish Test Results - AddEditDeleteUser  
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/AddEditDeleteUser.xml'
+      testRunTitle: AddEditDeleteUser
+    displayName: 'Publish Test Results - AddEditDeleteUser'
+    continueOnError: true
+    condition: succeededOrFailed()
+
+
+#Run Robot Scripts - Alerts
+  - script: |
+      robot --pythonpath . -x Alerts.xml Alerts.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - Alerts'
+    continueOnError: true
+
+#Publish Test Results - Alerts  
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/Alerts.xml'
+      testRunTitle: Alerts
+    displayName: 'Publish Test Results - Alerts'
+    continueOnError: true
+    condition: succeededOrFailed()
+
+
+#Run Robot Scripts - Counter
+  - script: |
+      robot --pythonpath . -x Counter.xml Counter.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - Counter'
+    continueOnError: true
+
+#Publish Test Results - Counter  
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/Counter.xml'
+      testRunTitle: Counter
+    displayName: 'Publish Test Results - Counter'
+    continueOnError: true
+    condition: succeededOrFailed()
+
+#Run Robot Scripts - CrossReference
+  - script: |
+      robot --pythonpath  . -x CrossReference.xml CrossReference.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - CrossReference'
+    continueOnError: true
+
+#Publish Test Results - CrossReference  
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/CrossReference.xml'
+      testRunTitle: CrossReference
+    displayName: 'Publish Test Results - CrossReference'
+    continueOnError: true
+    condition: succeededOrFailed()
+
+
+#Run Robot Scripts - EditOrgandService
+  - script: |
+      robot --pythonpath  . -x EditOrgandService.xml EditOrgandService.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - EditOrgandService'
+    continueOnError: true
+
+#Publish Test Results - EditOrgandService  
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/EditOrgandService.xml'
+      testRunTitle: EditOrgandService
+    displayName: 'Publish Test Results - EditOrgandService'
+    continueOnError: true
+    condition: succeededOrFailed()
+
+
+#Run Robot Scripts - Library
+  - script: |
+      robot --pythonpath  . -x Library.xml Library.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - Library'
+    continueOnError: true
+
+#Publish Test Results - Library  
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/Library.xml'
+      testRunTitle: Library
+    displayName: 'Publish Test Results - Library'
+    continueOnError: true
+    condition: succeededOrFailed()
+
+
+#Run Robot Scripts - Logout
+  - script: |
+       robot --pythonpath  . -x Logout.xml Logout.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - Logout'
+    continueOnError: true
+
+#Publish Test Results - Logout 
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/Logout.xml'
+      testRunTitle: Logout
+    displayName: 'Publish Test Results - Logout'
+    continueOnError: true
+    condition: succeededOrFailed()
+
+
+#Run Robot Scripts - ProcessandEndpoint
+  - script: |
+       robot --pythonpath  . -x ProcessandEndpoint.xml ProcessandEndpoint.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - ProcessandEndpoint'
+    continueOnError: true
+
+#Publish Test Results - ProcessandEndpoint 
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/ProcessandEndpoint.xml'
+      testRunTitle: ProcessandEndpoint
+    displayName: 'Publish Test Results - ProcessandEndpoint'
+    continueOnError: true
+    condition: succeededOrFailed()
+
+
+#Run Robot Scripts - RoleBasedTesting
+  - script: |
+       robot --pythonpath  . -x RoleBasedTesting.xml RoleBasedTesting.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - RoleBasedTesting'
+    continueOnError: true
+
+#Publish Test Results - RoleBasedTesting 
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/RoleBasedTesting.xml'
+      testRunTitle: RoleBasedTesting
+    displayName: 'Publish Test Results - RoleBasedTesting'
+    continueOnError: true
+    condition: succeededOrFailed()
+
+
+#Run Robot Scripts - ServiceLog
+  - script: |
+       robot --pythonpath  . -x ServiceLog.xml ServiceLog.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - ServiceLog'
+    continueOnError: true
+
+#Publish Test Results - ServiceLog 
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/ServiceLog.xml'
+      testRunTitle: ServiceLog
+    displayName: 'Publish Test Results - ServiceLog'
+    continueOnError: true
+    condition: succeededOrFailed()
+
+
+#Run Robot Scripts - ServiceParameter
+  - script: |
+       robot --pythonpath  . -x ServiceParameter.xml ServiceParameter.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - ServiceParameter'
+    continueOnError: true
+
+#Publish Test Results - ServiceParameter 
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/ServiceParameter.xml'
+      testRunTitle: ServiceParameter
+    displayName: 'Publish Test Results - ServiceParameter'
+    continueOnError: true
+    condition: succeededOrFailed()
+
+
+#Run Robot Scripts - Servicedata
+  - script: |
+       robot --pythonpath  . -x ServiceParameter.xml ServiceParameter.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - Servicedata'
+    continueOnError: true
+
+#Publish Test Results - Servicedata 
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/ServiceParameter.xml'
+      testRunTitle: Servicedata
+    displayName: 'Publish Test Results - Servicedata'
+    continueOnError: true
+    condition: succeededOrFailed()
+
+
+#Run Robot Scripts - Transfer
+  - script: |
+       robot --pythonpath  . -x Transfer.xml Transfer.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - Transfer'
+    continueOnError: true
+
+#Publish Test Results - Transfer 
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/Transfer.xml'
+      testRunTitle: Transfer
+    displayName: 'Publish Test Results - Transfer'
+    continueOnError: true
+    condition: succeededOrFailed()
+
+
+#Run Robot Scripts - Extensions
+  - script: |
+       robot --pythonpath  . -x Extension.xml extension.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - Extensions'
+    continueOnError: true
+
+#Publish Test Results - Extensions
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/Extension.xml'
+      testRunTitle: Extensions
+    displayName: 'Publish Test Results - Extensions'
+    continueOnError: true
+    condition: succeededOrFailed()
+
+
+#DeleteFiles
+  - task: DeleteFiles@1
+    displayName: 'Delete files from agent build directory'
+    inputs:
+      SourceFolder: '$(Agent.BuildDirectory)'
+      Contents: |
+       a*
+       b*
+       **/s/IntegrationTest*
+      RemoveSourceFolder: true
