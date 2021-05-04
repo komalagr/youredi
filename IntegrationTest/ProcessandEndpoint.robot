@@ -3,20 +3,18 @@ Library           SeleniumLibrary
 Variables         Variablesfile.yaml
 *** Test Cases ***
 
-Dev_TC01_AddProcess
+TC01_AddProcess
     [Documentation]    Check that If Process does not exist , it should get added successfully
     ...
     ...    Test Data Setup
     ...    1. Need Organization Name : Komal test organistaion
     ...    2. Need Service -- DemoService
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    #Click Processes
@@ -29,21 +27,19 @@ Dev_TC01_AddProcess
     Page should contain element    class=fa-play    #New process page should be displayed with Start button
     Sleep    2s
     [Teardown]    Close Browser
-    
-Dev_TC02_DeleteProcess_PositiveScenario
+
+TC02_DeleteProcess_PositiveScenario
     [Documentation]    Check that user is able to delete the process if process name entered on Delete pop up window is correct
     ...
     ...    Test data setup
     ...    Need process- 1Process added to DemoService in Komal test organistaion
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    sleep    2s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select service
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    # Clicks Processes
     Wait until Page contains    text=1Process    timeout=${login.timeout}
@@ -55,20 +51,18 @@ Dev_TC02_DeleteProcess_PositiveScenario
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
     Sleep    4s
     [Teardown]    Close Browser
-    
-Dev_TC03_DeleteProcess_ProcessNameIncorect
+
+TC03_DeleteProcess_ProcessNameIncorect
     [Documentation]    Check that delete button should not be active if On delete window,process name entered is incorrect
     ...
     ...    Test Data setup
     ...    1. Komal test organistaion \ -- DemoService
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    #Click on Processes
@@ -80,22 +74,19 @@ Dev_TC03_DeleteProcess_ProcessNameIncorect
     Element Should Be Disabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #Check that delete button should be disabled
     Sleep    2s
     [Teardown]    Close Browser
-   
-    
-Dev_TC04_DeleteProcess_Cancel
+
+TC04_DeleteProcess_Cancel
     [Documentation]    Check that user if User clicks on cancel button on Delete process page, then process should not get deleted
     ...
     ...
     ...    Test Data setup
     ...    1. Komal test organistaion \ -- DemoService
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    # click on processes
@@ -110,21 +101,18 @@ Dev_TC04_DeleteProcess_Cancel
     Page should contain    text=${process}
     Sleep    2s
     [Teardown]    Close Browser
-   
-    
+
 Dev_TC05_DeleteEndpoint_Positive
     [Documentation]    Check that If endpoint is not assoicated to a process, then it should get deleted
     ...
     ...    Test Data setup
     ...    1. Komal test organistaion \ -- DemoService \ -- 1Process
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Wait Until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    class=fa-lightbulb-o    #Click endpoints
@@ -135,8 +123,7 @@ Dev_TC05_DeleteEndpoint_Positive
     Wait until page does not contain    text=1Process    timeout=${login.timeout}
     Sleep    2s
     [Teardown]    Close Browser
-    
-    
+
 Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     [Documentation]    Check that process should not get added if Process name or endpoint name already exist
     ...
@@ -144,14 +131,12 @@ Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     ...    Test Data Setup
     ...    1. Need Organization -- Name : Komal test organistaion
     ...    2. Need Service -- DemoService
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    15s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    # Click on processes
@@ -165,8 +150,7 @@ Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     Page should not contain element    class=fa-play    # Error message should be displayed
     Sleep    2s
     [Teardown]    Close Browser
-  
-    
+
 Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     [Documentation]    Check that If endpoint is associated to a process , endpoint should not get deleted
     ...
@@ -174,14 +158,12 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     ...    Test Data Setup
     ...    1. Need Organization -- Name : Komal test organistaion
     ...    2. Need Service -- DemoService
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in    # Login
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Wait Until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    class=fa-lightbulb-o    # Click on Endpoints
@@ -189,11 +171,11 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Click Element    xpath=//*[@id="webide"]/main/section/section/form/header/div/button    # click on delete enpoint
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    # confirm deletion on endpoint
-    Wait until page contains    text=Can't delete an endpoint that has a process attached    timeout=30s
+    Wait until page contains    text=Can't delete an endpoint that has a process attached    timeout=${login.timeout}
     Page Should contain    text=Can't delete an endpoint that has a process attached    # error message should be displayed since endpoint associated to a process
     Sleep    2s
     [Teardown]    Close Browser
-    
+
 Dev_TC08_AddEndpoint_Positive
     [Documentation]    Check user can add endpoint if it does not already exist
     ...
@@ -201,14 +183,12 @@ Dev_TC08_AddEndpoint_Positive
     ...    Test Data Setup
     ...    1. Need Organization -- Name : Komal test organistaion
     ...    2. Need Service -- DemoService
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    [Setup]    login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Wait Until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    class=fa-lightbulb-o    # click on endpoints
@@ -221,22 +201,20 @@ Dev_TC08_AddEndpoint_Positive
     Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
     Sleep    4s
     [Teardown]    Close Browser
-    
+
 Dev_TC08b_DeleteEndpointforNextrun
     [Documentation]    Check that If endpoint is not assoicated to a process, then it should get deleted
     ...
     ...    Test Data setup
     ...    1. Komal test organistaion \ -- DemoService \ -- 1Process
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    12s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    4s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Wait Until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}   
+    Wait Until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    class=fa-lightbulb-o    #Click endpoints
     Wait until page contains    text=2enpoint    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/section/article/ul/li[2]/h6/i
@@ -247,8 +225,7 @@ Dev_TC08b_DeleteEndpointforNextrun
     Wait until page does not contain    text=3endpoint    timeout=${login.timeout}
     Sleep    2s
     [Teardown]    Close Browser
-    
-    
+
 Dev_TC51_Check If binding is not active process should not get executed
     [Documentation]    Check if the endpoint binding is not active, process should not get executed.An error message should be displayed
     ...
@@ -257,16 +234,13 @@ Dev_TC51_Check If binding is not active process should not get executed
     ...    1. Need Organization Name : Komal test organistaion
     ...    2. Need Service -- DemoService
     ...    3 Process name binding whose endpoint binding is not marked active
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    18s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    4s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select service
-    Sleep    15s
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click element    class=fa-object-group    #Click on Processes
     sleep    4s
@@ -280,19 +254,18 @@ Dev_TC51_Check If binding is not active process should not get executed
     Page should contain    text=Process not found using given account    #error message shouldbe present
     Sleep    2s
     [Teardown]    Close Browser
-    
-TC47_Bug 8386: Space at the end of process name should not prevent it to be deleted.
+
+Bug 8386: Space at the end of process name should not prevent it to be deleted.
     [Documentation]    Check that if message property is set \ with empty value , still it should be displayed in Transfer messages
     ...
     ...    test data setup
     ...    Process - 1Space trim Test with extra spaces in end should be present in Demo service4
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    [Setup]    login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    4s
     Click Element    xpath=/html/body/main/section[1]/section/div/div[1]/div[2]/div[4]/div/p/a[2]    #click on demo service4
     Sleep    4s
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
@@ -308,22 +281,19 @@ TC47_Bug 8386: Space at the end of process name should not prevent it to be dele
     Page should not contain    text=1Space trim Test
     Sleep    2s
     [Teardown]    Close Browser
-    
+
 TC32_AddandDeleteBinding
     [Documentation]    Check user can add Bindings to endpoint and also user can delete bindings
     ...
     ...    Komal test Organisation - Demo service 5
     ...    Counters endpoint
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    [Setup]    login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[5]/div[1]/p/a[2]
-    sleep    11s
     Wait Until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
     Click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
@@ -344,24 +314,22 @@ TC32_AddandDeleteBinding
     click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[2]/i
     Sleep    4s
     [Teardown]    Close Browser
-    
+
 TC33_PBI 8220: Web IDE: changing of Endpoint type.
     [Documentation]    Check user can edit endpoint type if it Binding is not associated to it
     ...
     ...    Komal Test Organisation - Demo Service 3
     ...    Endpoint \ with type Inbound and no binding attached to it
     ...    Endpoint is associated to a process
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    [Setup]    login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    4s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
     Sleep    4s
-    Wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}    
+    Wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #Click endpoints
     Wait until page contains    text=Binding    timeout=${login.timeout}
     click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i
@@ -374,24 +342,22 @@ TC33_PBI 8220: Web IDE: changing of Endpoint type.
     Page should not contain    text=Can't change type of an endpoint that has endpoint bindings
     Sleep    2s
     [Teardown]    Close Browser
-    
+
 TC34_CannotChangeEndpointType_IfBindingassociated
     [Documentation]    Check user cannot edit endpoint type if it Binding is associated to it
     ...
     ...    Test Data setup
     ...    Komal Test Organisation - DemoService4
     ...    EndpointB1 with Binding
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    [Setup]    login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[4]/div[1]/p/a[2]
     Sleep    4s
-    Wait until page contains element    class=fa-lightbulb-o    timeout=30s
+    Wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #click on endpoints
     Wait until page contains    text=1Space Trim Test    timeout=${login.timeout}
     Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    1
@@ -401,17 +367,15 @@ TC34_CannotChangeEndpointType_IfBindingassociated
     Page should contain    text=Can't change type of an endpoint that has endpoint bindings
     Sleep    2s
     [Teardown]    Close Browser
-    
+
 TC42_RestartProcesswithemptyProperty
     [Documentation]    Check that if message property is set \ with empty value , still it should be displayed in Transfer messages
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    [Setup]    login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    4s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
     Sleep    4s
     wait until page contains element    class=fa-object-group    timeout=${login.timeout}
@@ -437,24 +401,22 @@ TC42_RestartProcesswithemptyProperty
     Page should contain    text=Process started successfully.
     Sleep    2s
     [Teardown]    Close Browser
-    
+
 TC20_Reset endpoint type for next run.
     [Documentation]    Check user can edit endpoint type if it Binding is not associated to it
     ...
     ...    Komal Test Organisation - Demo Service 3
     ...    Endpoint \ with type Inbound and no binding attached to it
     ...    Endpoint is associated to a process
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    [Setup]    login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    4s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
     Sleep    4s
-    Wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}    
+    Wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #Click endpoints
     Wait until page contains    text=Binding    timeout=${login.timeout}
     click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i
@@ -467,3 +429,13 @@ TC20_Reset endpoint type for next run.
     Page should not contain    text=Can't change type of an endpoint that has endpoint bindings
     Sleep    2s
     [Teardown]    Close Browser
+
+*** Keywords ***
+Login
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+
+
+
