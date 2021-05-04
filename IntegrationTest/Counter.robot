@@ -3,17 +3,15 @@ Library           SeleniumLibrary
 Variables         Variablesfile.yaml
 *** Test Cases ***
 
-Dev_TC14_Delete_Counter
+TC14_Delete_Counter
     [Documentation]    Check user can delete Counter on UI
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    12s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
+    Sleep    4s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
     Sleep    4s
     wait until page contains element    class=fa-calculator    timeout=${login.timeout}
     Click Element    class=fa-calculator    #Click on Counters
@@ -23,17 +21,15 @@ Dev_TC14_Delete_Counter
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Click Delete on confimation
     sleep    4s
     [Teardown]    Close Browser
-    
-Dev_TC15_Search_Counter
+
+TC15_Search_Counter
     [Documentation]    Check user can search Counter on UI
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    12s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    [Setup]    login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
+    Sleep    4s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Sleep    4s
     wait until page contains element    class=fa-calculator    timeout=${login.timeout}
@@ -45,3 +41,18 @@ Dev_TC15_Search_Counter
     Page should contain Element    class=fa-remove
     Sleep    4s
     [Teardown]    Close Browser
+
+
+
+
+
+
+*** Keywords ***
+Login
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+
+
+
