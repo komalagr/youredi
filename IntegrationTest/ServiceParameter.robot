@@ -33,7 +33,7 @@ TC10_AddServiceParameter_Positive
     Sleep    2s
     [Teardown]    Close Browser
 
-newTC11_DeleteParameter
+TC11_DeleteParameter
     [Documentation]    Check user can delete service parameter
     ...
     ...    Test Data Setup
