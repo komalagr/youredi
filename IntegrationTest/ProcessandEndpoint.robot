@@ -97,7 +97,8 @@ TC04_DeleteProcess_Cancel
     Input Text    xpath=//*[@id="input-8"]    ${process}    # get in the process name to be deleted
     Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[2]    # click cancel on delete pop up window
-    Sleep    10s
+    Sleep    4s
+    Wait until Page contains    text=${process}    timeout=${login.timeout}
     Page should contain    text=${process}
     Sleep    2s
     [Teardown]    Close Browser
@@ -267,7 +268,7 @@ Bug 8386: Space at the end of process name should not prevent it to be deleted.
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
     Sleep    4s
     Click Element    xpath=/html/body/main/section[1]/section/div/div[1]/div[2]/div[4]/div/p/a[2]    #click on demo service4
-    Sleep    4s
+    Sleep    2s
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click element    xpath=/html/body/aside/div[1]/ul/li[5]/a/i    #click on processes
     Wait Until Element Is Visible    class=fa-plus    timeout=${login.timeout}
@@ -277,7 +278,7 @@ Bug 8386: Space at the end of process name should not prevent it to be deleted.
     Input Text    xpath=/html/body/div[4]/form/div/div[2]/p[2]/input    1Space Trim Test
     sleep    4s
     Click element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]/i    #Confirm deletion
-    wait until page contains element    class=fa-plus    timeout=16s
+    wait until page contains element    class=fa-plus    timeout=${login.timeout}
     Page should not contain    text=1Space trim Test
     Sleep    2s
     [Teardown]    Close Browser
@@ -312,7 +313,7 @@ TC32_AddandDeleteBinding
     click element    xpath=//*[@id="webide"]/div[5]/form/div/div[3]/span/button[1]/i
     sleep    6s
     click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[2]/i
-    Sleep    4s
+    Sleep    2s
     [Teardown]    Close Browser
 
 TC33_PBI 8220: Web IDE: changing of Endpoint type.
@@ -328,7 +329,7 @@ TC33_PBI 8220: Web IDE: changing of Endpoint type.
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
-    Sleep    4s
+    Sleep    2s
     Wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #Click endpoints
     Wait until page contains    text=Binding    timeout=${login.timeout}
@@ -415,7 +416,7 @@ TC20_Reset endpoint type for next run.
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
     Sleep    4s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
-    Sleep    4s
+    Sleep    2s
     Wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #Click endpoints
     Wait until page contains    text=Binding    timeout=${login.timeout}
