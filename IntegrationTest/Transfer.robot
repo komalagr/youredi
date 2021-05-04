@@ -18,7 +18,7 @@ TC039_Transfer_FilterById
     sleep    6s
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[2]/i
     click element    xpath=/html/body/main/section/header/form/div[2]/div[4]/div/button[1]/i
-    Wait until page contains    text=${transferid}    timeout=${login.timeout}
+    Wait until page contains    text=${login.transferid}    timeout=${login.timeout}
     Page should not contain    text=11425361
     Page should contain    ${login.transferid}
     Sleep    2s
