@@ -3,18 +3,17 @@ Library           SeleniumLibrary
 Variables         Variablesfile.yaml
 *** Test Cases ***
 
-Dev_TC34_AddUserToOrganization
+TC34_AddUserToOrganization
     [Documentation]    Check we can add User to Organisation
     ...
-    ...    Test data setup
+    ...    Test Sdata setu2ap
     ...    Komal test organisation
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    21s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
+    sleep    4s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
     Sleep    6s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
@@ -28,16 +27,14 @@ Dev_TC34_AddUserToOrganization
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
     sleep    4s
     [Teardown]    Close Browser
-    
-Dev_TC36_EditUserRoleInOrganization
+
+TC36_EditUserRoleInOrganization
     [Documentation]    Check that we can edit role for the user for organisation
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    21s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
     Sleep    6s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
@@ -47,16 +44,15 @@ Dev_TC36_EditUserRoleInOrganization
     Click element    xpath=//*[@id="webide"]/main/section/section/section/form/header/button/i
     sleep    4s
     [Teardown]    Close Browser
-    
-Dev_TC35_DeleteUserFromOrganization
+
+newTC35_DeleteUserFromOrganization
     [Documentation]    check that we can delete user from organisation
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    21s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
+    Sleep    4s
     click element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div[1]/p/a[2]
     Sleep    6s
     Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[1]/span[2]/a/i
@@ -68,3 +64,13 @@ Dev_TC35_DeleteUserFromOrganization
     Page should not contain    text=Aryan
     Sleep    4s
     [Teardown]    Close Browser
+
+*** Keywords ***
+Login
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+
+
+
