@@ -13,8 +13,7 @@ TC25-Logs-information
     Sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Click Element    class=fa-info-circle    #Click on Service log
-    Wait until page contains    text=Executing Branch 1    timeout=${login.timeout}
-    Sleep    2s
+    Sleep    6s
     Input text    xpath=/html/body/main/section/section/header/form/div[1]/div[4]/div/div/input    hii
     sleep    4s
     wait until page does not contain    text=hello    timeout=${login.timeout}
