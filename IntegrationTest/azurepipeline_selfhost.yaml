@@ -241,7 +241,7 @@ jobs:
 
 #Run Robot Scripts - Servicedata
   - script: |
-       robot --pythonpath  . -x ServiceParameter.xml ServiceParameter.robot
+       robot --pythonpath  . -x Servicedata.xml Servicedata.robot
     workingDirectory: IntegrationTest
     displayName: 'Run Robot Scripts - Servicedata'
     continueOnError: true
@@ -249,7 +249,7 @@ jobs:
 #Publish Test Results - Servicedata 
   - task: PublishTestResults@2
     inputs:
-      testResultsFiles: '**/ServiceParameter.xml'
+      testResultsFiles: '**/Servicedata.xml'
       testRunTitle: Servicedata
     displayName: 'Publish Test Results - Servicedata'
     continueOnError: true
