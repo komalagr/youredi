@@ -2,21 +2,25 @@
 Library           SeleniumLibrary
 Variables         Variablesfile.yaml
 *** Test Cases ***
-
-Dev_TC28-Logout
+TC28-Logout
     [Documentation]    Check user can logout from the application
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    12s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[2]/div/p/i
-    Click element    class=fa-cog
-    Click element    xpath=//*[@id="webide"]/aside/div[2]/div/a[5]/i
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
+    Click element    class=fa-cog    #Click on settings
+    Sleep    2s
+    Click element    xpath=//*[@id="webide"]/aside/div[2]/div/a[5]/i    # Click on Logout
     Handle Alert
     Wait until page contains    text=Please log in to access Youredi.    timeout=${login.timeout}
     Page should contain element    xpath=//*[@id="login"]/div/div[1]/div[2]/form/div[4]/div/button/i
     Sleep    2s
     [Teardown]    Close Browser
+
+*** Keywords ***
+Login
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in

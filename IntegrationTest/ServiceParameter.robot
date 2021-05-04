@@ -3,23 +3,20 @@ Library           SeleniumLibrary
 Variables         Variablesfile.yaml
 *** Test Cases ***
 
-Dev_TC10_AddServiceParameter_Positive
+TC10_AddServiceParameter_Positive
     [Documentation]    Check user can add Service parameter on Parameter UI page
     ...
     ...
     ...    Test Data Setup
     ...    1. Need Organization -- Name : Komal test organistaion
     ...    2. Need Service -- DemoService
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    18s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
-    Sleep    4s
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
+    Sleep    2s
+    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Wait until page contains element    class=fa-cogs    timeout=${login.timeout}
     Click Element    class=fa-cogs    # Click on Parameters link
     Wait until page contains element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]    timeout=${login.timeout}
@@ -35,21 +32,19 @@ Dev_TC10_AddServiceParameter_Positive
     Page should contain    text=1parameter    # check that page should display new parameter added
     Sleep    2s
     [Teardown]    Close Browser
-    
-Dev_TC11_DeleteParameter
+
+TC11_DeleteParameter
     [Documentation]    Check user can delete service parameter
     ...
     ...    Test Data Setup
     ...    1. Need Organization -- Name : Komal test organistaion
     ...    2. Need Service -- DemoService
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    12s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=18s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
+    Sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
     Sleep    4s
     Wait until page contains element    class=fa-cogs    timeout=46s
@@ -61,3 +56,11 @@ Dev_TC11_DeleteParameter
     Wait until page does not contain    text=1parameter    timeout=16s
     Sleep    2s
     [Teardown]    Close Browser
+
+
+*** Keywords ***
+Login
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
