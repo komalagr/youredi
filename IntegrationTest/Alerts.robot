@@ -3,18 +3,16 @@ Library           SeleniumLibrary
 Variables         Variablesfile.yaml
 *** Test Cases ***
     
-Dev_TC45-Alerts_AddComment
+TC45-Alerts_AddComment
     [Documentation]    Check user is able to add comments to alert on alert page
     ...
     ...    Test data setup. - Need an alert with info as Info3 in Demoservice of Komal Test Organisation
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    4s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     wait until page contains element    class=fa-bell    timeout=${login.timeout}
     Click Element    class=fa-bell    #Click on Alerts
@@ -34,23 +32,21 @@ Dev_TC45-Alerts_AddComment
     Page should contain    text=TestCommentAdding
     Sleep    4s
     [Teardown]    Close Browser
-    
-Dev_TC45-Alerts_AddPayload
+
+TC45-Alerts_AddPayload
     [Documentation]    Check user is able to add payload to alert on alert page
     ...
     ...    Test data setup. - Need an alert with info as Info3 in Demoservice of Komal Test Organisation
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     wait until page contains element    class=fa-bell    timeout=${login.timeout}
     Click Element    class=fa-bell    #Click on Alerts
-    Sleep    6s    
+    Sleep    6s
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
@@ -65,19 +61,17 @@ Dev_TC45-Alerts_AddPayload
     Click element    xpath=/html/body/main/section/section/section/section[2]/article/div/form/div[2]/div/button[1]/i    # click on save
     sleep    4s
     [Teardown]    Close Browser
-    
-Dev_TC46-Alerts_AssignToMe
+
+TC46-Alerts_AssignToMe
     [Documentation]    Check user is able to assign the alert to himself/herself
     ...
     ...    Test data setup. - Need an alert with info as Info3 in Demoservice of Komal Test Organisation
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    16s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     wait until page contains element    class=fa-bell    timeout=${login.timeout}
     Click Element    class=fa-bell    #Click on Alerts
@@ -96,19 +90,17 @@ Dev_TC46-Alerts_AssignToMe
     Should be equal as Strings    ${assignedto}    Komal Agarwal (komal@youredi.com)
     Sleep    4s
     [Teardown]    Close Browser
-    
-Dev_TC47-Alerts_Unassign
+
+TC47-Alerts_Unassign
     [Documentation]    Check user is able to unassign the alert
     ...
     ...    Test data setup. - Need an alert with info as Info3 in Demoservice of Komal Test Organisation
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    12s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    4s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     wait until page contains element    class=fa-bell    timeout=${login.timeout}
     Click Element    class=fa-bell    #Click on Alerts
@@ -126,17 +118,15 @@ Dev_TC47-Alerts_Unassign
     Should be equal as Strings    ${assignedto}    Not assigned.
     sleep    4s
     [Teardown]    Close Browser
-    
+
 Dev_TC21-Alerts_FilterByAssignedTo
     [Documentation]    Check user can filter Alerts by Info
-    Open Browser    ${login.url}    chrome
-    Input Text    id=email    ${login.email}
-    Input Password    id=password    ${login.password}
-    Click Element    class=fa-sign-in
-    Sleep    18s
-    Click element    xpath= //*[@id="webide"]/main/section/section/div/div[1]/div/p/a[1]/i
-    Wait until page contains    text=Organizations    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div/p/a[1]/i    #Select Organization
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    sleep    2s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     wait until page contains element    class=fa-bell    timeout=${login.timeout}
     Click Element    class=fa-bell    #Click on Alerts
@@ -152,3 +142,13 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Should be equal as Strings    ${id}    ${login.alertid}    #dev=203542
     Sleep    4s
     [Teardown]    Close Browser
+
+*** Keywords ***
+Login
+    Open Browser    ${login.url}    chrome
+    Input Text    id=email    ${login.email}
+    Input Password    id=password    ${login.password}
+    Click Element    class=fa-sign-in
+
+
+
