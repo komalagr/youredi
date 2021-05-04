@@ -45,7 +45,7 @@ TC36_EditUserRoleInOrganization
     sleep    4s
     [Teardown]    Close Browser
 
-newTC35_DeleteUserFromOrganization
+TC35_DeleteUserFromOrganization
     [Documentation]    check that we can delete user from organisation
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
