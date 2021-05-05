@@ -12,7 +12,7 @@ DEV_TC1_OData_AlertCommentsposiitve
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -28,7 +28,7 @@ DEV_TC2_OData_AlertCommentsNeg
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -45,7 +45,7 @@ DEV_TC3_OData_AlertsNegative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -63,7 +63,7 @@ DEV_TC4_OData_Service_Positive
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -80,7 +80,7 @@ DEV_TC5_OData_ServiceNegative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -98,7 +98,7 @@ DEV_TC6_OData_ProcessesPositive
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -115,7 +115,7 @@ DEV_TC7_OData_Processes_Negative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -133,7 +133,7 @@ DEV_TC8_OData_ProcessesNegative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -151,7 +151,7 @@ DEV_TC9_OData_ExtensionPositive
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -168,7 +168,7 @@ DEV_TC10_OData_ExtensionNegative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -185,7 +185,7 @@ DEV_TC11_OData_ExtensionNegative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -202,7 +202,7 @@ DEV_TC12_OData_ServiceParameterPositive
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -219,7 +219,7 @@ DEV_TC13_OData_ServiceParameterNegative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -236,7 +236,7 @@ DEV_TC14_OData_CrossReferencePositive
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -253,7 +253,7 @@ DEV_TC15_OData_CrossReferenceNegative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -270,7 +270,7 @@ DEV_TC16_OData_CounterPositive
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -287,7 +287,7 @@ DEV_TC17_OData_CounterNegative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -304,7 +304,7 @@ DEV_TC18_OData_EPBindingPositive
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -321,7 +321,7 @@ DEV_TC19_OData_EPBindingNegative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -338,7 +338,7 @@ DEV_TC20_OData_EPBindingNegative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    4s
@@ -355,7 +355,7 @@ DEV_TC21_OData_EndpointPositive
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    2s
@@ -372,7 +372,7 @@ DEV_TC22_OData_EndpointNegative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    2s
@@ -389,7 +389,7 @@ DEV_TC23_OData_EndpointNegative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    2s
@@ -405,7 +405,7 @@ DEV_TC24_OData_ServiceLogPositive
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    2s
@@ -421,7 +421,7 @@ DEV_TC25_OData_ServiceLogNegative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    2s
@@ -437,7 +437,7 @@ DEV_TC26_OData_TransferPositive
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    2s
@@ -453,7 +453,7 @@ DEV_TC27_OData_TransferNegative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    2s
@@ -469,7 +469,7 @@ DEV_TC28_OData_ServiceDataPositive
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    2s
@@ -485,7 +485,7 @@ DEV_TC29_OData_ServiceDataNegative
     [Setup]    login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    2s
@@ -501,7 +501,7 @@ DEV_TC30_OData_LibrariesPositive
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    2s
@@ -517,7 +517,7 @@ DEV_TC31_OData_LibrariesNegative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    2s
@@ -533,7 +533,7 @@ DEV_TC32_OData_SchedulesPositive
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    2s
@@ -549,7 +549,7 @@ DEV_TC33_OData_SchedulesNegative
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    login.timeout=${login.timeout}
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
     sleep    2s
