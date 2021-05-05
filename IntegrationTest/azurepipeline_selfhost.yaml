@@ -289,6 +289,21 @@ jobs:
     continueOnError: true
     condition: succeededOrFailed()
 
+#Run Robot Scripts - ODataQuery
+  - script: |
+       robot --pythonpath  . -x ODataQuery.xml ODataQuery.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - ODataQuery'
+    continueOnError: true
+
+#Publish Test Results - ODataQuery 
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/ODataQuery.xml'
+      testRunTitle: ODataQuery
+    displayName: 'Publish Test Results - ODataQuery'
+    continueOnError: true
+    condition: succeededOrFailed()
 
 #DeleteFiles
   - task: DeleteFiles@1
