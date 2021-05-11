@@ -68,9 +68,10 @@ TC03_DeleteProcess_ProcessNameIncorect
     Click Element    class=fa-object-group    #Click on Processes
     Wait until Page contains    text=2enpoint    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click on delete button in first row
-    Sleep    6s
+    Sleep    1s
+    Wait until page contains    text=Really delete permanently?    timeout=${login.timeout}
     Input Text    xpath=//*[@id="input-8"]    8134 Bug    # enter incorrect process name in delete popup window
-    Sleep    6s
+    Sleep    2s
     Element Should Be Disabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    #Check that delete button should be disabled
     Sleep    2s
     [Teardown]    Close Browser
@@ -93,7 +94,8 @@ TC04_DeleteProcess_Cancel
     Wait until Page contains    text=2enpoint    timeout=${login.timeout}
     ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #get the process name to be deleted
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    # click delete button
-    Sleep    6s
+    Sleep    1s
+    Wait until page contains    text=Really delete permanently?    timeout=${login.timeout}
     Input Text    xpath=//*[@id="input-8"]    ${process}    # get in the process name to be deleted
     Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[2]    # click cancel on delete pop up window
