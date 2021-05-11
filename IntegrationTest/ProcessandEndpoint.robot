@@ -95,7 +95,7 @@ TC04_DeleteProcess_Cancel
     ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #get the process name to be deleted
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    # click delete button
     Sleep    1s
-    Wait until page contains    text=Really delete permanently?    timeout=${timeout}
+    Wait until page contains    text=Really delete permanently?    timeout=${login.timeout}
     Input Text    xpath=//*[@id="input-8"]    ${process}    # get in the process name to be deleted
     Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[2]    # click cancel on delete pop up window
