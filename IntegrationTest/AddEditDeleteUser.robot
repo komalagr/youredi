@@ -4,7 +4,7 @@ Variables         Variablesfile.yaml
 *** Test Cases ***
 
 TC34_AddUserToOrganization
-    [Documentation]    Check we can add User to Organisation.
+    [Documentation]    Check we can add User to Organisation.ok
     ...
     ...    Test data setup
     ...    Komal test organisation
