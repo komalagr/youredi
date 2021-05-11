@@ -65,6 +65,21 @@ TC35_DeleteUserFromOrganization
     Page should not contain    text=Aryan
     Sleep    4s
     [Teardown]    Close Browser
+    
+    
+ T50_SearchUser_UserPage
+    [Documentation]    Check we can search for user on User page
+    [Setup]    Login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains    text=Organizations    timeout=${login.timeout}
+    Scroll Element Into View    class=fa-users
+    Click element    class=fa-users
+    Input Text    name=filter    komal@youredi.com
+    Wait until page contains    text=Komal    timeout=${login.timeout}
+    Page should not contain    text=aryan@youredi.com
+    Page should contain    text=Komal
+    [Teardown]    Close Browser
 
 *** Keywords ***
 Login
