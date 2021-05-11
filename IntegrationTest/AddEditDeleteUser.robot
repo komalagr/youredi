@@ -4,9 +4,9 @@ Variables         Variablesfile.yaml
 *** Test Cases ***
 
 TC34_AddUserToOrganization
-    [Documentation]    Check we can add User to Organisation
+    [Documentation]    Check we can add User to Organisation.
     ...
-    ...    Test Sdata setu2ap
+    ...    Test data setup
     ...    Komal test organisation
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
