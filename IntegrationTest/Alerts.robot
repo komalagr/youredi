@@ -142,6 +142,100 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Should be equal as Strings    ${id}    ${login.alertid}    #dev=203542
     Sleep    4s
     [Teardown]    Close Browser
+    
+    
+TC60AlertWarningCategory
+    [Documentation]    Check users can filter alerts based on severity - Warning
+    ...
+    ...    Komal Test Organisation - Demo Service 4
+    ...    Need alerts with Minor, major, critical and warning category
+    [Setup]    login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    4s
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]    #Select Service
+    Sleep    2s
+    Click element    class=fa-bell
+    Sleep    4s
+    Click element    xpath=/html/body/main/section/section/header/form/div[4]/div/button[1]/span/i
+    Click element    class=fa-refresh
+    Sleep    2s
+    Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/article/ul/li[5]/span
+    Sleep    2s
+    Page should contain    text=No alerts found.
+    [Teardown]    Close Browser
+
+TC61AlertMinorCategory
+    [Documentation]    Check users can filter alerts based on severity - Minor
+    ...
+    ...    Komal Test Organisation - Demo Service 4
+    ...    Need alerts with Minor, major, critical and warning category
+    [Setup]    login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    4s
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]    #Select Service
+    Sleep    2s
+    Click element    class=fa-bell
+    Sleep    4s
+    Click element    xpath=/html/body/main/section/section/header/form/div[4]/div/button[2]/span/i
+    Click element    class=fa-refresh
+    Sleep    2s
+    Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/article/ul/li[4]/span
+    Sleep    2s
+    Page should contain    text=No alerts found.
+    [Teardown]    Close Browser
+
+TC62AlertMajorCategory
+    [Documentation]    Check users can filter alerts based on severity - Major
+    ...
+    ...    Komal Test Organisation - Demo Service 4
+    ...    Need alerts with Minor, major, critical and warning category
+    [Setup]    login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    4s
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]    #Select Service
+    Sleep    2s
+    Click element    class=fa-bell
+    Sleep    4s
+    Click element    xpath=/html/body/main/section/section/header/form/div[4]/div/button[3]/span/i
+    Click element    class=fa-refresh
+    Sleep    2s
+    Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/article/ul/li[3]/span
+    Sleep    2s
+    Page should contain    text=No alerts found.
+    [Teardown]    Close Browser
+
+TC63AlertCriticalCategory
+    [Documentation]    Check users can filter alerts based on severity - Critical
+    ...
+    ...    Komal Test Organisation - Demo Service 4
+    ...    Need alerts with Minor, major, critical and warning category
+    [Setup]    login
+    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Click element    class=btn-primary
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    4s
+    Click Element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]    #Select Service
+    Sleep    2s
+    Click element    class=fa-bell
+    Sleep    4s
+    Click element    xpath=/html/body/main/section/section/header/form/div[4]/div/button[4]/span/i
+    Click element    class=fa-refresh
+    Sleep    2s
+    Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/article/ul/li[2]/span
+    Sleep    2s
+    Page should contain    text=No alerts found.
+    [Teardown]    Close Browser
+
 
 *** Keywords ***
 Login
