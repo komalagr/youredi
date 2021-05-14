@@ -433,8 +433,6 @@ TC20_Reset endpoint type for next run.
     [Teardown]    Close Browser
     
 
-
-
 *** Keywords ***
 Login
     Open Browser    ${login.url}    chrome
