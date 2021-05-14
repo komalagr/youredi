@@ -432,38 +432,7 @@ TC20_Reset endpoint type for next run.
     Sleep    2s
     [Teardown]    Close Browser
     
-TC08c_AddEndpoints_ForNextRun
-    [Documentation]    Add endpoints 4ep and 5ep for next run
-    ...
-    ...
-    ...    Test Data Setup
-    ...    1. Need Organization -- Name : Komal test organistaion
-    ...    2. Need Service -- DemoService
-    [Setup]    login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
-    Click element    class=btn-primary
-    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${timeout}
-    Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    Sleep    2s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select service
-    Wait Until page contains element    class=fa-lightbulb-o    timeout=${timeout}
-    Click Element    class=fa-lightbulb-o    # click on endpoints
-    Wait until page contains    text=2enpoint    timeout=${timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    # click on add endpoint
-    Sleep    4s
-    Input text    name=Description    4ep    # enter new endpoint name
-    click element    xpath=//*[@id="webide"]/main/section/section/form/header/button    # save the endpoint
-    Wait until page contains    text=4ep    timeout=${timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
-    Sleep    4s
-    Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[1]/i    # click on add endpoint
-    Sleep    4s
-    Input text    name=Description    5ep    # enter new endpoint name
-    click element    xpath=//*[@id="webide"]/main/section/section/form/header/button    # save the endpoint
-    Wait until page contains    text=5ep    timeout=${timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
-    Sleep    4s
-    [Teardown]    Close Browser
+
 
 *** Keywords ***
 Login
