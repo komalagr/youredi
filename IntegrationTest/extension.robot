@@ -30,7 +30,7 @@ TC17_Delete Extension
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
-    sleep    2s
+    sleep    4s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
     wait until page contains element    class=fa-plug    timeout=${login.timeout}
     Click Element    class=fa-plug    #Click extension
