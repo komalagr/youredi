@@ -10,7 +10,7 @@ TC17_Add Library
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
-    Sleep    4s
+    wait until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Sleep    4s
     wait until page contains element    class=fa-book    timeout=${login.timeout}
@@ -21,7 +21,7 @@ TC17_Add Library
     Input Text    name=Name    Default1    #Enter Library Name
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i    #Click Save
     Wait until page contains    text=Default1    timeout=${login.timeout}
-    Element should be Enabled    class=fa-refresh    #Click refresh
+    Element should be Enabled    class=fa-refresh    #Click refresh.
     Sleep    2s
     [Teardown]    Close Browser
 
@@ -32,7 +32,7 @@ TC18_Delete Library
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
-    Sleep    4s
+    wait until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Sleep    4s
     wait until page contains element    class=fa-book    timeout=${login.timeout}

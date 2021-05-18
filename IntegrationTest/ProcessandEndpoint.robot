@@ -14,7 +14,7 @@ TC01_AddProcess
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    sleep    2s
+    Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    #Click Processes
@@ -38,7 +38,7 @@ TC02_DeleteProcess_PositiveScenario
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    sleep    2s
+    Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select service
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    # Clicks Processes
@@ -62,7 +62,7 @@ TC03_DeleteProcess_ProcessNameIncorect
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    sleep    2s
+    Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    #Click on Processes
@@ -87,7 +87,7 @@ TC04_DeleteProcess_Cancel
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    sleep    2s
+    Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # select service
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    # click on processes
@@ -115,7 +115,7 @@ Dev_TC05_DeleteEndpoint_Positive
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    sleep    2s
+    Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Wait Until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    class=fa-lightbulb-o    #Click endpoints
@@ -139,7 +139,7 @@ Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    sleep    2s
+    Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    # Click on processes
@@ -166,7 +166,7 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    sleep    2s
+    Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Wait Until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    class=fa-lightbulb-o    # Click on Endpoints
@@ -191,7 +191,7 @@ Dev_TC08_AddEndpoint_Positive
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    Sleep    2s
+    Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Wait Until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    class=fa-lightbulb-o    # click on endpoints
@@ -215,7 +215,7 @@ Dev_TC08b_DeleteEndpointforNextrun
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    Sleep    4s
+    Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]
     Wait Until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    class=fa-lightbulb-o    #Click endpoints
@@ -242,7 +242,7 @@ Dev_TC51_Check If binding is not active process should not get executed
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    Sleep    4s
+    Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select service
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click element    class=fa-object-group    #Click on Processes
@@ -267,7 +267,7 @@ Bug 8386: Space at the end of process name should not prevent it to be deleted.
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    Sleep    4s
+    Wait Until page contains element    xpath=/html/body/main/section[1]/section/div/div[1]/div[2]/div[4]/div/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section[1]/section/div/div[1]/div[2]/div[4]/div/p/a[2]    #click on demo service4
     Sleep    2s
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
@@ -294,7 +294,7 @@ TC32_AddandDeleteBinding
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    Sleep    4s
+    Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[5]/div[1]/p/a[2]    timeout=${login.timeout}
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[5]/div[1]/p/a[2]
     Wait Until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
@@ -328,7 +328,7 @@ TC33_PBI 8220: Web IDE: changing of Endpoint type.
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    Sleep    4s
+    Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
     Sleep    2s
     Wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
@@ -356,7 +356,7 @@ TC34_CannotChangeEndpointType_IfBindingassociated
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    Sleep    4s
+    Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[4]/div[1]/p/a[2]    timeout=${login.timeout}
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[4]/div[1]/p/a[2]
     Sleep    4s
     Wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
@@ -377,7 +377,7 @@ TC42_RestartProcesswithemptyProperty
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    Sleep    4s
+    Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
     Sleep    4s
     wait until page contains element    class=fa-object-group    timeout=${login.timeout}
@@ -415,7 +415,7 @@ TC20_Reset endpoint type for next run.
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    Sleep    4s
+    Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
     Sleep    2s
     Wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
