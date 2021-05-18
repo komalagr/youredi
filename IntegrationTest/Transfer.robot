@@ -10,7 +10,7 @@ TC039_Transfer_FilterById
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
-    sleep    4s
+    Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/div/div[1]/div[1]/p/a[2]    #click on Service
     click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[2]/div/a/i    #click on transfer
     sleep    4s
