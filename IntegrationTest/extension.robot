@@ -11,11 +11,12 @@ TC16_Add Extension
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
-    sleep    2s
+    wait until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
     wait until page contains element    class=fa-plug    timeout=${login.timeout}
     Click Element    class=fa-plug    #Click extension
     sleep    12s
+    wait until element is enabled    class=fa-plus    timeout=${login.timeout}
     Click Element    class=fa-plus    # Click on Add
     Sleep    6s
     Input Text    name=extension.Name    Ext2    #Enter Extension name
@@ -30,7 +31,7 @@ TC17_Delete Extension
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
-    sleep    4s
+    wait until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select service
     wait until page contains element    class=fa-plug    timeout=${login.timeout}
     Click Element    class=fa-plug    #Click extension
@@ -56,7 +57,7 @@ TC31_Bug8642_ExtensionCanotBeDeleted_IfUsedInProcess
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
-    sleep    2s
+    wait until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[2]/div/p/a[2]    #Select Service
     Sleep    6s
     Wait until page contains element    class=fa-plug    timeout=${login.timeout}
