@@ -12,10 +12,10 @@ TC01_AddProcess
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
+    Sleep    4s
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
-    Sleep    4s
-    Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
+    Sleep    8s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Selects Service
     Wait Until page contains element    class=fa-object-group    timeout=${login.timeout}
     Click Element    class=fa-object-group    #Click Processes
