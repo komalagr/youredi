@@ -8,9 +8,10 @@ TC25-Logs-information
     [Setup]    Login
     Wait until page contains    text=Login successful. Welcome to Youredi!
     Click element    class=btn-primary
+    Sleep    3s
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
-    Sleep    2s
+    Sleep    4s
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    #Select Service
     Click Element    class=fa-info-circle    #Click on Service log
     Sleep    6s
