@@ -8,7 +8,7 @@ TC43_AddParentOrg
     ...
     ...    Test data setup. We shall e using an organization present at third position
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i
