@@ -9,7 +9,7 @@ TC34_AddUserToOrganization
     ...    Test data setup
     ...    Komal test organisation
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
@@ -31,7 +31,7 @@ TC34_AddUserToOrganization
 TC36_EditUserRoleInOrganization
     [Documentation]    Check that we can edit role for the user for organisation
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
@@ -49,7 +49,7 @@ TC36_EditUserRoleInOrganization
 TC35_DeleteUserFromOrganization
     [Documentation]    check that we can delete user from organisation
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
@@ -70,7 +70,7 @@ TC35_DeleteUserFromOrganization
  T50_SearchUser_UserPage
     [Documentation]    Check we can search for user on User page
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains    text=Organizations    timeout=${login.timeout}
     Scroll Element Into View    class=fa-users

@@ -6,7 +6,7 @@ Variables         Variablesfile.yaml
 TC25-Logs-information
     [Documentation]    Check user can Filter Logs by information
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Sleep    3s
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}

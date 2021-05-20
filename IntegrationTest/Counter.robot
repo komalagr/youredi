@@ -6,7 +6,7 @@ Variables         Variablesfile.yaml
 TC14_Delete_Counter
     [Documentation]    Check user can delete Counter on UI
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization
@@ -25,7 +25,7 @@ TC14_Delete_Counter
 TC15_Search_Counter
     [Documentation]    Check user can search Counter on UI
     [Setup]    login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select + on Organization

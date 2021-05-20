@@ -8,7 +8,7 @@ TC45-Alerts_AddComment
     ...
     ...    Test data setup. - Need an alert with info as Info3 in Demoservice of Komal Test Organisation
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
@@ -38,7 +38,7 @@ TC45-Alerts_AddPayload
     ...
     ...    Test data setup. - Need an alert with info as Info3 in Demoservice of Komal Test Organisation
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
@@ -67,7 +67,7 @@ TC46-Alerts_AssignToMe
     ...
     ...    Test data setup. - Need an alert with info as Info3 in Demoservice of Komal Test Organisation
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
@@ -96,7 +96,7 @@ TC47-Alerts_Unassign
     ...
     ...    Test data setup. - Need an alert with info as Info3 in Demoservice of Komal Test Organisation
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
@@ -122,7 +122,7 @@ TC47-Alerts_Unassign
 Dev_TC21-Alerts_FilterByAssignedTo
     [Documentation]    Check user can filter Alerts by Info
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
@@ -150,7 +150,7 @@ TC60AlertWarningCategory
     ...    Komal Test Organisation - Demo Service 4
     ...    Need alerts with Minor, major, critical and warning category
     [Setup]    login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
@@ -173,7 +173,7 @@ TC61AlertMinorCategory
     ...    Komal Test Organisation - Demo Service 4
     ...    Need alerts with Minor, major, critical and warning category
     [Setup]    login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
@@ -196,7 +196,7 @@ TC62AlertMajorCategory
     ...    Komal Test Organisation - Demo Service 4
     ...    Need alerts with Minor, major, critical and warning category
     [Setup]    login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
@@ -219,7 +219,7 @@ TC63AlertCriticalCategory
     ...    Komal Test Organisation - Demo Service 4
     ...    Need alerts with Minor, major, critical and warning category
     [Setup]    login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization

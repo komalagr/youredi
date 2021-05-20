@@ -10,7 +10,7 @@ TC01_AddProcess
     ...    1. Need Organization Name : Komal test organistaion
     ...    2. Need Service -- DemoService
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Sleep    4s
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
@@ -35,7 +35,7 @@ TC02_DeleteProcess_PositiveScenario
     ...    Test data setup
     ...    Need process- 1Process added to DemoService in Komal test organistaion
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Sleep    4s
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
@@ -61,7 +61,7 @@ TC03_DeleteProcess_ProcessNameIncorect
     ...    Test Data setup
     ...    1. Komal test organistaion \ -- DemoService
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Sleep    3s
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
@@ -88,7 +88,7 @@ TC04_DeleteProcess_Cancel
     ...    Test Data setup
     ...    1. Komal test organistaion \ -- DemoService
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Sleep    3s
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
@@ -118,7 +118,7 @@ Dev_TC05_DeleteEndpoint_Positive
     ...    Test Data setup
     ...    1. Komal test organistaion \ -- DemoService \ -- 1Process
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Sleep    3s
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
@@ -144,7 +144,7 @@ Dev_TC06_AddProcess_Negative_ProcessAlreadyExist
     ...    1. Need Organization -- Name : Komal test organistaion
     ...    2. Need Service -- DemoService
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Sleep    3s
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
@@ -173,7 +173,7 @@ Dev_TC07_DeleteEndpoint_Negative_EndpointAssociatedToProcess
     ...    1. Need Organization -- Name : Komal test organistaion
     ...    2. Need Service -- DemoService
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
@@ -199,7 +199,7 @@ Dev_TC08_AddEndpoint_Positive
     ...    1. Need Organization -- Name : Komal test organistaion
     ...    2. Need Service -- DemoService
     [Setup]    login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Sleep    3s
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
@@ -225,7 +225,7 @@ Dev_TC08b_DeleteEndpointforNextrun
     ...    Test Data setup
     ...    1. Komal test organistaion \ -- DemoService \ -- 1Process
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Sleep    3s
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
@@ -254,7 +254,7 @@ Dev_TC51_Check If binding is not active process should not get executed
     ...    2. Need Service -- DemoService
     ...    3 Process name binding whose endpoint binding is not marked active
     [Setup]    Login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Sleep    3s
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
@@ -281,7 +281,7 @@ Bug 8386: Space at the end of process name should not prevent it to be deleted.
     ...    test data setup
     ...    Process - 1Space trim Test with extra spaces in end should be present in Demo service4
     [Setup]    login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Sleep    3s
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
@@ -310,7 +310,7 @@ TC32_AddandDeleteBinding
     ...    Komal test Organisation - Demo service 5
     ...    Counters endpoint
     [Setup]    login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Sleep    3s
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
@@ -346,7 +346,7 @@ TC33_PBI 8220: Web IDE: changing of Endpoint type.
     ...    Endpoint \ with type Inbound and no binding attached to it
     ...    Endpoint is associated to a process
     [Setup]    login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
@@ -375,7 +375,7 @@ TC34_CannotChangeEndpointType_IfBindingassociated
     ...    Komal Test Organisation - DemoService4
     ...    EndpointB1 with Binding
     [Setup]    login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
@@ -397,7 +397,7 @@ TC34_CannotChangeEndpointType_IfBindingassociated
 TC42_RestartProcesswithemptyProperty
     [Documentation]    Check that if message property is set \ with empty value , still it should be displayed in Transfer messages
     [Setup]    login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
@@ -436,7 +436,7 @@ TC20_Reset endpoint type for next run.
     ...    Endpoint \ with type Inbound and no binding attached to it
     ...    Endpoint is associated to a process
     [Setup]    login
-    Wait until page contains    text=Login successful. Welcome to Youredi!
+    Wait until page contains    text=Login successful. Welcome to Youredi!    timeout=${login.timeout}
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
