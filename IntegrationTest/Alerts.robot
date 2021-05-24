@@ -12,6 +12,7 @@ TC45-Alerts_AddComment
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    6s
     wait until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     wait until page contains element    class=fa-bell    timeout=${login.timeout}
@@ -42,6 +43,7 @@ TC45-Alerts_AddPayload
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    6s
     wait until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     wait until page contains element    class=fa-bell    timeout=${login.timeout}
@@ -71,6 +73,7 @@ TC46-Alerts_AssignToMe
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    6s
     wait until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     wait until page contains element    class=fa-bell    timeout=${login.timeout}
@@ -126,6 +129,7 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    6s
     wait until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[1]/div[1]/p/a[2]    # Select Service
     wait until page contains element    class=fa-bell    timeout=${login.timeout}
@@ -154,6 +158,7 @@ TC60AlertWarningCategory
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    4s
     wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]    #Select Service
     Sleep    2s
@@ -177,6 +182,7 @@ TC61AlertMinorCategory
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    6s
     wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]    #Select Service
     Sleep    2s
@@ -200,6 +206,7 @@ TC62AlertMajorCategory
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    6s
     wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]    #Select Service
     Sleep    2s
@@ -223,6 +230,7 @@ TC63AlertCriticalCategory
     Click element    class=btn-primary
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    #Select Organization
+    Sleep    6s
     wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]    timeout=${login.timeout}
     Click Element    xpath=/html/body/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]    #Select Service
     Sleep    2s
