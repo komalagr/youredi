@@ -140,6 +140,7 @@ DEV_TC8_OData_ProcessesNegative
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid2})/Services(${login.serviceid2})/Processes(${login.processid1})
     sleep    2s
@@ -157,6 +158,7 @@ DEV_TC9_OData_ExtensionPositive
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid1})/Services(${login.serviceid2})/Extensions(${login.extensionsid1})
     sleep    2s
@@ -174,6 +176,7 @@ DEV_TC10_OData_ExtensionNegative
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid1})/Services(${login.serviceid1})/Extensions(${login.extensionsid1})
     sleep    2s
@@ -190,6 +193,7 @@ DEV_TC11_OData_ExtensionNegative
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid2})/Services(${login.serviceid2})/Extensions(${login.extensionsid1})
     sleep    2s
@@ -206,6 +210,7 @@ DEV_TC12_OData_ServiceParameterPositive
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid1})/Services(${login.serviceid3})/ServiceParameters
     sleep    2s
@@ -223,6 +228,7 @@ DEV_TC13_OData_ServiceParameterNegative
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid3} )/Services(${login.serviceid3})/ServiceParameters
     sleep    2s
@@ -239,6 +245,7 @@ DEV_TC14_OData_CrossReferencePositive
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid1})/Services(${login.serviceid2})/CrossReferences
     sleep    2s
@@ -256,6 +263,7 @@ DEV_TC15_OData_CrossReferenceNegative
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid2})/Services(${login.serviceid2})/CrossReferences
     sleep    2s
@@ -272,6 +280,7 @@ DEV_TC16_OData_CounterPositive
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid1})/Services(${login.serviceid1})/Counters
     sleep    2s
@@ -289,6 +298,7 @@ DEV_TC17_OData_CounterNegative
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid2})/Services(${login.serviceid2})/Counters
     sleep    2s
@@ -305,6 +315,7 @@ DEV_TC18_OData_EPBindingPositive
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid1})/Services(${login.serviceid2})/Endpoints(${login.endpointsid1})/EndpointBindings(${login.bindingsid1})
     sleep    2s
@@ -322,6 +333,7 @@ DEV_TC19_OData_EPBindingNegative
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid1})/Services(${login.serviceid1})/Endpoints(${login.endpointsid1})/EndpointBindings(${login.bindingsid1})
     sleep    2s
@@ -338,6 +350,7 @@ DEV_TC20_OData_EPBindingNegative
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid2})/Services(${login.serviceid2})/Endpoints(${login.endpointsid1})/EndpointBindings(${login.bindingsid1})
     sleep    2s
@@ -354,6 +367,7 @@ DEV_TC21_OData_EndpointPositive
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid1})/Services(${login.serviceid2})/Endpoints(${login.endpointsid1})
     sleep    2s
@@ -371,6 +385,7 @@ DEV_TC22_OData_EndpointNegative
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid2})/Services(${login.serviceid2})/Endpoints(${login.endpointsid1})
     sleep    2s
@@ -387,6 +402,7 @@ DEV_TC23_OData_EndpointNegative
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid2})/Services(${login.serviceid2})/Endpoints
     sleep    2s
@@ -403,6 +419,7 @@ DEV_TC24_OData_ServiceLogPositive
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid1})/Services(${login.serviceid1})/ServiceLogs
     sleep    2s
@@ -420,6 +437,7 @@ DEV_TC25_OData_ServiceLogNegative
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid2})/Services(${login.serviceid2})/ServiceLogs
     sleep    2s
@@ -436,6 +454,7 @@ DEV_TC26_OData_TransferPositive
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid1})/Transfers(${login.transferid1})
     sleep    2s
@@ -453,6 +472,7 @@ DEV_TC27_OData_TransferNegative
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid2})/Transfers(${login.transferid1})
     sleep    2s
@@ -469,6 +489,7 @@ DEV_TC28_OData_ServiceDataPositive
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid1})/Services(${login.serviceid1})/ServiceDatas/FindItems(ItemType='Type2',Index1='',Index2='',Skip=0,Take=50)
     sleep    2s
@@ -486,6 +507,7 @@ DEV_TC29_OData_ServiceDataNegative
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid2})/Services(${login.serviceid2})/ServiceDatas/FindItems(ItemType='Type2',Index1='',Index2='',Skip=0,Take=50)
     sleep    2s
@@ -502,6 +524,7 @@ DEV_TC30_OData_LibrariesPositive
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid1})/Services(${login.serviceid2})/CodeLibraries
     sleep    2s
@@ -519,6 +542,7 @@ DEV_TC31_OData_LibrariesNegative
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid2})/Services(${login.serviceid2})/CodeLibraries
     sleep    2s
@@ -535,6 +559,7 @@ DEV_TC32_OData_SchedulesPositive
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid1})/Services(${login.serviceid2})/Schedules
     sleep    2s
@@ -552,6 +577,7 @@ DEV_TC33_OData_SchedulesNegative
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
+    sleep    2s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid2})/Services(${login.serviceid2})/Schedules
     sleep    2s
