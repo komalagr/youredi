@@ -21,7 +21,7 @@ TC45-Alerts_AddComment
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
-    Sleep    3s
+    Sleep    7s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
     Wait until page contains    text=Info3    timeout=${login.timeout}
     Page should not contain    text=No alerts found
@@ -52,7 +52,7 @@ TC45-Alerts_AddPayload
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
-    Sleep    3s
+    Sleep    7s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
     Wait until page contains    text=Info3    timeout=${login.timeout}
     Page should not contain    text=No alerts found
@@ -82,7 +82,7 @@ TC46-Alerts_AssignToMe
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
-    Sleep    3s
+    Sleep    7s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
     Wait until page contains    text=Info3    timeout=${login.timeout}
     Page should not contain    text=No alerts found
@@ -111,7 +111,7 @@ TC47-Alerts_Unassign
     Input text    name=filterInfo    Info3    # Enter into filter criteria
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
-    Sleep    3s
+    Sleep    7s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[2]
     Wait until page contains    text=Info3    timeout=${login.timeout}
     Page should not contain    text=No alerts found
@@ -138,7 +138,7 @@ Dev_TC21-Alerts_FilterByAssignedTo
     Select from list by value    xpath=/html/body/main/section/section/header/form/div[2]/div[2]/select    ${login.alertfilter}    # Enter into filter criteria 928 for stage , dev=16887
     Sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/header/form/div[4]/button/i
-    Sleep    4s
+    Sleep    6s
     Click element    xpath=//*[@id="webide"]/main/section/section/section/section[1]/section[1]/article/ul/li[3]
     Sleep    4s
     Page should not contain    text=No alerts found
@@ -166,7 +166,7 @@ TC60AlertWarningCategory
     Sleep    4s
     Click element    xpath=/html/body/main/section/section/header/form/div[4]/div/button[1]/span/i
     Click element    class=fa-refresh
-    Sleep    2s
+    Sleep    4s
     Click element    xpath=/html/body/main/section/section/section/section[1]/section[1]/article/ul/li[5]/span
     Sleep    2s
     Page should contain    text=No alerts found.
