@@ -280,7 +280,7 @@ DEV_TC16_OData_CounterPositive
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
-    sleep    2s
+    sleep    5s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid1})/Services(${login.serviceid1})/Counters
     sleep    2s
@@ -298,7 +298,7 @@ DEV_TC17_OData_CounterNegative
     Wait until page contains element    xpath=/html/body/main/section/section/div/div[1]/div/p/a[1]/i    timeout=${login.timeout}
     click element    xpath=/html/body/aside/div[2]/button[2]/i
     click element    xpath=/html/body/aside/div[2]/div/a[1]
-    sleep    2s
+    sleep    5s
     Wait until page contains element    xpath=/html/body/main/section/section/header/form/div/input    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/header/form/div/input    /api/Accounts(${login.accountid2})/Services(${login.serviceid2})/Counters
     sleep    2s
