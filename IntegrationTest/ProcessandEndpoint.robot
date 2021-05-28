@@ -424,6 +424,7 @@ TC42_RestartProcesswithemptyProperty
     Wait until element is visible    class=fa-plus    timeout=${login.timeout}
     Input Text    xpath=/html/body/main/section/section/div/div/div[2]/section/section[2]/section[2]/div/div/input    P1
     Click element    xpath=/html/body/main/section/section/div/div/div[1]/div/button[2]/i    #click start
+    Sleep    4s
     Wait until page contains    text=Process started successfully.    timeout=${login.timeout}
     Page should contain    text=Process started successfully.
     Sleep    2s
