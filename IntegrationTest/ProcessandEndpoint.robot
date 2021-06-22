@@ -415,8 +415,9 @@ TC42_RestartProcesswithemptyProperty
     Click element    xpath=/html/body/main/section/div[1]/div/div[1]/div/button[1]/i
     Sleep    4s
     Click element    xpath=/html/body/aside/div[1]/ul/li[2]/div/a/i
-    Sleep    12s
-    Click element    xpath=/html/body/main/section/div/section/div/div/div[1]/div[1]/i    #click transfers
+    Sleep    16s
+    Wait until element is visible    xpath=/html/body/main/section/div/section/div/div/div[1]/div[1]/i    timeout=${login.timeout}
+    Click element    xpath=/html/body/main/section/div/section/div/div/div[1]/div[1]/i    #click transfer id
     sleep    8s
     Wait until element is visible    xpath=/html/body/main/section/section/header/div[1]/button/i    timeout=${login.timeout}
     Click element    xpath=/html/body/main/section/section/header/div[1]/button/i    #click transfer id
