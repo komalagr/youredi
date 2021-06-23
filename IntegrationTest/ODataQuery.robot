@@ -147,7 +147,6 @@ DEV_TC8_OData_ProcessesNegative
     click element    xpath=/html/body/main/section/section/header/form/div/button/i
     sleep    4s
     Page should not contain    text=200 success
-    Page should contain    text=404 error
     [Teardown]    Close Browser
 
 DEV_TC9_OData_ExtensionPositive
