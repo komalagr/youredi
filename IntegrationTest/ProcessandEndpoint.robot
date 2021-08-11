@@ -267,7 +267,7 @@ Dev_TC51_Check If binding is not active process should not get executed
     sleep    4s
     click element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Select Binding process
     Wait Until Element Is enabled    class=fa-play    timeout=${login.timeout}
-    click element    xpath=//*[@id="webide"]/main/section[1]/header/div/button/i    #click start
+    click element    xpath=/html/body/main/section/div[1]/div[1]/div[1]/div/button[1]/i   #click start
     Wait until page contains    text=Start process    timeout=${login.timeout}
     click element    xpath=//*[@id="webide"]/main/section[1]/div[1]/div[1]/div[1]/div/button[1]/i    #click start
     Sleep    6s
