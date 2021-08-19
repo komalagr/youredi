@@ -422,6 +422,7 @@ TC42_RestartProcesswithemptyProperty
     Click element    xpath=/html/body/main/section/section/div/div/div[1]/div/button[2]/i    #click start
     Sleep    9s
     Wait until page contains    text=Process started successfully.    timeout=${login.timeout}
+    Sleep    9s
     Page should contain    text=Process started successfully.
     Sleep    2s
     [Teardown]    Close Browser
