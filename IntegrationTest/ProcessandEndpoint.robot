@@ -49,7 +49,7 @@ TC02_DeleteProcess_PositiveScenario
     ${process}=    Get Text    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[2]/a    #Gets name of the process that will be deleted
     Click Element    xpath=//*[@id="webide"]/main/section/section/article/table/tbody/tr[1]/td[9]/div/button    #Click delete
     Sleep    4s
-    Input Text    xpath=//*[@id="input-8"]    ${process}    #Enter process name on delete pop up window
+    Input Text    xpath=/html/body/div[4]/form/div/div[2]/p[2]/input    ${process}    #Enter process name on delete pop up window
     Wait until element is enabled    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/div[4]/form/div/div[3]/span/button[1]
     Sleep    4s
