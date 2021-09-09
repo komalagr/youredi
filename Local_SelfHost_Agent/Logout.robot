@@ -5,7 +5,7 @@ Variables         variables.yaml
 
 Dev_TC28-Logout
     [Documentation]    Check user can logout from the application
-    Open Browser    ${login.url}    chrome
+    Open Browser    ${login.url}    chrome headlesschrome
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
