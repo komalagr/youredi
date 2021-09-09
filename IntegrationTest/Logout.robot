@@ -20,7 +20,7 @@ TC28-Logout
 
 *** Keywords ***
 Login
-    Open Browser    ${login.url}    chrome
+    Open Browser    ${login.url}    headlesschrome
     Input Text    id=email    ${login.email}
     Input Password    id=password    ${login.password}
     Click Element    class=fa-sign-in
