@@ -215,7 +215,6 @@ Dev_TC08_AddEndpoint_Positive
     Input text    name=Description    3Endpoint    # enter new endpoint name
     click element    xpath=//*[@id="webide"]/main/section/section/form/header/button    # save the endpoint
     Wait until page contains    text=3Endpoint    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]    # refresh endpoints
     Sleep    4s
     [Teardown]    Close Browser
 
