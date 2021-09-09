@@ -30,7 +30,7 @@ jobs:
   - script: |
       pip install pytest pytest-azurepipelines
       pytest
-      robot --pythonpath . -x outputxunit.xml Logout.robot
+      robot --pythonpath . -x outputxunit.xml Servicelog.robot
     displayName: 'Run Robot Scripts'
     workingDirectory: Local_SelfHost_Agent
     
