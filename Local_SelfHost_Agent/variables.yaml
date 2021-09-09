@@ -5,8 +5,8 @@
 
 
 login:
- url: https://stage.youredi.com/
+ url: https://dev.youredi.com/
  email: komal@youredi.com
- password: RobotTesting@456
- timeout: 60s
+ password: RobotTesting@123
+ timeout: 120s
    
