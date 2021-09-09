@@ -351,13 +351,11 @@ TC33_PBI 8220: Web IDE: changing of Endpoint type.
     Wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #Click endpoints
     Wait until page contains    text=Binding    timeout=${login.timeout}
-    click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i
     Sleep    4s
     Select from List by Value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    4
     sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
     Sleep    4s
-    Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]
     Page should not contain    text=Can't change type of an endpoint that has endpoint bindings
     Sleep    2s
     [Teardown]    Close Browser
@@ -445,7 +443,6 @@ TC20_Reset endpoint type for next run.
     Wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #Click endpoints
     Wait until page contains    text=Binding    timeout=${login.timeout}
-    click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]/i
     Sleep    4s
     Select from List by Value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    1
     sleep    4s
