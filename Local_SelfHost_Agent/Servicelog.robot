@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-Variables         Variablesfile.yaml
+Variables         variablesfile.yaml
 *** Test Cases ***
 
 TC25-Logs-information
