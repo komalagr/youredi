@@ -447,7 +447,6 @@ TC20_Reset endpoint type for next run.
     sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
     Sleep    4s
-    Click element    xpath=//*[@id="webide"]/main/section/section/section/header/button[2]
     Page should not contain    text=Can't change type of an endpoint that has endpoint bindings
     Sleep    2s
     [Teardown]    Close Browser
