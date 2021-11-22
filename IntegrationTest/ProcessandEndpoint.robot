@@ -312,7 +312,7 @@ TC32_AddandDeleteBinding
     Wait Until page contains element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[5]/div[1]/p/a[2]    timeout=${login.timeout}
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[5]/div[1]/p/a[2]
     Wait Until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
-    click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i
+    click element    class=fa-lightbulb-o
     Click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
     Sleep    12s
     Click element    xpath=//*[@id="webide"]/main/section/section/div/section/header/button[1]/i
@@ -348,7 +348,7 @@ TC33_PBI 8220: Web IDE: changing of Endpoint type.
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
     Sleep    2s
     Wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #Click endpoints
+    Click Element    class=fa-lightbulb-o    #Click endpoints
     Wait until page contains    text=Binding    timeout=${login.timeout}
     Sleep    4s
     Select from List by Value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    4
@@ -375,7 +375,7 @@ TC34_CannotChangeEndpointType_IfBindingassociated
     Click element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[4]/div[1]/p/a[2]
     Sleep    4s
     Wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
-    Click element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #click on endpoints
+    Click element    class=fa-lightbulb-o    #click on endpoints
     Wait until page contains    text=1Space Trim Test    timeout=${login.timeout}
     Select from list by value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    1
     sleep    4s
@@ -440,7 +440,7 @@ TC20_Reset endpoint type for next run.
     Click Element    xpath=//*[@id="webide"]/main/section/section/div/div[1]/div[2]/div[3]/div/p/a[2]
     Sleep    2s
     Wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
-    Click Element    xpath=//*[@id="webide"]/aside/div[1]/ul/li[7]/a/i    #Click endpoints
+    Click Element    class=fa-lightbulb-o    #Click endpoints
     Wait until page contains    text=Binding    timeout=${login.timeout}
     Sleep    4s
     Select from List by Value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    1
