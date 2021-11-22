@@ -350,7 +350,7 @@ TC33_PBI 8220: Web IDE: changing of Endpoint type.
     Wait until page contains element    class=fa-lightbulb-o    timeout=${login.timeout}
     Click Element    class=fa-lightbulb-o    #Click endpoints
     Wait until page contains    text=Binding    timeout=${login.timeout}
-    Sleep    4s
+    Sleep    8s
     Select from List by Value    xpath=//*[@id="webide"]/main/section/section/form/article/div/div[2]/select    4
     sleep    4s
     Click element    xpath=//*[@id="webide"]/main/section/section/form/header/button/i
