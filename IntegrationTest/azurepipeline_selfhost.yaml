@@ -316,8 +316,8 @@ jobs:
   - task: PublishTestResults@2
     inputs:
       testResultsFiles: '**/Oldui.xml'
-      testRunTitle: OldUI
-    displayName: 'Publish Test Results - OldUI'
+      testRunTitle: Oldui
+    displayName: 'Publish Test Results - Oldui'
     continueOnError: true
     condition: succeededOrFailed()
 
