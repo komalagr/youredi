@@ -28,3 +28,4 @@ login:
  extensionsid1: '#{extensionsid1}#'
  bindingsid1: '#{bindingsid1}#'
  transferid1: '#{transferid1}#'
+ olduiurl: '#{olduiurl}#'

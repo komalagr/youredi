@@ -304,6 +304,22 @@ jobs:
     displayName: 'Publish Test Results - ODataQuery'
     continueOnError: true
     condition: succeededOrFailed()
+    
+#Run Robot Scripts - Oldui
+  - script: |
+       robot --pythonpath  . -x Oldui.xml Oldui.robot
+    workingDirectory: IntegrationTest
+    displayName: 'Run Robot Scripts - Oldui'
+    continueOnError: true
+
+#Publish Test Results - Oldui 
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: '**/Oldui.xml'
+      testRunTitle: Oldui
+    displayName: 'Publish Test Results - Oldui'
+    continueOnError: true
+    condition: succeededOrFailed()
 
 #DeleteFiles
   - task: DeleteFiles@1
