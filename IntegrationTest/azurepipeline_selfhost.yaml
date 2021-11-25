@@ -305,19 +305,19 @@ jobs:
     continueOnError: true
     condition: succeededOrFailed()
     
-#Run Robot Scripts - OldUIlogin
+#Run Robot Scripts - Oldui
   - script: |
-       robot --pythonpath  . -x ODataQuery.xml ODataQuery.robot
+       robot --pythonpath  . -x Oldui.xml Oldui.robot
     workingDirectory: IntegrationTest
-    displayName: 'Run Robot Scripts - ODataQuery'
+    displayName: 'Run Robot Scripts - Oldui'
     continueOnError: true
 
-#Publish Test Results - OldUIlogin 
+#Publish Test Results - Oldui 
   - task: PublishTestResults@2
     inputs:
-      testResultsFiles: '**/OlduiLogin.xml'
-      testRunTitle: OldUIlogin
-    displayName: 'Publish Test Results - OldUIlogin'
+      testResultsFiles: '**/Oldui.xml'
+      testRunTitle: OldUI
+    displayName: 'Publish Test Results - OldUI'
     continueOnError: true
     condition: succeededOrFailed()
 
