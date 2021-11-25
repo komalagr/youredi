@@ -11,5 +11,6 @@ TC01_LoginOldUI
     Click element    xpath=/html/body/div/form/div[6]/input
     Sleep    6s
     Page should contain element    id=logout
+    [Teardown]    Close Browser
     
 
