@@ -5,7 +5,7 @@ Variables         Variablesfile.yaml
 *** Test Cases ***
 
 TC01_LoginOldUI
-    Open Browser    https://oldui-stage.youredi.com/Login.aspx    headlesschrome
+    Open Browser    ${olduilogin.url}    headlesschrome
     Input Text    xpath=/html/body/div/form/div[6]/p[1]/input    ${login.email}
     Input Text    xpath=/html/body/div/form/div[6]/p[2]/input    ${login.password}
     Click element    xpath=/html/body/div/form/div[6]/input
